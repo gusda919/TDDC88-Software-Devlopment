@@ -47,9 +47,15 @@ List the decisions that have been made regarding architectural approaches and th
 \begin{enumerate}
     \item \textbf{Decision:} The web application will be built as a Single Page Application (SPA).
         \linebreak{}
-        \textbf{Justification:} Building the web application as an SPA comes with pros such as no need for page reloads when a user switches views. This will result in a faster and more interactive experience for the end-user, since only the data needed will be requested from the server when interacting with the application. 
-    \item
-    \item
+        \textbf{Justification:} Building the web application as an SPA comes with pros such as no need for page reloads when a user switches views. This will result in a faster and more interactive experience for the end-user, since only the data needed will be requested from the server when interacting with the application.  
+    \item \textbf{Decision:} Angular will be used as a frontend framework for the web application.
+    \linebreak{}
+    \textbf{Justification:} Angular seems to be the frontend framework that best fits the customer's requirements and preferences. For starters it uses TypeScript and has native support for Web Components, something which our other main candidate React lacks. While it's still possible to use TypeScript and Web Components with React, it would most likely be more cumbersome. Another reason we decided to use Angular is the fact that a few people in the development team already had experience with the framework, so it is expected that we can be up and running faster. Angular is also more structured than React and uses the MVC (Model, View, Controller) design pattern which makes it possible to isolate the application logic from the UI layer.
+    Angular also has standardized ways of creating components through the Angular CLI and is more structured than React, something which will be benefitial when working in a development team of around 10 people. Last but not least, Angular is also a complete framework which means that it comes with everything needed to handle routing, http-requests and testing, as opposed to React where you need to import 3rd party libraries for these things. Not having to rely on 3rd party modules for routing and other things makes the application more robust and maintainable over time. 
+    \item \textbf{Decision:} Node.js will be used with the web application framework Express for the backend.
+    \linebreak{}
+    \textbf{Justification:} Commonly used in combination with Angular and React so there are lots of great resources online for working with the chosen technologies. Node.js is basically server-side.js and it can (and will) be used with TypeScript in the project, which means that TypeScript will be used for both the frontend and backend. Express is a web application framework for Node.js that comes with many great features for creating robust APIs.
+    
 \end{enumerate}
 
 
