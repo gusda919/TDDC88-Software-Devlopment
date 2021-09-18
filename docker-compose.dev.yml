@@ -11,19 +11,22 @@ services:
       - ./client:/usr/src/app
       - ./client/node_modules:/usr/src/app/node_modules
  server: # name of the first service
-    build: ./server # specify the directory of the Dockerfile
+    build: 
+      context: ./server # specify the directory of the Dockerfile
+      target: base
     ports:
      - "8080:8080"
     environment:
      - MONGO_URL=mongodb://database/mean-app
     volumes:
-     - ./server:/usr/src/app
+     - ./server/src:/usr/src/app/src
      - ./server/node_modules:/usr/src/app/node_modules
+     - ./server/nodemon.json:/usr/src/app/nodemon.json
     links:
      - database
     depends_on:
      - database
-    command: npm run debug
+    command: npm run dev
  database: # name of the third service
    image: mongo # specify image to build container from
    volumes:
