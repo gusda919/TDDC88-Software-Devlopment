@@ -3,12 +3,12 @@ import express from "express";
 import { config } from "./config";
 import mongoose from "mongoose";
 
-import { User } from "./models";
+import { UserModel } from "./models";
 import { router } from "./routes";
 
 const app = express();
 
-// using commonjs require because not supported by ES imports
+// using commonjs require because json not supported by ES imports
 const users = require('./testusers.json').testUsers;
  
 // Connect to MongoDB
@@ -18,9 +18,10 @@ mongoose.connection.on('error', function(err: Error) {
  console.error('MongoDB connection error: ' + err);
 });
 
-// populate db from json file
-User.collection.deleteMany({}).then(() => console.log("All users deleted"));
-User.collection.insertMany(users).then(() => console.log("Inserted users from JSON")) 
+if (UserModel.find({}) == null) { // populate db from json file if User collection is empty
+    UserModel.collection.deleteMany({}).then(() => console.log("All users deleted"));
+    UserModel.collection.insertMany(users).then(() => console.log("Inserted users from JSON"));
+}
  
 // Cross Origin middleware
 app.use(function(req: express.Request, res: express.Response, next: express.NextFunction) {
