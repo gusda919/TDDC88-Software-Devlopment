@@ -1,7 +1,8 @@
 # TDDC88 Company 1 Project
 
 ## Installation
-Clone project and run:
+The development environment is set up using docker. Download docker [here](https://docs.docker.com/get-docker/).
+
 ```
 docker-compose -f docker-compose.dev.yml up --build
 ```
