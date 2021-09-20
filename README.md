@@ -3,6 +3,7 @@
 ## Installation
 The development environment is set up using docker. Download docker [here](https://docs.docker.com/get-docker/).
 
+Run the development environment with the following command:
 ```
 docker-compose -f docker-compose.dev.yml up --build
 ```
