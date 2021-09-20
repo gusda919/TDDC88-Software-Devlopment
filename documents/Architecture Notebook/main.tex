@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{TDDC88 Project - Company 1 - Architecture Notebook}
+\author{Architect: Jacob Karlén}
+\date{September 2021}
+
+\begin{document}
+
+\newcommand{\comment}[1]{} % allows for multi-line comments
+
+\maketitle
+
+\section{Purpose}
+\comment{
+Always address Sections 2 through 6 of this template. Other sections are recommended, depending on the amount of novel architecture, the amount of expected maintenance, the skills of the development team, and the importance of other architectural concerns.
+}
+
+
+This document describes the philosophy, decisions, constraints, justifications, significant elements, and any other overarching aspects of the system that shape the design and implementation. 
+
+\section{Architectural goals and philosophy}
+\comment{
+Describe the philosophy of the architecture. Identify issues that will drive the philosophy, such as: Will the system be driven by complex deployment concerns, adapting to legacy systems, or performance issues? Does it need to be robust for long-term maintenance? 
+
+Formulate a set of goals that the architecture needs to meet in its structure and behavior. Identify critical issues that must be addressed by the architecture, such as: Are there hardware dependencies that should be isolated from the rest of the system? Does the system need to function efficiently under unusual conditions?
+}
+
+
+\section{Assumptions and dependencies}
+\comment{
+[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
+}
+
+\section{Architecturally significant requirements}
+\comment{
+Insert a reference or link to the requirements that must be implemented to realize the architecture.
+}
+
+\section{Decisions, constraints, and justifications}
+\comment{
+List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.
+	Decision or constraint and justification
+	Decision or constraint and justification
+}
+
+\begin{enumerate}
+    \item \textbf{Decision:} The web application will be built as a Single Page Application (SPA).
+        \linebreak{}
+        \textbf{Justification:} Building the web application as an SPA comes with pros such as no need for page reloads when a user switches views. This will result in a faster and more interactive experience for the end-user, since only the data needed will be requested from the server when interacting with the application.  
+    \item \textbf{Decision:} Angular will be used as a frontend framework for the web application.
+    \linebreak{}
+    \textbf{Justification:} Angular seems to be the frontend framework that best fits the customer's requirements and preferences. For starters it uses TypeScript and has native support for Web Components, something which our other main candidate React lacks. While it's still possible to use TypeScript and Web Components with React, it would most likely be more cumbersome. Another reason we decided to use Angular is the fact that a few people in the development team already had experience with the framework, so it is expected that we can be up and running faster. Angular is also more structured than React and uses the MVC (Model, View, Controller) design pattern which makes it possible to isolate the application logic from the UI layer.
+    Angular also has standardized ways of creating components through the Angular CLI and is more structured than React, something which will be benefitial when working in a development team of around 10 people. Last but not least, Angular is also a complete framework which means that it comes with everything needed to handle routing, http-requests and testing, as opposed to React where you need to import 3rd party libraries for these things. Not having to rely on 3rd party modules for routing and other things makes the application more robust and maintainable over time. 
+    \item \textbf{Decision:} Node.js will be used with the web application framework Express for the backend.
+    \linebreak{}
+    \textbf{Justification:} Commonly used in combination with Angular and React so there are lots of great resources online for working with the chosen technologies. Node.js is basically server-side.js and it can (and will) be used with TypeScript in the project, which means that TypeScript will be used for both the frontend and backend. Express is a web application framework for Node.js that comes with many great features for creating robust APIs.
+    
+\end{enumerate}
+
+
+\section{Architectural Mechanisms}
+\comment{
+List the architectural mechanisms and describe the current state of each one. Initially, each mechanism may be only name and a brief description. They will evolve until the mechanism is a collaboration or pattern that can be directly applied to some aspect of the design.]
+Architectural Mechanism 1
+[Describe the purpose, attributes, and function of the architectural mechanism.]
+Architectural Mechanism 2
+[Describe the purpose, attributes, and function of the architectural mechanism.
+}
+
+\section{Key abstractions}
+\comment{
+List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.
+}
+
+\section{Layers and architectural framework}
+\comment{
+Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.
+}
+
+
+
+\section{Architectural views}
+\comment{
+Describe the architectural views that you will use to describe the software architecture. This illustrates the different perspectives that you will make available to review and to document architectural decisions.]
+Recommended views
+•	Logical: Describes the structure and behavior of architecturally significant portions of the system. This might include the package structure, critical interfaces, important classes and subsystems, and the relationships between these elements. It also includes physical and logical views of persistent data, if persistence will be built into the system. This is a documented subset of the design.
+•	Operational: Describes the physical nodes of the system and the processes, threads, and components that run on those physical nodes. This view isn’t necessary if the system runs in a single process and thread.
+•	Use case: A list or diagram of the use cases that contain architecturally significant requirements.
+}
+
+
+
+\end{document}
