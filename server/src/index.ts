@@ -18,10 +18,9 @@ mongoose.connection.on('error', function(err: Error) {
  console.error('MongoDB connection error: ' + err);
 });
 
-if (UserModel.find({}) == null) { // populate db from json file if User collection is empty
-    UserModel.collection.deleteMany({}).then(() => console.log("All users deleted"));
-    UserModel.collection.insertMany(users).then(() => console.log("Inserted users from JSON"));
-}
+// populate db, move this later to run only once
+UserModel.collection.deleteMany({}).then(() => console.log("All users deleted"));
+UserModel.collection.insertMany(users).then(() => console.log("Inserted users from JSON"));
  
 // Cross Origin middleware
 app.use(function(req: express.Request, res: express.Response, next: express.NextFunction) {

@@ -8,8 +8,7 @@ services:
      - "4200:4200"
      - "9229:9229"
    volumes:
-      - ./client:/usr/src/app
-      - ./client/node_modules:/usr/src/app/node_modules
+      - ./client/src:/usr/src/app/src
  server: # name of the first service
     build: 
       context: ./server # specify the directory of the Dockerfile
@@ -20,7 +19,6 @@ services:
      - MONGO_URL=mongodb://database/mean-app
     volumes:
      - ./server/src:/usr/src/app/src
-     - ./server/node_modules:/usr/src/app/node_modules
      - ./server/nodemon.json:/usr/src/app/nodemon.json
     links:
      - database
