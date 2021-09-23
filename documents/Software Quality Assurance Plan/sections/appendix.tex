@@ -1,0 +1,108 @@
+\appendix
+\label{sec:appendix}
+
+\section{\LaTeX{} Examples}
+The following examples should help you to write your document using \LaTeX{}. You'll find here the examples of tables, figures, citations and references. For other features of \LaTeX{}, see tutorials on \href{https://www.overleaf.com/learn}{\textbf{Overleaf}} or use this \href{https://wch.github.io/latexsheet/}{\textbf{cheatsheet}}. To work with this template, download its entire folder (including /sections, /bibliography and /figures), and run your \LaTeX{} editor like \href{https://www.overleaf.com}{\textbf{Overleaf}}.
+
+
+\subsection*{Example Citation}
+Example of citation: \cite{Smith_2013} and \cite{Smith_2012}. 
+
+
+\subsection*{Example References}
+%Example of table reference: see Table \ref{tab:example}. \\
+Example of equation reference: see Equation \eqref{eq:emc}. \\
+%Example of reference to Section \ref{sec:methods}. \\
+%Example of reference to Subsection \ref{sec:dataset:subsection}. \\
+Example of figure reference: see Figure \ref{fig:example}.\\
+Example of subfigure reference: see Figure \ref{fig:multiple:example11}.\\
+
+
+\subsection*{Example list}
+\begin{itemize}
+\item Bullet point one
+\item Bullet point two
+\item Nested list items:
+\begin{itemize}
+\item Nested item one
+\item Nested item two
+\end{itemize}
+\end{itemize}
+
+\subsection*{Enumerations}
+\begin{enumerate}
+\item Numbered list item one
+\item Numbered list item two
+\item Nested list items:
+\begin{enumerate}
+\item Nested item one
+\item Nested item two
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection*{Example Table}
+
+\begin{table}[h] 
+\centering
+\begin{tabular}{l l l}
+\hline
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\hline
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\hline
+\end{tabular}
+\caption{Table caption}
+\label{tab:example}
+\end{table}
+
+
+
+\subsection*{Example Equation}
+Equations within the text: $e = mc^2$. Equation with label on its own line:
+\begin{equation} \label{eq:emc}
+    e = mc^2
+\end{equation}
+
+
+
+
+\subsection*{Example Figures}
+
+\begin{figure}[ht]
+    \centering\includegraphics[width=0.4\linewidth]{placeholder}
+    \caption{An example of simple figure.}
+    \label{fig:example}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering\includegraphics[width=1\linewidth]{placeholder}
+        \caption{An example of multiple figures in one frame.}
+        \label{fig:multiple:example11}
+    \end{subfigure}
+    %
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering\includegraphics[width=1\linewidth]{placeholder}
+        \caption{Next subfigure.}
+        \label{fig:multiple:example12}
+    \end{subfigure}
+    %
+    \\
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering\includegraphics[width=1\linewidth]{placeholder}
+        \caption{Subfigure on another line.}
+        \label{fig:multiple:example21}
+    \end{subfigure}
+    %
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering\includegraphics[width=1\linewidth]{placeholder}
+        \caption{Yet another subfigure.}
+        \label{fig:multiple:example22}
+    \end{subfigure}
+    \caption{More figures in appendix.}
+    \label{fig:multiple}
+\end{figure}
