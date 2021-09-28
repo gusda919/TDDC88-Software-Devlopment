@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Patient } from './patient';
 
-let mock_patients = require('./emergency_room_test_data');
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
+  private mockPatients: Patient[] = [];
+  private _jsonUrl = '/emergency_room_test_data.json';
 
-  constructor() { }
-
-  getUsers(): Patient[] {
-    return mock_patients;
+  constructor(private http: HttpClient) { 
+  
   }
 
-  getUser(ssn: string): Patient {
-    return mock_patients.find((patient: Patient) => patient.ssn === ssn);
+  getPatients(): Patient[] {
+    return this.mockPatients;
   }
+
 }

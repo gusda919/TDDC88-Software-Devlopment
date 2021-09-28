@@ -1,6 +1,6 @@
 import express, { Request, Response, } from "express";
 import { Mongoose, Error } from "mongoose";
-import { UserModel, UserDoc } from "./models"; 
+import { UserModel, UserDoc } from "./user"; 
 
 export const router = express.Router();
 
