@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserlistComponent } from './userlist/userlist.component';
+import { UserlistComponent } from './shared/components/userlist/userlist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ChartsModule } from 'ng2-charts';
@@ -15,7 +15,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
-import { EmployeesComponent } from './employees/employees.component';
+import { EmployeesComponent } from './shared/components/employees/employees.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
