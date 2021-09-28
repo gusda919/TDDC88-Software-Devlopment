@@ -9,7 +9,7 @@ import { UserlistComponent } from './shared/components/userlist/userlist.compone
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ChartsModule } from 'ng2-charts';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './core/header/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
