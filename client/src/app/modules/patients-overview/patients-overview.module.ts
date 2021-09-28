@@ -5,19 +5,23 @@ import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { OverviewTableComponent } from './overview-table/overview-table.component';
+import { OverviewTableComponent } from './components/overview-table/overview-table.component';
+import { OverviewPageComponent } from './pages/overview-page/overview-page.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
-    OverviewTableComponent
+    OverviewTableComponent,
+    OverviewPageComponent
   ],
   imports: [
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    RouterModule
+    RouterModule,
+    MatCardModule
   ]
 })
 export class PatientsOverviewModule { }
