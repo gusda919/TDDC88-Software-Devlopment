@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LineChartComponent } from './charts/line-chart/line-chart.component';
-import { CardComponent } from './card/card.component';
+import { DashboardPageComponent } from './pages/dashboard/dashboard-page.component';
+import { LineChartComponent } from './components/charts/line-chart/line-chart.component';
+import { CardComponent } from './components/card/card.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     CardComponent,
     LineChartComponent,
-    DashboardComponent
+    DashboardPageComponent
   ],
   imports: [
     CommonModule,
