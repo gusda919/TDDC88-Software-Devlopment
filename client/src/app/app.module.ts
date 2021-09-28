@@ -22,6 +22,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { CardComponent } from './card/card.component';
 import { LineChartComponent } from './charts/line-chart/line-chart.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { OverviewTableComponent } from './overview-table/overview-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,9 @@ import { LineChartComponent } from './charts/line-chart/line-chart.component';
     NavComponent,
     DashboardComponent,
     CardComponent,
-    LineChartComponent
+    LineChartComponent,
+    EmployeesComponent,
+    OverviewTableComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,10 @@ import { LineChartComponent } from './charts/line-chart/line-chart.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
