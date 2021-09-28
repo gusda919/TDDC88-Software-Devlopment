@@ -10,3 +10,7 @@ router.get('/users/:name', async (req: Request, res: Response) => {
         res.json(users);
     });
 });
+
+router.get('/', async (req: Request, res: Response) => {
+  res.send('hello world');
+});

@@ -14,28 +14,31 @@ export class DashboardComponent {
       if (result.matches) {
         if (this.breakpointObserver.isMatched(Breakpoints.Handset)) {
           return [
-            { title: 'Card 1', cols: 2, rows: 1 },
-            { title: 'Card 2', cols: 2, rows: 1 },
-            { title: 'Card 3', cols: 2, rows: 1 },
-            { title: 'Card 4', cols: 2, rows: 1 }
+            { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+            { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 2, rows: 1 },
+            { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 2, rows: 1 },
+            { title: 'Respiratory Rate', contentType: 'line-chart', cols: 2, rows: 1 },
+            { title: 'Body Temperature', contentType: 'line-chart', cols: 2, rows: 1 }
           ];
         }
         if (this.breakpointObserver.isMatched(Breakpoints.Tablet)) {
           return [
-            { title: 'Card 1', cols: 2, rows: 1 },
-            { title: 'Card 2', cols: 1, rows: 1 },
-            { title: 'Card 3', cols: 1, rows: 1 },
-            { title: 'Card 4', cols: 1, rows: 1 }
+            { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+            { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
+            { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 1 },
+            { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
+            { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 }
           ];
         }
         
       }
 
       return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
+        { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+        { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
+        { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 2 },
+        { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
+        { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 }
       ];
     })
   );
