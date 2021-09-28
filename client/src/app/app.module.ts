@@ -12,32 +12,26 @@ import { ChartsModule } from 'ng2-charts';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
+
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+import { EmployeesComponent } from './employees/employees.component';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
-import { CardComponent } from './card/card.component';
-import { LineChartComponent } from './charts/line-chart/line-chart.component';
-import { EmployeesComponent } from './employees/employees.component';
-import { OverviewTableComponent } from './overview-table/overview-table.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import { RouterModule } from '@angular/router';
+
+import { PatientDashboardModule } from './modules/patient-dashboard/patient-dashboard.module';
+import { PatientsOverviewModule } from './modules/patients-overview/patients-overview.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserlistComponent,
     NavComponent,
-    DashboardComponent,
-    CardComponent,
-    LineChartComponent,
     EmployeesComponent,
-    OverviewTableComponent
   ],
   imports: [
     BrowserModule,
@@ -48,16 +42,15 @@ import { MatSortModule } from '@angular/material/sort';
     ChartsModule,
     LayoutModule,
     MatToolbarModule,
-    MatButtonModule,
     MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
     MatMenuModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule
+    RouterModule,
+    PatientDashboardModule,
+    PatientsOverviewModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
