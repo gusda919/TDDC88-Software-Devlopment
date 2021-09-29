@@ -34,10 +34,10 @@ mongoose.connection.on('open', function() {
         });
 });
 
-UserModel.collection.deleteMany({}).then(() => console.log("All users deleted"));
-UserModel.collection.insertMany(users).then(() => console.log("Inserted users from JSON"));
-PatientModel.collection.deleteMany({}).then(() => console.log("All patients deleted"));
-PatientModel.collection.insertMany(patients).then(() => console.log("Inserted patients from JSON"));
+// UserModel.collection.deleteMany({}).then(() => console.log("All users deleted"));
+// UserModel.collection.insertMany(users).then(() => console.log("Inserted users from JSON"));
+// PatientModel.collection.deleteMany({}).then(() => console.log("All patients deleted"));
+// PatientModel.collection.insertMany(patients).then(() => console.log("Inserted patients from JSON"));
 
  
 // Cross Origin middleware
