@@ -19,15 +19,18 @@ export class OverviewTableComponent implements AfterViewInit {
   dataSource: OverviewTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['ssn', 'first_name', 'last_name'];
 
   constructor(private patientService: PatientService) {
     this.dataSource = new OverviewTableDataSource(patientService);
+
   }
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.dataSource.table = this.table;
     this.table.dataSource = this.dataSource;
+    
   }
 }

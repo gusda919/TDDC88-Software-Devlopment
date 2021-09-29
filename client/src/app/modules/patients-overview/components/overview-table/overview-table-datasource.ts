@@ -7,6 +7,10 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 // imports for mock data and model
 import { PatientService } from 'src/app/core/mocks/patient.service';
 import { Patient } from 'src/app/core/mocks/patient';
+import { MatTable } from '@angular/material/table';
+
+
+// TODO: Need to fix so that the table updated when fetching data
 
 /**
  * Data source for the OverviewTable view. This class should
@@ -14,14 +18,21 @@ import { Patient } from 'src/app/core/mocks/patient';
  * (including sorting, pagination, and filtering).
  */
 export class OverviewTableDataSource extends DataSource<Patient> {
-  data: Patient[];
+  data: Patient[] = [];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
+  table: any | undefined;
 
   constructor(private patientService: PatientService) {
     super();
-    this.data = patientService.getPatients();
+    patientService.getPatients().subscribe(patients => { 
+      this.data = patients;
+      this.table.renderRows();
+    });
+
   }
+
+
 
   /**
    * Connect this data source to the table. The table will only update when
@@ -60,6 +71,7 @@ export class OverviewTableDataSource extends DataSource<Patient> {
     }
   }
 
+
   /**
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
@@ -73,7 +85,7 @@ export class OverviewTableDataSource extends DataSource<Patient> {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
         case 'name': return compare(a.first_name, b.first_name, isAsc);
-        case 'id': return compare(+a.last_name, +b.last_name, isAsc);
+        case 'id': return compare(+a.ssn, +b.ssn, isAsc);
         default: return 0;
       }
     });

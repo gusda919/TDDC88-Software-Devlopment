@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Patient } from './patient';
+import { Observable } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
 
@@ -7,15 +8,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PatientService {
-  private mockPatients: Patient[] = [];
-  private _jsonUrl = '/emergency_room_test_data.json';
+  private patientsUrl = 'http://localhost:8080/patients';
 
   constructor(private http: HttpClient) { 
   
   }
 
-  getPatients(): Patient[] {
-    return this.mockPatients;
+  getPatients(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(this.patientsUrl);
   }
 
 }

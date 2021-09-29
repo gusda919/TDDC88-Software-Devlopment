@@ -28,4 +28,4 @@ const patientSchema = new Schema<Patient>({
     "visiting_date": { type: String , required: true }
 });
 
-export const PatientModel = model<Patient>('User', patientSchema);
+export const PatientModel = model<Patient>('Patient', patientSchema);
