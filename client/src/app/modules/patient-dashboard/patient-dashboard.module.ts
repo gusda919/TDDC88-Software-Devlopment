@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardPageComponent } from './pages/dashboard/dashboard-page.component';
 import { LineChartComponent } from './components/charts/line-chart/line-chart.component';
 import { CardComponent } from './components/card/card.component';
+import { VpboxComponent } from './components/vpbox/vpbox.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -20,7 +21,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     CardComponent,
     LineChartComponent,
-    DashboardPageComponent
+    DashboardPageComponent,
+    VpboxComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,7 @@ import { RouterModule } from '@angular/router';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    MatMenuModule
-  ]
+    MatMenuModule,
+  ],
 })
-export class PatientDashboardModule { }
+export class PatientDashboardModule {}
