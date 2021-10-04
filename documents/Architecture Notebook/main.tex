@@ -1,8 +1,9 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
 
 \title{TDDC88 Project - Company 1 - Architecture Notebook}
-\author{Architect: Jacob Karlén}
+\author{Author: Company 1}
 \date{September 2021}
 
 \begin{document}
@@ -10,6 +11,31 @@
 \newcommand{\comment}[1]{} % allows for multi-line comments
 
 \maketitle
+
+\begin{table}
+\centering
+\begin{tabular}{||c c l c c||} 
+\hline
+Version & Author & Updates & Reviewed by & Date \\ [0.5ex] 
+\hline\hline
+0.1 & Jacob Karlén & Initial version & - & 2021-09-16 \\
+\hline
+1.0 & Jacob Karlén & 
+    \begin{tabular}{@{}l@{}}Architectural overview diagram and architectural desicions\end{tabular}
+    & TBD & 2021-09-17  \\
+\hline
+\end{tabular}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	Table of Content
+%----------------------------------------------------------------------------------------
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\clearpage
+
+
 
 \section{Purpose}
 \comment{
@@ -47,14 +73,40 @@ List the decisions that have been made regarding architectural approaches and th
 \begin{enumerate}
     \item \textbf{Decision:} The web application will be built as a Single Page Application (SPA).
         \linebreak{}
-        \textbf{Justification:} Building the web application as an SPA comes with pros such as no need for page reloads when a user switches views. This will result in a faster and more interactive experience for the end-user, since only the data needed will be requested from the server when interacting with the application.  
+        \textbf{Justification:} Building the web application as an SPA comes with pros such as no need for page reloads when a user switches views. This will result in a faster and more interactive experience for the end-user, since only the data needed will be requested from the server when interacting with the application. The web application will also be OS-neutral, something which is a technical requirement of the project.
+        
+    \item \textbf{Decision:} Web Components will be used to modularize the UI components.  
+    \linebreak{}
+    \textbf{Justification:} We will use Web Components since it's a preference of the customer.
+    
     \item \textbf{Decision:} Angular will be used as a frontend framework for the web application.
     \linebreak{}
-    \textbf{Justification:} Angular seems to be the frontend framework that best fits the customer's requirements and preferences. For starters it uses TypeScript and has native support for Web Components, something which our other main candidate React lacks. While it's still possible to use TypeScript and Web Components with React, it would most likely be more cumbersome. Another reason we decided to use Angular is the fact that a few people in the development team already had experience with the framework, so it is expected that we can be up and running faster. Angular is also more structured than React and uses the MVC (Model, View, Controller) design pattern which makes it possible to isolate the application logic from the UI layer.
-    Angular also has standardized ways of creating components through the Angular CLI and is more structured than React, something which will be benefitial when working in a development team of around 10 people. Last but not least, Angular is also a complete framework which means that it comes with everything needed to handle routing, http-requests and testing, as opposed to React where you need to import 3rd party libraries for these things. Not having to rely on 3rd party modules for routing and other things makes the application more robust and maintainable over time. 
-    \item \textbf{Decision:} Node.js will be used with the web application framework Express for the backend.
+    \textbf{Justification:} Angular seems to be the frontend framework that best fits the customer's requirements and preferences. For starters it uses TypeScript and has native support for Web Components, something which our other main candidate React lacks. While it's still possible to use TypeScript and Web Components with React, it would most likely be more cumbersome. An additional pro of Angular is that there already exists plenty of great component libraries, for example Angular Material which is what we plan to use, as well as charting libraries like Chart.js to create good looking data visualizations (similar libraries compatible with React also exists). Another reason we decided to use Angular is the fact that a few people in the development team already had experience with the framework, so it is expected that we can be up and running faster. Angular is also more structured than React and uses the MVC (Model, View, Controller) design pattern which makes it possible to isolate the application logic from the UI layer.
+    Angular also has standardized ways of creating components through the Angular CLI and is more structured than React, something which will be beneficial when working in a development team of around 10 people. Last but not least, Angular is also a complete framework which means that it comes with everything needed to handle routing, http-requests and testing, as opposed to React where you need to import 3rd party libraries for these things. Not having to rely on 3rd party modules for routing and other things makes the application more robust and maintainable over time (even though we of course will rely on the component libraries). 
+    
+    \item \textbf{Decision:} Node.js will be used with the Node.js web application framework Express for the backend.
     \linebreak{}
-    \textbf{Justification:} Commonly used in combination with Angular and React so there are lots of great resources online for working with the chosen technologies. Node.js is basically server-side.js and it can (and will) be used with TypeScript in the project, which means that TypeScript will be used for both the frontend and backend. Express is a web application framework for Node.js that comes with many great features for creating robust APIs.
+    \textbf{Justification:} Commonly used in combination with Angular and React so there are lots of great resources online for working with the chosen technologies. Node.js is basically server-side.js and it can (and will) be used with TypeScript in the project, which means that TypeScript will be used for both the frontend and backend. Express is a web application framework for Node.js that comes with many great features for creating robust APIs. Since the the application will not be of such a large scale we could most likely have gotten away with most server setups, like a java or python server instead, but Node works very well with Angular since we then can use TypeScript on both the client and server. Node.js is also very scalable and fast so if there for some reason later would exist a need to scale up, the possibility will be there. 
+    
+     \item \textbf{Decision:} TypeScript will be used in both the frontend and backend.
+    \linebreak{}
+    \textbf{Justification:} TypeScript which is a strongly typed subset of JavaScript improves readability of the code, since it makes everything more clear what type is to be expected. It also greatly improves debuggability because of this same reason, it will give you errors if you give a parameter of the wrong type to a function for example. It can help us spot errors in the code earlier in the project, and it is also nice to have language consistency across the client and server, using the same syntax, and only having to switch the context we are working in. 
+    
+     \item \textbf{Decision:} TypeScript will be used in both the frontend and backend.
+    \linebreak{}
+    \textbf{Justification:} TypeScript which is a strongly typed superset of JavaScript improves readability of the code, since it makes everything more clear what type is to be expected. It also greatly improves debuggability because of this same reason, it will give you errors if you give a parameter of the wrong type to a function for example. It can help us spot errors in the code earlier in the project, and it is also nice to have language consistency across the client and server, using the same syntax, and only having to switch the context we are working in. 
+    
+      \item \textbf{Decision:} TypeScript will be used in both the frontend and backend.
+    \linebreak{}
+    \textbf{Justification:} TypeScript which is a strongly typed superset of JavaScript improves readability of the code, since it makes everything more clear what type is to be expected. It also greatly improves debuggability because of this same reason, it will give you errors if you give a parameter of the wrong type to a function for example. It can help us spot errors in the code earlier in the project, and it is also nice to have language consistency across the client and server, using the same syntax, and only having to switch the context we are working in. 
+    
+     \item \textbf{Decision:} MongoDB will be used as a document-based database for the application and mongoose will be used for object modeling.
+    \linebreak{}
+    \textbf{Justification:} This might seem like an odd choice for storing sensitive information like patient data, and that is most likely true. Since information security is outside the scope of this project, and we will only be serving fake static test data through our backend, we haven't taken that fact into account. We would probably not need a database at all, since we could serve the data from static documents right away, but we decided to use a MongoDB database either way, to make it at least a bit more realistic. MongoDB is often used in combination with Node.js+Express servers and it is easy to work with. We also had previous experience with MongoDB from before which will help, and we will use the Node.js library mongoose for object modeling of the MongoDB database.
+    
+      \item \textbf{Decision:} The development environment will run in docker containers orchestrated with docker-compose
+    \linebreak{}
+    \textbf{Justification:} The motivation behind this is that it will create a consistent environment for everybody working with the development, so there shouldn't be issues related to use of different dependencies on different systems. It is also really convenient to be able to start client, server and database in separate docker containers with a single docker-compose command. Another benefit of using docker from the beginning of the project, is that it will be easy when we want to deploy with Kubernetes, since it is easy to go from using docker-compose to Kubernetes.
     
 \end{enumerate}
 
@@ -77,6 +129,8 @@ List and briefly describe the key abstractions of the system. This should be a r
 \comment{
 Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.
 }
+
+\includepdf[pages=-]{tech_stack.pdf}
 
 
 
