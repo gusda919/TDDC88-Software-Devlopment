@@ -1,15 +1,15 @@
-<mat-card>
+<mat-card class="vpbox">
   <mat-card-header>
     <mat-card-title>Vitalparametrar</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <mat-action-list>
-      <mat-list-item>
-        <mat-icon matListIcon>folder</mat-icon>
-        <h3 matLine>Parameter 1</h3>
+      <mat-list-item *ngFor="let param of params">
+        <mat-icon matListIcon>{{ param.icon }}</mat-icon>
+        <h3 matLine>{{ param.name }}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">100</div>
+            <div class="param" fxFlex="30">{{ param.value }}</div>
           </div>
         </div>
       </mat-list-item>
