@@ -15,6 +15,7 @@ export class DashboardPageComponent {
         if (this.breakpointObserver.isMatched(Breakpoints.Handset)) {
           return [
             { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+            { title: 'History', contentType: 'history', cols: 2, rows: 1 },
             { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 2, rows: 1 },
             { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 2, rows: 1 },
             { title: 'Respiratory Rate', contentType: 'line-chart', cols: 2, rows: 1 },
@@ -24,6 +25,7 @@ export class DashboardPageComponent {
         if (this.breakpointObserver.isMatched(Breakpoints.Tablet)) {
           return [
             { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+            { title: 'History', contentType: 'history', cols: 2, rows: 1 },
             { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
             { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 1 },
             { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
@@ -35,6 +37,7 @@ export class DashboardPageComponent {
 
       return [
         { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+        { title: 'History', contentType: 'history', cols: 2, rows: 1 },
         { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
         { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 2 },
         { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
