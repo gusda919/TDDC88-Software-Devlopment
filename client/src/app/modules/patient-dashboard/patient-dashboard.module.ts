@@ -15,14 +15,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
-import { HistoryComponent } from './components/history/history.component';
+import { JournalComponent } from './components/journal/journal.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     LineChartComponent,
     DashboardPageComponent,
-    HistoryComponent
+    JournalComponent
   ],
   imports: [
     CommonModule,
