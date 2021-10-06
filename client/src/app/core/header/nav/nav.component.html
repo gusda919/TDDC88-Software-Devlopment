@@ -9,6 +9,15 @@
     <mat-icon aria-label="Side nav toggle icon">{{ drawer.opened ? 'menu_open' : 'menu' }}</mat-icon>
   </button>
   <span>Region Östergötland </span>
+  <span id="spacer"></span>
+  <span id="dateTime">{{date| date: 'y/MM/dd, HH:mm' }}</span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>mail_outline</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" matBadge="8" matBadgeColor="warn">
+    <mat-icon>notifications</mat-icon>
+  </button>
+
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">
