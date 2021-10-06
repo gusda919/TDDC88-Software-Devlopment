@@ -19,4 +19,8 @@ export class VpboxComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  print() {
+    alert('hej');
+  }
 }
