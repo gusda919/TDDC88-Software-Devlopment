@@ -19,3 +19,17 @@
   flex: 1 1 auto;
 }
 
+#message {
+  position:fixed;
+  top: 44px;
+  z-index: 5;
+  left: 80%;
+  margin-top: 2%;
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.specificMessage {
+  background-color: aliceblue;
+  margin-bottom: 10px;
+}

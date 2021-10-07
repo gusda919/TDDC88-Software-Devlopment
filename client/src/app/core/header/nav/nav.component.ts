@@ -12,6 +12,8 @@ export class NavComponent {
 
   date : number  = Date.now();
   menuItems = ['overview', 'dashboard', 'employees']
+  displayMessage = false;
+  panelOpenState = false;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset])
     .pipe(
@@ -19,6 +21,16 @@ export class NavComponent {
       shareReplay()
     );
 
+    getMessages() {
+      if(this.displayMessage) {
+        this.displayMessage = false;
+      } else {
+        this.displayMessage = true;
+      }
+    }
+
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+
 
 }

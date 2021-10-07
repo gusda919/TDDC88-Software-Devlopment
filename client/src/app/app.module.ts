@@ -25,6 +25,7 @@ import { RouterModule } from '@angular/router';
 
 import { PatientDashboardModule } from './modules/patient-dashboard/patient-dashboard.module';
 import { PatientsOverviewModule } from './modules/patients-overview/patients-overview.module';
+import { ButtonComponent } from './core/header/nav/button/button.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PatientsOverviewModule } from './modules/patients-overview/patients-ove
     UserlistComponent,
     NavComponent,
     EmployeesComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
