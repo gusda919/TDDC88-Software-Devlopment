@@ -20,7 +20,10 @@ export class VpboxComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  isDisplay = false;
+
   print(param: any) {
     console.log(param);
+    this.isDisplay = !this.isDisplay;
   }
 }
