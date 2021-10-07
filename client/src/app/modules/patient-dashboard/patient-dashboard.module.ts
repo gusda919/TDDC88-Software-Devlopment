@@ -16,13 +16,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
+import { MyGraphComponent } from './components/my-graph/my-graph.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     LineChartComponent,
     DashboardPageComponent,
-    VpboxComponent,
+    MyGraphComponent
   ],
   imports: [
     CommonModule,
