@@ -14,31 +14,32 @@ export class DashboardPageComponent {
       if (result.matches) {
         if (this.breakpointObserver.isMatched(Breakpoints.Handset)) {
           return [
-            { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
-            { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 2, rows: 1 },
-            { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 2, rows: 1 },
-            { title: 'Respiratory Rate', contentType: 'line-chart', cols: 2, rows: 1 },
-            { title: 'Body Temperature', contentType: 'line-chart', cols: 2, rows: 1 }
+            // { title: 'Patient Overview', contentType: 'line', cols: 2, rows: 2 },
+            // { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 2, rows: 1 },
+            // { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 2, rows: 1 },
+            // { title: 'Respiratory Rate', contentType: 'line-chart', cols: 2, rows: 1 },
+            // { title: 'Body Temperature', contentType: 'line-chart', cols: 2, rows: 1 }
           ];
         }
         if (this.breakpointObserver.isMatched(Breakpoints.Tablet)) {
           return [
-            { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
-            { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
-            { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 1 },
-            { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
-            { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 }
+            // { title: 'Patient Overview', contentType: 'line', cols: 2, rows: 2 },
+            // { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
+            // { title: 'Blodtryck', contentType: 'line', cols: 1, rows: 1}
+            // { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 1 },
+            // { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
+            // { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 }
           ];
         }
         
       }
 
       return [
-        { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
-        { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
-        { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 2 },
-        { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
-        { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 }
+        // { title: 'Patient Overview', contentType: 'line', cols: 2, rows: 2 },
+        // { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
+        // { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 2 },
+        // { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
+        // { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 }
       ];
     })
   );
