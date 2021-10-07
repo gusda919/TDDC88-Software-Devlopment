@@ -18,11 +18,11 @@
           },
           "pulse": {
             "label": "Puls",
-            "data": [ 91, 77 ]
+            "data": [ 81, 77 ]
           },
           "bloodPrassure": {
             "label": "Blodtryck",
-            "data": [ "177/8", "159/89" ]
+            "data": [ "177/84", "159/89" ]
           },
           "bodyTemperature": {
             "label": "Kroppstemperatur",
@@ -62,7 +62,21 @@
             "date": "2021-09-24",
             "time": "12:00",
             "tests": [
-              { "marker": "P-natrium", "value": 137 }
+              { "marker": "B-Hb (Hemoglobin)" , "value": 144 },
+              { "marker": "B-EVF", "value": 0.43 },
+              { "marker": "B-Erytrocter", "value": 4.9 },
+              { "marker": "B-MCV", "value": 88 },
+              { "marker": "ERC(B)-MCH", "value": 30 },
+              { "marker": "ERC(B)-MCHC", "value": 336 },
+              { "marker": "B-Lekocyter", "value": 12.0 },  
+              { "marker": "B-Trombocyter", "value": 162 },
+              { "marker": "P-APT-tid", "value": 33 },
+              { "marker": "P-KR (INR)", "value": 1.1 },
+              { "marker": "P-CRP", "value": 16 },
+              { "marker": "P-Natrium", "value": 140 },
+              { "marker": "P-Kalium", "value": 3.7 },
+              { "marker": "P-Kreatinin", "value": 69 },
+              { "marker": "Pt-Krea, eGFR, MDRD", "value": 71 }
             ] 
           }
         ],
@@ -70,8 +84,14 @@
           {
             "date": "2021-03-14",
             "time":"12:30",
-            "type": "Alvedon 500mg, oralt filmdragerad tablett",
-            "dose": "2 tabletter engångsdos"
+            "type": "Ringer-acetet Fresnius Kabi, intravenöst, Infusionsvätska, lösning",
+            "dose": "1000ml engångsdos"
+          },
+          {
+            "date": "2021-03-14",
+            "time":"14:30",
+            "type": "Innohep, 10000 anti-Xa IE subkutant, Injektionsvätska, lösning",
+            "dose": "1 förfylld spruta x 2 tv"
           }
         ],
         "cosmic": {
@@ -941,6 +961,99 @@
                 "time": "12:30",
                 "note": "Får kaffe och smörgås"
             }
+        ],
+        "labs": 
+        [
+          {
+            "date": "2021-09-24",
+            "time": "12:00",
+            "tests": [
+              { "marker": "B-Hb (Hemoglobin)" , "value": 116 },
+              { "marker": "B-EVF", "value": 0.35 },
+              { "marker": "B-Erytrocter", "value": 3.6 },
+              { "marker": "B-MCV", "value": 95 },
+              { "marker": "ERC(B)-MCH", "value": 32 },
+              { "marker": "ERC(B)-MCHC", "value": 335 },
+              { "marker": "B-Lekocyter", "value": 7.6 },  
+              { "marker": "B-Trombocyter", "value": 251 },
+              { "marker": "P-CRP", "value": 5 },
+              { "marker": "P-Natrium", "value": 138 },
+              { "marker": "P-Kalium", "value": 4.0 },
+              { "marker": "P-Kreatinin", "value": 64 },
+              { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
+              { "marker": "P-Glukos", "value": 6.8 },
+              { "marker": "P-NT-ProBNP", "value": 130 }
+            ] 
+          },
+          {
+            "date": "2021-09-24",
+            "time": "14:00",
+            "tests": [
+              { "marker": "P-Glukos", "value": 6.3 }
+            ] 
+          },
+          {
+            "date": "2021-09-25",
+            "time": "12:00",
+            "tests": [
+              { "marker": "B-Hb (Hemoglobin)" , "value": 121 },
+              { "marker": "B-EVF", "value": 0.36 },
+              { "marker": "B-Erytrocter", "value": 3.7 },
+              { "marker": "B-MCV", "value": 96 },
+              { "marker": "ERC(B)-MCH", "value": 33 },
+              { "marker": "ERC(B)-MCHC", "value": 339 },
+              { "marker": "B-Lekocyter", "value": 7.2 },  
+              { "marker": "B-Trombocyter", "value": 190 },
+              { "marker": "P-CRP", "value": 5 },
+              { "marker": "P-Natrium", "value": 139 },
+              { "marker": "P-Kalium", "value": 4.3 },
+              { "marker": "P-Kreatinin", "value": 70 },
+              { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
+              { "marker": "P-Troponin T hs", "value": 14 }
+            ] 
+          },
+          {
+            "date": "2021-09-26",
+            "time": "12:00",
+            "tests": [
+              { "marker": "B-Hb (Hemoglobin)" , "value": 125 },
+              { "marker": "B-EVF", "value": 0.38 },
+              { "marker": "B-Erytrocter", "value": 3.9 },
+              { "marker": "B-MCV", "value": 97 },
+              { "marker": "ERC(B)-MCH", "value": 32 },
+              { "marker": "ERC(B)-MCHC", "value": 332 },
+              { "marker": "B-Lekocyter", "value": 7.2 },  
+              { "marker": "B-Trombocyter", "value": 203 },
+              { "marker": "P-APT-tid", "value": 27 },
+              { "marker": "P-KR (INR)", "value": 1.1 },
+              { "marker": "P-CRP", "value": 5 },
+              { "marker": "P-Natrium", "value": 141 },
+              { "marker": "P-Kalium", "value": 3.9 },
+              { "marker": "P-Kreatinin", "value": 71 },
+              { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
+              { "marker": "P-Glukos", "value": 5.4 }
+            ] 
+          }
+        ],
+        "drugs": [
+          {
+            "date": "2021-03-14",
+            "time": "12:30",
+            "type": "Brilique. 90 mg oralt, Filmdragerad tablett",
+            "dose": "2 tabletter engångsdos"
+          },
+          {
+            "date": "2021-03-14",
+            "time": "14:30",
+            "type": "Meoprolol Sandoz*, 50mg oralt, Depottablett",
+            "dose": "1 depottablett engångsdos"
+          },
+          {
+            "date": "2021-03-14",
+            "time": "14:30",
+            "type": "Trombyl, 75mg, oralt, Tablett",
+            "dose": "4 tabletter engångsdos"
+          }
         ],
         "cosmic": {
             "se:JournalNoteEHRExtracts": {
@@ -2009,19 +2122,108 @@
             }
         ],
         "labs": [
-            
-            [
-                {
-                    "parameter": "B-Blodstatus",
-                    "value": 116,
-                    "status": "red"
-                },
-                {
-                    "parameter": "B-Hb (Hemoglobin)",
-                    "value": 0.35,
-                    "status": "red"
-                } 
-            ]
+          {
+            "date": "2021-09-24",
+            "time": "12:00",
+            "tests": [
+              { "marker": "B-Hb (Hemoglobin)" , "value": 116 },
+              { "marker": "B-EVF", "value": 0.35 },
+              { "marker": "B-Erytrocter", "value": 3.6 },
+              { "marker": "B-MCV", "value": 95 },
+              { "marker": "ERC(B)-MCH", "value": 32 },
+              { "marker": "ERC(B)-MCHC", "value": 335 },
+              { "marker": "B-Lekocyter", "value": 7.6 },  
+              { "marker": "B-Trombocyter", "value": 251 },
+              { "marker": "P-CRP", "value": 5 },
+              { "marker": "P-Natrium", "value": 138 },
+              { "marker": "P-Kalium", "value": 4.0 },
+              { "marker": "P-Kreatinin", "value": 64 },
+              { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
+              { "marker": "P-Glukos", "value": 6.8 },
+              { "marker": "P-NT-ProBNP", "value": 130 }
+            ] 
+          },
+          {
+            "date": "2021-09-24",
+            "time": "14:00",
+            "tests": [
+              { "marker": "P-Glukos", "value": 6.3 }
+            ] 
+          },
+          {
+            "date": "2021-09-25",
+            "time": "12:00",
+            "tests": [
+              { "marker": "B-Hb (Hemoglobin)" , "value": 121 },
+              { "marker": "B-EVF", "value": 0.36 },
+              { "marker": "B-Erytrocter", "value": 3.7 },
+              { "marker": "B-MCV", "value": 96 },
+              { "marker": "ERC(B)-MCH", "value": 33 },
+              { "marker": "ERC(B)-MCHC", "value": 339 },
+              { "marker": "B-Lekocyter", "value": 7.2 },  
+              { "marker": "B-Trombocyter", "value": 190 },
+              { "marker": "P-CRP", "value": 5 },
+              { "marker": "P-Natrium", "value": 139 },
+              { "marker": "P-Kalium", "value": 4.3 },
+              { "marker": "P-Kreatinin", "value": 70 },
+              { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
+              { "marker": "P-Troponin T hs", "value": 14 }
+            ] 
+          },
+          {
+            "date": "2021-09-26",
+            "time": "12:00",
+            "tests": [
+              { "marker": "B-Hb (Hemoglobin)" , "value": 125 },
+              { "marker": "B-EVF", "value": 0.38 },
+              { "marker": "B-Erytrocter", "value": 3.9 },
+              { "marker": "B-MCV", "value": 97 },
+              { "marker": "ERC(B)-MCH", "value": 32 },
+              { "marker": "ERC(B)-MCHC", "value": 332 },
+              { "marker": "B-Lekocyter", "value": 7.2 },  
+              { "marker": "B-Trombocyter", "value": 203 },
+              { "marker": "P-APT-tid", "value": 27 },
+              { "marker": "P-KR (INR)", "value": 1.1 },
+              { "marker": "P-CRP", "value": 5 },
+              { "marker": "P-Natrium", "value": 141 },
+              { "marker": "P-Kalium", "value": 3.9 },
+              { "marker": "P-Kreatinin", "value": 71 },
+              { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
+              { "marker": "P-Glukos", "value": 5.4 }
+            ] 
+          }
+        ],
+        "drugs": [
+          {
+            "date": "2021-03-14",
+            "time":"08:30",
+            "type": "Alvedon, 500mg oralt, Filmdragerad tablett",
+            "dose": "2 tabletter engångsdos"
+          },
+          {
+            "date": "2021-03-14",
+            "time":"08:30",
+            "type": "Morfin Kalceks, SLutlig konc: 1mg/ml intravenöst, Injektionsvätska, lösning",
+            "dose": "2,5 - 5 ml (2,5 - 5 mg) engångsdos"
+          },
+          {
+            "date": "2021-03-15",
+            "time":"11:30",
+            "type": "Ondansetron Fresnius Kabi, 2mg/ml intravenöst, Injektionsvätska, lösning",
+            "dose": "2ml engångsdos"
+          },
+          {
+            "date": "2021-03-15",
+            "time":"14:30",
+            "type": "Ringer-acetat Fresnius Kabi, intravenöst, Injektionsvätska, lösning",
+            "dose": "1000ml engångsdos"
+          },
+          {
+            "date": "2021-03-15",
+            "time":"18:30",
+            "type": "Voltaren, 25mg/ml intramuskulärt, injektionsvätska, lösning",
+            "dose": "3 ml engångsdos"
+          }
         ],
         "caregiving": [
             {
