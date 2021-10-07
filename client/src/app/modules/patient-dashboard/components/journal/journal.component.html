@@ -1,2 +1,22 @@
-<p>history works!</p>
-<mat-card>Simple card</mat-card>
+<table mat-table >
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell> Datum </th>
+    <td mat-cell >1 </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell > Anteckningstyp </th>
+    <td mat-cell >2 </td>
+  </ng-container>
+
+  <ng-container matColumnDef="studentEmail">
+    <th mat-header-cell > Antecknad av </th>
+    <td mat-cell >3</td>
+  </ng-container>
+
+  <ng-container matColumnDef="studentEmail">
+    <th mat-header-cell > Vårdenhet </th>
+    <td mat-cell >4</td>
+  </ng-container>
+
+</table>
