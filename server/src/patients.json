@@ -5,6 +5,28 @@
         "givenName": "Jan",
         "description": "man skada höft",
         "gender": "man",
+        "vitalParamaters": {
+          "bloodOxygenLevel": {
+            "label": "SpO2 (pox)",
+            "data": [ 98, 99 ]
+          },
+          "pulse": {
+            "label": "Puls",
+            "data": [ 91, 77 ]
+          },
+          "bloodPrassure": {
+            "label": "Blodtryck",
+            "data": [ "177/8", "159/89" ]
+          },
+          "bodyTemperature": {
+            "label": "Kroppstemperatur",
+            "data": [ 38, 36.7, 36.8 ]
+          },
+          "respiratoryRate": {
+            "label": "Andningsfrekvens",
+            "data": [ 16, 14 ]
+          }
+        },
         "entrancesAndExits": [
             {
                 "type": "PVK",
@@ -848,6 +870,28 @@
         "givenName": "Klara",
         "description": "kvinna onormal hjärtrytm",
         "gender": "kvinna",
+        "vitalParamaters": {
+          "bloodOxygenLevel": {
+            "label": "SpO2 (pox)",
+            "data": [ 99, 99, 96, 97 ]
+          },
+          "pulse": {
+            "label": "Puls",
+            "data": [ 155, 125, 100, 91 ]
+          },
+          "bloodPrassure": {
+            "label": "Blodtryck",
+            "data": [ "123/88", "110/98", "127/96", "113/84", "123/88" ]
+          },
+          "bodyTemperature": {
+            "label": "Kroppstemperatur",
+            "data": [ 36.7, 36.7 ]
+          },
+          "respiratoryRate": {
+            "label": "Andningsfrekvens",
+            "data": [ 20, 20, 16, 20, 18 ]
+          }
+        },
         "entrancesAndExits": [
             {
                 "type": "PVK",
@@ -1876,6 +1920,28 @@
         "givenName": "Anna",
         "description": "kvinna buksmärta",
         "gender": "kvinna",
+        "vitalParamaters": {
+          "bloodOxygenLevel": {
+            "label": "SpO2 (pox)",
+            "data": [ 100, 97, 100 ]
+          },
+          "pulse": {
+            "label": "Puls",
+            "data": [ 71, 72, 73 ]
+          },
+          "bloodPrassure": {
+            "label": "Blodtryck",
+            "data": [ "157/88", "160/98", "163/86" ]
+          },
+          "bodyTemperature": {
+            "label": "Kroppstemperatur",
+            "data": [ 36.3, 36.1, 36.2 ]
+          },
+          "respiratoryRate": {
+            "label": "Andningsfrekvens",
+            "data": [ 20, 18, 18 ]
+          }
+        },
         "entrancesAndExits": [
             {
                 "type": "PVK",
