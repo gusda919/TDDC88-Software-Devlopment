@@ -5,10 +5,16 @@
         "givenName": "Jan",
         "description": "man skada höft",
         "gender": "man",
+        "triage": "grön",
+        "importantInformation":  null,
+        "proposedMeasures": null,
         "vitalParamaters": {
           "bloodOxygenLevel": {
             "label": "SpO2 (pox)",
-            "data": [ 98, 99 ]
+            "data": [ 
+              { "date": "2021-03-14", "time": "13:45", "value": 98 },
+              { "date": "2021-03-14", "time": "16:45", "value": 99 }
+            ]
           },
           "pulse": {
             "label": "Puls",
@@ -50,6 +56,23 @@
                 "time": "14:30",
                 "note": "Patienten fastar inför operationen från kl 15:00"
             }
+        ],
+        "labs": [
+          {
+            "date": "2021-09-24",
+            "time": "12:00",
+            "tests": [
+              { "marker": "P-natrium", "value": 137 }
+            ] 
+          }
+        ],
+        "drugs": [
+          {
+            "date": "2021-03-14",
+            "time":"12:30",
+            "type": "Alvedon 500mg, oralt filmdragerad tablett",
+            "dose": "2 tabletter engångsdos"
+          }
         ],
         "cosmic": {
             "se:JournalNoteEHRExtracts": {
@@ -870,6 +893,17 @@
         "givenName": "Klara",
         "description": "kvinna onormal hjärtrytm",
         "gender": "kvinna",
+        "triage": "gul",
+        "importantInformation": "Antikoagulantiabehandling",
+        "proposedMeasures": {
+          "generalMeasures": [
+            "EKG"
+          ],
+          "specificMeasures": [
+            "Blodgas (NA, K, Ca, Kreatinin",
+            "CRP vid tecken på infektion"
+          ]
+        },
         "vitalParamaters": {
           "bloodOxygenLevel": {
             "label": "SpO2 (pox)",
@@ -1920,6 +1954,20 @@
         "givenName": "Anna",
         "description": "kvinna buksmärta",
         "gender": "kvinna",
+        "triage": "gul",
+        "importantInformation": "Antikoagulantiabehandling",
+        "proposedMeasures": {
+          "generalMeasures": [
+            "EKG - Om buksmärta över navelplan och över 35 år eller kardiovaskulära"
+          ],
+          "specificMeasures": [
+            "U-hCG hos fertila kvinnor",
+            "Övre buksmärta, Blodstatus, CRP",
+            "Leverstatus vid misstanke om gallorsakad smärta",
+            "Nedre buksmärta/flanksmärta, CRP, urinsticka",
+            "Blodstatus vid misstanke om appendicit"
+          ]
+        },
         "vitalParamaters": {
           "bloodOxygenLevel": {
             "label": "SpO2 (pox)",
@@ -1984,7 +2032,7 @@
                 "time": "13:00",
                 "note": "Får kaffe och smörgås"
             },
-            {
+            { 
                 "time": "13:25",
                 "note": "Finner ett litet sår på vänster underben som tvättas och läggs om med Mepilex"
             }
