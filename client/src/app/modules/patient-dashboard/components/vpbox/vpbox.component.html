@@ -17,13 +17,19 @@
   </mat-card-content>
 </mat-card>
 
-<div *ngIf="isDisplay">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Graf</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <h3>TJA</h3>
-    </mat-card-content>
-  </mat-card>
+<div
+  *ngFor="let param of params"
+  style="width: 45%; float: right; margin-right: 5%"
+>
+  <div *ngIf="param.isGraphDisplayed">
+    <!--<mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ param.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ param.value }}</p>
+      </mat-card-content>
+    </mat-card>-->
+    <app-my-graph></app-my-graph>
+  </div>
 </div>

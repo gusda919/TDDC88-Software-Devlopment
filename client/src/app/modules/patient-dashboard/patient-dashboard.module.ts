@@ -23,7 +23,8 @@ import { MyGraphComponent } from './components/my-graph/my-graph.component';
     CardComponent,
     LineChartComponent,
     DashboardPageComponent,
-    MyGraphComponent
+    MyGraphComponent,
+    VpboxComponent,
   ],
   imports: [
     CommonModule,

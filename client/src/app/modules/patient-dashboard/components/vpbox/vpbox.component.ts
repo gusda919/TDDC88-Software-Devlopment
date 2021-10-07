@@ -7,13 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VpboxComponent implements OnInit {
   params = [
-    { icon: 'folder', name: 'Pulse', value: '97 bpm' },
-    { icon: 'folder', name: 'Blood Pressure', value: '140/65 mmHg' },
-    { icon: 'folder', name: 'Temp.', value: '39°C' },
-    { icon: 'folder', name: 'Resp.-rate', value: '32 / min' },
-    { icon: 'folder', name: 'SpO2', value: '96%' },
-    { icon: 'folder', name: 'Hydration', value: 'normal' },
-    { icon: 'folder', name: 'Consciousness', value: 'C' },
+    { icon: 'folder', name: 'Pulse', value: '97 bpm', isGraphDisplayed: false },
+    {
+      icon: 'folder',
+      name: 'Blood Pressure',
+      value: '140/65 mmHg',
+      isGraphDisplayed: false,
+    },
+    { icon: 'folder', name: 'Temp.', value: '39°C', isGraphDisplayed: false },
+    {
+      icon: 'folder',
+      name: 'Resp.-rate',
+      value: '32 / min',
+      isGraphDisplayed: false,
+    },
+    { icon: 'folder', name: 'SpO2', value: '96%', isGraphDisplayed: false },
+    {
+      icon: 'folder',
+      name: 'Hydration',
+      value: 'normal',
+      isGraphDisplayed: false,
+    },
+    {
+      icon: 'folder',
+      name: 'Consciousness',
+      value: 'C',
+      isGraphDisplayed: false,
+    },
   ];
 
   constructor() {}
@@ -23,7 +43,17 @@ export class VpboxComponent implements OnInit {
   isDisplay = false;
 
   print(param: any) {
-    console.log(param);
-    this.isDisplay = !this.isDisplay;
+    //Kod som ser till att enbart en graf kan visas samtidigt, tas
+    //stycket nedan bort kan man visa flera grafer samtidigt
+    if (!param.isGraphDisplayed) {
+      for (let i = 0; i < this.params.length; i++) {
+        if (this.params[i].isGraphDisplayed) {
+          this.params[i].isGraphDisplayed = false;
+        }
+      }
+    }
+
+    //
+    param.isGraphDisplayed = !param.isGraphDisplayed;
   }
 }
