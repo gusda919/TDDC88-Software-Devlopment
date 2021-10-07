@@ -1,0 +1,29 @@
+<mat-card class="vpbox">
+  <mat-card-header>
+    <mat-card-title>Vitalparametrar</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-action-list>
+      <mat-list-item *ngFor="let param of params" (click)="print(param)">
+        <mat-icon matListIcon>{{ param.icon }}</mat-icon>
+        <h3 matLine>{{ param.name }}</h3>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">{{ param.value }}</div>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-action-list>
+  </mat-card-content>
+</mat-card>
+
+<div *ngIf="isDisplay">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Graf</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h3>TJA</h3>
+    </mat-card-content>
+  </mat-card>
+</div>

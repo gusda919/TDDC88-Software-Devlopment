@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardPageComponent } from './pages/dashboard/dashboard-page.component';
 import { LineChartComponent } from './components/charts/line-chart/line-chart.component';
 import { CardComponent } from './components/card/card.component';
+import { VpboxComponent } from './components/vpbox/vpbox.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -34,7 +35,7 @@ import { MyGraphComponent } from './components/my-graph/my-graph.component';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    MatMenuModule
-  ]
+    MatMenuModule,
+  ],
 })
-export class PatientDashboardModule { }
+export class PatientDashboardModule {}
