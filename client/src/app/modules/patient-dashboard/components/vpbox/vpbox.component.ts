@@ -20,7 +20,7 @@ export class VpboxComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  print() {
-    alert('hej');
+  print(param: any) {
+    console.log(param);
   }
 }

@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-card-content>
     <mat-action-list>
-      <mat-list-item *ngFor="let param of params" (click)="print()">
+      <mat-list-item *ngFor="let param of params" (click)="print(param)">
         <mat-icon matListIcon>{{ param.icon }}</mat-icon>
         <h3 matLine>{{ param.name }}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
