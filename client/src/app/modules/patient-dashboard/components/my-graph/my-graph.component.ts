@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 //import {Chart} from 'node_modules/chart.js';
 import { Chart, ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 
@@ -9,6 +9,8 @@ import { Chart, ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 })
 export class MyGraphComponent implements OnInit {
   constructor() {}
+
+  @Input() param: any;
 
   ngOnInit() {
     var myGraph = new Chart('myGraph', {
