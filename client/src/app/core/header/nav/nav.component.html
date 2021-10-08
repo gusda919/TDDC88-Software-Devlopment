@@ -33,7 +33,7 @@
           </mat-card-content>
           <mat-divider inset></mat-divider>
           <mat-card-actions>
-            <button mat-button (click)="deleteMessage(message.id)">Stäng</button>
+            <button mat-button  color="warn" (click)="deleteMessage(message.id)">Ta bort</button>
           </mat-card-actions>
         </mat-card>
       </div>
@@ -44,7 +44,7 @@
   </mat-card-content>
   <mat-divider inset></mat-divider>
   <mat-card-actions>
-    <button mat-button (click)="getMessages()">CLOSE</button>
+    <button mat-button (click)="getMessages()">STÄNG</button>
   </mat-card-actions>
 </mat-card>
 
