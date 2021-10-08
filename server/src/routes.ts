@@ -83,7 +83,28 @@ router.get('/patients/:patientID/cosmic/:keyword', async (req: Request, res: Res
 
 //routes.get('/patients/:patientID/labs)
 
-//routes.get('/patients/:patientID/vitalParameters)
+router.get('/patients/:patientID/vitalParameters', async (req: Request, res: Response) => {
+  //route for getting all the vitalparameters for the patient with patient id "patientID"
+  //Possible parameters that will be returned could be pulse, bloodpressure and temperature (all parameters w. all data)
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters        
+  res.json(result);
+
+});
+
+router.get('/patients/:patientID/vitalParameters/bloodOxygenLevel', async (req: Request, res: Response) => {
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters.bloodOxygenLevel        
+  res.json(result);
+
+});
+
+router.get('/patients/:patientID/vitalParameters', async (req: Request, res: Response) => {
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters        
+  res.json(result);
+
+});
+
+
+
 
 
 
