@@ -1,9 +1,4 @@
 export interface Patient {
-    "labs": Lab,
-    "vitalParameters": VitalParameters
-}
-
-export interface PasteJSONAsCode {
     patientID:            string;
     familyName:           string;
     givenName:            string;
@@ -381,7 +376,7 @@ export interface Test {
 export interface VitalParameters {
     bloodOxygenLevel: BloodOxygenLevel;
     pulse:            BodyTemperature;
-    bloodPrassure:    BloodPrassure;
+    bloodPressure:    BloodPressure;
     bodyTemperature:  BodyTemperature;
     respiratoryRate:  BodyTemperature;
 }
@@ -397,7 +392,7 @@ export interface Datum {
     value: number;
 }
 
-export interface BloodPrassure {
+export interface BloodPressure {
     label: string;
     data:  string[];
 }

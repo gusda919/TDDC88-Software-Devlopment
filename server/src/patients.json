@@ -933,7 +933,7 @@
             "label": "Puls",
             "data": [ 155, 125, 100, 91 ]
           },
-          "bloodPrassure": {
+          "bloodPressure": {
             "label": "Blodtryck",
             "data": [ "123/88", "110/98", "127/96", "113/84", "123/88" ]
           },
