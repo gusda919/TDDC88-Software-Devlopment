@@ -10,7 +10,7 @@ export class PatientHeaderComponent implements OnInit{
     //change this to dynamically change with real test data later
     name = "Test Persson";
     personalNumber = "20000101-0101";
-    triage = "Orange";
+    triage = "Red";
     visitingFor ="Stomach Ache";
     teamInCharge = "A";
 
