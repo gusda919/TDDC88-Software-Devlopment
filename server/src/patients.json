@@ -8,7 +8,7 @@
         "triage": "grön",
         "importantInformation":  null,
         "proposedMeasures": null,
-        "vitalParamaters": {
+        "VitalParameters": {
           "bloodOxygenLevel": {
             "label": "SpO2 (pox)",
             "data": [ 
@@ -924,7 +924,7 @@
             "CRP vid tecken på infektion"
           ]
         },
-        "vitalParamaters": {
+        "VitalParameters": {
           "bloodOxygenLevel": {
             "label": "SpO2 (pox)",
             "data": [ 99, 99, 96, 97 ]
@@ -2081,7 +2081,7 @@
             "Blodstatus vid misstanke om appendicit"
           ]
         },
-        "vitalParamaters": {
+        "VitalParameters": {
           "bloodOxygenLevel": {
             "label": "SpO2 (pox)",
             "data": [ 100, 97, 100 ]
