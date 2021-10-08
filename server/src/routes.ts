@@ -120,32 +120,40 @@ router.get('/patients/:patientID/vitalParameters/respiratoryRate', async (req: R
 
 router.get('/patients/:patientID/labs', async (req: Request, res: Response) => {
   //route for getting all the labtest results for the patient with patient id "patientID"
-  //This route returns a list of test with date, time and types of tests (with marker and value) that have been made.
+  //This route returns a list of tests with date, time and types of tests (with marker and value) that have been made.
   let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].labs      
   res.json(result);
 });
 
 router.get('/patients/:patientID/labs/:date', async (req: Request, res: Response) => {
   //route for getting all the labtest results for the patient with patient id "patientID"
-  //This route returns a list of test with date, time and types of tests (with marker and value) that have been made.
+  //This route returns all labresults based on 
   let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].labs
   .filter((l:Lab) => l.date == req.params.date)[0]    
   res.json(result);
 });
 
+router.get('/patients/:patientID/drugs', async (req: Request, res: Response) => {
+  //route for getting all the drugs written out for the patient with patient id "patientID"
+  //This route returns a list of drugs with date, time and type of drugs and what kind of dose.
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].drugs      
+  res.json(result);
+});
 
+router.get('/patients/:patientID/entrancesAndExits', async (req: Request, res: Response) => {
+  //route for getting all the entrances and exits (picclines) written out for the patient with patient id "patientID"
+  //This route returns a list of picclines for the patient with type, size, localization, time, action and actionTime.
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].entrancesAndExits      
+  res.json(result);
+});
 
+router.get('/patients/:patientID/caregiving', async (req: Request, res: Response) => {
+  //route for getting all the caregivings done the patient with patient id "patientID"
+  //This route returns a list of all the caregiving with date, time and description of the care given.
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].caregiving      
+  res.json(result);
+});
 
-
-
-
-// Daniel och Axel
-
-//routes.get('/patients/:patientID/drugs)
-
-//routes.get('/patients/:patientID/entrancesandexits)
-
-//routes.get('/patients/:patientID/caregiving')
 
 
 
