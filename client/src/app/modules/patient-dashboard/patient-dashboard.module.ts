@@ -16,6 +16,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { ChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
 import { JournalComponent } from './components/journal/journal.component';
+import { PatientHeaderComponent } from './components/patient-header/patient-header.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { JournalComponent } from './components/journal/journal.component';
     LineChartComponent,
     DashboardPageComponent,
     JournalComponent
+    PatientHeaderComponent,
   ],
   imports: [
     CommonModule,

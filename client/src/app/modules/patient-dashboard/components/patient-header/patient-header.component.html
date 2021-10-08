@@ -1,0 +1,49 @@
+<mat-card class="patient-header-card">
+   <mat-card-content>
+
+        <!-- <ul>
+            <li>
+                <strong>Namn</strong>
+                 <p> {{name}}</p>
+            </li>
+            <li>
+                <strong>Personnummer</strong>
+                <p>{{personalNumber}}</p> 
+            </li>
+            <li>
+                <strong>Triage</strong>
+                <p>{{triage}}</p>
+            </li>
+            <li>
+                <strong>Besöksorsak</strong>
+                <p>{{visitingFor}}</p> 
+            </li>
+            <li>
+                <strong>Ansvarigt team</strong>
+                <p>Team {{teamInCharge}}</p> 
+            </li>
+        </ul> -->
+        <div class = "patientHeaderInformationBox">
+            <strong>Namn</strong>
+            <p class = "informationBoxValue" > {{name}}</p>
+        </div>
+        <div class = "patientHeaderInformationBox">
+            <strong>Personnummer</strong>
+            <p class = "informationBoxValue" >{{personalNumber}}</p> 
+        </div>
+        <div class = "patientHeaderInformationBox">
+            <strong>Triage</strong>
+            <p id = "triageColor" class = "informationBoxValue" style="background-color: green;" >  </p>
+           
+        </div>
+        <div class = "patientHeaderInformationBox">
+            <strong>Besöksorsak</strong>
+            <p class = "informationBoxValue" >{{visitingFor}}</p>
+        </div>
+        <div class = "patientHeaderInformationBox">
+            <strong>Ansvarigt team</strong>
+            <p class = "informationBoxValue" >Team {{teamInCharge}}</p> 
+        </div>   
+   </mat-card-content> 
+  
+</mat-card>
