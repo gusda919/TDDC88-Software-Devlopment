@@ -17,6 +17,32 @@ router.get('/patients', async (req: Request, res: Response) => {
   PatientModel.find({}).then((patients => res.json(patients)));
 });
 
+// Erik och Eric 
+
+//routes.get('/patients/:patientID/labs)
+
+//routes.get('/patients/:patientID/vitalParameters)
+
+
+
+// Daniel och Axel
+
+//routes.get('/patients/:patientID/drugs)
+
+//routes.get('/patients/:patientID/entrancesandexits)
+
+//routes.get('/patients/:patientID/caregiving')
+
+
+
+// Simon och Jacob
+
+//routes.get('/patients/:patientID/journalNotes)
+
+//routes.get('/patients/:patientID/:parameter')
+
+
+
 router.get('/', async (req: Request, res: Response) => {
   res.send('hello world');
 });
