@@ -15,12 +15,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
+import { PatientHeaderComponent } from './components/patient-header/patient-header.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     LineChartComponent,
-    DashboardPageComponent
+    DashboardPageComponent,
+    PatientHeaderComponent,
   ],
   imports: [
     CommonModule,
