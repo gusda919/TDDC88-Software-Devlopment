@@ -22,10 +22,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { PatientDashboardModule } from './modules/patient-dashboard/patient-dashboard.module';
 import { PatientsOverviewModule } from './modules/patients-overview/patients-overview.module';
-import { ButtonComponent } from './core/header/nav/button/button.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +34,6 @@ import { ButtonComponent } from './core/header/nav/button/button.component';
     UserlistComponent,
     NavComponent,
     EmployeesComponent,
-    ButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +52,8 @@ import { ButtonComponent } from './core/header/nav/button/button.component';
     MatListModule,
     MatIconModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
