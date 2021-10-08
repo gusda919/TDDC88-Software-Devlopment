@@ -1,7 +1,7 @@
 import express, { Request, Response, } from "express";
 import { Mongoose, Error } from "mongoose";
 import { UserModel, UserDoc } from "./user";
-import { Patient, RecordsRecord, TentacledRecord } from "./patient";
+import { Patient, RecordsRecord, TentacledRecord, Lab } from "./patient";
 //import { PatientModel, PatientDoc } from "./patient";
 
 const patients = require('./patients.json');
@@ -117,6 +117,22 @@ router.get('/patients/:patientID/vitalParameters/respiratoryRate', async (req: R
   let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters.respiratoryRate      
   res.json(result);
 });
+
+router.get('/patients/:patientID/labs', async (req: Request, res: Response) => {
+  //route for getting all the labtest results for the patient with patient id "patientID"
+  //This route returns a list of test with date, time and types of tests (with marker and value) that have been made.
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].labs      
+  res.json(result);
+});
+
+router.get('/patients/:patientID/labs/:date', async (req: Request, res: Response) => {
+  //route for getting all the labtest results for the patient with patient id "patientID"
+  //This route returns a list of test with date, time and types of tests (with marker and value) that have been made.
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].labs
+  .filter((l:Lab) => l.date == req.params.date)[0]    
+  res.json(result);
+});
+
 
 
 
