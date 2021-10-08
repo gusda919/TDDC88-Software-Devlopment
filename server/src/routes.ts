@@ -81,26 +81,41 @@ router.get('/patients/:patientID/cosmic/:keyword', async (req: Request, res: Res
 
 // Erik och Eric 
 
-//routes.get('/patients/:patientID/labs)
-
 router.get('/patients/:patientID/vitalParameters', async (req: Request, res: Response) => {
   //route for getting all the vitalparameters for the patient with patient id "patientID"
   //Possible parameters that will be returned could be pulse, bloodpressure and temperature (all parameters w. all data)
   let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters        
   res.json(result);
-
 });
 
 router.get('/patients/:patientID/vitalParameters/bloodOxygenLevel', async (req: Request, res: Response) => {
-  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters.bloodOxygenLevel        
+  //route for getting the vital parameter "bloodOxygenLevel" for the patient "patientID", returns all the data available
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters.bloodOxygenLevel       
   res.json(result);
-
 });
 
-router.get('/patients/:patientID/vitalParameters', async (req: Request, res: Response) => {
-  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters        
+router.get('/patients/:patientID/vitalParameters/pulse', async (req: Request, res: Response) => {
+  //route for getting the vital parameter "pulse" for the patient "patientID", returns all the data available
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters.pulse        
   res.json(result);
+});
 
+router.get('/patients/:patientID/vitalParameters/bloodPressure', async (req: Request, res: Response) => {
+  //route for getting the vital parameter "bloodPressure" for the patient "patientID", returns all the data available
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters.bloodPressure        
+  res.json(result);
+});
+
+router.get('/patients/:patientID/vitalParameters/bodyTemperature', async (req: Request, res: Response) => {
+  //route for getting the vital parameter "bodyTemperaturel" for the patient "patientID", returns all the data available
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters.bodyTemperature       
+  res.json(result);
+});
+
+router.get('/patients/:patientID/vitalParameters/respiratoryRate', async (req: Request, res: Response) => {
+  //route for getting the vital parameter "respiratoryRate" for the patient "patientID", returns all the data available
+  let result = patients.filter((p:Patient) => p.patientID == req.params.patientID)[0].VitalParameters.respiratoryRate      
+  res.json(result);
 });
 
 
