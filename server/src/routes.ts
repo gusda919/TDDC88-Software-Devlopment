@@ -62,7 +62,9 @@ router.get('/patients/:patientID/cosmic/healthproblem', async (req: Request, res
 
 router.get('/patients/:patientID/cosmic/:keyword', async (req: Request, res: Response) => {
   // route for getting cosmic data of an area "keyword" for a patient with patient id "patientID"
-  // possible keywords: "Allmäntillstånd", "Hjärta", "Blodtryck", "Puls", "Nedre extremitet", "Undersökningsresultat"
+  // possible keyword parameters: "Allmäntillstånd", "Hjärta", "Blodtryck", "Puls", "Nedre extremitet", "Undersökningsresultat"
+  
+  // example: localhost:8080/patients/195001232296/cosmic/Blodtryck
 
   let result = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0]
                   .cosmic["se:JournalNoteEHRExtracts"].JournalNoteEHRExtract.Note.Records.Record
