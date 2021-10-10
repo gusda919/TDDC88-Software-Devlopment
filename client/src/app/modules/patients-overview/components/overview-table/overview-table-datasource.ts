@@ -10,6 +10,7 @@ import { Patient } from 'src/app/core/mocks/patient';
 import { MatTable } from '@angular/material/table';
 
 
+
 // TODO: Need to fix so that the table updated when fetching data
 
 /**

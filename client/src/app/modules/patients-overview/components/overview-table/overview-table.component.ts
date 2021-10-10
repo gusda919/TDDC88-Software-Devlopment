@@ -19,7 +19,8 @@ export class OverviewTableComponent implements AfterViewInit {
   dataSource: OverviewTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['ssn', 'first_name', 'last_name'];
+  displayedColumns = ['issue', 'name', 'date','priority'];
+  groupedColumns =['header'];
 
   constructor(private patientService: PatientService) {
     this.dataSource = new OverviewTableDataSource(patientService);
