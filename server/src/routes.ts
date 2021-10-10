@@ -41,22 +41,42 @@ router.get('/patients', async (req: Request, res: Response) => {
 
 router.get('/patients/:patientID/cosmic/contactreason', async (req: Request, res: Response) => {
   // route for getting the contact reason for patient with patient id "patientID"
-
   let result = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0]
                 .cosmic["se:JournalNoteEHRExtracts"].JournalNoteEHRExtract.Note.Records.Record
                .filter((r: RecordsRecord) => r.Keyword == "Kontaktorsak")
-
   res.json(result);
 })
 
 router.get('/patients/:patientID/cosmic/healthproblem', async (req: Request, res: Response) => {
   // route for getting the current health problem for patient with patient id "patientID"
-
   let result = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0]
                 .cosmic["se:JournalNoteEHRExtracts"].JournalNoteEHRExtract.Note.Records.Record
                .filter((r: RecordsRecord) => r.Keyword == "Aktuellt hälsoproblem")
-
   res.json(result);
+})
+
+router.get('/patients/:patientID/cosmic/assessment', async (req: Request, res: Response) => {
+    // route for getting the current assessment for patient with patient id "patientID"
+    let result = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0]
+                  .cosmic["se:JournalNoteEHRExtracts"].JournalNoteEHRExtract.Note.Records.Record
+                 .filter((r: RecordsRecord) => r.Keyword == "Bedömning")
+    res.json(result);
+})
+
+router.get('/patients/:patientID/cosmic/diagnosis', async (req: Request, res: Response) => {
+    // route for getting the current diagnosis for patient with patient id "patientID"
+    let result = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0]
+                  .cosmic["se:JournalNoteEHRExtracts"].JournalNoteEHRExtract.Note.Records.Record
+                 .filter((r: RecordsRecord) => r.Keyword == "Diagnos")
+    res.json(result);
+})
+
+router.get('/patients/:patientID/cosmic/takenmeasures', async (req: Request, res: Response) => {
+    // route for getting the current taken measures for patient with patient id "patientID"
+    let result = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0]
+                  .cosmic["se:JournalNoteEHRExtracts"].JournalNoteEHRExtract.Note.Records.Record
+                 .filter((r: RecordsRecord) => r.Keyword == "Utförda åtgärder")
+    res.json(result);
 })
 
 
