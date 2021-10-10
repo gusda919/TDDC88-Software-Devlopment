@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { EmployeesComponent } from './employees/employees.component';
-import { OverviewTableComponent } from './overview-table/overview-table.component';
+import { DashboardPageComponent } from './modules/patient-dashboard/pages/dashboard/dashboard-page.component';
+import { EmployeesComponent } from './shared/components/employees/employees.component';
+import { OverviewPageComponent } from './modules/patients-overview/pages/overview-page/overview-page.component';
+
+// TODO: maybe add routing file to each module 
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardPageComponent },
   { path: 'employees', component: EmployeesComponent },
-  { path: 'overview', component: OverviewTableComponent },
+  { path: 'overview', component: OverviewPageComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'}, 
 ];
 
