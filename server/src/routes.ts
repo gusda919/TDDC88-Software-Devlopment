@@ -143,6 +143,9 @@ router.get('/patients/:patientID/labs/:date', async (req: Request, res: Response
   res.json(result);
 });
 
+
+// refactor in same fashion is possible for the routes below as for vitalParameters
+
 router.get('/patients/:patientID/drugs', async (req: Request, res: Response) => {
   //route for getting all the drugs written out for the patient with patient id "patientID"
   //This route returns a list of drugs with date, time and type of drugs and what kind of dose.
