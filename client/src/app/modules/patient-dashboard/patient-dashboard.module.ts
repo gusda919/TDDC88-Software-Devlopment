@@ -23,8 +23,8 @@ import { PatientHeaderComponent } from './components/patient-header/patient-head
     CardComponent,
     LineChartComponent,
     DashboardPageComponent,
-    JournalComponent
-    PatientHeaderComponent,
+    JournalComponent,
+    PatientHeaderComponent, 
   ],
   imports: [
     CommonModule,
