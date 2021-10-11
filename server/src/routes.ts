@@ -17,12 +17,6 @@ router.get('/users', async (req: Request, res: Response) => {
     res.json(users.slice(1,10));
 });
 
-// Simon och Jacob
-
-//routes.get('/patients/:patientID/journalNotes)
-
-//routes.get('/patients/:patientID/:parameter')
-
 router.get('/patients', async (req: Request, res: Response) => {
   // route for getting overview attributes for all patients
   console.log("in /patients");
@@ -73,13 +67,6 @@ router.get('/patients/:patientID/cosmic/:keyword', async (req: Request, res: Res
   res.json(result);
 });
 
-
-
-
-
-//[0].cosmic["se:JournalNoteEHRExtracts"].JournalNoteEHRExtract.Note.Records.Record[2].Record[1].Record
-
-// Erik och Eric 
 
 //routes.get('/patients/:patientID/labs)
 
