@@ -20,3 +20,21 @@ docker-compose -f docker-compose.dev.yml up --build
 ```
 
 This will spin up three docker containers with Angular (port 4200), Node.js (port 8080), and MongoDB (port 27017).
+
+## Semantic Commit Messages
+In order to write meaningful commit messages, please use the following format:
+
+`<type>: <subject>`, where the subject is a summary in present tense.
+
+For example `docs: Update README.md`
+
+More examples of types:
+- `feat`: (new feature for the user, not a new feature for build script)
+- `fix`: (bug fix for the user, not a fix to a build script)
+- `docs`: (changes to the documentation)
+- `style`: (formatting, missing semi colons, etc; no production code change)
+- `refactor`: (refactoring production code, eg. renaming a variable)
+- `test`: (adding missing tests, refactoring tests; no production code change)
+- `chore`: (updating grunt tasks etc; no production code change)
+
+Source: [Josh Buchea](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
