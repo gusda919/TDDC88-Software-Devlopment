@@ -28,7 +28,7 @@ import { MyGraphComponent } from './components/my-graph/my-graph.component';
     DashboardPageComponent,
     JournalComponent,
     PatientHeaderComponent,
-    TimelineComponent
+    TimelineComponent,
     MyGraphComponent,
     VpboxComponent,
   ],
