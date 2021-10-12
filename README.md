@@ -38,3 +38,19 @@ More examples of types:
 - `chore`: (updating grunt tasks etc; no production code change)
 
 Source: [Josh Buchea](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+
+## Workflow here on GitLab
+_Last updated: 2021-10-12_
+
+A sketch of the indended workflow is available in the documents folder here in this repository.
+
+We have 5 long-lived branches:
+- `main` - Is updated each iteration, code on this branch must be able to be shown to the customer. You are only allowed to pull code from develop to main.
+- `develop` - The intermediate branch where code from backend, overview and dashboard should be merged to. Code on this branch must be ready to be tested (integration, regression and acceptance testing). Here it is fine to have some bugs.
+- `backend` - CFT1
+- `overview` - CFT2
+- `dashboard` - CFT3
+
+From the three cross-functional team branches, smaller feature branches shall be created. These smaller branches are not supposed to live longer than maximum two days, this is to enable continuous integration. When these smaller branches are merged to their respective CFT branch, peer-reviews must be made (more on that later).
+
+Before a merge request from a CFT branch to `develop` is made (or from a feature branch to a CFT branch), you must make sure that you have pulled the latest changes from `develop` to your branch and resolved the resulting conflicts if there are any.
