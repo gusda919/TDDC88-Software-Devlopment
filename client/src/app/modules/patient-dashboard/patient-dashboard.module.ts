@@ -17,6 +17,7 @@ import { ChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
 import { JournalComponent } from './components/journal/journal.component';
 import { PatientHeaderComponent } from './components/patient-header/patient-header.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PatientHeaderComponent } from './components/patient-header/patient-head
     LineChartComponent,
     DashboardPageComponent,
     JournalComponent,
-    PatientHeaderComponent, 
+    PatientHeaderComponent,
+    TimelineComponent
   ],
   imports: [
     CommonModule,
