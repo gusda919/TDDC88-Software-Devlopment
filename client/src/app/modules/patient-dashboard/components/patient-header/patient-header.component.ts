@@ -20,6 +20,10 @@ export class PatientHeaderComponent implements OnInit{
   }
 
   updateTriageColor(){
+
+    // refactor idea to avoid unneeded code
+    // triageColor?.setAttribute('style', ('background-color: ' + this.triage.toLowerCase()));
+
     let triageColor = document.getElementById('triageColor')
     if (this.triage === 'Green') {
       triageColor?.setAttribute('style', 'background-color: green');
