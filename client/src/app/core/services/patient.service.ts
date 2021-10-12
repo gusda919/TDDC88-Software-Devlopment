@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-//import { Patient } from '../../shared/models/patient';
+import { Patient, Lab } from '../../shared/models/patient';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,8 +12,14 @@ export class PatientService {
 
   constructor(private http: HttpClient) { }
 
-  // getPatients(query: string): Observable<User[]> {
-  //   return this.http.get<User[]>(this.baseUrl);
-  // }
+  getPatients(): Observable<Patient[]> {
+    // returns overview attributes for all patients
+    return this.http.get<Patient[]>(this.baseUrl);
+  }
+
+  getPatientLabs(patientID: string): Observable<Lab[]> {
+    // returns all lab results for a specific patient
+    return this.http.get<Lab[]>(this.baseUrl + patientID + '/labs')
+  }
 
 }
