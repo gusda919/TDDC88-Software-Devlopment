@@ -30,7 +30,7 @@ We have 5 long-lived branches:
 - `overview` - CFT2
 - `dashboard` - CFT3
 
-From the three cross-functional team branches, smaller feature branches shall be created. These smaller branches are not supposed to live longer than maximum two days, this is to enable continuous integration. When these smaller branches are merged to their respective CFT branch, peer-reviews must be made (more on that later, a checklist is in the making). All merge requests must be approved according to the set guidelines before it is merged (the author is prevented to approve). 
+From the three cross-functional team branches, smaller feature branches shall be created. These smaller branches are not supposed to live longer than maximum two days, this is to enable continuous integration. When these smaller branches are merged to their respective CFT branch, peer-reviews must be made (see the section Approve Merge Requests below). All merge requests must be approved according to the set guidelines before it is merged (the author is prevented to approve). 
 
 Before a merge request from a CFT branch to `develop` is made (or from a feature branch to a CFT branch), you must make sure that you have pulled the latest changes from `develop` to your branch and resolved the resulting conflicts if there are any.
 
