@@ -7,7 +7,12 @@
     *ngIf="isHandset$ | async">
     <mat-icon aria-label="Side nav toggle icon">{{ drawer.opened ? 'menu_open' : 'menu' }}</mat-icon>
   </button>
-  <span>Region Östergötland </span>
+  <a>
+  <img class="logo" alt="Missing logo" src="https://www.regionostergotland.se/contentassets/7163600210ad40aba14bdc3d7ca95639/ro_v_neg.jpg"
+    onclick="document.location.href='https://www.google.com'"
+  >
+  </a>
+  <!--<span>Region Östergötland </span>  https://pbs.twimg.com/profile_images/1095680331867406336/3QhxGo-h_400x400.png -->
   <span id="spacer"></span>
   <span id="dateTime">{{date| date: 'y/MM/dd, HH:mm' }}</span>
   <button  mat-icon-button id="mail_button" (click)="getMessages()" aria-label="Example icon-button with heart icon">
