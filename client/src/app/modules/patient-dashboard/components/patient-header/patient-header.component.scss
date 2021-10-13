@@ -1,0 +1,23 @@
+.patient-header-card{
+    height: 5vw;
+    position: sticky;
+    top: 0;
+}
+.patientHeaderInformationBox {
+    float: left;
+    width: 20%;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 1.5vw;
+}
+.informationBoxValue {
+    margin-top: 10%;
+    font-size: 2vw;
+}
+
+#triageColor {
+    min-height: 3vw;
+    max-width: 6vw;
+    margin-left: 33%;
+    margin-top: 5%;
+}
