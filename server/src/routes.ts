@@ -2,7 +2,6 @@ import express, { Request, Response, } from "express";
 import { Mongoose, Error } from "mongoose";
 import { UserModel, UserDoc } from "./user";
 import { Patient, RecordsRecord, TentacledRecord, Lab } from "./patient";
-//import { PatientModel, PatientDoc } from "./patient";
 
 const patients = require('./patients.json');
 const users = require('./testusers.json').testUsers;
@@ -10,10 +9,6 @@ const users = require('./testusers.json').testUsers;
 export const router = express.Router();
 
 router.get('/users', async (req: Request, res: Response) => {
-    // Simple route for getting the first 10 users
-    // UserModel.find({'Namn': { '$regex': req.params.name.toString(), '$options': 'i' }}, async (err: Error, users: UserDoc) => {
-    //     res.json(users);
-    // });
     res.json(users.slice(1,10));
 });
 
@@ -96,7 +91,7 @@ router.get('/patients/:patientID/vitalParameters', async (req: Request, res: Res
 });
 
 // the 5 routes can be refactored into 1 route with an additional route param, like:
-// '/patients/:patientID/vitalParameters/:parameter' and use ...VitalParameters[req.parms.parameter]
+// '/patients/:patientID/vitalParameters/:parameter' and use ...VitalParameters[req.params.parameter]
 
 router.get('/patients/:patientID/vitalParameters/bloodOxygenLevel', async (req: Request, res: Response) => {
   //route for getting the vital parameter "bloodOxygenLevel" for the patient "patientID", returns all the data available
