@@ -20,7 +20,7 @@
             "label": "Puls",
             "data": [ 81, 77 ]
           },
-          "bloodPrassure": {
+          "bloodPressure": {
             "label": "Blodtryck",
             "data": [ "177/84", "159/89" ]
           },
@@ -2090,7 +2090,7 @@
             "label": "Puls",
             "data": [ 71, 72, 73 ]
           },
-          "bloodPrassure": {
+          "bloodPressure": {
             "label": "Blodtryck",
             "data": [ "157/88", "160/98", "163/86" ]
           },
