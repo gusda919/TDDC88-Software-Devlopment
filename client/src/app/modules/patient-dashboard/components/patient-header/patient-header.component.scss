@@ -21,3 +21,23 @@
     margin-left: 33%;
     margin-top: 5%;
 }
+
+
+.patheader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    //align-items: center;
+}
+
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 40px solid rgb(238, 238, 9);
+    margin: auto;
+    margin-top: auto;
+ 
+}

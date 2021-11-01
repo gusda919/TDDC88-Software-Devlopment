@@ -110,6 +110,17 @@ router.get('/patients/:patientID/cosmic/:keyword', async (req: Request, res: Res
   }  
 });
 
+router.get('/patients/:patientID/contagious', async (req: Request, res: Response) => {
+  //route for getting data whether a patient is contagious or not. 
+  let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
+  if (patient) {
+    res.json(patient.contagious);
+  }
+  else {
+    res.json("Patient med personnummer " + req.params.patientID + " finns inte i systemet");
+  }
+});
+
 router.get('/patients/:patientID/vitalParameters', async (req: Request, res: Response) => {
   //route for getting all the vitalparameters for the patient with patient id "patientID"
   //Possible parameters that will be returned could be pulse, bloodpressure and temperature (all parameters w. all data)
