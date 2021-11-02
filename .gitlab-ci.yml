@@ -13,7 +13,7 @@ cache:
 install_dependencies:
   stage: build
   script:
-   - npm install
+   - npm install(client/)
   artifacts:
     paths:
       - ./node_modules/.bin/ng
