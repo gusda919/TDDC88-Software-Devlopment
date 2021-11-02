@@ -81,7 +81,7 @@ If not, leave a comment to remind the author to follow the guidelines going forw
 If not, leave comments in the code where you found the issue and define what needs to be changed. Please write which lines the comment applies to in the comment, it is not always that clear even if the function "Commenting on lines ..." is used, and use the "Insert suggestion" function if you have a suggested solution.
 - Test what the author wanted you to test. Comment when necessary.
 - Based on the changes made, investigate quickly whether any related function may have been affected by the changes and test it (further testing will be made by the test team).
-If the changes resulted in a major diffence in functionality, comment and make sure the problem is resolved before merging. If just a minor bug was discovered, make a comment as well as an issue describing the bug.
+If the changes resulted in a major diffence in functionality or a bug, comment and make sure the problem is resolved before merging.
 - For requirements marked _Done_: Check if the indended behavior corresponds with the behavior described in the use case which the requirement was derived from.
 If the behavior does not correspond, comment what differs.
 
