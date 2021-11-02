@@ -1,0 +1,23 @@
+image: node:16-alpine3.11
+
+stages:
+
+  - build
+  
+  - test
+
+cache: 
+  paths: 
+    - ./node_modules/.bin/ng
+
+install_dependencies:
+  stage: build
+  script:
+   - npm install
+  artifacts:
+    paths:
+      - ./node_modules/.bin/ng
+
+testing_testing:
+  stage: test
+  script: npm test
