@@ -1,4 +1,4 @@
-image: ccf4b4ee3bee:latest
+image: mongo:latest
 
 stages:
 
