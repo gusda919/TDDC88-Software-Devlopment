@@ -913,7 +913,7 @@
         "givenName": "Klara",
         "description": "kvinna onormal hjärtrytm",
         "gender": "kvinna",
-        "triage": "gul",
+        "triage": "röd",
         "importantInformation": "Antikoagulantiabehandling",
         "proposedMeasures": {
           "generalMeasures": [

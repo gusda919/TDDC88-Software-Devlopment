@@ -28,7 +28,8 @@ router.get('/patients', async (req: Request, res: Response) => {
     familyName: p.familyName,
     description: p.description,
     gender: p.gender,
-    triage: p.triage
+    triage: p.triage,
+    caregiving: p.caregiving
   })
   ));
 });
