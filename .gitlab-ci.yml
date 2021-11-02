@@ -8,7 +8,7 @@ stages:
 
 cache: 
   paths: 
-    - node_modules/
+    - .client/node_modules/
 
 install_dependencies:
   stage: build
@@ -16,7 +16,7 @@ install_dependencies:
    - npm install
   artifacts:
     paths:
-      - node_modules/
+      - .client/node_modules/
 
 testing_testing:
   stage: test
