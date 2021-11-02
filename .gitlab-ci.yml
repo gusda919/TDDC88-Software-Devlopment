@@ -1,0 +1,23 @@
+image: ccf4b4ee3bee:latest
+
+stages:
+
+  - build
+  
+  - test
+
+cache: 
+  paths: 
+    - client/
+
+install_dependencies:
+  stage: build
+  script:
+   - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+testing_testing:
+  stage: test
+  script: npm test
