@@ -20,4 +20,4 @@ install_dependencies:
 
 testing_testing:
   stage: test
-  script: client/node_modules/.bin/ng test
+  script: ./client/node_modules/.bin/ng test
