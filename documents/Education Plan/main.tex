@@ -26,7 +26,6 @@
 \usepackage{array}
 \usepackage{lipsum}
 \usepackage{hyperref}
-\usepackage{float}
 
 
 
@@ -36,31 +35,31 @@
 %----------------------------------------------------------------------------------------
 \begin{document}
 
-\title{Software Quality Assurance Plan (v. 1.0)} % Title
+\title{Education Plan} % Title
 \author{Company 1 - TDDC88}
 \date{} % Date for the report
 \maketitle % Inserts the title, author and date
 
 \begin{table}
 \centering
-\begin{tabular}{||c c l c c||} 
+\begin{tabular}{||c c c c c||} 
 \hline
-Version & Author & Updates & Reviewed by & Date \\ [0.5ex] 
+Version & Author by & Updates & Reviewed by & Date \\ [0.5ex] 
 \hline\hline
-0.1 & Erik Sköld & Initial version & - & 2021-09-14 \\
+0.1 & A. Nilsson \& D. Ma & Initial version & E. Sköld & 2021-09-17 \\ 
 \hline
-1.0 & Erik Sköld & 
-    \begin{tabular}{@{}l@{}}First plans for documents,\\
-    development, testing and quality\end{tabular}
-    & Daniel Ma & 2021-09-23  \\
+0.2 & D. Ma & 
+ \begin{tabular}{@{}l@{}}Developed R\&D and updated\\Communication to better reflect\\the current situation\end{tabular}
+& E. Sköld & 2021-10-13 \\
 \hline
-1.1 & Erik Sköld & 
-    \begin{tabular}{@{}l@{}}Updated guidelines for development\\
-    regarding workflow, software reviews\\
-    and version handling\end{tabular}  
-    & Jacob Karlén & 2021-10-13 \\
+0.3 & E. Sköld & Updated the quality part of P\&S & D. Ma & 2021-10-14 \\ 
 \hline
+1.0 & A. Nilsson & Updated P\&S & D. Ma & 2021-10-15 \\ 
+\hline
+% Next & Someone else & Updates made & Next date \\
+% \hline
 \end{tabular}
+%\caption{\label{tab:engagemang-mw}Svarsdata från enkätfrågorna kopplade till engagemang.}
 \end{table}
 
 % Removed abstract, not needed in TDDC88
@@ -86,27 +85,17 @@ Version & Author & Updates & Reviewed by & Date \\ [0.5ex]
 %----------------------------------------------------------------------------------------
 %	Main Part
 %----------------------------------------------------------------------------------------
-\input{sections/01-purpose}
-\clearpage
+\input{sections/01-introduction}
+\input{sections/02-communication}
+\input{sections/03-pands}
+\input{sections/04-randd}
 
-\input{sections/02-documents}
 \clearpage
-
-\input{sections/03-development}
-\clearpage
-
-\input{sections/04-testing}
-\clearpage
-
-\input{sections/05-quality}
-\clearpage
-
 
 %----------------------------------------------------------------------------------------
 %	Appendix
 %----------------------------------------------------------------------------------------
-%\input{sections/appendix}
-% Currently no need for appendix
+
 
 %----------------------------------------------------------------------------------------
 %	Bibliography
