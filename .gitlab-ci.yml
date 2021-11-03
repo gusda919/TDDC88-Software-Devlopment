@@ -1,4 +1,5 @@
 image: node:16-alpine3.11
+image: angular/ngcontainer
 
 stages:
 
