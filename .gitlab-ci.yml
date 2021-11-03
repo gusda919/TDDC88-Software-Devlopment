@@ -15,7 +15,9 @@ install_dependencies:
   stage: build
   script:
    - npm install client/
+   - npm rm -rf node_modules
    - npm install -g @angular/cli
+
   artifacts:
     paths:
       - ./node_modules/.bin/ng
