@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 //import {Chart} from 'node_modules/chart.js';
 import { Chart, ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { VitalParameters } from 'src/app/shared/models/patient';
 
 @Component({
   selector: 'app-my-graph',
@@ -10,7 +11,7 @@ import { Chart, ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 export class MyGraphComponent implements OnInit {
   constructor() {}
 
-  @Input() param: any;
+  @Input() vitalParameters: VitalParameters;
 
   ngOnInit() {
     var myGraph = new Chart('myGraph', {
@@ -53,4 +54,9 @@ export class MyGraphComponent implements OnInit {
       },
     });
   }
+
+
+
+
+
 }
