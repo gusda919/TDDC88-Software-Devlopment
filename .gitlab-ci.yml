@@ -24,4 +24,4 @@ install_dependencies:
 
 testing_testing:
   stage: test
-  script: npm test client/
+  script: ./client/ npm test 
