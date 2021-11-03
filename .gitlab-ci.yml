@@ -27,5 +27,6 @@ testing_testing:
   stage: test
 
   script: 
+  - ng help
   - cd client
   - npm test
