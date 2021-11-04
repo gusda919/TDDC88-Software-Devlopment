@@ -28,5 +28,5 @@ testing_testing:
   stage: test
 
   script: 
-  - npm build
+  - npm run build
   - npm test -- --browsers=ChromeHeadless --watch=false
