@@ -13,6 +13,7 @@ export class NavComponent {
   date : number  = Date.now();
   menuItems = ['overview', 'dashboard', 'employees']
   displayMessage = false;
+  displayProfile = false;
   panelOpenState = false;
 
   messages = [
@@ -42,7 +43,14 @@ export class NavComponent {
     });
     }
 
-    
+    getProfile() {
+      if(this.displayProfile){
+        this.displayProfile = false;
+      }
+      else {
+        this.displayProfile = true;
+      }
+    }
 
 
   constructor(private breakpointObserver: BreakpointObserver) {}
