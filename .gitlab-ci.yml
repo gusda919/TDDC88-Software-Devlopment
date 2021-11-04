@@ -25,7 +25,7 @@ install_dependencies:
 #  - chmod 0777 client/node_modules/.bin/ng
 
 testing_testing:
-  stage: test
+  stage: test -- --browsers=ChromeHeadless --watch=false
 
   script: 
   - npm test
