@@ -9,54 +9,90 @@ import { VitalParameters } from 'src/app/shared/models/patient';
   styleUrls: ['./my-graph.component.scss'],
 })
 export class MyGraphComponent implements OnInit {
+  
   constructor() {}
 
-  @Input() vitalParameters: VitalParameters;
+  @Input() vitalParameters: any;
+  labels: string[] = [];
+  data: number[] = [];
+  systolic: number[] = [];
+  diastolic: number[] = [];
+
 
   ngOnInit() {
-    var myGraph = new Chart('myGraph', {
-      type: 'line',
-      data: {
-        labels: [
-          '08:00',
-          '09:00',
-          '10:00',
-          '11:00',
-          '12:00',
-          '13:00',
-          '14:00',
-          '15:00',
-          '16:00',
-          '17:00',
-          '18:00',
-          '19:00',
-        ],
-        datasets: [
-          {
-            data: [120, 122, 119, 116, 124, 128, 130, 126, 117, 121, 120, 123],
-            label: 'Systoliskt blodtryck (mmHg)',
-            borderColor: '#3e95cd',
-            fill: false,
-          },
-          {
-            data: [80, 83, 82, 82, 77, 86, 82, 79, 84, 80, 81, 82],
-            label: 'Diastoliskt blodtryck (mmHG)',
-            borderColor: '#c45850',
-            fill: false,
-          },
-        ],
-      },
-      options: {
-        title: {
-          display: true,
-          // text: 'World population per region (in millions)'
+    console.log(this.vitalParameters);
+    this.addTimestamps();
+    this.addValues();
+
+    if(this.vitalParameters.label=='Blodtryck') {
+      var myGraph = new Chart('myGraph', {
+        type: 'line',
+        data: {
+          labels: this.labels,
+          datasets: [
+            {
+              data: this.systolic,
+              label: 'Systoliskt blodtryck',
+              borderColor: '#0015ff',
+              fill: false,
+            },
+            {
+              data: this.diastolic,
+              label: 'Diastoliskt blodtryck',
+              borderColor: '#ff0019',
+              fill: false,
+            },
+          ],
         },
-      },
-    });
+        options: {
+          title: {
+            display: true,
+            // text: 'World population per region (in millions)'
+          },
+        },
+      });
+    } else {
+      var myGraph = new Chart('myGraph', {
+        type: 'line',
+        data: {
+          labels: this.labels,
+          datasets: [
+            {
+              data: this.data,
+              label: this.vitalParameters.label,
+              borderColor: '#0015ff',
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            // text: 'World population per region (in millions)'
+          },
+        },
+      });
+    }
+    
   }
 
+  addTimestamps() {
+    for(let i = 0; i < this.vitalParameters.data.length; i++) {
+      this.labels.push(this.vitalParameters.data[i].time);
+    }
+  }
 
-
-
+  addValues() {
+    if(this.vitalParameters.label=='Blodtryck') {
+      for(let i = 0; i < this.vitalParameters.data.length; i++) {
+        this.systolic.push(this.vitalParameters.data[i].systolic);
+        this.diastolic.push(this.vitalParameters.data[i].diastolic);
+      }
+    } else {
+      for(let i = 0; i < this.vitalParameters.data.length; i++) {
+        this.data.push(this.vitalParameters.data[i].value);
+      }
+    }
+  }
 
 }
