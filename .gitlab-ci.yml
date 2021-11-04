@@ -28,4 +28,5 @@ testing_testing:
   stage: test
 
   script: 
+  - cd client
   - npm test
