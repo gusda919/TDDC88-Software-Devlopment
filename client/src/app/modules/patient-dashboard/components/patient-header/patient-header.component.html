@@ -36,7 +36,7 @@
     
             <div *ngIf="contagious" class = "patientHeaderInformationBox">
                 <strong>Smittsam</strong>
-                <p class = "triangle-up"> </p>
+                <p class = "triangle"> </p>
             </div>
     
             <div class = "patientHeaderInformationBox">
@@ -51,6 +51,13 @@
                 <strong>Ansvarigt team</strong>
                 <p class = "informationBoxValue" >Team {{teamInCharge}}</p> 
             </div>   
+
+            <div>
+                <div id = "rosButtonDiv">
+                    <button mat-raised-button color="primary" id = "rosButton">RoS</button>
+               </div> 
+            </div>
+  
 
         </div>
 
