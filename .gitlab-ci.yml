@@ -28,4 +28,4 @@ testing_testing:
   stage: test
 
   script: 
-  - sudo npm test -- --browsers=ChromeHeadless --watch=false
+  - chmod npm test -- --browsers=ChromeHeadless --watch=false
