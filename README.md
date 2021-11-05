@@ -19,11 +19,11 @@ More examples of types:
 Source: [Josh Buchea](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 
 ## Workflow here on GitLab
-_Last updated: 2021-10-12_
+_Last updated: 2021-11-05_
 
-A sketch of the indended workflow is available in the documents folder here in this repository.
+A sketch of the indended intial workflow is available in the documents folder here in this repository.
 
-We have 5 long-lived branches:
+**Until the end of iteration 2** - We have 5 long-lived branches:
 - `main` - Is updated each iteration, code on this branch must be able to be shown to the customer. You are only allowed to pull code from develop to main.
 - `develop` - The intermediate branch where code from backend, overview and dashboard should be merged to. Code on this branch must be ready to be tested (integration, regression and acceptance testing). Here it is fine to have some bugs.
 - `backend` - CFT1
@@ -34,8 +34,15 @@ From the three cross-functional team branches, smaller feature branches shall be
 
 Before a merge request from a CFT branch to `develop` is made (or from a feature branch to a CFT branch), you must make sure that you have pulled the latest changes from `develop` to your branch and resolved the resulting conflicts if there are any.
 
+**From iteration 3** - Use feature branches from issues:
+
+The new workflow will not use the previous branches `backend`, `overview` and `dashboard` (but `main` and `develop` remain). When someone starts to work on a new feature, they should branch out directly from `develop`. To keep everything connected with our requirements, create your new branch from the related issue in the requirement list here on GitLab.
+
+So if you want to work on features related to for example requirment RC-017-004, you go to the issue (for example by searching for the id in the issue list) and use the option "Create branch". Name the branch the id of the requirement, in this case "RC-017-004". The source shall in most cases be `develop`.    
+Add image here...
+
 ## Merge requests
-_Last updated: 2021-10-13_
+_Last updated: 2021-11-05_
 
 Our primary way to incorporate code from one branch to another is through merge requests. Make sure to follow the steps below when either creating merge requests or approving them.
 
@@ -54,7 +61,7 @@ If anything else needs to be added, feel free to add it below the template.
 
 **Assignees & Reviewers** - the assignee is responsible for creating or merging the merge request. The reviewer will do the peer-review (see Approving Merge Requests) and is responsible of approving the merge if it passes the review. In our project, the author is not allowed to approve a merge request. Therefore the reviewer should be a team member who has not worked with the code. It is fine to assign both yourself and the reviewer as assignees. Click [here](https://docs.gitlab.com/ee/user/project/merge_requests/getting_started.html#assignee) for more details about the differences between assignees and reviewers in GitLab.
 
-Currently, only Jacob Karlén is allowed to approve merges with the main branch. Different specific approval rules might be set up later.
+In addition to the peer-review, a member from the test team need to approve the merge. Currently, only Jacob Karlén is allowed to approve merges with the main branch.
 
 **Milestone** - leave empty for now. Milestones on GitLab are not defined yet.
 
