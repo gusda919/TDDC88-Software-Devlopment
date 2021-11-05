@@ -21,7 +21,7 @@ Source: [Josh Buchea](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f4
 ## Workflow here on GitLab
 _Last updated: 2021-11-05_
 
-A sketch of the indended intial workflow is available in the documents folder here in this repository.
+A sketch of the indended intial workflow is available in the image directory here in this repository.
 
 **Until the end of iteration 2** - We have 5 long-lived branches:
 - `main` - Is updated each iteration, code on this branch must be able to be shown to the customer. You are only allowed to pull code from develop to main.
@@ -38,8 +38,9 @@ Before a merge request from a CFT branch to `develop` is made (or from a feature
 
 The new workflow will not use the previous branches `backend`, `overview` and `dashboard` (but `main` and `develop` remain). When someone starts to work on a new feature, they should branch out directly from `develop`. To keep everything connected with our requirements, create your new branch from the related issue in the requirement list here on GitLab.
 
-So if you want to work on features related to for example requirment RC-017-004, you go to the issue (for example by searching for the id in the issue list) and use the option "Create branch". Name the branch the id of the requirement, in this case "RC-017-004". The source shall in most cases be `develop`.    
-Add image here...
+So if you want to work on features related to for example requirment RC-017-004, you go to the issue (for example by searching for the id in the issue list) and use the option "Create branch". Name the branch the id of the requirement, in this case "RC-017-004". The source shall in most cases be `develop`.
+
+<img src="images/create-issue-branch.png" width="600">    
 
 ## Merge requests
 _Last updated: 2021-11-05_
