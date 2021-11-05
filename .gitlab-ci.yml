@@ -22,7 +22,7 @@ install_dependencies:
       - node_modules
 
 before_script: 
-  - chmod 0777 */client/
+  - chmod 0777 ./node_modules/.bin/ng
 
 testing_testing:
   stage: test
