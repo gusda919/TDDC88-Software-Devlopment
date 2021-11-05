@@ -18,6 +18,48 @@
 #triageColor {
     min-height: 3vw;
     max-width: 6vw;
-    margin-left: 33%;
+    margin: auto;
     margin-top: 5%;
 }
+
+.patheader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    //align-items: center;
+    align-self: auto;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 40px solid rgb(238, 238, 9);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+
+}
+
+.rosButtonDiv {
+    /*
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: center;
+    */
+    margin-top: auto;
+
+}
+
+.rosButton {
+    align-self: center;
+    margin-top: auto;
+}
+
+
+
+
