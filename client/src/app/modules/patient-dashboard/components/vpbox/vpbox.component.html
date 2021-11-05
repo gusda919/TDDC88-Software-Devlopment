@@ -5,7 +5,7 @@
   </mat-card-header>
   <mat-card-content>
     <mat-action-list>
-      <mat-list-item>
+      <mat-list-item (click)="toggleBloodOxygenGraph()">
         <mat-icon matListIcon>placeholder</mat-icon>
         <h3 matLine>{{vitalParameters.bloodOxygenLevel.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
@@ -14,7 +14,7 @@
           </div>
         </div>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item (click)="togglePulseGraph()">
         <mat-icon matListIcon>placeholder</mat-icon>
         <h3 matLine>{{vitalParameters.pulse.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item (click)="toggleBloodPressureGraph()">
         <mat-icon matListIcon>placeholder</mat-icon>
         <h3 matLine>{{vitalParameters.bloodPressure.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
@@ -32,7 +32,7 @@
           </div>
         </div>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item (click)="toggleBodyTemperatureGraph()">
         <mat-icon matListIcon>placeholder</mat-icon>
         <h3 matLine>{{vitalParameters.bodyTemperature.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
@@ -41,7 +41,7 @@
           </div>
         </div>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item (click)="toggleRespiratoryRateGraph()">
         <mat-icon matListIcon>placeholder</mat-icon>
         <h3 matLine>{{vitalParameters.respiratoryRate.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
@@ -53,4 +53,21 @@
     </mat-action-list>
   </mat-card-content>
 </mat-card>
+
+<div *ngIf="isBloodOxygenDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
+</div>
+<div *ngIf="isPulseDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.pulse"></app-my-graph>
+</div>
+<div *ngIf="isBloodPressureDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.bloodPressure"></app-my-graph>
+</div>
+<div *ngIf="isBodyTemperatureDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
+</div>
+<div *ngIf="isRespiratoryRateDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
+</div>
+
 </div>

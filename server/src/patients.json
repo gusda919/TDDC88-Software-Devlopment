@@ -18,19 +18,32 @@
           },
           "pulse": {
             "label": "Puls",
-            "data": [ 81, 77 ]
+            "data": [
+              { "date": "2021-03-14", "time": "14:00", "value": 81 },
+              { "date": "2021-03-14", "time": "15:15", "value": 77 }
+            ]
           },
           "bloodPressure": {
             "label": "Blodtryck",
-            "data": [ "177/84", "159/89" ]
+            "data": [
+              { "date": "2021-03-14", "time": "13:50", "systolic": 177, "diastolic": 84 },
+              { "date": "2021-03-14", "time": "14:40", "systolic": 159, "diastolic": 89 }
+            ]
           },
           "bodyTemperature": {
             "label": "Kroppstemperatur",
-            "data": [ 38, 36.7, 36.8 ]
+            "data": [
+              { "date": "2021-03-14", "time": "14:11", "value": 38 },
+              { "date": "2021-03-14", "time": "15:15", "value": 36.7 },
+              { "date": "2021-03-14", "time": "16:12", "value": 36.8 }
+            ]
           },
           "respiratoryRate": {
             "label": "Andningsfrekvens",
-            "data": [ 16, 14 ]
+            "data": [
+              { "date": "2021-03-14", "time": "14:15", "value": 16 },
+              { "date": "2021-03-14", "time": "15:23", "value": 14 }
+            ]
           }
         },
         "entrancesAndExits": [
@@ -927,23 +940,48 @@
         "VitalParameters": {
           "bloodOxygenLevel": {
             "label": "SpO2 (pox)",
-            "data": [ 99, 99, 96, 97 ]
+            "data": [
+              { "date": "2021-03-16", "time": "12:12", "value": 99 },
+              { "date": "2021-03-16", "time": "13:42", "value": 99 },
+              { "date": "2021-03-16", "time": "14:12", "value": 96 },
+              { "date": "2021-03-16", "time": "14:16", "value": 97 }
+            ]
           },
           "pulse": {
             "label": "Puls",
-            "data": [ 155, 125, 100, 91 ]
+            "data": [
+              { "date": "2021-03-16", "time": "12:15", "value": 155 },
+              { "date": "2021-03-16", "time": "13:16", "value": 125 },
+              { "date": "2021-03-16", "time": "14:18", "value": 100 },
+              { "date": "2021-03-16", "time": "14:49", "value": 91 }
+            ]
           },
           "bloodPressure": {
             "label": "Blodtryck",
-            "data": [ "123/88", "110/98", "127/96", "113/84", "123/88" ]
+            "data": [
+              { "date": "2021-03-16", "time": "12:01", "systolic": 123, "diastolic": 88 },
+              { "date": "2021-03-16", "time": "13:13", "systolic": 110, "diastolic": 98 },
+              { "date": "2021-03-16", "time": "14:04", "systolic": 127, "diastolic": 96 },
+              { "date": "2021-03-16", "time": "14:15", "systolic": 113, "diastolic": 84 },
+              { "date": "2021-03-16", "time": "14:56", "systolic": 123, "diastolic": 88 }
+            ]
           },
           "bodyTemperature": {
             "label": "Kroppstemperatur",
-            "data": [ 36.7, 36.7 ]
+            "data": [
+              { "date": "2021-03-16", "time": "12:15", "value": 36.7 },
+              { "date": "2021-03-16", "time": "13:15", "value": 36.7 }
+            ]
           },
           "respiratoryRate": {
             "label": "Andningsfrekvens",
-            "data": [ 20, 20, 16, 20, 18 ]
+            "data": [
+              { "date": "2021-03-16", "time": "12:01", "value": 20 },
+              { "date": "2021-03-16", "time": "13:13", "value": 20 },
+              { "date": "2021-03-16", "time": "14:04", "value": 16 },
+              { "date": "2021-03-16", "time": "14:15", "value": 20 },
+              { "date": "2021-03-16", "time": "14:56", "value": 18 }
+            ]
           }
         },
         "entrancesAndExits": [
@@ -2084,23 +2122,43 @@
         "VitalParameters": {
           "bloodOxygenLevel": {
             "label": "SpO2 (pox)",
-            "data": [ 100, 97, 100 ]
+            "data": [
+              { "date": "2021-09-24", "time": "12:12", "value": 100 },
+              { "date": "2021-09-24", "time": "13:42", "value": 97 },
+              { "date": "2021-09-24", "time": "14:12", "value": 100 }
+            ]
           },
           "pulse": {
             "label": "Puls",
-            "data": [ 71, 72, 73 ]
+            "data": [
+              { "date": "2021-09-24", "time": "12:12", "value": 71 },
+              { "date": "2021-09-24", "time": "13:42", "value": 72 },
+              { "date": "2021-09-24", "time": "14:12", "value": 73 }
+            ]
           },
           "bloodPressure": {
             "label": "Blodtryck",
-            "data": [ "157/88", "160/98", "163/86" ]
+            "data": [
+              { "date": "2021-09-24", "time": "12:12", "systolic": 157, "diastolic": 88 },
+              { "date": "2021-09-24", "time": "13:42", "systolic": 160, "diastolic": 98 },
+              { "date": "2021-09-24", "time": "14:12", "systolic": 163, "diastolic": 86 }
+            ]
           },
           "bodyTemperature": {
             "label": "Kroppstemperatur",
-            "data": [ 36.3, 36.1, 36.2 ]
+            "data": [
+              { "date": "2021-09-24", "time": "12:12", "value": 36.3 },
+              { "date": "2021-09-24", "time": "13:42", "value": 36.1 },
+              { "date": "2021-09-24", "time": "14:12", "value": 36.2 }
+            ]
           },
           "respiratoryRate": {
             "label": "Andningsfrekvens",
-            "data": [ 20, 18, 18 ]
+            "data": [
+              { "date": "2021-09-24", "time": "12:12", "value": 20 },
+              { "date": "2021-09-24", "time": "13:42", "value": 18 },
+              { "date": "2021-09-24", "time": "14:12", "value": 18 }
+            ]
           }
         },
         "entrancesAndExits": [

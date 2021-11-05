@@ -12,7 +12,12 @@ import { PatientService } from '../../../../core/services/patient.service'
 export class VpboxComponent implements OnInit {
 
   isLoaded = false;
-  patientId = "195001232296";
+  isBloodOxygenDisplayed = false;
+  isPulseDisplayed = false;
+  isBloodPressureDisplayed = false;
+  isBodyTemperatureDisplayed = false;
+  isRespiratoryRateDisplayed = false;
+  patientId = "198605119885";
   vitalParameters: VitalParameters;
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
@@ -30,6 +35,8 @@ export class VpboxComponent implements OnInit {
     });
   }
 
+
+  //Get functions for displaying the latest value for each vital parameter
   getLatestBloodOxygenLevel() {
     let data = this.vitalParameters.bloodOxygenLevel.data;
     return data[data.length-1].value;
@@ -37,22 +44,45 @@ export class VpboxComponent implements OnInit {
 
   getLatestPulse() {
     let data = this.vitalParameters.pulse.data;
-    return data[data.length-1];
+    return data[data.length-1].value;
   }
 
   getLatestBloodPressure() {
     let data = this.vitalParameters.bloodPressure.data;
-    return data[data.length-1];
+    return data[data.length-1].systolic + "/" + data[data.length-1].diastolic;
   }
 
   getLatestBodyTemperature() {
     let data = this.vitalParameters.bodyTemperature.data;
-    return data[data.length-1];
+    return data[data.length-1].value;
   }
 
   getLatestRespiratoryRate() {
     let data = this.vitalParameters.respiratoryRate.data;
-    return data[data.length-1];
+    return data[data.length-1].value;
+  }
+
+
+
+  //Toggle functions for displaying graphs
+  toggleBloodOxygenGraph() {
+    this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;
+  }
+
+  togglePulseGraph() {
+    this.isPulseDisplayed = !this.isPulseDisplayed;
+  }
+
+  toggleBloodPressureGraph() {
+    this.isBloodPressureDisplayed = !this.isBloodPressureDisplayed;
+  }
+
+  toggleBodyTemperatureGraph() {
+    this.isBodyTemperatureDisplayed = !this.isBodyTemperatureDisplayed;
+  }
+
+  toggleRespiratoryRateGraph() {
+    this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;
   }
 
 }
