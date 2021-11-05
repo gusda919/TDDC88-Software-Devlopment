@@ -22,7 +22,7 @@ install_dependencies:
       - node_modules
 
 before_script: 
-  - chmod 0777 * 
+  - chmod 0777 */client/
 
 testing_testing:
   stage: test
