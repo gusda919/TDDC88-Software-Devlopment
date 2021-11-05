@@ -3,8 +3,7 @@
     type="button"
     aria-label="Toggle sidenav"
     mat-icon-button
-    (click)="drawer.toggle()"
-    *ngIf="isHandset$ | async">
+    (click)="drawer.toggle()">
     <mat-icon aria-label="Side nav toggle icon">{{ drawer.opened ? 'menu_open' : 'menu' }}</mat-icon>
   </button>
   <span>Region Östergötland </span>
