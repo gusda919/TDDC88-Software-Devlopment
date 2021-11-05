@@ -29,4 +29,4 @@ testing_testing:
 
   script: 
   - cd client
-  - ng test -- --browsers=ChromeHeadless --watch=false
+  - npm test -- --browsers=ChromeHeadless --watch=false
