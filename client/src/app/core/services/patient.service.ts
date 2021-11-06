@@ -31,6 +31,10 @@ export class PatientService {
     return this.http.get<Patient[]>(this.baseUrl);
   }
 
+  getPatient(patientID: string): Observable<Patient> {
+    return this.http.get<any>(this.baseUrl + patientID);
+  }
+
   // Service for getting the contact reason for the patient with person number "patientID" 
   getPatientCosmicContactReason(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/contactreason');

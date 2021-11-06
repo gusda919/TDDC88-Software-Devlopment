@@ -28,6 +28,26 @@ router.get('/patients', async (req: Request, res: Response) => {
   ));
 });
 
+router.get('/patients/:patientID', async (req: Request, res: Response) => {
+  console.log("Hej")
+  let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
+  console.log(patient)
+  if (patient) {
+    res.json( ({
+      patientID: patient.patientID,
+      givenName: patient.givenName,
+      familyName: patient.familyName,
+      description: patient.description,
+      gender: patient.gender,
+      triage: patient.triage
+    }))
+  }
+  else {
+    res.json("Patient med personnummer " + req.params.patientID + " finns inte i systemet")
+  }  
+
+});
+
 router.get('/patients/:patientID/cosmic/contactreason', async (req: Request, res: Response) => {
   // route for getting the contact reason for patient with patient id "patientID"
   let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
