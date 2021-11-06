@@ -5,6 +5,7 @@ export interface Patient {
     description:          string;
     gender:               string;
     triage:               string;
+    contagious:           string;
     importantInformation: null;
     proposedMeasures:     null;
     VitalParameters:      VitalParameters;

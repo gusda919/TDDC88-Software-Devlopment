@@ -1,22 +1,77 @@
-\section{Quality}
-This section highlights the expected resources to be spent on Quality Assurance (excluding testing) and the standard metrics to be used. \emph{Will be further developed in a future version.}
+\section{Software Quality Assessments}
+This section describes the plan for Software Quality Assessments (excluding testing). The plan includes a schedule of the assesments, their purpose and the metrics to be used.
 
-\subsection{Resources}
+%highlights the expected resources to be spent on Quality Assurance (excluding testing) and the standard metrics to be used. \emph{Will be further developed in a future version.}
+
+%   Removed to version 1.2
+%\subsection{Resources \textcolor{red}{(UPDATE OR REMOVE)}}
+%\begin{table}[H]
+%\centering
+%\begin{tabular}{||c c||} 
+%\hline
+%Quality Personnel & Hours \\ [0.5ex] 
+%\hline\hline
+%Quality Coordinator & 80 \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+\subsection{Assessment schedule}
 \begin{table}[H]
 \centering
 \begin{tabular}{||c c||} 
 \hline
-Quality Personnel & Hours \\ [0.5ex] 
+Date & Iteration to be monitored \\ [0.5ex] 
 \hline\hline
-Quality Coordinator & 80 \\
+2021-11-09 & Work until iteration 2 \\
+\hline
+2021-11-24 & Iteration 3 \\
+\hline
+2021-12-07 & Iteration 4 \\
 \hline
 \end{tabular}
 \end{table}
 
-\subsection{Standard metrics}
+\subsection{Purpose of assessments}
+The purpose of this procedure is to monitor and measure the product quality. Data is collected to find risks and determine if changes in the product or processes are needed.
+
+%\begin{itemize}
+%    \item Plan quality assurance (Gör en plan för hur ofta och vad som ska göras, hur ska det rapporteras? Baserat på detta kan metrics avgöras.)
+%    \item Monitor and measure product quality
+%    \item Initiates necessary changes of product and processes
+%    \item Review decisions on code condventions, test tools and reporting
+%    \item Collect means of quality work
+%    \item Use CodeMR for software metrics? Complexity, Coupling, Lack of Cohesion, Size
+%\end{itemize}
+
+\subsection{Metrics}
+For each assessment, the Quality Coordinator will measure and produce the metrics listed below. The results shall be documented in a spreadsheet available to the entire company in MS Teams. An overview of the results from each assessment will be presented on the upcoming company-wide meeting. The most significant findings will be brought up at the weekly manager meeting by the Quality Coordinator, where a decision is made whether any further action needs to be taken.
+
+\subsubsection{CodeMR}
 \begin{itemize}
-\item Software Quality effort and resources expended (Planned versus Actual)
-\item Number of Software Quality Assessments (Planned versus Actual)
-\item Number of Software Quality Assessment Findings or Noncompliances (Open versus Closed)
-\item Number of Risks identified as a result of Software Quality Assessments
+    \item Complexity
+    \item Coupling
+    \item Lack of Cohesion
+    \item Size
 \end{itemize}
+These metrics are given from the code analysis tool CodeMR. The metrics will give an overview of which classes have for example high complexity. If certain classes have too high values, this will be noticed and remedied. The goal is that no class should have a high or very-high value of these quality attributes.
+
+\subsubsection{GitLab}
+\begin{itemize}
+    \item Deployment frequency (Planned vs Actual)
+    \item WIP amount (amount of "cards" or tasks in progress at the time)
+    \item Number of Peer Reviews (reviewed Merge Requests)
+    \item Ratio of merges without review
+    \item Time to merge (time from first commit to merge request sent)
+    \item Merge request review time
+    \item Number of Issues found when reviewing Merge requests
+\end{itemize}
+These metrics are produced from the activities on the company GitLab. The purpose of them is to monitor and evaluate the processes and workflow on GitLab. If the metrics show values worse than the set guidelines, actions will be taken to meet the guidelines.
+
+\subsubsection{Quality process}
+\begin{itemize}    
+    \item Number of Software Quality Assessments (Planned versus Actual)
+    \item Number of Software Quality Assessment Findings (Open versus Closed)
+    \item Number of Risks identified as a result of Software Quality Assessments
+\end{itemize}
+The purpose of these metrics is to evaluate the Software Quality Assessments. The values of these metrics will indicate how rewarding the process is.
