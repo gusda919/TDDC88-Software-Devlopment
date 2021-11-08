@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving } from '../../shared/models/patient';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })

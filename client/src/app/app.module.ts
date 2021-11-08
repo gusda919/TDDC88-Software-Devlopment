@@ -22,13 +22,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+
 import { MatTableModule } from '@angular/material/table';  
 import {CdkTableModule} from '@angular/cdk/table';
-
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { PatientDashboardModule } from './modules/patient-dashboard/patient-dashboard.module';
 import { PatientsOverviewModule } from './modules/patients-overview/patients-overview.module';
 import { JournalComponent } from './modules/patient-dashboard/components/journal/journal.component';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +59,7 @@ import { JournalComponent } from './modules/patient-dashboard/components/journal
     MatButtonModule,
     MatTableModule,
     CdkTableModule,
-   
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
