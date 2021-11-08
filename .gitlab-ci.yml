@@ -1,4 +1,5 @@
 image: node:16-alpine3.11
+image: angular/ngcontainer
 
 stages:
 
@@ -36,5 +37,4 @@ testing_testing:
   #- npm install karma-firefox-launcher --save-dev
   - npm ci
   - npm install -g @angular/cli
-  - npm install puppeteer --only=dev
   - npm test
