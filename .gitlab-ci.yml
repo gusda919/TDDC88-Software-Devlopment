@@ -36,5 +36,5 @@ testing_testing:
   #- npm install karma-firefox-launcher --save-dev
   - npm ci
   - npm install -g @angular/cli
-  - npm i puppeteer
+  - npm install puppeteer --only=dev
   - npm test
