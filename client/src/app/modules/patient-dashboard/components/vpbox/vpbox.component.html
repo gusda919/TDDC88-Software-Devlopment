@@ -1,15 +1,52 @@
+<div *ngIf="isLoaded">
 <mat-card class="vpbox">
   <mat-card-header>
     <mat-card-title>Vitalparametrar</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <mat-action-list>
-      <mat-list-item *ngFor="let param of params" (click)="print(param)">
-        <mat-icon matListIcon>{{ param.icon }}</mat-icon>
-        <h3 matLine>{{ param.name }}</h3>
+      <mat-list-item (click)="toggleBloodOxygenGraph()">
+        <mat-icon matListIcon>placeholder</mat-icon>
+        <h3 matLine>{{vitalParameters.bloodOxygenLevel.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{ param.value }}</div>
+            <div class="param" fxFlex="30">{{getLatestBloodOxygenLevel()}} %</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="togglePulseGraph()">
+        <mat-icon matListIcon>placeholder</mat-icon>
+        <h3 matLine>{{vitalParameters.pulse.label}}</h3>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">{{getLatestPulse()}} bpm</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleBloodPressureGraph()">
+        <mat-icon matListIcon>placeholder</mat-icon>
+        <h3 matLine>{{vitalParameters.bloodPressure.label}}</h3>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">{{getLatestBloodPressure()}} mmHg</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleBodyTemperatureGraph()">
+        <mat-icon matListIcon>placeholder</mat-icon>
+        <h3 matLine>{{vitalParameters.bodyTemperature.label}}</h3>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">{{getLatestBodyTemperature()}} °C</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleRespiratoryRateGraph()">
+        <mat-icon matListIcon>placeholder</mat-icon>
+        <h3 matLine>{{vitalParameters.respiratoryRate.label}}</h3>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">{{getLatestRespiratoryRate()}} / min</div>
           </div>
         </div>
       </mat-list-item>
@@ -17,11 +54,20 @@
   </mat-card-content>
 </mat-card>
 
-<div
-  *ngFor="let param of params"
-  style="width: 45%; float: right; margin-right: 5%"
->
-  <div *ngIf="param.isGraphDisplayed">
-    <app-my-graph [param]="param"></app-my-graph>
-  </div>
+<div *ngIf="isBloodOxygenDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
+</div>
+<div *ngIf="isPulseDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.pulse"></app-my-graph>
+</div>
+<div *ngIf="isBloodPressureDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.bloodPressure"></app-my-graph>
+</div>
+<div *ngIf="isBodyTemperatureDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
+</div>
+<div *ngIf="isRespiratoryRateDisplayed">
+  <app-my-graph [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
+</div>
+
 </div>

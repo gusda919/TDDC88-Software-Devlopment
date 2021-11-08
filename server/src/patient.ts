@@ -393,12 +393,19 @@ export interface Datum {
     value: number;
 }
 
+export interface BloodPressureData {
+    date: string;
+    time: string;
+    systolic: number;
+    diastolic: number;
+}
+
 export interface BloodPressure {
     label: string;
-    data:  string[];
+    data:  BloodPressureData[];
 }
 
 export interface BodyTemperature {
     label: string;
-    data:  number[];
+    data:  Datum[];
 }

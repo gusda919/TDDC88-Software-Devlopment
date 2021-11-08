@@ -1,49 +1,61 @@
 [
-  {
-      "patientID": "195001232296",
-      "familyName": "Bodström",
-      "givenName": "Jan",
-      "description": "man skada höft",
-      "gender": "man",
-      "triage": "grön",
-      "contagious": "true",
-      "importantInformation":  null,
-      "proposedMeasures": null,
-      "VitalParameters": {
-        "bloodOxygenLevel": {
-          "label": "SpO2 (pox)",
-          "data": [ 
-            { "date": "2021-03-14", "time": "13:45", "value": 98 },
-            { "date": "2021-03-14", "time": "16:45", "value": 99 }
-          ]
-        },
-        "pulse": {
-          "label": "Puls",
-          "data": [ 81, 77 ]
-        },
-        "bloodPrassure": {
-          "label": "Blodtryck",
-          "data": [ "177/84", "159/89" ]
-        },
-        "bodyTemperature": {
-          "label": "Kroppstemperatur",
-          "data": [ 38, 36.7, 36.8 ]
-        },
-        "respiratoryRate": {
-          "label": "Andningsfrekvens",
-          "data": [ 16, 14 ]
-        }
-      },
-      "entrancesAndExits": [
-          {
-              "type": "PVK",
-              "size": 1.3,
-              "localization": "vänster sida",
-              "time": "14:15",
-              "action": null,
-              "actionTime": null
+    {
+        "patientID": "195001232296",
+        "familyName": "Bodström",
+        "givenName": "Jan",
+        "description": "man skada höft",
+        "gender": "man",
+        "triage": "grön",
+        "importantInformation":  null,
+        "proposedMeasures": null,
+        "VitalParameters": {
+          "bloodOxygenLevel": {
+            "label": "SpO2 (pox)",
+            "data": [ 
+              { "date": "2021-03-14", "time": "13:45", "value": 98 },
+              { "date": "2021-03-14", "time": "16:45", "value": 99 }
+            ]
+          },
+          "pulse": {
+            "label": "Puls",
+            "data": [
+              { "date": "2021-03-14", "time": "14:00", "value": 81 },
+              { "date": "2021-03-14", "time": "15:15", "value": 77 }
+            ]
+          },
+          "bloodPressure": {
+            "label": "Blodtryck",
+            "data": [
+              { "date": "2021-03-14", "time": "13:50", "systolic": 177, "diastolic": 84 },
+              { "date": "2021-03-14", "time": "14:40", "systolic": 159, "diastolic": 89 }
+            ]
+          },
+          "bodyTemperature": {
+            "label": "Kroppstemperatur",
+            "data": [
+              { "date": "2021-03-14", "time": "14:11", "value": 38 },
+              { "date": "2021-03-14", "time": "15:15", "value": 36.7 },
+              { "date": "2021-03-14", "time": "16:12", "value": 36.8 }
+            ]
+          },
+          "respiratoryRate": {
+            "label": "Andningsfrekvens",
+            "data": [
+              { "date": "2021-03-14", "time": "14:15", "value": 16 },
+              { "date": "2021-03-14", "time": "15:23", "value": 14 }
+            ]
           }
-      ],
+        },
+      "entrancesAndExits": [
+        {
+            "type": "PVK",
+            "size": 1.3,
+            "localization": "vänster sida",
+            "time": "14:15",
+            "action": null,
+            "actionTime": null
+        }
+    ],
       "caregiving": [
           {
               "time": "12:15",
@@ -929,23 +941,48 @@
       "VitalParameters": {
         "bloodOxygenLevel": {
           "label": "SpO2 (pox)",
-          "data": [ 99, 99, 96, 97 ]
+          "data": [
+            { "date": "2021-03-16", "time": "12:12", "value": 99 },
+            { "date": "2021-03-16", "time": "13:42", "value": 99 },
+            { "date": "2021-03-16", "time": "14:12", "value": 96 },
+            { "date": "2021-03-16", "time": "14:16", "value": 97 }
+          ]
         },
         "pulse": {
           "label": "Puls",
-          "data": [ 155, 125, 100, 91 ]
+          "data": [
+            { "date": "2021-03-16", "time": "12:15", "value": 155 },
+            { "date": "2021-03-16", "time": "13:16", "value": 125 },
+            { "date": "2021-03-16", "time": "14:18", "value": 100 },
+            { "date": "2021-03-16", "time": "14:49", "value": 91 }
+          ]
         },
         "bloodPressure": {
           "label": "Blodtryck",
-          "data": [ "123/88", "110/98", "127/96", "113/84", "123/88" ]
+          "data": [
+            { "date": "2021-03-16", "time": "12:01", "systolic": 123, "diastolic": 88 },
+            { "date": "2021-03-16", "time": "13:13", "systolic": 110, "diastolic": 98 },
+            { "date": "2021-03-16", "time": "14:04", "systolic": 127, "diastolic": 96 },
+            { "date": "2021-03-16", "time": "14:15", "systolic": 113, "diastolic": 84 },
+            { "date": "2021-03-16", "time": "14:56", "systolic": 123, "diastolic": 88 }
+          ]
         },
         "bodyTemperature": {
           "label": "Kroppstemperatur",
-          "data": [ 36.7, 36.7 ]
+          "data": [
+            { "date": "2021-03-16", "time": "12:15", "value": 36.7 },
+            { "date": "2021-03-16", "time": "13:15", "value": 36.7 }
+          ]
         },
         "respiratoryRate": {
           "label": "Andningsfrekvens",
-          "data": [ 20, 20, 16, 20, 18 ]
+          "data": [
+            { "date": "2021-03-16", "time": "12:01", "value": 20 },
+            { "date": "2021-03-16", "time": "13:13", "value": 20 },
+            { "date": "2021-03-16", "time": "14:04", "value": 16 },
+            { "date": "2021-03-16", "time": "14:15", "value": 20 },
+            { "date": "2021-03-16", "time": "14:56", "value": 18 }
+          ]
         }
       },
       "entrancesAndExits": [
@@ -1805,263 +1842,13 @@
                         "-extension": "SE2321000040-4JVV",
                         "-self-closing": "true"
                       }
-                    },
-                    "PhoneNumbers": {
-                      "Phone": [
-                        {
-                          "PhoneType": "HSA_Direkttelefon",
-                          "PhoneNumber": "010-103 01 11",
-                          "PhoneComment": "Nationellt HSA-attribut"
-                        },
-                        {
-                          "PhoneType": "HSA_Växeltelefon",
-                          "PhoneNumber": "010-103 00 00",
-                          "PhoneComment": "Nationellt HSA-attribut"
-                        }
-                      ]
-                    },
-                    "EmailAddresses": {
-                      "Email": {
-                        "EmailType": "HSA_Email",
-                        "EmailAddress": "Intygstjansten@regionostergotland.se"
-                      }
-                    },
-                    "UnitAddresses": {
-                      "UnitAddress": [
-                        {
-                          "UnitAddressType": "PostAdress",
-                          "UnitAddressAddress": "Lasarettet",
-                          "UnitAddressPostcode": "591 85",
-                          "UnitAddressCity": "Motala",
-                          "UnitAddressCounty": {
-                            "-self-closing": "true"
-                          },
-                          "UnitAddressCountry": "Sverige",
-                          "UnitAddressComment": {
-                            "-self-closing": "true"
-                          }
-                        },
-                        {
-                          "UnitAddressType": "HSA_Postadress",
-                          "UnitAddressAddress": "Lasarettet",
-                          "UnitAddressPostcode": "591 85",
-                          "UnitAddressCity": "Motala",
-                          "UnitAddressCounty": {
-                            "-self-closing": "true"
-                          },
-                          "UnitAddressCountry": "Sverige",
-                          "UnitAddressComment": "Nationellt HSA-attribut"
-                        },
-                        {
-                          "UnitAddressType": "HSA_Besöksadress",
-                          "UnitAddressAddress": "Lasarettet",
-                          "UnitAddressPostcode": {
-                            "-self-closing": "true"
-                          },
-                          "UnitAddressCity": "Motala",
-                          "UnitAddressCounty": {
-                            "-self-closing": "true"
-                          },
-                          "UnitAddressCountry": "Sverige",
-                          "UnitAddressComment": "Nationellt HSA-attribut"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "UnitID": {
-                      "-root": "1.2.752.129.2.1.4.1",
-                      "-extension": "SE2321000040-TEST",
-                      "-self-closing": "true"
-                    },
-                    "UnitLocalID": {
-                      "-root": "LiO_UNIT_LOCAL_ID",
-                      "-extension": "\"/",
-                      "-self-closing": "true"
-                    },
-                    "UnitName": "Region Östergötland",
-                    "UnitSecrecyGroups": {
-                      "-self-closing": "true"
-                    },
-                    "AccessZones": {
-                      "-self-closing": "true"
-                    },
-                    "PhoneNumbers": {
-                      "-self-closing": "true"
-                    },
-                    "EmailAddresses": {
-                      "-self-closing": "true"
-                    },
-                    "UnitAddresses": {
-                      "-self-closing": "true"
-                    }
-                  },
-                  {
-                    "UnitID": {
-                      "-root": "1.2.752.129.2.1.4.1",
-                      "-extension": "SE2321000040-4L6P",
-                      "-self-closing": "true"
-                    },
-                    "UnitLocalID": {
-                      "-root": "LiO_UNIT_LOCAL_ID",
-                      "-extension": "20920022",
-                      "-self-closing": "true"
-                    },
-                    "UnitName": "Avd 14:Med specklin:NSV",
-                    "UnitSecrecyGroups": {
-                      "Group": "NSV_Medicinska specialistkliniken"
-                    },
-                    "HeadCareproviderUnitID": {
-                      "-root": "1.2.752.129.2.1.4.1",
-                      "-extension": "SE2321000040-TEST",
-                      "-self-closing": "true"
-                    },
-                    "AccessZones": {
-                      "AccessZoneID": {
-                        "-root": "1.2.752.129.2.1.4.1",
-                        "-extension": "SE2321000040-4JVV",
-                        "-self-closing": "true"
-                      }
-                    },
-                    "PhoneNumbers": {
-                      "Phone": [
-                        {
-                          "PhoneType": "FaktTel",
-                          "PhoneNumber": "0141-77237",
-                          "PhoneComment": {
-                            "-self-closing": "true"
-                          }
-                        },
-                        {
-                          "PhoneType": "HSA_Direkttelefon",
-                          "PhoneNumber": "010-104 72 37",
-                          "PhoneComment": "Nationellt HSA-attribut"
-                        },
-                        {
-                          "PhoneType": "HSA_Växeltelefon",
-                          "PhoneNumber": "010-103 00 00",
-                          "PhoneComment": "Nationellt HSA-attribut"
-                        }
-                      ]
-                    },
-                    "EmailAddresses": {
-                      "-self-closing": "true"
-                    },
-                    "UnitAddresses": {
-                      "UnitAddress": [
-                        {
-                          "UnitAddressType": "BesöksAdress",
-                          "UnitAddressAddress": "Lasarettsgatan 37",
-                          "UnitAddressPostcode": "591 85",
-                          "UnitAddressCity": "Motala",
-                          "UnitAddressCounty": {
-                            "-self-closing": "true"
-                          },
-                          "UnitAddressCountry": "Sverige",
-                          "UnitAddressComment": {
-                            "-self-closing": "true"
-                          }
-                        },
-                        {
-                          "UnitAddressType": "HSA_Postadress",
-                          "UnitAddressAddress": "Lasarettet",
-                          "UnitAddressPostcode": "591 85",
-                          "UnitAddressCity": "Motala",
-                          "UnitAddressCounty": {
-                            "-self-closing": "true"
-                          },
-                          "UnitAddressCountry": "Sverige",
-                          "UnitAddressComment": "Nationellt HSA-attribut"
-                        },
-                        {
-                          "UnitAddressType": "HSA_Besöksadress",
-                          "UnitAddressAddress": "Lasarettet, A-huset, Plan 14",
-                          "UnitAddressPostcode": {
-                            "-self-closing": "true"
-                          },
-                          "UnitAddressCity": "Motala",
-                          "UnitAddressCounty": {
-                            "-self-closing": "true"
-                          },
-                          "UnitAddressCountry": "Sverige",
-                          "UnitAddressComment": "Nationellt HSA-attribut"
-                        }
-                      ]
                     }
                   }
                 ]
-              },
-              "CareUnit": {
-                "UnitID": {
-                  "-root": "1.2.752.129.2.1.4.1",
-                  "-extension": "SE2321000040-4L6P",
-                  "-self-closing": "true"
-                },
-                "UnitLocalID": {
-                  "-root": "LiO_UNIT_LOCAL_ID",
-                  "-extension": "20920022",
-                  "-self-closing": "true"
-                }
-              },
-              "AccessZoneUnit": {
-                "UnitID": {
-                  "-root": "1.2.752.129.2.1.4.1",
-                  "-extension": "SE2321000040-4JVV",
-                  "-self-closing": "true"
-                },
-                "UnitLocalID": {
-                  "-root": "LiO_UNIT_LOCAL_ID",
-                  "-extension": "\"/",
-                  "-self-closing": "true"
-                }
-              },
-              "HeadCareproviderUnit": {
-                "UnitID": {
-                  "-root": "1.2.752.129.2.1.4.1",
-                  "-extension": "SE2321000040-TEST",
-                  "-self-closing": "true"
-                },
-                "UnitLocalID": {
-                  "-root": "LiO_UNIT_LOCAL_ID",
-                  "-extension": "\"/",
-                  "-self-closing": "true"
-                }
-              },
-              "CareProviders": {
-                "CareProvider": {
-                  "CareProviderType": "Vårdgivare",
-                  "CareProviderID": {
-                    "-root": "1.2.752.129.2.1.4.1",
-                    "-extension": "SE2321000040T-525R",
-                    "-self-closing": "true"
-                  },
-                  "CareProviderInternalID": "322009",
-                  "CareProviderName": "Carina Sandell",
-                  "ProviderPosition": {
-                    "CareProviderPositionID": {
-                      "-root": "LiO_Caregiver_position_ID",
-                      "-extension": "Not implemented",
-                      "-self-closing": "true"
-                    },
-                    "CareProviderPositionName": "Övriga personer"
-                  },
-                  "CareProviderUnit": {
-                    "UnitID": {
-                      "-root": "1.2.752.129.2.1.4.1",
-                      "-extension": "Not implemented",
-                      "-self-closing": "true"
-                    },
-                    "UnitLocalID": {
-                      "-root": "1.2.752.129.2.1.4.1",
-                      "-extension": "Not implemented",
-                      "-self-closing": "true"
-                    }
-                  }
-                }
               }
             }
           }
-        }
+    }
   },
   {
       "patientID": "194202269207",
@@ -2087,23 +1874,43 @@
       "VitalParameters": {
         "bloodOxygenLevel": {
           "label": "SpO2 (pox)",
-          "data": [ 100, 97, 100 ]
+          "data": [
+            { "date": "2021-09-24", "time": "12:12", "value": 100 },
+            { "date": "2021-09-24", "time": "13:42", "value": 97 },
+            { "date": "2021-09-24", "time": "14:12", "value": 100 }
+          ]
         },
         "pulse": {
           "label": "Puls",
-          "data": [ 71, 72, 73 ]
+          "data": [
+            { "date": "2021-09-24", "time": "12:12", "value": 71 },
+            { "date": "2021-09-24", "time": "13:42", "value": 72 },
+            { "date": "2021-09-24", "time": "14:12", "value": 73 }
+          ]
         },
-        "bloodPrassure": {
+        "bloodPressure": {
           "label": "Blodtryck",
-          "data": [ "157/88", "160/98", "163/86" ]
+          "data": [
+            { "date": "2021-09-24", "time": "12:12", "systolic": 157, "diastolic": 88 },
+            { "date": "2021-09-24", "time": "13:42", "systolic": 160, "diastolic": 98 },
+            { "date": "2021-09-24", "time": "14:12", "systolic": 163, "diastolic": 86 }
+          ]
         },
         "bodyTemperature": {
           "label": "Kroppstemperatur",
-          "data": [ 36.3, 36.1, 36.2 ]
+          "data": [
+            { "date": "2021-09-24", "time": "12:12", "value": 36.3 },
+            { "date": "2021-09-24", "time": "13:42", "value": 36.1 },
+            { "date": "2021-09-24", "time": "14:12", "value": 36.2 }
+          ]
         },
         "respiratoryRate": {
           "label": "Andningsfrekvens",
-          "data": [ 20, 18, 18 ]
+          "data": [
+            { "date": "2021-09-24", "time": "12:12", "value": 20 },
+            { "date": "2021-09-24", "time": "13:42", "value": 18 },
+            { "date": "2021-09-24", "time": "14:12", "value": 18 }
+          ]
         }
       },
       "entrancesAndExits": [
