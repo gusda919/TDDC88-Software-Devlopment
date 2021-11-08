@@ -29,8 +29,8 @@ testing_testing:
   stage: test
   script: 
   - cd client
-  - sudo npm install -g karma-cli
-  - karma start
+  #- sudo npm install -g karma-cli
+  #- karma start
   - export CHROME_BIN=/usr/bin/google-chrome
   - npm ci
   - npm install -g @angular/cli
