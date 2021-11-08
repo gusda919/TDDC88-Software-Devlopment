@@ -31,59 +31,68 @@ export class PatientService {
     return this.http.get<Patient[]>(this.baseUrl);
   }
 
-  // route for getting the contact reason for the patient with person number "patientID" 
+  getPatient(patientID: string): Observable<Patient> {
+    return this.http.get<any>(this.baseUrl + patientID);
+  }
+
+  // Service for getting the contact reason for the patient with person number "patientID" 
   getPatientCosmicContactReason(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/contactreason');
   }
 
-  // route for getting the current health problem for the patient with person number "patientID"
+  // Service for getting the current health problem for the patient with person number "patientID"
   getPatientCosmicHealthProblem(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/healthproblem');
   }
 
-  // route for getting the current assessment for the patient with person number "patientID"
+  // Service for getting the current assessment for the patient with person number "patientID"
   getPatientCosmicAssessment(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/assessment');
   }
 
- // route for getting the current diagnosis for the patient with person number "patientID"
+ // Service for getting the current diagnosis for the patient with person number "patientID"
  getPatientCosmicDiagnosis(patientID: string): Observable<any> {
   return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/diagnosis');
  }
 
-  // route for getting the current taken measures for the patient with person number "patientID"
+  // Service for getting the current taken measures for the patient with person number "patientID"
   getPatientCosmicTakenMeasures(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/takenmeasures');
   }
 
-  // route for getting the current general condition for the patient with person number "patientID"
+  // Service for getting the current general condition for the patient with person number "patientID"
   getPatientCosmicGeneralCondition(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/Allmäntillstånd');
   }
 
-  // route for getting the current heart information for the patient with person number "patientID"
+  // Service for getting the current heart information for the patient with person number "patientID"
   getPatientCosmicHeart(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/Hjärta');
   }
 
-  // route for getting the current heart information for the patient with person number "patientID"
+  // Service for getting the current heart information for the patient with person number "patientID"
   getPatientCosmicBloodPressure(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/Blodtryck');
   }
 
-  // route for getting the current blood pressure for the patient with person number "patientID"
+  // Service for getting the current blood pressure for the patient with person number "patientID"
   getPatientCosmicPulse(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/Puls');
   }
 
-  // route for getting the current lower extremities information for the patient with person number "patientID"
+  // Service for getting the current lower extremities information for the patient with person number "patientID"
   getPatientCosmicLowerExtremity(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/Nedre%20extremitet');
   }
 
-  // route for getting the current examination results for the patient with person number "patientID"
+  // Service for getting the current examination results for the patient with person number "patientID"
   getPatientCosmicExaminationResults(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/Undersökningsresultat');
+  }
+
+  //getPatientContagious(patientID: string)
+  getPatientContagious(patientID: string): Observable<any> {
+    return this.http.get<any>( this.baseUrl + patientID + '/contagious');
   }
 
   //Service for getting all the vital parameters for the patient with person number "patientID"
