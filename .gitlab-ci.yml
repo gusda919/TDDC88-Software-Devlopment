@@ -2,32 +2,33 @@ image: node:16-alpine3.11
 
 stages:
 
-  - build
+  #- build
   
   - test
 
-cache: 
-  paths: 
-    - node_modules
+#cache: 
+#  paths: 
+#    - node_modules
 
-install_dependencies:
-  stage: build
-  script:
-   - npm install client/
-   - npm rm -rf node_modules
-   - npm install -g @angular/cli
+#install_dependencies:
+#  stage: build
+ # script:
+  # - npm install client/
+   #- npm rm -rf node_modules
+   
 
-  artifacts:
-    paths:
-      - node_modules
+  #artifacts:
+   # paths:
+    #  - node_modules
 
-before_script: 
-  - chmod 0777 ./node_modules/.bin/ng
+#before_script: 
+ # - chmod 0777 ./node_modules/.bin/ng
 
 testing_testing:
-  image: angular/ngcontainer
   stage: test
 
   script: 
   - cd client
-  - npm test -- --browsers=ChromeHeadless --watch=false
+  - npm ci
+  - npm install -g @angular/cli
+  - npm test
