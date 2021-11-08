@@ -25,7 +25,6 @@ stages:
  # - chmod 0777 ./node_modules/.bin/ng
 
 testing_testing:
-  image: angular/ngcontainer
   stage: test
   before_script:
     # Add Google Chrome to aptitude's (package manager) sources
