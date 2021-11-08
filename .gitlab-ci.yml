@@ -31,5 +31,6 @@ testing_testing:
   script: 
   - cd client
   - npm ci
+  - export CHROME_BIN=/usr/bin/google-chrome
   - npm install -g @angular/cli
-  - npm test
+  - npm test -- browser=Headless -- no-watch
