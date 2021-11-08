@@ -32,4 +32,5 @@ testing_testing:
   - export CHROME_BIN=/usr/bin/google-chrome
   - npm ci
   - npm install -g @angular/cli
+  - karma start
   - npm test
