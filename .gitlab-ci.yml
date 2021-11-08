@@ -49,8 +49,8 @@ testing_testing:
     - node ./node_modules/.bin/webdriver-manager update
   script: 
   - cd client
-  - npm ci
+  #- npm ci
   #export CHROME_BIN=/usr/bin/google-chrome
-  - npm install -g @angular/cli
+ # - npm install -g @angular/cli
   - npm test
   #-- browser=Headless -- no-watch
