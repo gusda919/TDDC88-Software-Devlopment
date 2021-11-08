@@ -33,6 +33,6 @@ testing_testing:
   - npm ci
   #export CHROME_BIN=/usr/bin/google-chrome
   - npm install -g @angular/cli
-  - npm install--save - dev phantomjs - prebuilt karma - phantomjs - launchernpm install--save intl
+  - npm install --save - dev phantomjs - prebuilt karma - phantomjs - launchernpm install --save intl
   - npm test --browser PhantomJS
   #-- browser=Headless -- no-watch
