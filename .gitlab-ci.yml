@@ -37,5 +37,6 @@ testing_testing:
   #- npm install karma-firefox-launcher --save-dev
   - npm ci
   - npm install -g @angular/cli
+  - npm install
   - npm install puppeteer-core@chrome-71
   - npm test
