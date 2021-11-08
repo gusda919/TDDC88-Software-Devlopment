@@ -8,12 +8,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { OverviewTableComponent } from './components/overview-table/overview-table.component';
 import { OverviewPageComponent } from './pages/overview-page/overview-page.component';
 import { MatCardModule } from '@angular/material/card';
+import {  MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     OverviewTableComponent,
-    OverviewPageComponent
+    OverviewPageComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { MatCardModule } from '@angular/material/card';
     MatPaginatorModule,
     MatSortModule,
     RouterModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class PatientsOverviewModule { }
