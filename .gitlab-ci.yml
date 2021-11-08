@@ -31,4 +31,4 @@ testing_testing:
   - export CHROME_BIN=/usr/bin/google-chrome
   - npm ci
   - npm install -g @angular/cli
-  - npm test -- browser=Headless -- no-watch
+  - npm test -- browsers=Headless -- no-watch
