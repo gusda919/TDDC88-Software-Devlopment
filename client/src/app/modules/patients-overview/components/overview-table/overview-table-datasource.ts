@@ -29,6 +29,7 @@ export class OverviewTableDataSource extends DataSource<Patient> {
     patientService.getPatients().subscribe(patients => { 
       this.data = patients;
       this.table.renderRows();
+      console.log("hello world")
     });
 
   }
