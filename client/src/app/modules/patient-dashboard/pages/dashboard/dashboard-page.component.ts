@@ -5,7 +5,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 @Component({
   selector: 'app-dashboard-page',
   templateUrl: './dashboard-page.component.html',
-  styleUrls: ['./dashboard-page.component.scss']
+  styleUrls: ['./dashboard-page.component.scss'],
 })
 export class DashboardPageComponent {
   /** Based on the screen size, switch from standard to one column per row */
@@ -15,6 +15,7 @@ export class DashboardPageComponent {
         if (this.breakpointObserver.isMatched(Breakpoints.Handset)) {
           return [
             { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+            { title: 'Journal', contentType: 'journal', cols: 2, rows: 1 },
             { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 2, rows: 1 },
             { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 2, rows: 1 },
             { title: 'Respiratory Rate', contentType: 'line-chart', cols: 2, rows: 1 },
@@ -24,6 +25,7 @@ export class DashboardPageComponent {
         if (this.breakpointObserver.isMatched(Breakpoints.Tablet)) {
           return [
             { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+            { title: 'Journal', contentType: 'journal', cols: 2, rows: 1 },
             { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
             { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 1 },
             { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
@@ -35,6 +37,7 @@ export class DashboardPageComponent {
 
       return [
         { title: 'Patient Overview', contentType: 'text', cols: 2, rows: 1 },
+        { title: 'Journal', contentType: 'journal', cols: 2, rows: 1 },
         { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
         { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 2 },
         { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },

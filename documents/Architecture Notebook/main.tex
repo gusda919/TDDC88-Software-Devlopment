@@ -24,6 +24,10 @@ Version & Author & Updates & Reviewed by & Date \\ [0.5ex]
     \begin{tabular}{@{}l@{}}Architectural overview diagram and architectural desicions\end{tabular}
     & TBD & 2021-09-17  \\
 \hline
+1.1 & Jacob Karlén & 
+    \begin{tabular}{@{}l@{}}New desicion and architectural philosophy\end{tabular}
+    & TBD & 2021-11-02  \\
+\hline
 \end{tabular}
 \end{table}
 
@@ -52,6 +56,13 @@ Describe the philosophy of the architecture. Identify issues that will drive the
 Formulate a set of goals that the architecture needs to meet in its structure and behavior. Identify critical issues that must be addressed by the architecture, such as: Are there hardware dependencies that should be isolated from the rest of the system? Does the system need to function efficiently under unusual conditions?
 }
 
+The architectural goals of the project is to find a technology stack and system architecture that supports the development of the patient journal web application, and that takes the requirements of the project into consideration. Since the focus of the project is on the front-end and user experience of the system, the backend architecture doesn't need to be that complex, and we can get away with a simple solution that delivers static data to the frontend.
+
+The main limiting resource in the project is time, and this should be taken into consideration when deciding on the system architecture. This means that it could be motivated to use technologies that people in the team already have experience with, to speed up the process and reduce time needed to learn new technolgies that take away time from the actual development.
+
+Another architectural goal is to try to limit 3rd party dependencies in order to keep the project as stable as possible. Too many dependencies could affect the maintainability of the project in the longer term, with unexpected errors due to dependecy changes.
+
+In terms of philosophy, we strive to find a balance between a stable architecture that can easily be deployed into production, and at the same time being lightweight and nimble enough to support rapid development.
 
 \section{Assumptions and dependencies}
 \comment{
@@ -107,6 +118,10 @@ List the decisions that have been made regarding architectural approaches and th
       \item \textbf{Decision:} The development environment will run in docker containers orchestrated with docker-compose
     \linebreak{}
     \textbf{Justification:} The motivation behind this is that it will create a consistent environment for everybody working with the development, so there shouldn't be issues related to use of different dependencies on different systems. It is also really convenient to be able to start client, server and database in separate docker containers with a single docker-compose command. Another benefit of using docker from the beginning of the project, is that it will be easy when we want to deploy with Kubernetes, since it is easy to go from using docker-compose to Kubernetes.
+    
+     \item \textbf{Decision:} MongoDB will no longer be used for storing data, and the data will instead be saved in a JSON-document on the server
+    \linebreak{}
+    \textbf{Justification:} The motivation behind this is that we came to the realization that MongoDB only added a layer of complexity to the architecture without providing new or useful functionality. Since we don't have any new data that needs to be stored and only work with static data, the database doesn't provide anything that we could not do with a static JSON document. When we removed MongoDB from the tech stack, it simplified the server considerably, since we don't need to right mongoose schemas and queries for all the different data types.
     
 \end{enumerate}
 

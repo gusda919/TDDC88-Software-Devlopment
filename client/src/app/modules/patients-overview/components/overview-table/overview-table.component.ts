@@ -18,8 +18,29 @@ export class OverviewTableComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<Patient>;
   dataSource: OverviewTableDataSource;
 
+  triageColor(name: String): string {
+    
+   
+    if(name == "grön") {
+      return "normal";
+      
+    }
+    
+    if(name == "gul") {
+      return "low";
+      
+    }
+    if(name == "röd") {
+      return "high";
+      
+    }
+
+    return "primary";
+  }
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['ssn', 'first_name', 'last_name'];
+  displayedColumns = ['issue', 'name', 'id' ,'date', 'triage'];
+  groupedColumns =['header'];
 
   constructor(private patientService: PatientService) {
     this.dataSource = new OverviewTableDataSource(patientService);

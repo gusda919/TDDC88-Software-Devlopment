@@ -10,6 +10,7 @@ import { Patient } from 'src/app/core/mocks/patient';
 import { MatTable } from '@angular/material/table';
 
 
+
 // TODO: Need to fix so that the table updated when fetching data
 
 /**
@@ -28,6 +29,7 @@ export class OverviewTableDataSource extends DataSource<Patient> {
     patientService.getPatients().subscribe(patients => { 
       this.data = patients;
       this.table.renderRows();
+      console.log("hello world")
     });
 
   }
