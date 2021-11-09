@@ -1,7 +1,7 @@
 #image: node:latest
-#juanje/angular-cli-chrome
-image: pipekung/angular:latest
-#image: efgiese/efgiese-angular-chrome-headless
+image: juanje/angular-cli-chrome
+#image: pipekung/angular:latest
+
 
 stages:
 
