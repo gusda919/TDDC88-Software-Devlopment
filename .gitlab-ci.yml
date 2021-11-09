@@ -40,12 +40,12 @@ testing_testing:
   - npm install apt
   - npm install apt-get
   - npm install -g @angular/cli
-  - image: angular/ngcontainer:latest
+  #Här behövs angular/ngcontainer
   - sudo apt-get update
   - sudo apt install chromium 
 
   #- RUN apt-get install chromium -y
 #  - npm i chromium
-  - image: node:latest
+  # Här behövs senaste node
   - node -v
   - npm test
