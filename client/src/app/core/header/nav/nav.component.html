@@ -99,7 +99,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item">{{item | titlecase}}</a>
+      <a *ngFor="let label of menuLabels; let i = index" mat-list-item [routerLink]="'/'+menuLinks[i]">{{label | titlecase}}</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

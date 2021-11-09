@@ -11,7 +11,10 @@ import { map, shareReplay } from 'rxjs/operators';
 export class NavComponent {
 
   date : number  = Date.now();
-  menuItems = ['overview', 'dashboard', 'employees']
+
+  menuLabels = ['enhetsöversikt', 'dashboard']
+  menuLinks = ['overview', 'dashboard/198605119885']
+
   displayMessage = false;
   displayProfile = false;
   panelOpenState = false;

@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserlistComponent } from './shared/components/userlist/userlist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ChartsModule } from 'ng2-charts';
@@ -15,7 +14,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
-import { EmployeesComponent } from './shared/components/employees/employees.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -35,9 +33,7 @@ import { JournalComponent } from './modules/patient-dashboard/components/journal
 @NgModule({
   declarations: [
     AppComponent,
-    UserlistComponent,
     NavComponent,
-    EmployeesComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,3 +61,4 @@ import { JournalComponent } from './modules/patient-dashboard/components/journal
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 
