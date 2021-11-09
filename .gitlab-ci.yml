@@ -1,7 +1,7 @@
 image: node:latest
-image: angular/ngcontainer:latest
+#
 #image: efgiese/efgiese-angular-chrome-headless
-image: node:latest
+
 stages:
 
   #- build
@@ -40,10 +40,12 @@ testing_testing:
   - npm install apt
   - npm install apt-get
   - npm install -g @angular/cli
+  - image: angular/ngcontainer:latest
   - sudo apt-get update
   - sudo apt install chromium 
 
   #- RUN apt-get install chromium -y
 #  - npm i chromium
+  - image: node:latest
   - node -v
   - npm test
