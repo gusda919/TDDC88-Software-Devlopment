@@ -5,7 +5,7 @@
         "givenName": "Jan",
         "description": "man skada höft",
         "gender": "man",
-        "triage": "grön",
+        "triage": "green",
         "importantInformation":  null,
         "proposedMeasures": null,
         "VitalParameters": {
@@ -926,7 +926,7 @@
       "givenName": "Klara",
       "description": "kvinna onormal hjärtrytm",
       "gender": "kvinna",
-      "triage": "gul",
+      "triage": "yellow",
       "contagious": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
@@ -1856,7 +1856,7 @@
       "givenName": "Anna",
       "description": "kvinna buksmärta",
       "gender": "kvinna",
-      "triage": "gul",
+      "triage": "yellow",
       "contagious": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
