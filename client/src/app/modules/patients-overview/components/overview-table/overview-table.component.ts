@@ -17,20 +17,16 @@ export class OverviewTableComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<Patient>;
   dataSource: MatTableDataSource<Patient> = new MatTableDataSource<Patient>();
 
-  triageColor(name: String): string { 
-
-    if(name == "green") {
-      return "normal";
-    }
-    
-    if(name == "yellow") {
-      return "low";
-    }
-    if(name == "red") {
-      return "high";
-    }
-
-    return "primary";
+  triageTextMap: any  = {
+    "green": "Grön",
+    "yellow": "Gul",
+    "orange": "Orange",
+    "red": "Röd"
+  }
+  triageColorMap: any = {
+    "green": "normal",
+    "yellow": "low",
+    "red": "high"
   }
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
