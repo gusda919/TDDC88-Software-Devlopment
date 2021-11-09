@@ -1,6 +1,6 @@
 #image: node:latest
 #image: angular/ngcontainer:latest
-image: armno/node-chromium
+image: efgiese/efgiese-angular-chrome-headless
 
 stages:
 
@@ -41,8 +41,6 @@ testing_testing:
   - npm install apt-get
   - npm install -g @angular/cli
   - sudo apt-get update
-  - npm update -g npm
-  - npm update -g node
   - sudo apt install chromium 
 
   #- RUN apt-get install chromium -y
