@@ -1,11 +1,11 @@
 #image: node:latest
 #juanje/angular-cli-chrome
-image: pipekung/angular:latest
+#image: pipekung/angular:latest
 #image: efgiese/efgiese-angular-chrome-headless
 
 stages:
 
-  #- build
+  - build
   
   - test
 
@@ -26,16 +26,10 @@ stages:
 
 #before_script: 
  # - chmod 0777 ./node_modules/.bin/ng
-
-testing_testing:
- # image: browserless/chrome
-  stage: test
- # before_script:
- # - export CHROME_BIN=/usr/bin/google-chrome
+dependencies: 
+  stage: build
+  image: angular/ngcontainer
   script: 
-  #- sudo npm install -g karma-cli
-  #- karma start
-  #- npm install karma-firefox-launcher --save-dev
   - cd client
   - npm ci
   - npm install apt 
@@ -46,6 +40,17 @@ testing_testing:
   #stod sudo här tidigare
   - apt-get update
   - apt install chromium 
+testing_testing:
+ # image: browserless/chrome
+  image: node:latest
+  stage: test
+ # before_script:
+ # - export CHROME_BIN=/usr/bin/google-chrome
+  script: 
+  #- sudo npm install -g karma-cli
+  #- karma start
+  #- npm install karma-firefox-launcher --save-dev
+
 
   #- RUN apt-get install chromium -y
 #  - npm i chromium
