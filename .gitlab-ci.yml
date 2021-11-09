@@ -65,7 +65,6 @@ testing_testing:
   # Här behövs senaste node
   - cd client
   - node -v
-  - export CHROME_BIN='/usr/bin/chromium'
   - npm test
   cache:
     key: build-cache
