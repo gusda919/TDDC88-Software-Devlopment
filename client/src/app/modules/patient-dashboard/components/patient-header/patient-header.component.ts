@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { __values } from 'tslib';
 import { PatientService } from '../../../../core/services/patient.service';
 import { Subscription } from 'rxjs';
+import { NavComponent } from '../../../../core/header/nav/nav.component';
 
 @Component({
   selector: 'app-patient-header',
@@ -22,7 +23,6 @@ export class PatientHeaderComponent implements OnInit{
   constructor(private patientService: PatientService) {
     this.subscription = this.patientService.getPatientContagious(this.personalNumber).subscribe( (cont: any) => 
     (this.contagious = (cont ==="true") )); 
-    // console.log(cont) );
    
     this.patientService.getPatient(this.personalNumber).subscribe( (cont: any) => {
       this.name = cont.givenName + " " + cont.familyName,
@@ -34,6 +34,11 @@ export class PatientHeaderComponent implements OnInit{
   }
   ngOnInit(){
     this.updateTriageColor();
+  }
+
+  rosclick() {
+    console.log("hej");
+    //NavComponent.addECG('198605119885');
   }
 
   updateTriageColor(){

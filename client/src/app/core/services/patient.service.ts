@@ -96,6 +96,11 @@ export class PatientService {
     return this.http.get<any>( this.baseUrl + patientID + '/contagious');
   }
 
+  //getPatientNewECG(patientID: string)
+  getPatientNewECG(patientID: string): Observable<any> {
+    return this.http.get<any>( this.baseUrl + patientID + '/newECG');
+  }
+
   //Service for getting all the vital parameters for the patient with person number "patientID"
   getPatientVitalparameters(patientID: string): Observable<VitalParameters> {
     return this.http.get<VitalParameters>(this.baseUrl + patientID + '/vitalparameters');

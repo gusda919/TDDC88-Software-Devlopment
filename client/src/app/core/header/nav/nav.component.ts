@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, Subscription} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { PatientService } from '../../../core/services/patient.service';
 
 @Component({
   selector: 'app-nav',
@@ -15,13 +16,14 @@ export class NavComponent {
   displayMessage = false;
   displayProfile = false;
   panelOpenState = false;
+  subscription: Subscription;
+  pn: string;
 
   messages = [
     {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
-    {id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
-    {id: 2, patient: 'Sven Svensson', pn:"941212-0110",content: 'Blodprov är nu tillgängligt'}
+    //{id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
+   // {id: 2, patient: 'Sven Svensson', pn:"941212-0110",content: 'Blodprov är nu tillgängligt'},
   ]
-
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset])
     .pipe(
@@ -29,30 +31,62 @@ export class NavComponent {
       shareReplay()
     );
 
-    getMessages() {
-      if(this.displayMessage) {
-        this.displayMessage = false;
-      } else {
-        this.displayMessage = true;
-      }
-    }
+  constructor(private breakpointObserver: BreakpointObserver, private patientService: PatientService) {
 
-    deleteMessage(i:number) {
-      this.messages.forEach((value,index)=>{
-        if(value.id == i) this.messages.splice(index,1);
+    this.subscription = this.patientService.getPatients().subscribe( (pats: any) => {
+      console.log(pats);
+      pats.forEach(element => {
+        
+      });
     });
+
+  };
+
+  addECG(pn: string) {
+    this.patientService.getPatient(pn).subscribe((patient: any) => {
+    let fullname = patient.givenName +" "+ patient.familyName;
+    this.messages.push({id: this.messages.length, patient: fullname, pn: pn, content: 'ECG resultat är nu tillgängligt'})
+    });
+  };
+
+  
+  /*
+  getPatientName(pn: string) {
+    let fultientService.getPatient(pn).subscribe((patient: any) => {
+    let fullname : string;
+    this.palname = patient.givenName +" "+ patient.familyName;
+    console.log(fullname);
+
+    });
+    return (fullname);
+
+  }
+*/
+  getMessages() {
+    if(this.displayMessage) {
+      this.displayMessage = false;
+    } else {
+      this.displayMessage = true;
     }
+  }
 
-    getProfile() {
-      if(this.displayProfile){
-        this.displayProfile = false;
-      }
-      else {
-        this.displayProfile = true;
-      }
+  deleteMessage(i:number) {
+    this.messages.forEach((value,index)=>{
+      if(value.id == i) this.messages.splice(index,1);
+  });
+  }
+
+  getProfile() {
+    if(this.displayProfile){
+      this.displayProfile = false;
     }
+    else {
+      this.displayProfile = true;
+    }
+  }
 
-
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  ngOnInit(){
+    this.addECG('198605119885');
+  }
 
 }
