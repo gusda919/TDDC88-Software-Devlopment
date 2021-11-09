@@ -38,7 +38,8 @@ testing_testing:
   - npm ci
   - npm install apt
   - npm install -g @angular/cli
-  #- sudo apt install chromium 
-  - RUN apt-get install chromium -y
+  - sudo apt-get clean 
+  - sudo apt install chromium 
+  #- RUN apt-get install chromium -y
 #  - npm i chromium
   - npm test
