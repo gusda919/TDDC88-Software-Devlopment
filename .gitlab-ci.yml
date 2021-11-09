@@ -37,9 +37,9 @@ testing_testing:
   - cd client
   - npm ci
   - npm install apt
+  - npm install apt-get
   - npm install -g @angular/cli
-  - sudo apt update
-  - sudo apt upgrade
+  - sudo apt-get update
   - sudo apt install chromium 
 
   #- RUN apt-get install chromium -y
