@@ -38,13 +38,13 @@ testing_testing:
   - npm ci
   - npm install apt
   - npm install apt-get
-  - nvm install 12
-  - nvm use 12
   - npm install -g @angular/cli
-  - ng --version
   - sudo apt-get update
+  - npm update -g npm
+  - npm update -g node
   - sudo apt install chromium 
 
   #- RUN apt-get install chromium -y
 #  - npm i chromium
+  - node -v
   - npm test
