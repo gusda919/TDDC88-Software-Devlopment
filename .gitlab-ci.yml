@@ -37,7 +37,7 @@ testing_testing:
   #- npm install karma-firefox-launcher --save-dev
   - npm ci
   - npm install apt
-  - apt install chromium-browser
   - npm install -g @angular/cli
-  - npm i chromium
+  - apt install chromium-browser
+#  - npm i chromium
   - npm test
