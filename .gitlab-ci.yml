@@ -1,4 +1,4 @@
-image: node:latest
+image: node:16-alpine3.11
 #image: angular/ngcontainer
 
 stages:
@@ -35,7 +35,8 @@ testing_testing:
   #- sudo npm install -g karma-cli
   #- karma start
   #- npm install karma-firefox-launcher --save-dev
+  - apt install chromium-browser
   - npm ci
   - npm install -g @angular/cli
-  - apt install chromium-browser
+  - npm i chromium
   - npm test
