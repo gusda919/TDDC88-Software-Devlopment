@@ -1,7 +1,7 @@
 #image: node:latest
-image: juanje/angular-cli-chrome
-#image: pipekung/angular:latest
-
+#juanje/angular-cli-chrome
+image: pipekung/angular:latest
+#image: efgiese/efgiese-angular-chrome-headless
 
 stages:
 
@@ -42,8 +42,9 @@ testing_testing:
   - npm install apt-get
   #- npm install -g @angular/cli
   #Här behövs angular/ngcontainer
-  - sudo apt-get update
-  - sudo apt install chromium 
+  #stod sudo här tidigare
+  - apt-get update
+  - apt install chromium 
 
   #- RUN apt-get install chromium -y
 #  - npm i chromium
