@@ -24,6 +24,9 @@ stages:
    # paths:
     #  - node_modules
 
+#Lösningsförslag: artifacts eller caching för att spara över det som lagras i dependencies-staget?
+
+
 #before_script: 
  # - chmod 0777 ./node_modules/.bin/ng
 dependencies: 
