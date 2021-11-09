@@ -52,8 +52,8 @@ testing_testing:
  # image: browserless/chrome
   image: node:latest
   stage: test
- # before_script:
- # - export CHROME_BIN=/usr/bin/google-chrome
+  before_script:
+  - export CHROME_BIN='/usr/bin/chromium'
   script: 
   #- sudo npm install -g karma-cli
   #- karma start
