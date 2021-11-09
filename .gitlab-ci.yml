@@ -38,7 +38,8 @@ testing_testing:
   #- npm install karma-firefox-launcher --save-dev
   - cd client
   - npm ci
-  - npm install apt
+  - npm install apt 
+  - npm audit fix --force
   - npm install apt-get
   #- npm install -g @angular/cli
   #Här behövs angular/ngcontainer
