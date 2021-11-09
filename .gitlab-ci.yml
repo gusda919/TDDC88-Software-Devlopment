@@ -31,7 +31,6 @@ testing_testing:
  # before_script:
  # - export CHROME_BIN=/usr/bin/google-chrome
   script: 
-  - cd client
   #- sudo npm install -g karma-cli
   #- karma start
   #- npm install karma-firefox-launcher --save-dev
@@ -39,5 +38,6 @@ testing_testing:
   - npm install apt
   - npm install -g @angular/cli
   - apt install chromium-browser
+  - cd client
 #  - npm i chromium
   - npm test
