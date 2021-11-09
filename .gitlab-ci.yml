@@ -1,7 +1,7 @@
-#image: node:latest
-#image: angular/ngcontainer:latest
-image: efgiese/efgiese-angular-chrome-headless
-
+image: node:latest
+image: angular/ngcontainer:latest
+#image: efgiese/efgiese-angular-chrome-headless
+image: node:latest
 stages:
 
   #- build
