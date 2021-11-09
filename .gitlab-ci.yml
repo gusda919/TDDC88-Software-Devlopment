@@ -1,5 +1,5 @@
-image: node:latest
-#image: angular/ngcontainer
+#image: node:latest
+image: angular/ngcontainer
 
 stages:
 
@@ -38,6 +38,6 @@ testing_testing:
   - npm ci
   - npm install apt
   - npm install -g @angular/cli
-  - RUN apt -get install chromium
+  - sudo apt install chromium
 #  - npm i chromium
   - npm test
