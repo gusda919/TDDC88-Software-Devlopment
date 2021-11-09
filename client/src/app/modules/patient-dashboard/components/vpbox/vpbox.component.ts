@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
 
 import { PatientService } from '../../../../core/services/patient.service'
@@ -11,13 +11,16 @@ import { PatientService } from '../../../../core/services/patient.service'
 
 export class VpboxComponent implements OnInit {
 
+  @Input()
+  patientId: string = "198605119885";
+
   isLoaded = false;
   isBloodOxygenDisplayed = false;
   isPulseDisplayed = false;
   isBloodPressureDisplayed = false;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
-  patientId = "198605119885";
+ 
   vitalParameters: VitalParameters;
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}

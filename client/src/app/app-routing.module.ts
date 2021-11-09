@@ -8,10 +8,10 @@ import { OverviewPageComponent } from './modules/patients-overview/pages/overvie
 // TODO: maybe add routing file to each module 
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardPageComponent },
+  { path: 'dashboard/:patientID', component: DashboardPageComponent },
   { path: 'employees', component: EmployeesComponent },
   { path: 'overview', component: OverviewPageComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'}, 
+  { path: '', redirectTo: '/overview', pathMatch: 'full'}, 
 ];
 
 @NgModule({
