@@ -34,10 +34,10 @@ testing_testing:
   #- sudo npm install -g karma-cli
   #- karma start
   #- npm install karma-firefox-launcher --save-dev
+  - cd client
   - npm ci
   - npm install apt
   - npm install -g @angular/cli
   - apt install chromium-browser
-  - cd client
 #  - npm i chromium
   - npm test
