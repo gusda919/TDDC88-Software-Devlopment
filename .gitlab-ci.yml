@@ -1,6 +1,6 @@
-image: node:latest
-image: angular/ngcontainer:latest
-
+#image: node:latest
+#image: angular/ngcontainer:latest
+image: armno/node-chromium
 
 stages:
 
