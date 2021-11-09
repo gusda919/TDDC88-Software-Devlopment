@@ -43,6 +43,11 @@ dependencies:
   #stod sudo här tidigare
   - sudo apt-get update
   - sudo apt install chromium 
+  cache:
+    key: build-cache
+    paths: 
+    - client/
+
 testing_testing:
  # image: browserless/chrome
   image: node:latest
@@ -61,3 +66,7 @@ testing_testing:
   - cd client
   - node -v
   - npm test
+  cache:
+    key: build-cache
+    paths: 
+    - client/
