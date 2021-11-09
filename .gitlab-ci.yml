@@ -38,6 +38,6 @@ testing_testing:
   - npm ci
   - npm install apt
   - npm install -g @angular/cli
-  - sudo apt install chromium-browser
+  - apt install chromium-browser
 #  - npm i chromium
   - npm test
