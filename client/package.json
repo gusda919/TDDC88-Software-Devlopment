@@ -6,7 +6,8 @@
     "start": "./node_modules/.bin/ng serve --watch --host 0.0.0.0",
     "build": "./node_modules/.bin/ng build",
     "watch": "./node_modules/.bin/ng build --watch --configuration development",
-    "test": "./node_modules/.bin/ng test"
+    "test": "./node_modules/.bin/ng test",
+    "test:ci": "./node_modules/.bin/ng test --browsers=Headless --no-watch"
   },
   "private": true,
   "dependencies": {
