@@ -1,5 +1,5 @@
-image: node:latest
-#image: angular/ngcontainer
+#image: node:latest
+image: angular/ngcontainer
 
 stages:
 
