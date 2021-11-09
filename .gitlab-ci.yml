@@ -1,6 +1,6 @@
-
-image: angular/ngcontainer:latest
 image: node:latest
+image: angular/ngcontainer:latest
+
 
 stages:
 
