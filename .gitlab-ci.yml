@@ -1,16 +1,51 @@
-image: efgiese/efgiese-angular-chrome-headless
+#image: node:latest
+juanje/angular-cli-chrome
+#image: efgiese/efgiese-angular-chrome-headless
 
 stages:
-  - setup
+
+  #- build
+  
   - test
 
-setup:
-  stage: setup
-  script:
-    - npm prune
-    - npm install
+#cache: 
+#  paths: 
+#    - node_modules
 
-test_karma:
+#install_dependencies:
+#  stage: build
+ # script:
+  # - npm install client/
+   #- npm rm -rf node_modules
+   
+
+  #artifacts:
+   # paths:
+    #  - node_modules
+
+#before_script: 
+ # - chmod 0777 ./node_modules/.bin/ng
+
+testing_testing:
+ # image: browserless/chrome
   stage: test
-  script:
-    - ./node_modules/@angular/cli/bin/ng test --browsers ChromeHeadless --watch=false
+ # before_script:
+ # - export CHROME_BIN=/usr/bin/google-chrome
+  script: 
+  #- sudo npm install -g karma-cli
+  #- karma start
+  #- npm install karma-firefox-launcher --save-dev
+  - cd client
+  - npm ci
+  - npm install apt
+  - npm install apt-get
+  - npm install -g @angular/cli
+  #Här behövs angular/ngcontainer
+  - sudo apt-get update
+  - sudo apt install chromium 
+
+  #- RUN apt-get install chromium -y
+#  - npm i chromium
+  # Här behövs senaste node
+  - node -v
+  - npm test
