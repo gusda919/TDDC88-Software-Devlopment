@@ -33,13 +33,13 @@ dependencies:
   - cd client
   - npm ci
   - npm install apt 
-  - npm audit fix --force
+#  - npm audit fix --force
   - npm install apt-get
   #- npm install -g @angular/cli
   #Här behövs angular/ngcontainer
   #stod sudo här tidigare
-  - apt-get update
-  - apt install chromium 
+  - sudo apt-get update
+  - sudo apt install chromium 
 testing_testing:
  # image: browserless/chrome
   image: node:latest
