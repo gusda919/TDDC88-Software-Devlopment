@@ -1,4 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PatientService } from 'src/app/core/services/patient.service';
+import { Caregiving } from 'src/app/shared/models/patient';
+
+
+
+
+interface TimelineEvent {
+  date: Date,
+  icon: string,
+  type: string,
+  data: {
+    note: string,
+  }
+}
+
+
 
 @Component({
   selector: 'app-timeline',
@@ -7,39 +23,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
   
-  displayedEvent: any = {};
+  displayedEvent: TimelineEvent;
 
-  events: any = [
-    {
-      "date": "2021-01-20",
-      "time": "18:05",
-      "description": "Fick en smörmåg och kaffe"
-    },
-    {
-      "date": "2021-01-21",
-      "time": "14:05",
-      "description": "Provresultat kom tillbaka"
-    },
-    {
-      "date": "2021-01-21",
-      "time": "16:05",
-      "description": "Skickades till röntgen för att ta bilder"
-    },
-    {
-      "date": "2021-01-22",
-      "time": "18:05",
-      "description": "Blev utskriven från avdelningen"
-    },
-    {
-      "date": "2021-01-22",
-      "time": "18:05",
-      "description": "Blev utskriven från avdelningen"
-    },
-  ];
 
-  constructor() { }
+  @Input() patientId: string;
+
+  caregiving: Caregiving[];
+
+  events: TimelineEvent[] = [];
+
+
+
+  constructor(private patientService: PatientService) { }
+
 
   ngOnInit(): void {
+    this.patientService.getPatientCaregiving(this.patientId).subscribe((caregiving: Caregiving[]) => {      
+      let events: TimelineEvent[] = caregiving.map((c: Caregiving): TimelineEvent => ({
+        date: new Date(c.date+"T"+c.time),
+        icon: 'caregiving-icon',
+        type: 'caregiving',
+        data: {
+          note: c.note,
+        }
+      })
+      );
+      this.events = this.events.concat(events);    
+    });
   }
 
   displayEvent(event: any) {

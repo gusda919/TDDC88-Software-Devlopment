@@ -9,7 +9,7 @@
     <div class="timeline-wrapper">
     <mat-card-content>
         <div class="timeline-event" *ngFor="let event of events" (click)="displayEvent(event)">
-            {{event.date}}, {{event.time}}
+            {{event.date | date:'yyyy/MM/dd HH:mm'}} 
             <mat-icon class="timeline-event-icon" aria-label="timeline event icon">event</mat-icon>
         </div>
         <hr class="timeline-line">
@@ -17,7 +17,7 @@
     </div>
 
     <mat-card-subtitle>
-        <div *ngIf="displayedEvent" class="timeline-event-info">{{displayedEvent.description}}</div>
+        <div *ngIf="displayedEvent" class="timeline-event-info">{{displayedEvent.data?.note}}</div>
     </mat-card-subtitle>
 
 </mat-card>

@@ -58,14 +58,17 @@
     ],
       "caregiving": [
           {
+              "date": "2021-03-14",
               "time": "12:15",
               "note": "Hjälper patienten med avlastningskuddar för att hitta ett smärtlindrande läge"
           },
           {
+              "date": "2021-03-14",
               "time": "14:15",
               "note": "Kontaktat anhöriga att patienten flyttas till Linköping oh planerats för operation. Patienten har själv talat med anhöriga."            
           },
           {
+              "date": "2021-03-14",
               "time": "14:30",
               "note": "Patienten fastar inför operationen från kl 15:00"
           }
@@ -997,6 +1000,7 @@
       ],
       "caregiving": [
           {
+              "date": "2021-03-16",
               "time": "12:30",
               "note": "Får kaffe och smörgås"
           }
@@ -2037,14 +2041,17 @@
       ],
       "caregiving": [
           {
+              "date": "2021-03-15",
               "time": "12:15",
               "note": "Varit uppe på toaletten med två levande stöd"
           },
           {
+              "date": "2021-03-15",
               "time": "13:00",
               "note": "Får kaffe och smörgås"
           },
           { 
+              "date": "2021-03-15",
               "time": "13:25",
               "note": "Finner ett litet sår på vänster underben som tvättas och läggs om med Mepilex"
           }
