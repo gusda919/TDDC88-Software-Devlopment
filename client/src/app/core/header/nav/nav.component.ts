@@ -27,16 +27,17 @@ export class NavComponent {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset])
     .pipe(
-      map(result => result.matches),
+      map((result: { matches: any; }) => result.matches),
       shareReplay()
     );
 
   constructor(private breakpointObserver: BreakpointObserver, private patientService: PatientService) {
 
     this.subscription = this.patientService.getPatients().subscribe( (pats: any) => {
-      console.log(pats);
-      pats.forEach(element => {
-        
+      pats.forEach((pat: any) => {
+        if (pat.newecg === "true") {
+          this.addECG(pat.patientID);
+        }
       });
     });
 
@@ -49,19 +50,6 @@ export class NavComponent {
     });
   };
 
-  
-  /*
-  getPatientName(pn: string) {
-    let fultientService.getPatient(pn).subscribe((patient: any) => {
-    let fullname : string;
-    this.palname = patient.givenName +" "+ patient.familyName;
-    console.log(fullname);
-
-    });
-    return (fullname);
-
-  }
-*/
   getMessages() {
     if(this.displayMessage) {
       this.displayMessage = false;
