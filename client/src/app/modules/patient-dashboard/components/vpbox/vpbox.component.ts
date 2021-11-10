@@ -69,23 +69,51 @@ export class VpboxComponent implements OnInit {
 
   //Toggle functions for displaying graphs
   toggleBloodOxygenGraph() {
+    if(!this.isBloodOxygenDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
     this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;
   }
 
   togglePulseGraph() {
+    if(!this.isPulseDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
     this.isPulseDisplayed = !this.isPulseDisplayed;
   }
 
   toggleBloodPressureGraph() {
+    if(!this.isBloodPressureDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
     this.isBloodPressureDisplayed = !this.isBloodPressureDisplayed;
   }
 
   toggleBodyTemperatureGraph() {
+    if(!this.isBodyTemperatureDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
     this.isBodyTemperatureDisplayed = !this.isBodyTemperatureDisplayed;
   }
 
   toggleRespiratoryRateGraph() {
+    if(!this.isRespiratoryRateDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
     this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;
   }
 
+  checkIfAnyGraphIsToggled() {
+    if(this.isBloodOxygenDisplayed || 
+      this.isPulseDisplayed || 
+      this.isBloodPressureDisplayed || 
+      this.isBodyTemperatureDisplayed || 
+      this.isRespiratoryRateDisplayed) {
+        this.isBloodOxygenDisplayed = false;
+        this.isPulseDisplayed = false;
+        this.isBloodPressureDisplayed = false;
+        this.isBodyTemperatureDisplayed = false;
+        this.isRespiratoryRateDisplayed = false;
+    }
+  }
 }
