@@ -7,7 +7,7 @@ stages:
 
   - build
   
-  - test
+  #- test
 
 #cache: 
 #  paths: 
@@ -43,18 +43,22 @@ dependencies:
   #stod sudo här tidigare
   - sudo apt-get update
   - sudo apt install chromium 
+  - ng update
+  - node -v
+  - export CHROME_BIN='/usr/bin/chromium'
+  - npm test --browsers=Headless --no-watch
   cache:
     key: build-cache
     paths: 
     - client/
 
-testing_testing:
+#testing_testing:
  # image: browserless/chrome
-  image: node:latest
-  stage: test
-  before_script:
-  - export CHROME_BIN='/usr/bin/chromium'
-  script: 
+  #image: node:latest
+  #stage: test
+  #before_script:
+ # - export CHROME_BIN='/usr/bin/chromium'
+  #script: 
   #- sudo npm install -g karma-cli
   #- karma start
   #- npm install karma-firefox-launcher --save-dev
@@ -63,11 +67,12 @@ testing_testing:
   #- RUN apt-get install chromium -y
 #  - npm i chromium
   # Här behövs senaste node
-  - cd client
-  - node -v
-  - export CHROME_BIN='/usr/bin/chromium'
-  - npm test --browsers=Headless --no-watch
-  cache:
-    key: build-cache
-    paths: 
-    - client/
+  #- cd client
+  #- node -v
+  #- export CHROME_BIN='/usr/bin/chromium'
+ # - npm test --browsers=Headless --no-watch
+ # cache:
+ #   key: build-cache
+ #   paths: 
+ #   - client/
+#
