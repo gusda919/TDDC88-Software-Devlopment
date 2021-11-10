@@ -38,12 +38,12 @@ dependencies:
   - npm install apt 
 #  - npm audit fix --force
   - npm install apt-get
-  #- npm install -g @angular/cli
+  - npm install -g @angular/cli
   #Här behövs angular/ngcontainer
   #stod sudo här tidigare
   - sudo apt-get update
   - sudo apt install chromium 
-  - npm ng update
+  - ng update
   - node -v
   - export CHROME_BIN='/usr/bin/chromium'
   - npm test --browsers=Headless --no-watch
