@@ -43,6 +43,7 @@ dependencies:
   #stod sudo här tidigare
   - sudo apt-get update
   - sudo apt install chromium 
+  - which chromium-browser
   cache:
     key: build-cache
     paths: 
@@ -65,6 +66,7 @@ testing_testing:
   # Här behövs senaste node
   - cd client
   - node -v
+  - which chromium-browser
   - export CHROME_BIN='/usr/bin/chromium'
   - npm test --browsers=Headless --no-watch
   cache:
