@@ -43,7 +43,7 @@ dependencies:
   #stod sudo här tidigare
   - sudo apt-get update
   - sudo apt install chromium 
-  - ng update
+#  - ng update
   - node -v
   - export CHROME_BIN='/usr/bin/chromium'
   - npm test --browsers=Headless --no-watch
