@@ -21,7 +21,7 @@ export class NavComponent {
 
   messages = [
     {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
-    //{id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
+    {id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
    // {id: 2, patient: 'Sven Svensson', pn:"941212-0110",content: 'Blodprov är nu tillgängligt'},
   ]
 
@@ -37,6 +37,7 @@ export class NavComponent {
       pats.forEach((pat: any) => {
         if (pat.newecg === "true") {
           this.addECG(pat.patientID);
+         // patientService.setPatientNoNewECG(pat.patientID);
         }
       });
     });
@@ -46,7 +47,7 @@ export class NavComponent {
   addECG(pn: string) {
     this.patientService.getPatient(pn).subscribe((patient: any) => {
     let fullname = patient.givenName +" "+ patient.familyName;
-    this.messages.push({id: this.messages.length, patient: fullname, pn: pn, content: 'ECG resultat är nu tillgängligt'})
+    this.messages.push({id: this.messages.length, patient: fullname, pn: pn, content: 'Nytt EKG result tillgängligt'})
     });
   };
 
@@ -78,3 +79,4 @@ export class NavComponent {
   }
 
 }
+

@@ -52,12 +52,31 @@
                 <p class = "informationBoxValue" > {{gender}}</p> 
             </div>   
 
-            <div>
+            <div id= "buttonsDiv">
+
                 <div id = "rosButtonDiv" >
-                    <button mat-raised-button color="primary" id = "rosButton" (click)="rosclick()" >RoS</button>
+                    <button mat-raised-button color="primary" id = "rosButton" (click)="openRoS(personalNumber)">RoS</button>
                </div> 
+
+               <div id = "EKGButtonDiv" >
+                    <button mat-raised-button color="primary" id = "erg" (click)="openECG(personalNumber)">EKG</button>
+
+              </div> 
+
+              <div id = "EKGButtonDiv" >
+                <button mat-raised-button color="primary" (click)="imageSource = '/assets/ECG.png' " >EKG2</button>
+            </div> 
+
+              <div>
+                <img [src]="imageSource" *ngIf="imageSource"/>
+
+              </div>
+
+
+        
+
             </div>
-  
+          
 
         </div>
 

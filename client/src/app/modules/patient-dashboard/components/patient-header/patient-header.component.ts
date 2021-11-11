@@ -3,6 +3,10 @@ import { __values } from 'tslib';
 import { PatientService } from '../../../../core/services/patient.service';
 import { Subscription } from 'rxjs';
 import { NavComponent } from '../../../../core/header/nav/nav.component';
+import {MatDialog} from '@angular/material/dialog';
+
+
+let imageSource: string;
 
 @Component({
   selector: 'app-patient-header',
@@ -19,6 +23,7 @@ export class PatientHeaderComponent implements OnInit{
     visitingFor = "";
     gender = "";
     subscription: Subscription;
+    imageSource: string;
 
   constructor(private patientService: PatientService) {
     this.subscription = this.patientService.getPatientContagious(this.personalNumber).subscribe( (cont: any) => 
@@ -32,13 +37,18 @@ export class PatientHeaderComponent implements OnInit{
     });
 
   }
+
   ngOnInit(){
     this.updateTriageColor();
   }
 
-  rosclick() {
-    console.log("hej");
-    //NavComponent.addECG('198605119885');
+  openECG(pn: string) {
+    console.log("Show EKG for " + pn);
+    imageSource = '/assets/ECG.png'
+  }
+
+  openRoS(pn: string) {
+    console.log("Open RoS for " + pn);
   }
 
   updateTriageColor(){
@@ -57,6 +67,8 @@ export class PatientHeaderComponent implements OnInit{
       triageColor?.setAttribute('style', 'background-color: red');
     }
   }
+
+  
 }
 
 

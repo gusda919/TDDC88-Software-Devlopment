@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving } from '../../shared/models/patient';
 import { Observable } from 'rxjs';
 
+const httpOptions = {
+  headers: new HttpHeaders( { 'Content-Type': 'application/json' } )
+}
 
 @Injectable({
   providedIn: 'root'
@@ -100,6 +103,19 @@ export class PatientService {
   getPatientNewECG(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/newECG');
   }
+
+
+  /*
+  setPatientNoNewECG(patientID: string): Observable<any> {
+    return this.http.put<any>( this.baseUrl + patientID + '/newECG', "false", httpOptions);
+  }
+
+  setPatientNoNewECG2(patientID: string): Observable<any> {
+    let pat: Patient = this.getPatient(patientID);
+    pat.newECG = "false";
+    return this.http.put<any>( this.baseUrl + patientID + '/newECG', "false", httpOptions);
+  }
+*/
 
   //Service for getting all the vital parameters for the patient with person number "patientID"
   getPatientVitalparameters(patientID: string): Observable<VitalParameters> {
