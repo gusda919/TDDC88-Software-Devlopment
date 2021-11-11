@@ -22,10 +22,9 @@
 }
 
 .dropdown-menu{
-  display: block;
-  position: fixed;
-  left: 90%;
-  top: 10%;
+  position: absolute;
+  right: 1rem;
+  top: 4rem;
   background-color: white;
   padding: 0.75rem;
   border-radius: 0.25rem;
@@ -48,8 +47,10 @@
 }
 
 #profile-button{
+
 background-color:transparent;
 border: none;
+
 }
 
 #spacer {
