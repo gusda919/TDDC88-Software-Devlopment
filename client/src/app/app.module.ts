@@ -28,6 +28,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { PatientDashboardModule } from './modules/patient-dashboard/patient-dashboard.module';
 import { PatientsOverviewModule } from './modules/patients-overview/patients-overview.module';
 import { JournalComponent } from './modules/patient-dashboard/components/journal/journal.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { JournalComponent } from './modules/patient-dashboard/components/journal
     MatButtonModule,
     MatTableModule,
     CdkTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PatientService } from 'src/app/core/services/patient.service';
 import { Caregiving, Lab, Drug } from 'src/app/shared/models/patient';
-
+import { faMicroscope, faPills, faHandHoldingMedical } from '@fortawesome/free-solid-svg-icons'
 
 
 
 interface TimelineEvent {
   date: Date,
-  icon: string,
+  icon: any,
   type: string,
   data: any,
 }
@@ -31,6 +31,10 @@ export class TimelineComponent implements OnInit {
   drugs: Drug[];
   events: TimelineEvent[] = [];
 
+  faMicroscope = faMicroscope;
+  faPills = faPills;
+  faHandHoldingMedical = faHandHoldingMedical;
+  
 
   constructor(private patientService: PatientService) { }
 
@@ -39,7 +43,7 @@ export class TimelineComponent implements OnInit {
     this.patientService.getPatientCaregiving(this.patientId).subscribe((caregiving: Caregiving[]) => {      
       let events: TimelineEvent[] = caregiving.map((c: Caregiving): TimelineEvent => ({
         date: new Date(c.date+"T"+c.time),
-        icon: 'event',
+        icon: faHandHoldingMedical,
         type: 'caregiving',
         data: c.note
       })
@@ -54,7 +58,7 @@ export class TimelineComponent implements OnInit {
     this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
       let events: TimelineEvent[] = labs.map((l: Lab): TimelineEvent => ({
         date: new Date(l.date+"T"+l.time),
-        icon: 'event',
+        icon: faMicroscope,
         type: 'lab',
         data: l.tests,
       })
@@ -68,7 +72,7 @@ export class TimelineComponent implements OnInit {
     this.patientService.getPatientDrugs(this.patientId).subscribe((drugs: Drug[]) => {      
       let events: TimelineEvent[] = drugs.map((d: Drug): TimelineEvent => ({
         date: new Date(d.date+"T"+d.time),
-        icon: 'event',
+        icon: faPills,
         type: 'drug',
         data: {
           type: d.type,

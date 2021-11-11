@@ -20,6 +20,8 @@ import { JournalComponent } from './components/journal/journal.component';
 import { PatientHeaderComponent } from './components/patient-header/patient-header.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { MyGraphComponent } from './components/my-graph/my-graph.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { MyGraphComponent } from './components/my-graph/my-graph.component';
     MatCardModule,
     MatButtonModule,
     MatMenuModule,
+    FontAwesomeModule,
   ],
 })
 export class PatientDashboardModule {}
