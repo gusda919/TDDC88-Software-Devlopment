@@ -41,6 +41,7 @@ export class PatientHeaderComponent implements OnInit{
     this.patientService.getPatient(this.patientId).subscribe( (cont: any) => {
       this.name = cont.givenName + " " + cont.familyName,
       this.triage = cont.triage,
+      this.contagious = cont.contagious ==="true",
       this.visitingFor = cont.description.substr(cont.description.indexOf(" ") + 1).charAt(0).toUpperCase() + cont.description.substr(cont.description.indexOf(" ") + 1).slice(1),
       this.gender = cont.gender.charAt(0).toUpperCase() + cont.gender.slice(1)
       this.updateTriageColor();

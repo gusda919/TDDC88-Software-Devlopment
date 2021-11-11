@@ -929,7 +929,7 @@
       "description": "kvinna onormal hjärtrytm",
       "gender": "kvinna",
       "triage": "yellow",
-      "contagious": "true",
+      "contagious": "false",
       "newECG": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {

@@ -42,7 +42,8 @@ router.get('/patients/:patientID', async (req: Request, res: Response) => {
       familyName: patient.familyName,
       description: patient.description,
       gender: patient.gender,
-      triage: patient.triage
+      triage: patient.triage,
+      contagious: patient.contagious
     }))
   }
   else {
