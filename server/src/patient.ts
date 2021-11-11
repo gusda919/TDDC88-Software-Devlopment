@@ -17,6 +17,7 @@ export interface Patient {
 }
 
 export interface Caregiving {
+    date: string;
     time: string;
     note: string;
 }
