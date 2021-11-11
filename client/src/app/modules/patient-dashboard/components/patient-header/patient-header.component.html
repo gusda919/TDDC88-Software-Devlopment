@@ -52,19 +52,14 @@
                 <p class = "informationBoxValue" > {{gender}}</p> 
             </div>   
 
-            <div id= "buttonsDiv">
+            <div id = "rosButtonDiv" class="headerButton" >
+                <button mat-raised-button color="primary" id = "rosButton" (click)="openRoS(patientId)">RoS</button>
+            </div> 
 
-                <div id = "rosButtonDiv" >
-                    <button mat-raised-button color="primary" id = "rosButton" (click)="openRoS(patientId)">RoS</button>
-               </div> 
-
-               <div id = "EKGButtonDiv" >
-                    <button mat-raised-button color="primary" id = "erg" (click)="openModal(patientId)">EKG</button>
-              </div> 
-
-            </div>
-          
-
+            <div id = "EKGButtonDiv" class="headerButton" >
+                <button mat-raised-button color="primary" id = "erg" (click)="openModal(patientId)">EKG</button>
+            </div> 
+        
         </div>
 
 

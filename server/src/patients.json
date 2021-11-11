@@ -5,13 +5,9 @@
         "givenName": "Jan",
         "description": "man skada höft",
         "gender": "man",
-<<<<<<< HEAD
         "triage": "green",
-=======
         "contagious": "true",
         "newECG": "true",
-        "triage": "grön",
->>>>>>> cabba42ec76412cdaae76885909ac5197a736c23
         "importantInformation":  null,
         "proposedMeasures": null,
         "VitalParameters": {
@@ -932,14 +928,9 @@
       "givenName": "Klara",
       "description": "kvinna onormal hjärtrytm",
       "gender": "kvinna",
-<<<<<<< HEAD
       "triage": "yellow",
-      "contagious": "false",
-=======
-      "triage": "gul",
       "contagious": "true",
       "newECG": "false",
->>>>>>> cabba42ec76412cdaae76885909ac5197a736c23
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
