@@ -25,7 +25,8 @@ export class DashboardPageComponent implements OnInit {
             { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 2, rows: 1 },
             { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 2, rows: 1 },
             { title: 'Respiratory Rate', contentType: 'line-chart', cols: 2, rows: 1 },
-            { title: 'Body Temperature', contentType: 'line-chart', cols: 2, rows: 1 }
+            { title: 'Body Temperature', contentType: 'line-chart', cols: 2, rows: 1 },
+            { title: 'Silhouette', contentType: 'img', cols: 1, rows: 1 ,}
           ];
         }
         if (this.breakpointObserver.isMatched(Breakpoints.Tablet)) {
@@ -35,7 +36,8 @@ export class DashboardPageComponent implements OnInit {
             { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
             { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 1 },
             { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
-            { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 }
+            { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 },
+            { title: 'Silhouette', contentType: 'img', cols: 1, rows: 1 ,}
           ];
         }
         
@@ -47,7 +49,8 @@ export class DashboardPageComponent implements OnInit {
         { title: 'Systolic Blood preassure', contentType: 'line-chart', cols: 1, rows: 1 },
         { title: 'Heart Rate (Pulse)', contentType: 'line-chart', cols: 1, rows: 2 },
         { title: 'Respiratory Rate', contentType: 'line-chart', cols: 1, rows: 1 },
-        { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 }
+        { title: 'Body Temperature', contentType: 'line-chart', cols: 1, rows: 1 },
+        { title: 'Silhouette', contentType: 'img', cols: 1, rows: 1 ,}
       ];
     })
   );
