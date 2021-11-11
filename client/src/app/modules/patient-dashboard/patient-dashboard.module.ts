@@ -33,6 +33,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TimelineComponent,
     MyGraphComponent,
     VpboxComponent,
+    BodySilhouetteComponent,
   ],
   imports: [
     CommonModule,
