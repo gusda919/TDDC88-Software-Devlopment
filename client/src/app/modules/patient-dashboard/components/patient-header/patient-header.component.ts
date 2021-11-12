@@ -74,13 +74,18 @@ export class PatientHeaderComponent implements OnInit{
     let modal = document.getElementById("myModal");
     document.getElementById('img01')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
     modal?.style.setProperty("display", "block")
-
+    
+    document.getElementById('outer-wrapper-id')?.style.setProperty('opacity', '0.7');
+    document.getElementById('sidenav-id')?.style.setProperty('opacity', '0.2');
   }
 
   closeModal() {
     console.log("closing")
     let modal = document.getElementById("myModal");
     modal?.style.setProperty("display", "none")
+
+    document.getElementById('outer-wrapper-id')?.style.setProperty('opacity', '1');
+    document.getElementById('sidenav-id')?.style.setProperty('opacity', '1');
   }
   
 }
