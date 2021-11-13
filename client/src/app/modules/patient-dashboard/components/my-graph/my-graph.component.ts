@@ -13,22 +13,26 @@ export class MyGraphComponent implements OnInit {
   constructor() {}
 
   @Input() vitalParameters: any;
+  @Input() bloodPressure: any;
+  @Input() pulse: any;
   labels: string[] = [];
+  bloodPressureLabels: string[] = [];
+  pulseLabels: string[] = [];
+  
   data: number[] = [];
   systolic: number[] = [];
   diastolic: number[] = [];
 
 
   ngOnInit() {
-    console.log(this.vitalParameters);
-    this.addTimestamps();
-    this.addValues();
+ 
+    if(this.vitalParameters == null) {
+      this.addTimestampsBloodPressureAndPulseGraph();
+      this.addValuesBloodPressureAndPulseGraph();
 
-    if(this.vitalParameters.label=='Blodtryck') {
       var myGraph = new Chart('myGraph', {
         type: 'line',
         data: {
-          labels: this.labels,
           datasets: [
             {
               data: this.systolic,
@@ -42,6 +46,12 @@ export class MyGraphComponent implements OnInit {
               borderColor: '#ff0019',
               fill: false,
             },
+            {
+              data: this.data,
+              label: 'Puls',
+              borderColor: '#03fc03',
+              fill: false,
+            },
           ],
         },
         options: {
@@ -51,7 +61,12 @@ export class MyGraphComponent implements OnInit {
           },
         },
       });
+
+
+
     } else {
+      this.addTimestamps();
+      this.addValues();
       var myGraph = new Chart('myGraph', {
         type: 'line',
         data: {
@@ -73,7 +88,6 @@ export class MyGraphComponent implements OnInit {
         },
       });
     }
-    
   }
 
   addTimestamps() {
@@ -83,16 +97,27 @@ export class MyGraphComponent implements OnInit {
   }
 
   addValues() {
-    if(this.vitalParameters.label=='Blodtryck') {
-      for(let i = 0; i < this.vitalParameters.data.length; i++) {
-        this.systolic.push(this.vitalParameters.data[i].systolic);
-        this.diastolic.push(this.vitalParameters.data[i].diastolic);
-      }
-    } else {
-      for(let i = 0; i < this.vitalParameters.data.length; i++) {
-        this.data.push(this.vitalParameters.data[i].value);
-      }
+    for(let i = 0; i < this.vitalParameters.data.length; i++) {
+      this.data.push(this.vitalParameters.data[i].value);
+    } 
+  }
+
+  addTimestampsBloodPressureAndPulseGraph() {
+    for(let i = 0; i < this.bloodPressure.data.length; i++) {
+      this.bloodPressureLabels.push(this.bloodPressure.data[i].time);
+    }
+    for(let i = 0; i < this.pulse.data.length; i++) {
+      this.pulseLabels.push(this.pulse.data[i].time);
     }
   }
 
+  addValuesBloodPressureAndPulseGraph() {
+    for(let i = 0; i < this.bloodPressure.data.length; i++) {
+      this.systolic.push(this.bloodPressure.data[i].systolic);
+      this.diastolic.push(this.bloodPressure.data[i].diastolic);
+    }
+    for(let i = 0; i < this.pulse.data.length; i++) {
+      this.data.push(this.pulse.data[i].value);
+    }
+  }
 }

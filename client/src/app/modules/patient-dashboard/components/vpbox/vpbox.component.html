@@ -14,7 +14,7 @@
           </div>
         </div>
       </mat-list-item>
-      <mat-list-item (click)="togglePulseGraph()">
+      <mat-list-item (click)="toggleBloodPressureAndPulseGraph()">
         <mat-icon matListIcon>placeholder</mat-icon>
         <h3 matLine>{{vitalParameters.pulse.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </mat-list-item>
-      <mat-list-item (click)="toggleBloodPressureGraph()">
+      <mat-list-item (click)="toggleBloodPressureAndPulseGraph()">
         <mat-icon matListIcon>placeholder</mat-icon>
         <h3 matLine>{{vitalParameters.bloodPressure.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
@@ -57,11 +57,8 @@
 <div *ngIf="isBloodOxygenDisplayed">
   <app-my-graph [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
 </div>
-<div *ngIf="isPulseDisplayed">
-  <app-my-graph [vitalParameters]="vitalParameters.pulse"></app-my-graph>
-</div>
-<div *ngIf="isBloodPressureDisplayed">
-  <app-my-graph [vitalParameters]="vitalParameters.bloodPressure"></app-my-graph>
+<div *ngIf="isBloodPressureAndPulseDisplayed">
+  <app-my-graph [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
 </div>
 <div *ngIf="isBodyTemperatureDisplayed">
   <app-my-graph [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
