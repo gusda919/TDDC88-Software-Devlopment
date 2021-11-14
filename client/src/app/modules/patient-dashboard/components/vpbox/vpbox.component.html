@@ -54,17 +54,14 @@
   </mat-card-content>
 </mat-card>
 
-<div *ngIf="isBloodOxygenDisplayed">
-  <app-my-graph [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
-</div>
-<div *ngIf="isBloodPressureAndPulseDisplayed">
-  <app-my-graph [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
-</div>
-<div *ngIf="isBodyTemperatureDisplayed">
-  <app-my-graph [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
-</div>
-<div *ngIf="isRespiratoryRateDisplayed">
-  <app-my-graph [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
-</div>
+
+<app-my-graph *ngIf="isBloodOxygenDisplayed" [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
+
+<app-my-graph *ngIf="isBloodPressureAndPulseDisplayed" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
+
+<app-my-graph *ngIf="isBodyTemperatureDisplayed" [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
+
+<app-my-graph *ngIf="isRespiratoryRateDisplayed"[vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
+
 
 </div>

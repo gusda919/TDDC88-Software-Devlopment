@@ -12,7 +12,7 @@ import { PatientService } from '../../../../core/services/patient.service'
 export class VpboxComponent implements OnInit {
 
   @Input()
-  patientId: string = "198605119885";
+  patientId: string;
 
   isLoaded = false;
   isBloodOxygenDisplayed = false;

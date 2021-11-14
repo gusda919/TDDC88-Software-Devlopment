@@ -16,8 +16,6 @@ export class MyGraphComponent implements OnInit {
   @Input() bloodPressure: any;
   @Input() pulse: any;
   labels: string[] = [];
-  bloodPressureLabels: string[] = [];
-  pulseLabels: string[] = [];
   
   data: number[] = [];
   systolic: number[] = [];
@@ -25,31 +23,41 @@ export class MyGraphComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.addTimestamps();
+    this.addValues();
+
  
     if(this.vitalParameters == null) {
-      this.addTimestampsBloodPressureAndPulseGraph();
-      this.addValuesBloodPressureAndPulseGraph();
+
+      const arrowDown = new Image(10,15);
+      arrowDown.src = '../../../../assets/arrow_down_bloodpressure_graph.png';
+      const arrowUp = new Image(10,15);
+      arrowUp.src = '../../../../assets/arrow_up_bloodpressure_graph.png'      
 
       var myGraph = new Chart('myGraph', {
-        type: 'line',
+        type: 'line',        
         data: {
+          labels: this.labels,
           datasets: [
             {
               data: this.systolic,
               label: 'Systoliskt blodtryck',
-              borderColor: '#0015ff',
+              borderColor: '#000000',
               fill: false,
+              pointStyle: arrowDown,
             },
             {
               data: this.diastolic,
               label: 'Diastoliskt blodtryck',
-              borderColor: '#ff0019',
+              borderColor: '#000000',
               fill: false,
+              pointStyle: arrowUp,
             },
             {
               data: this.data,
               label: 'Puls',
-              borderColor: '#03fc03',
+              borderColor: '#ff0000',
               fill: false,
             },
           ],
@@ -59,14 +67,15 @@ export class MyGraphComponent implements OnInit {
             display: true,
             // text: 'World population per region (in millions)'
           },
+          maintainAspectRatio: false,
+          legend: {
+            labels: {
+              usePointStyle: true,
+            },
+          }
         },
       });
-
-
-
     } else {
-      this.addTimestamps();
-      this.addValues();
       var myGraph = new Chart('myGraph', {
         type: 'line',
         data: {
@@ -85,39 +94,47 @@ export class MyGraphComponent implements OnInit {
             display: true,
             // text: 'World population per region (in millions)'
           },
+          maintainAspectRatio: false,
+          legend: {
+            labels: {
+              usePointStyle: true,
+            },
+          }
         },
       });
     }
   }
 
   addTimestamps() {
-    for(let i = 0; i < this.vitalParameters.data.length; i++) {
-      this.labels.push(this.vitalParameters.data[i].time);
+
+    if(this.vitalParameters==null) {
+      for(let i = 0; i < this.bloodPressure.data.length; i++) {
+        this.labels.push(this.bloodPressure.data[i].time);
+      }
+    } else {
+      for(let i = 0; i < this.vitalParameters.data.length; i++) {
+        this.labels.push(this.vitalParameters.data[i].time);
+      }
     }
+  
   }
 
   addValues() {
-    for(let i = 0; i < this.vitalParameters.data.length; i++) {
-      this.data.push(this.vitalParameters.data[i].value);
-    } 
+
+    if(this.vitalParameters==null) {
+      for(let i = 0; i < this.bloodPressure.data.length; i++) {
+        this.systolic.push(this.bloodPressure.data[i].systolic);
+        this.diastolic.push(this.bloodPressure.data[i].diastolic);
+      }
+      for(let i = 0; i < this.pulse.data.length; i++) {
+        this.data.push(this.pulse.data[i].value);
+      }  
+    } else {
+      for(let i = 0; i < this.vitalParameters.data.length; i++) {
+        this.data.push(this.vitalParameters.data[i].value);
+      } 
+    }
+
   }
 
-  addTimestampsBloodPressureAndPulseGraph() {
-    for(let i = 0; i < this.bloodPressure.data.length; i++) {
-      this.bloodPressureLabels.push(this.bloodPressure.data[i].time);
-    }
-    for(let i = 0; i < this.pulse.data.length; i++) {
-      this.pulseLabels.push(this.pulse.data[i].time);
-    }
-  }
-
-  addValuesBloodPressureAndPulseGraph() {
-    for(let i = 0; i < this.bloodPressure.data.length; i++) {
-      this.systolic.push(this.bloodPressure.data[i].systolic);
-      this.diastolic.push(this.bloodPressure.data[i].diastolic);
-    }
-    for(let i = 0; i < this.pulse.data.length; i++) {
-      this.data.push(this.pulse.data[i].value);
-    }
-  }
 }
