@@ -9,7 +9,7 @@
     <div class="timeline-wrapper">
     <mat-card-content>
         <div class="timeline-event" *ngFor="let event of events" (click)="displayEvent(event)">
-            {{event.date | date:'yyyy/MM/dd HH:mm'}} 
+            {{event.date | date:'HH:mm yyyy/MM/dd'}}
             <fa-icon class="timeline-event-icon fa-2x" aria-label="timeline event icon" [icon]="event.icon"></fa-icon>
         </div>
         <hr class="timeline-line">
