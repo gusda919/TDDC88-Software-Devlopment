@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
+import { faHeartbeat, faLungs, faThermometer } from '@fortawesome/free-solid-svg-icons';
 
 import { PatientService } from '../../../../core/services/patient.service'
 
@@ -15,6 +16,10 @@ export class VpboxComponent implements OnInit {
   patientId: string = "198605119885";
 
   isLoaded = false;
+  faHeartbeat = faHeartbeat;
+  faLungs = faLungs;
+  faThermometer = faThermometer;
+
   isBloodOxygenDisplayed = false;
   isPulseDisplayed = false;
   isBloodPressureDisplayed = false;
@@ -22,6 +27,8 @@ export class VpboxComponent implements OnInit {
   isRespiratoryRateDisplayed = false;
  
   vitalParameters: VitalParameters;
+
+
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
