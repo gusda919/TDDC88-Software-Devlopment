@@ -6,6 +6,8 @@
         "description": "man skada höft",
         "gender": "man",
         "triage": "green",
+        "contagious": "true",
+        "newECG": "true",
         "importantInformation":  null,
         "proposedMeasures": null,
         "VitalParameters": {
@@ -931,6 +933,7 @@
       "gender": "kvinna",
       "triage": "yellow",
       "contagious": "false",
+      "newECG": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
@@ -1862,6 +1865,7 @@
       "gender": "kvinna",
       "triage": "yellow",
       "contagious": "false",
+      "newECG": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
