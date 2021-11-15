@@ -33,11 +33,13 @@
 
 .timeline-event-icon {
   position: relative;
-  top: 32px;
+  top: 35px;
   left: -65px;
   transform: scale(1.5);
   z-index: 10;
   background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .timeline-line {
@@ -47,4 +49,3 @@
   position: absolute;
   width: 95%;
 }
-
