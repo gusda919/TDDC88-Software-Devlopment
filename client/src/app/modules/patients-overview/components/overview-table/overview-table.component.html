@@ -4,7 +4,12 @@
     <!-- Medical Issue-->
     <ng-container matColumnDef="issue">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Besvär</th>
-      <td mat-cell *matCellDef="let row">{{row.description | titlecase}}</td>
+      <td mat-cell *matCellDef="let row">{{row.description| titlecase}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Kön</th>
+      <td mat-cell *matCellDef="let row">{{row.gender | titlecase}}</td>
     </ng-container>
      <!--  Patient name-->
     <ng-container matColumnDef="name">
@@ -33,10 +38,9 @@
       <td mat-cell *matCellDef="let row">  <button mat-raised-button color= "{{triageColorMap[row.triage]}}" > {{triageTextMap[row.triage]}} </button> </td>
     </ng-container>
 
-<!-- getTriage(row.triage)-->
 
     <ng-container matColumnDef ="header" >
-      <th mat-header-cell *matHeaderCellDef colspan="4" >Enhetsöversikt - Akutmottagning </th>
+      <th mat-header-cell *matHeaderCellDef colspan="6" >Enhetsöversikt - Akutmottagning </th>
          </ng-container>
      
     <tr mat-header-row *matHeaderRowDef="groupedColumns; sticky: true"></tr>
