@@ -5,7 +5,6 @@ import { Subscription } from 'rxjs';
 import { NavComponent } from '../../../../core/header/nav/nav.component';
 import {MatDialog} from '@angular/material/dialog';
 
-
 let imageSource: string;
 
 @Component({
@@ -49,16 +48,6 @@ export class PatientHeaderComponent implements OnInit{
 
   }
 
-  openECG(pn: string) {
-    console.log("Show EKG for " + pn);
-
-    if (!this.ecgOpen) {
-      document.getElementById('ecg-img')?.setAttribute('src', '/assets/ECG.png');
-      this.ecgOpen = !this.ecgOpen;
-    } else {
-      document.getElementById('ecg-img')?.setAttribute('src', '');
-    }
-  }
 
   openRoS(pn: string) {
     console.log("Open RoS for " + pn);
@@ -69,17 +58,25 @@ export class PatientHeaderComponent implements OnInit{
     triageColor?.setAttribute('style', 'background-color: ' + this.triage);
   }
 
+   hideImg() {
 
-  openModal(patientId: string) {
+   }
+
+   openECGModal(patientId: string) {
     let modal = document.getElementById("myModal");
-    document.getElementById('img01')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
+
+    document.getElementById('ECGimg')?.setAttribute('alt', 'Ingen EKG hittades för patient med personnummer ' + patientId );
+    document.getElementById('ECGimg')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
+    //document.getElementById('ECGimg')?.setAttribute('onerror', "this.style.display='none'");
+    document.getElementById('ECGimg')?.setAttribute('onerror', "hideImg()");
+
     modal?.style.setProperty("display", "block")
     
     document.getElementById('outer-wrapper-id')?.style.setProperty('opacity', '0.7');
     document.getElementById('sidenav-id')?.style.setProperty('opacity', '0.2');
   }
 
-  closeModal() {
+  closeECGModal() {
     console.log("closing")
     let modal = document.getElementById("myModal");
     modal?.style.setProperty("display", "none")
