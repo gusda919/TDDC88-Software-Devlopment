@@ -92,7 +92,6 @@ export class TimelineComponent implements OnInit {
   }
 
   displayEvent(event: any) {
-    console.log(event);
     this.displayedEvent = event;
   }
 
