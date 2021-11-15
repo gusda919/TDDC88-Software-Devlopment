@@ -39,6 +39,18 @@
             <p>Typ: {{displayedEvent.data.type}}</p>
             <p>Dos: {{displayedEvent.data.dose}}</p>
         </div>
+        <div class="timeline-overview" >
+            <div class="timeline-arrow"  (click)="overView()">   
+
+
+               <mat-icon> arrow_back_ios</mat-icon> <span> Det finns fler händelser längre bak i tiden</span>
+ 
+            </div>
+          
+        </div>
+    
     </mat-card-subtitle>
+
+    
 
 </mat-card>

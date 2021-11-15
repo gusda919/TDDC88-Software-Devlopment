@@ -2,6 +2,7 @@
   width: 95%;
   float: left;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .timeline-wrapper {
@@ -39,7 +40,15 @@
   z-index: 10;
   background-color: white;
 }
+.timeline-overview {
 
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  
+  
+
+}
 .timeline-line {
   border: 2px dashed #000;
   margin-top: 20px;

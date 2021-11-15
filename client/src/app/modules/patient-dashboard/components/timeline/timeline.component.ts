@@ -96,4 +96,23 @@ export class TimelineComponent implements OnInit {
     this.displayedEvent = event;
   }
 
+
+  // placeholder function
+  overView() {
+
+    this.patientService.getPatientCaregiving(this.patientId).subscribe((caregiving: Caregiving[]) => {      
+      let events: TimelineEvent[] = caregiving.map((c: Caregiving): TimelineEvent => ({
+        date: new Date(c.date+"T"+c.time),
+        icon: faHandHoldingMedical,
+        type: 'caregiving',
+        data: c.note
+      })
+      );
+      this.events = this.events.concat(events);
+      this.getPatientLabs();
+    });
+   
+  }
+
+
 }
