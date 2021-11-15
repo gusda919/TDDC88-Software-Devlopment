@@ -22,6 +22,8 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { MyGraphComponent } from './components/my-graph/my-graph.component';
 import { BodySilhouetteComponent } from './components/body-silhouette/body-silhouette.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { JournalWidgetComponent } from './components/journal-widget/journal-widget.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MyGraphComponent,
     VpboxComponent,
     BodySilhouetteComponent,
+    JournalWidgetComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +51,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatButtonModule,
     MatMenuModule,
     FontAwesomeModule,
+    MatToolbarModule,
   ],
 })
 export class PatientDashboardModule {}
