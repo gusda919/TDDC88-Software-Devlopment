@@ -5,7 +5,6 @@ import { Subscription } from 'rxjs';
 import { NavComponent } from '../../../../core/header/nav/nav.component';
 import {MatDialog} from '@angular/material/dialog';
 
-
 let imageSource: string;
 
 @Component({
@@ -69,10 +68,19 @@ export class PatientHeaderComponent implements OnInit{
     triageColor?.setAttribute('style', 'background-color: ' + this.triage);
   }
 
+   hideImg() {
+
+
+   }
 
   openModal(patientId: string) {
     let modal = document.getElementById("myModal");
-    document.getElementById('img01')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
+
+    document.getElementById('ECGimg')?.setAttribute('alt', 'Ingen EKG hittades för patient med personnummer ' + patientId );
+    document.getElementById('ECGimg')?.setAttribute('src', '/assets/ECG' + patientId + '.pngs');
+    //document.getElementById('ECGimg')?.setAttribute('onerror', "this.style.display='none'");
+    document.getElementById('ECGimg')?.setAttribute('onerror', "hideImg()");
+
     modal?.style.setProperty("display", "block")
     
     document.getElementById('outer-wrapper-id')?.style.setProperty('opacity', '0.7');
