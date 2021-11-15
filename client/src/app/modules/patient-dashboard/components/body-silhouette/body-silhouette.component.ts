@@ -52,9 +52,4 @@ export class BodySilhouetteComponent implements OnInit {
 
 
 }
-
-
-
-
-
-
+ 
