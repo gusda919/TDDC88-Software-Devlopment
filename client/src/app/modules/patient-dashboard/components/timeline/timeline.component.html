@@ -18,10 +18,12 @@
 
     <mat-card-subtitle>
         <div *ngIf="displayedEvent && displayedEvent.type=='caregiving'" class="timeline-event-info">
+            <mat-icon style="float: right;" (click)="closeDisplayedEvent()">close</mat-icon>
             <h2>Omhändertagande</h2>
             <p>{{displayedEvent.data}}</p>
         </div>
         <div *ngIf="displayedEvent && displayedEvent.type=='lab'"  class="timeline-event-info">
+            <mat-icon style="float: right;" (click)="closeDisplayedEvent()">close</mat-icon>
             <h2>Labbresultat</h2>
             <table>
                 <tr>
@@ -35,6 +37,7 @@
             </table>
         </div>
         <div *ngIf="displayedEvent && displayedEvent.type=='drug'" class="timeline-event-info">
+            <mat-icon style="float: right;" (click)="closeDisplayedEvent()">close</mat-icon>
             <h2>Medicinering</h2>
             <p>Typ: {{displayedEvent.data.type}}</p>
             <p>Dos: {{displayedEvent.data.dose}}</p>

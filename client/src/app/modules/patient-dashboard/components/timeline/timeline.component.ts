@@ -81,7 +81,6 @@ export class TimelineComponent implements OnInit {
       })
       );
       this.events = this.events.concat(events);
-      console.log(this.events);
       this.sortData(); 
     });
   }
@@ -93,7 +92,12 @@ export class TimelineComponent implements OnInit {
   }
 
   displayEvent(event: any) {
+    console.log(event);
     this.displayedEvent = event;
+  }
+
+  closeDisplayedEvent() {
+    this.displayedEvent = <TimelineEvent>{};
   }
 
 }
