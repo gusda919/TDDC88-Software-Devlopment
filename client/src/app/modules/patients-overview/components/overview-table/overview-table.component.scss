@@ -14,12 +14,16 @@
   font-size: 20px
 }
 .mat-column-header {
-  
+  color: rgba(19, 19, 19, 0.753);
   font-weight: bold;
-  font-size: 20px
+  font-size: 24px;
 }
 
 .mat-column-issue {
+
+  font-size: 14px
+}
+.mat-column-gender {
 
   font-size: 14px
 }
@@ -48,7 +52,7 @@
 
 .mat-button.mat-high,
 .mat-stroked-button.mat-high {
-    color: #eb3131;
+    color: #F44336;
 }
 .mat-button.mat-high:hover,
 .mat-stroked-button.mat-high:hover {
@@ -60,19 +64,19 @@
 .mat-fab.mat-high,
 .mat-mini-fab.mat-high {
   color: #f0fff3;
-  background-color: #eb3131;
+  background-color: #F44336;
 }
 
 .mat-icon-button.mat-high {
-  color:#eb3131;
+  color:#F44336;
 }
 
 .mat-button.mat-normal,
 .mat-stroked-button.mat-normal {
-    color: #31eb69;
+    color: #4CAF50;
 }
 .mat-button.mat-normal:hover,
-.mat-stroked-button.mat-normalover {
+.mat-stroked-button.mat-norma:Hover {
   background-color: #f0fff3;
 }
 
@@ -81,18 +85,18 @@
 .mat-fab.mat-normal,
 .mat-mini-fab.mat-normal {
   color: #f0fff3;
-  background-color: #31eb69;
+  background-color: #4CAF50;;
 }
 
 .mat-icon-button.mat-normal{
-  color:#31eb69;
+  color:#4CAF50;
 }
 
 
 
 .mat-button.mat-low,
 .mat-stroked-button.mat-low {
-    color: #d8eb31;
+    color: #FFEB3B;
 }
 .mat-button.mat-gul:hover,
 .mat-stroked-button.mat-low:hover {
@@ -104,9 +108,9 @@
 .mat-fab.mat-low,
 .mat-mini-fab.mat-low {
   color: #f0fff3;
-  background-color: #d8eb31;
+  background-color: #FFEB3B;
 }
 .mat-icon-button.mat-low {
-  color:#d8eb31;
+  color:#FFEB3B;
 }
 
