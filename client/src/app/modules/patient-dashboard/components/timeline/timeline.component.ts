@@ -30,6 +30,7 @@ export class TimelineComponent implements OnInit {
   labs: Lab[];
   drugs: Drug[];
   events: TimelineEvent[] = [];
+  clickedButton: any;
 
   faMicroscope = faMicroscope;
   faPills = faPills;
@@ -97,6 +98,7 @@ export class TimelineComponent implements OnInit {
 
   closeDisplayedEvent() {
     this.displayedEvent = <TimelineEvent>{};
+    this.clickedButton = null;
   }
 
 }
