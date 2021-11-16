@@ -14,8 +14,6 @@ router.get('/users', async (req: Request, res: Response) => {
 
 router.get('/patients', async (req: Request, res: Response) => {
   // route for getting overview attributes for all patients
-  console.log("in /patients");
-
   // reduce the patient objects to only include overview attributes
   res.json(patients.map((p: Patient) => ({
     patientID: p.patientID,
@@ -32,9 +30,7 @@ router.get('/patients', async (req: Request, res: Response) => {
 });
 
 router.get('/patients/:patientID', async (req: Request, res: Response) => {
-  console.log("Hej")
   let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
-  console.log(patient)
   if (patient) {
     res.json( ({
       patientID: patient.patientID,
