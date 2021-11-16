@@ -14,8 +14,6 @@ router.get('/users', async (req: Request, res: Response) => {
 
 router.get('/patients', async (req: Request, res: Response) => {
   // route for getting overview attributes for all patients
-  console.log("in /patients");
-
   // reduce the patient objects to only include overview attributes
   res.json(patients.map((p: Patient) => ({
     patientID: p.patientID,
@@ -24,15 +22,15 @@ router.get('/patients', async (req: Request, res: Response) => {
     description: p.description,
     gender: p.gender,
     triage: p.triage,
+    contagious: p.contagious,
+    newecg: p.newECG,
     caregiving: p.caregiving
   })
   ));
 });
 
 router.get('/patients/:patientID', async (req: Request, res: Response) => {
-  console.log("Hej")
   let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
-  console.log(patient)
   if (patient) {
     res.json( ({
       patientID: patient.patientID,
@@ -40,7 +38,8 @@ router.get('/patients/:patientID', async (req: Request, res: Response) => {
       familyName: patient.familyName,
       description: patient.description,
       gender: patient.gender,
-      triage: patient.triage
+      triage: patient.triage,
+      contagious: patient.contagious
     }))
   }
   else {
@@ -141,6 +140,18 @@ router.get('/patients/:patientID/contagious', async (req: Request, res: Response
     res.json("Patient med personnummer " + req.params.patientID + " finns inte i systemet");
   }
 });
+
+router.get('/patients/:patientID/newECG', async (req: Request, res: Response) => {
+  //route for getting data whether a patient has a new ECG or not. 
+  let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
+  if (patient) {
+    res.json(patient.newECG);
+  }
+  else {
+    res.json("Patient med personnummer " + req.params.patientID + " finns inte i systemet");
+  }
+});
+
 
 router.get('/patients/:patientID/vitalParameters', async (req: Request, res: Response) => {
   //route for getting all the vitalparameters for the patient with patient id "patientID"

@@ -14,7 +14,7 @@
   <span id="spacer"></span>
   <span id="dateTime">{{date| date: 'y/MM/dd, HH:mm' }}</span>
   <button  mat-icon-button id="mail_button" (click)="getMessages()" aria-label="Example icon-button with heart icon">
-    <mat-icon matBadge="{{messages.length}}" matBadgeColor="warn">notifications</mat-icon>
+    <mat-icon matBadge="{{messages.length}}" [matBadgeHidden] = "messages.length===0" matBadgeColor="warn">notifications</mat-icon>
   </button>
   <!--Profile section should include picture & name?-->
   <div id="profile_div" style="padding-left: 1rem;" >
@@ -93,7 +93,7 @@
 </mat-card>
 
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" 
+  <mat-sidenav #drawer class="sidenav" id="sidenav-id" 
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">

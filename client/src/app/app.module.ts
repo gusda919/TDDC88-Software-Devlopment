@@ -29,7 +29,7 @@ import { PatientDashboardModule } from './modules/patient-dashboard/patient-dash
 import { PatientsOverviewModule } from './modules/patients-overview/patients-overview.module';
 import { JournalComponent } from './modules/patient-dashboard/components/journal/journal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -58,6 +58,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CdkTableModule,
     MatBadgeModule,
     FontAwesomeModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
+import { faHeartbeat, faLungs, faThermometer } from '@fortawesome/free-solid-svg-icons';
 
 import { PatientService } from '../../../../core/services/patient.service'
 
@@ -12,16 +13,21 @@ import { PatientService } from '../../../../core/services/patient.service'
 export class VpboxComponent implements OnInit {
 
   @Input()
-  patientId: string = "198605119885";
+  patientId: string;
 
   isLoaded = false;
+  faHeartbeat = faHeartbeat;
+  faLungs = faLungs;
+  faThermometer = faThermometer;
+
   isBloodOxygenDisplayed = false;
-  isPulseDisplayed = false;
-  isBloodPressureDisplayed = false;
+  isBloodPressureAndPulseDisplayed = false;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
  
   vitalParameters: VitalParameters;
+
+
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
@@ -75,18 +81,12 @@ export class VpboxComponent implements OnInit {
     this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;
   }
 
-  togglePulseGraph() {
-    if(!this.isPulseDisplayed) {
-      this.checkIfAnyGraphIsToggled();
-    }
-    this.isPulseDisplayed = !this.isPulseDisplayed;
-  }
 
-  toggleBloodPressureGraph() {
-    if(!this.isBloodPressureDisplayed) {
+  toggleBloodPressureAndPulseGraph() {
+    if(!this.isBloodPressureAndPulseDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodPressureDisplayed = !this.isBloodPressureDisplayed;
+    this.isBloodPressureAndPulseDisplayed = !this.isBloodPressureAndPulseDisplayed;
   }
 
   toggleBodyTemperatureGraph() {
@@ -105,13 +105,11 @@ export class VpboxComponent implements OnInit {
 
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
-      this.isPulseDisplayed || 
-      this.isBloodPressureDisplayed || 
+      this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
       this.isRespiratoryRateDisplayed) {
         this.isBloodOxygenDisplayed = false;
-        this.isPulseDisplayed = false;
-        this.isBloodPressureDisplayed = false;
+        this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
     }

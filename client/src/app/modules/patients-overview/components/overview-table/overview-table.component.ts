@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 
-import { PatientService } from 'src/app/core/mocks/patient.service';
-import { Patient } from 'src/app/core/mocks/patient';
+import { PatientService } from 'src/app/core/services/patient.service';
+import { Patient } from 'src/app/shared/models/patient';
+import { DataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-overview-table',
@@ -23,6 +24,12 @@ export class OverviewTableComponent implements AfterViewInit {
     "orange": "Orange",
     "red": "Röd"
   }
+  triageValueMap: any = {
+    "green": 1,
+    "yellow": 2,
+    "orange": 3,
+    "red": 4
+  }
   triageColorMap: any = {
     "green": "normal",
     "yellow": "low",
@@ -30,10 +37,12 @@ export class OverviewTableComponent implements AfterViewInit {
   }
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['issue', 'name', 'id' ,'date', 'triage'];
-  groupedColumns =['header'];
+  displayedColumns = ['issue', 'gender', 'name', 'id' ,'date', 'triage'];
+  groupedColumns = ['header'];
+  sortedData: Patient[];
 
   constructor(private patientService: PatientService) {
+    this.sortedData = this.dataSource.data;
   }
 
   ngAfterViewInit(): void {
@@ -49,4 +58,46 @@ export class OverviewTableComponent implements AfterViewInit {
     });
 
   }
+
+  sortData(sort:Sort) {
+
+    const data = this.dataSource.data.slice();
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+      return;
+    }
+
+
+    this.dataSource.data = data.sort((a: Patient, b: Patient) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'name':
+          return compare(a.familyName, b.familyName, isAsc);
+          case 'gender':
+          return compare(a.gender, b.gender, isAsc);
+        case 'issue':
+          return compare(a.description, b.description, isAsc);
+        case 'id':
+          return compare(a.patientID, b.patientID, isAsc);
+        case 'date':
+          return compare(a.caregiving[a.caregiving.length-1].time, b.caregiving[b.caregiving.length-1].time, isAsc);
+        case 'triage':
+          return compare(this.triageValueMap[a.triage], this.triageValueMap[b.triage], isAsc);
+        default:
+          return 0;
+
+      }
+    });
+
+
+  }
+
+  
+}
+
+function compare(a: number | string, b: number | string, isAsc: boolean) {
+
+
+
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
