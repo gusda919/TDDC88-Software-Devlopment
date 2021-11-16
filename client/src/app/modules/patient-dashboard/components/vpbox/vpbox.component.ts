@@ -27,8 +27,6 @@ export class VpboxComponent implements OnInit {
  
   vitalParameters: VitalParameters;
 
-
-
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
