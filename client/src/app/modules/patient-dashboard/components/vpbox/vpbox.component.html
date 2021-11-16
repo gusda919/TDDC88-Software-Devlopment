@@ -6,16 +6,16 @@
   <mat-card-content>
     <mat-action-list>
       <mat-list-item (click)="toggleBloodOxygenGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <img matListIcon src='../../../../../assets/spo2-icon.png'>
         <h3 matLine>{{vitalParameters.bloodOxygenLevel.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBloodOxygenLevel()}} %</div>
+            <div class="param" fxFlex="30">{{getLatestBloodOxygenLevel()}}%</div>
           </div>
         </div>
       </mat-list-item>
       <mat-list-item (click)="toggleBloodPressureAndPulseGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <fa-icon matListIcon [icon]='faHeartbeat'></fa-icon>
         <h3 matLine>{{vitalParameters.pulse.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
@@ -24,7 +24,7 @@
         </div>
       </mat-list-item>
       <mat-list-item (click)="toggleBloodPressureAndPulseGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <img matListIcon src='../../../../../assets/blood-pressure-icon.png'>
         <h3 matLine>{{vitalParameters.bloodPressure.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
@@ -33,16 +33,16 @@
         </div>
       </mat-list-item>
       <mat-list-item (click)="toggleBodyTemperatureGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <fa-icon matListIcon [icon]='faThermometer'></fa-icon>
         <h3 matLine>{{vitalParameters.bodyTemperature.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBodyTemperature()}} °C</div>
+            <div class="param" fxFlex="30">{{getLatestBodyTemperature()}}°C</div>
           </div>
         </div>
       </mat-list-item>
       <mat-list-item (click)="toggleRespiratoryRateGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <fa-icon matListIcon [icon]='faLungs'></fa-icon>
         <h3 matLine>{{vitalParameters.respiratoryRate.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
