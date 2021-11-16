@@ -1,13 +1,8 @@
 <mat-card class="silhouette-card"> 
     <mat-card-content [ngSwitch]="isListDisplayed">
-        <div id="silhouette" *ngSwitchCase="false" [ngSwitch]="patientId">
-            <button _ngcontent-iki-c138="" (click)="toggleList()" mat-button="" color="primary" class="mat-focus-indicator mat-button mat-button-base mat-primary"><span class="mat-button-wrapper">Visa Historik</span><span matripple="" class="mat-ripple mat-button-ripple"></span><span class="mat-button-focus-overlay"></span></button>
-            <img id="body_silhouette" *ngSwitchCase="195001232296" src="../../../../../assets/Jan_Bodstrom_png.png" width=100% height=20%>
-            <img id="body_silhouette" *ngSwitchCase="198605119885" src="../../../../../assets/Klara_Rosfors_png.png" width=100%>
-            <img id="body_silhouette" *ngSwitchCase="194202269207" src="../../../../../assets/Anna_Skoog_png.png" width=100%>
-        </div>
         <div id="silhouette-list" *ngSwitchCase="true">            
-            <button _ngcontent-iki-c138="" (click)="toggleList()" mat-button="" color="primary" class="mat-focus-indicator mat-button mat-button-base mat-primary"><span class="mat-button-wrapper">Stäng</span><span matripple="" class="mat-ripple mat-button-ripple"></span><span class="mat-button-focus-overlay"></span></button>
+            <button _ngcontent-iki-c138=""  (click)="toggleList()" mat-button="" color="primary" class="mat-focus-indicator mat-button mat-button-base mat-primary"><span class="mat-button-wrapper">Stäng</span><span matripple="" class="mat-ripple mat-button-ripple"></span><span class="mat-button-focus-overlay"></span></button>
+            <mat-divider id="icon-divider"></mat-divider>
             <table id="silhouette-table">
                 <tr>
                     <th>Tillsatt</th>
@@ -26,6 +21,32 @@
                     <td>{{data.actionTime}}</td>
                 </tr>
             </table>
-        </div>    
+            <mat-divider id="icon-divider"></mat-divider>
+        </div>
+        <div id="silhouette" [ngSwitch]="patientId">
+            <button _ngcontent-iki-c138="" *ngIf="!isListDisplayed" (click)="toggleList()" mat-button="" color="primary" class="mat-focus-indicator mat-button mat-button-base mat-primary"><span class="mat-button-wrapper">Visa Historik</span><span matripple="" class="mat-ripple mat-button-ripple"></span><span class="mat-button-focus-overlay"></span></button>
+            <img id="body_silhouette" *ngSwitchCase="195001232296" src="../../../../../assets/Jan_Bodstrom_png.png" width=100%>
+            <img id="body_silhouette" *ngSwitchCase="198605119885" src="../../../../../assets/Klara_Rosfors_png.png" width=100%>
+            <img id="body_silhouette" *ngSwitchCase="194202269207" src="../../../../../assets/Anna_Skoog_png.png" width=100%>
+        </div>
+        <mat-divider id="icon-divider"></mat-divider>
+        <div id="silhouette-icons">
+            <div class="icons">
+                <img class="icon" src="../../../../../assets/Infart.png" >
+                <p>Infart</p>
+            </div>
+            <div class="icons">
+                <img class="icon" src="../../../../../assets/Utfart.png" >
+                <p>Utfart</p>
+            </div>
+            <div class="icons">
+                <img class="icon" src="../../../../../assets/Skada.png" >
+                <p>Skada</p>
+            </div>
+            
+        </div>
+        <mat-divider id="icon-divider"></mat-divider>
+            
     </mat-card-content>
 </mat-card>
+
