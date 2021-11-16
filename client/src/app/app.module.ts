@@ -30,6 +30,8 @@ import { PatientsOverviewModule } from './modules/patients-overview/patients-ove
 import { JournalComponent } from './modules/patient-dashboard/components/journal/journal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+//import { uuid } from 'uuid';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatBadgeModule,
     FontAwesomeModule,
     MatSnackBarModule,
+   // uuidv4,
   ],
   providers: [],
   bootstrap: [AppComponent]

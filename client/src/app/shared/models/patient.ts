@@ -5,6 +5,9 @@ export interface Patient {
     description:          string;
     gender:               string;
     triage:               string;
+    contagious:           string;
+    newECG:               string;
+    newXray:              string;
     importantInformation: null;
     proposedMeasures:     null;
     VitalParameters:      VitalParameters;

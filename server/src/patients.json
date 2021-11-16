@@ -8,6 +8,7 @@
         "triage": "green",
         "contagious": "true",
         "newECG": "true",
+        "newXray": "true",
         "importantInformation":  null,
         "proposedMeasures": null,
         "VitalParameters": {
@@ -934,6 +935,7 @@
       "triage": "yellow",
       "contagious": "false",
       "newECG": "false",
+      "newXray": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
@@ -1866,7 +1868,8 @@
       "gender": "kvinna",
       "triage": "yellow",
       "contagious": "false",
-      "newECG": "false",
+      "newECG": "true",
+      "newXray": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
