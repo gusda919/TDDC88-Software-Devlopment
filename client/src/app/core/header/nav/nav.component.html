@@ -6,22 +6,24 @@
     (click)="drawer.toggle()">
     <mat-icon aria-label="Side nav toggle icon">{{ drawer.opened ? 'menu_open' : 'menu' }}</mat-icon>
   </button>
-  <div id="header-logo"> <!-- Need new Logo && Replace onclick link to eventual homepage-->
+  <div id="header-logo" style="margin-left: 13px;">
+  <!-- Need new Logo && Replace onclick link to eventual homepage-->
     <img id="logo" alt="Missing logo" src="../../../../assets/Logo_Region_Östergötland.png"
       onclick="document.location.href='#'" >
   </div>
   <!--<span>Region Östergötland </span>  -->
   <span id="spacer"></span>
-  <span id="dateTime">{{date| date: 'y/MM/dd, HH:mm' }}</span>
+  <span id="dateTime">{{date| date: 'y/MM/dd &nbsp;HH:mm&nbsp;' }}</span>
+
   <button  mat-icon-button id="mail_button" (click)="getMessages()" aria-label="Example icon-button with heart icon">
     <mat-icon matBadge="{{messages.length}}" [matBadgeHidden] = "messages.length===0" matBadgeColor="warn">notifications</mat-icon>
   </button>
   <!--Profile section should include picture & name?-->
-  <div id="profile_div" style="padding-left: 1rem;" >
+  <div id="profile_div" style="margin-left: 5px; margin-right: auto; margin-top: 7px;" >
     <div class="dropdown">
       <button id="profile-button" (click)="getProfile()">
 
-          <img src="../../../../assets/Profile1.svg" width="50px" height="50px" alt="Missing profile picture" style="cursor:pointer">
+          <img src="../../../../assets/TesP.png" width="50px" height="50px" alt="Missing profile picture" style="cursor:pointer">
       </button>
       </div>
   </div>
@@ -31,7 +33,7 @@
 <div class="dropdown-menu" *ngIf="displayProfile">
   <div id="dropdown-profile" style="text-align:center;">
     <picture>
-      <img src="../../../../assets/Profile1.svg" width="50px" height="50px" alt="Missing profile picture" >
+      <img src="../../../../assets/TesP.png" width="50px" height="50px" alt="Missing profile picture" >
     </picture>
     <p>
       <b>
