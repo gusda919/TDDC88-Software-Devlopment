@@ -1,0 +1,53 @@
+<!-- <div id="journal-widget">
+  <h2>Journal</h2>
+  <mat-toolbar>
+      <mat-toolbar-row>
+          <span (click)="showNotes()"><fa-icon [icon]="faNotesMedical"></fa-icon> Anteckningar</span>
+          <span (click)="showReferrals()"><fa-icon [icon]="faEnvelope"></fa-icon> Remisser</span>
+      </mat-toolbar-row>
+  </mat-toolbar> -->
+  <!--Referrals table-->
+    <div class="mat-elevation-z8 referrals-table">
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Date Column-->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+        <td mat-cell *matCellDef="let row">{{row.date}}</td>
+      </ng-container>
+    <!-- Updated Column -->
+      <ng-container matColumnDef="updated">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let row">{{row.updated}}</td>
+      </ng-container>
+
+    <!-- Type Column -->
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let row">{{row.type}}</td>
+      </ng-container>
+
+      <!-- Unit Column -->
+      <ng-container matColumnDef="unit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let row">{{row.unit}}</td>
+      </ng-container>
+
+      <!-- Answered Column -->
+      <ng-container matColumnDef="answered">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let row">{{row.answered}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #paginator
+        [length]="dataSource?.data?.length"
+        [pageIndex]="0"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 20]"
+        aria-label="Select page">
+    </mat-paginator>
+  </div>
+

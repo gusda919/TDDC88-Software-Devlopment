@@ -24,6 +24,11 @@ import { BodySilhouetteComponent } from './components/body-silhouette/body-silho
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { JournalWidgetComponent } from './components/journal-widget/journal-widget.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ReferralTableComponent } from './components/referral-table/referral-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { NotesTableComponent } from './components/notes-table/notes-table.component';
 
 
 @NgModule({
@@ -38,6 +43,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     VpboxComponent,
     BodySilhouetteComponent,
     JournalWidgetComponent,
+    ReferralTableComponent,
+    NotesTableComponent,
   ],
   imports: [
     CommonModule,
@@ -52,6 +59,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatMenuModule,
     FontAwesomeModule,
     MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class PatientDashboardModule {}

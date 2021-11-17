@@ -1,35 +1,3 @@
-<!-- <mat-card id="journal-widget">
-    <div class="mat-elevation-z8">
-        <table mat-table class="full-width-table" aria-label="Elements">
-    
-            <ng-container matColumnDef="date">
-                <th mat-header-cell *matHeaderCellDef>Datum</th>
-                <td mat-cell *matCellDef="let row"><a [routerLink]="['/dashboard', row.patientId]">{{row.givenName}} {{row.familyName}}</a>hejhejhej</td>
-            </ng-container>
-    
-            <ng-container matColumnDef="note-type">
-                <th mat-header-cell *matHeaderCellDef>Anteckningstyp</th>
-                <td mat-cell *matCellDef="let row"><a [routerLink]="['/dashboard', row.patientId]">{{row.givenName}} {{row.familyName}}</a>hejhejhej</td>
-            </ng-container>
-    
-            <ng-container matColumnDef="noter">
-                <th mat-header-cell *matHeaderCellDef>Antecknad av</th>
-                <td mat-cell *matCellDef="let row"><a [routerLink]="['/dashboard', row.patientId]">{{row.givenName}} {{row.familyName}}</a>hejhejhej</td>
-            </ng-container>
-    
-            <ng-container matColumnDef="unit">
-                <th mat-header-cell *matHeaderCellDef>Vårdenhet</th>
-                <td mat-cell *matCellDef="let row"><a [routerLink]="['/dashboard', row.patientId]">{{row.givenName}} {{row.familyName}}</a>hejhejhej</td>
-            </ng-container>
-    
-            <tr mat-header-row *matHeaderRowDef="groupedColumns; sticky: true"></tr>
-            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        
-    </div>
-
-</mat-card> -->
 <mat-card id="journal-widget">
     <h2>Journal</h2>
     <mat-toolbar>
@@ -39,14 +7,8 @@
         </mat-toolbar-row>
         
     </mat-toolbar>
-    <div *ngIf="isNotesDisplayed">
-        <p>hejhej</p>
-    </div>
-
-    <div *ngIf="isReferralsDisplayed">
-        <p>hej</p>
-    </div>
-    
+    <app-notes-table [patientId]="patientId" *ngIf="isNotesDisplayed"></app-notes-table>
+    <app-referral-table [patientId]="patientId" *ngIf="isReferralsDisplayed"></app-referral-table>
 </mat-card>
-
+ 
 
