@@ -6,16 +6,16 @@
   <mat-card-content>
     <mat-action-list>
       <mat-list-item (click)="toggleBloodOxygenGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <img matListIcon src='../../../../../assets/spo2-icon.png'>
         <h3 matLine>{{vitalParameters.bloodOxygenLevel.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBloodOxygenLevel()}} %</div>
+            <div class="param" fxFlex="30">{{getLatestBloodOxygenLevel()}}%</div>
           </div>
         </div>
       </mat-list-item>
       <mat-list-item (click)="toggleBloodPressureAndPulseGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <fa-icon matListIcon [icon]='faHeartbeat'></fa-icon>
         <h3 matLine>{{vitalParameters.pulse.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
@@ -24,7 +24,7 @@
         </div>
       </mat-list-item>
       <mat-list-item (click)="toggleBloodPressureAndPulseGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <img matListIcon src='../../../../../assets/blood-pressure-icon.png'>
         <h3 matLine>{{vitalParameters.bloodPressure.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
@@ -33,16 +33,16 @@
         </div>
       </mat-list-item>
       <mat-list-item (click)="toggleBodyTemperatureGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <fa-icon matListIcon [icon]='faThermometer'></fa-icon>
         <h3 matLine>{{vitalParameters.bodyTemperature.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBodyTemperature()}} °C</div>
+            <div class="param" fxFlex="30">{{getLatestBodyTemperature()}}°C</div>
           </div>
         </div>
       </mat-list-item>
       <mat-list-item (click)="toggleRespiratoryRateGraph()">
-        <mat-icon matListIcon>placeholder</mat-icon>
+        <fa-icon matListIcon [icon]='faLungs'></fa-icon>
         <h3 matLine>{{vitalParameters.respiratoryRate.label}}</h3>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
@@ -64,6 +64,7 @@
 </mat-card>
 
 
+<<<<<<< client/src/app/modules/patient-dashboard/components/vpbox/vpbox.component.html
 <app-my-graph *ngIf="isBloodOxygenDisplayed" [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
 
 <app-my-graph *ngIf="isBloodPressureAndPulseDisplayed" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
@@ -73,5 +74,13 @@
 <app-my-graph *ngIf="isRespiratoryRateDisplayed"[vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
 
  <app-list *ngIf="isLabsDisplayed" [patientId]="patientId"></app-list>
+=======
+  <div [ngSwitch]="true">
+    <app-my-graph *ngSwitchCase="isBloodOxygenDisplayed" [graphId]="1" [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
+    <app-my-graph *ngSwitchCase="isBloodPressureAndPulseDisplayed" [graphId]="2" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
+    <app-my-graph *ngSwitchCase="isBodyTemperatureDisplayed" [graphId]="3" [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
+    <app-my-graph *ngSwitchCase="isRespiratoryRateDisplayed" [graphId]="4" [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
+    <app-list *ngSwitchCase="isLabsDisplayed"[graphId]="5"  [patientId]="patientId"></app-list>
+  </div>
 
 </div>

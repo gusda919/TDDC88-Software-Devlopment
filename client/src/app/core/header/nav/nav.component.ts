@@ -25,7 +25,6 @@ export class NavComponent {
   messages = [
     {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
     {id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
-   // {id: 2, patient: 'Sven Svensson', pn:"941212-0110",content: 'Blodprov är nu tillgängligt'},
   ]
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset])
@@ -75,10 +74,6 @@ export class NavComponent {
     else {
       this.displayProfile = true;
     }
-  }
-
-  ngOnInit(){
-    this.addECG('198605119885');
   }
 
 }
