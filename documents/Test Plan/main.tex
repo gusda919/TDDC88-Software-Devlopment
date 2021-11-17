@@ -1,0 +1,123 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,a4paper]{article}
+
+% Adjusting margins to personal my need
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+% Graphics
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+% Math
+\usepackage{amssymb}
+\usepackage{amsmath} % Required for some math elements 
+
+% Other
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{comment}
+%\hypersetup{
+ %   colorlinks=true,
+  %  linkcolor=magenta,
+   % }
+
+
+
+%----------------------------------------------------------------------------------------
+%	MAIN PART
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\title{Test Plan} % Title
+\author{Company 1 - TDDC88}
+\date{} % Date for the report
+\maketitle % Inserts the title, author and date
+
+\begin{table}
+\centering
+\begin{tabular}{||c c c c c||} 
+\hline
+Version & Author & Updates & Reviewed by & Date \\ [0.5ex] 
+\hline\hline
+0.1 & E. Sköld & Initial version & A. Telenius & 2021-09-13 \\ 
+\hline
+0.2 & E. Parö & Test Levels and more & D. Ma & 2021-09-24 \\
+\hline
+0.3 & A. Telenius & Fill in last headers & D. Ma & 2021-09-24 \\
+\hline
+1.0 & A. Telenius & Rewrite every section in chapters 2.3-4.2 & E. Parö & 2021-11-07 \\
+\hline
+1.1 & O. Löfgren & Rewrite chapters 1 - 1.3 & E. Parö & 2021-11-09 \\
+\hline
+1.2 & E. Parö & Rewrite chapter 2.1 & A. Telenius & 2021-11-09 \\
+\hline
+1.3 & E. Parö & Added one paragraph in chapter 1 & E. Sköld & 2021-11-16 \\
+\hline
+1.4 &     \begin{tabular}{@{}l@{}}E. Schadewitz,\\
+        A. Nilsson\\
+        \end{tabular} & \begin{tabular}{@{}l@{}}Updated 2.2.3 with additional\\ information about system testing \end{tabular}  & E. Parö & 2021-11-17 \\
+    \hline
+\end{tabular}
+%\caption{\label{tab:engagemang-mw}Svarsdata från enkätfrågorna kopplade till engagemang.}
+\end{table}
+
+% Removed abstract, not needed in TDDC88
+%----------------------------------------------------------------------------------------
+%	Abstract
+%----------------------------------------------------------------------------------------
+%\begin{abstract}
+%\normalsize
+%% Text of the abstract
+%\lipsum[9]
+
+%\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	Table of Content
+%----------------------------------------------------------------------------------------
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Main Part
+%----------------------------------------------------------------------------------------
+\input{sections/01-introduction}
+\newpage
+\input{sections/02-Testmethodology}
+\newpage
+\input{sections/03-Testdeliverables}
+\newpage
+\input{sections/04-RescourceandEnvoriments}
+\newpage
+\input{sections/05-termsandacronyms}
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Appendix
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	Bibliography
+%----------------------------------------------------------------------------------------
+%\clearpage
+%\bibliography{bibliography/sample}{}
+%\bibliographystyle{plain}
+
+\end{document}
