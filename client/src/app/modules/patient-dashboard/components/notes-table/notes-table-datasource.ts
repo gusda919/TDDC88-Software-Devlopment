@@ -27,12 +27,14 @@ const EXAMPLE_DATA: NotesTableItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class NotesTableDataSource extends DataSource<NotesTableItem> {
-  data: NotesTableItem[] = EXAMPLE_DATA;
+  data: NotesTableItem[];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
+  patientId: string;
 
-  constructor() {
+  constructor(patientId: string) {
     super();
+    this.patientId = patientId;
   }
 
   /**
@@ -41,6 +43,7 @@ export class NotesTableDataSource extends DataSource<NotesTableItem> {
    * @returns A stream of the items to be rendered.
    */
   connect(): Observable<NotesTableItem[]> {
+    this.data = this.getPatientNotes();
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -92,6 +95,41 @@ export class NotesTableDataSource extends DataSource<NotesTableItem> {
       }
     });
   }
+
+  getPatientNotes() {
+    if (this.patientId=='195001232296') {
+      let data: NotesTableItem[] = [
+        {date: "2021-11-15 14:00", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-15 14:20", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-14 14:30", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-13 14:50", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-12 14:40", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+      ];
+      return data;
+    } else if (this.patientId=='198605119885') {
+      let data: NotesTableItem[] = [
+        {date: "2021-11-15 14:00", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-15 14:20", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-14 14:30", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-13 14:50", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-12 14:40", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+      ];
+      return data;
+    } else if (this.patientId=='194202269207') {
+      let data: NotesTableItem[] = [
+        {date: "2021-11-15 14:00", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-15 14:20", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-14 14:30", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-13 14:50", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+        {date: "2021-11-12 14:40", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen"},
+      ];
+      return data;
+    } else {
+      let data: NotesTableItem[] = [];
+      return data;
+    }
+  }
+
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */

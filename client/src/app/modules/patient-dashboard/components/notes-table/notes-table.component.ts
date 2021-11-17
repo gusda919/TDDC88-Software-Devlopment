@@ -14,16 +14,15 @@ export class NotesTableComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<NotesTableItem>;
   dataSource: NotesTableDataSource;
-  @Input() patientId : string;
-
+  @Input() patientId: string;
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['date', 'note_type', 'noted_by','unit'];
 
   constructor() {
-    this.dataSource = new NotesTableDataSource();
   }
 
   ngAfterViewInit(): void {
+    this.dataSource = new NotesTableDataSource(this.patientId);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;

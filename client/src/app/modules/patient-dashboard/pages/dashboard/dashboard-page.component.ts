@@ -62,7 +62,6 @@ export class DashboardPageComponent implements OnInit {
     // subscribe to route parameters to get param patientID
     this.route.paramMap.subscribe(params => {
       this.patientId = params.get('patientID') || "";
-      console.log(this.patientId);
     });
 
   }

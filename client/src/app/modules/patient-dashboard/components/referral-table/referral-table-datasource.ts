@@ -3,11 +3,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { Injectable, Input } from '@angular/core';
-import { PatientService} from 'src/app/core/services/patient.service'
-import { Patient } from 'src/app/core/mocks/patient';
-import { ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
-import {ReferralTableComponent} from './referral-table.component';
 
 // TODO: Replace this with your own data model type
 export interface ReferralTableItem {
@@ -22,13 +17,13 @@ export interface ReferralTableItem {
 
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: ReferralTableItem[] = [ 
+/*const EXAMPLE_DATA: ReferralTableItem[] = [ 
   {date: "2021-11-15 13:21", updated: "2021-11-16 08:31", type: "Remiss", unit: "Enhet1", answered: "2021-11-17 15:26"},
   {date: "2021-11-16 13:20", updated: "2021-11-17 08:32", type: "Remiss", unit: "Enhet2", answered: "2021-11-18 15:27"},
   {date: "2021-11-17 13:22", updated: "2021-11-18 08:33", type: "Remiss", unit: "Enhet3", answered: "2021-11-19 15:28"},
   {date: "2021-11-18 13:23", updated: "2021-11-19 08:34", type: "Remiss", unit: "Enhet4", answered: "2021-11-20 15:29"},
   
-];
+];*/
 
 /**
  * Data source for the ReferralTable view. This class should
@@ -38,12 +33,14 @@ const EXAMPLE_DATA: ReferralTableItem[] = [
 
 export class ReferralTableDataSource extends DataSource<ReferralTableItem> {
   
-  data: ReferralTableItem[] = EXAMPLE_DATA;
+  data: ReferralTableItem[];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
+  patientId: string;
   
-  constructor() {
+  constructor(patientId: string) {
     super();
+    this.patientId = patientId;
   }
 
   /**
@@ -52,7 +49,7 @@ export class ReferralTableDataSource extends DataSource<ReferralTableItem> {
    * @returns A stream of the items to be rendered.
    */
   connect(): Observable<ReferralTableItem[]> {
-    
+    this.data = this.getPatientReferrals();
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -106,7 +103,38 @@ export class ReferralTableDataSource extends DataSource<ReferralTableItem> {
     });
   }
 
-  
+  getPatientReferrals() {
+    if (this.patientId=='195001232296') {
+      let data: ReferralTableItem[] = [ 
+        {date: "2021-11-15 13:21", updated: "2021-11-16 08:31", type: "Remiss", unit: "Enhet1", answered: "2021-11-17 15:26"},
+        {date: "2021-11-16 13:20", updated: "2021-11-17 08:32", type: "Remiss", unit: "Enhet2", answered: "2021-11-18 15:27"},
+        {date: "2021-11-17 13:22", updated: "2021-11-18 08:33", type: "Remiss", unit: "Enhet3", answered: "2021-11-19 15:28"},
+        {date: "2021-11-18 13:23", updated: "2021-11-19 08:34", type: "Remiss", unit: "Enhet4", answered: "2021-11-20 15:29"},
+      ];
+      return data;
+    } else if (this.patientId=='198605119885') {
+      let data: ReferralTableItem[] = [ 
+        {date: "2021-11-15 13:21", updated: "2021-11-16 08:31", type: "Remiss", unit: "Enhet1", answered: "2021-11-17 15:26"},
+        {date: "2021-11-16 13:20", updated: "2021-11-17 08:32", type: "Remiss", unit: "Enhet2", answered: "2021-11-18 15:27"},
+        {date: "2021-11-17 13:22", updated: "2021-11-18 08:33", type: "Remiss", unit: "Enhet3", answered: "2021-11-19 15:28"},
+        {date: "2021-11-18 13:23", updated: "2021-11-19 08:34", type: "Remiss", unit: "Enhet4", answered: "2021-11-20 15:29"},
+      ];
+      return data;
+    } else if (this.patientId=='194202269207') {
+      let data: ReferralTableItem[] = [ 
+        {date: "2021-11-15 13:21", updated: "2021-11-16 08:31", type: "Remiss", unit: "Enhet1", answered: "2021-11-17 15:26"},
+        {date: "2021-11-16 13:20", updated: "2021-11-17 08:32", type: "Remiss", unit: "Enhet2", answered: "2021-11-18 15:27"},
+        {date: "2021-11-17 13:22", updated: "2021-11-18 08:33", type: "Remiss", unit: "Enhet3", answered: "2021-11-19 15:28"},
+        {date: "2021-11-18 13:23", updated: "2021-11-19 08:34", type: "Remiss", unit: "Enhet4", answered: "2021-11-20 15:29"},
+      ];
+      return data;
+    } else {
+      let data: ReferralTableItem[] = [];
+      return data;
+    }
+  }
+
+
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
