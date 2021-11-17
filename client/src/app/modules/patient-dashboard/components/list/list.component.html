@@ -1,21 +1,18 @@
 
 <div class="lab-overview">
-<mat-selection-list class="list" #labs>
+    <h1>Labbresultat</h1>
+<mat-action-list class="list" #labs>
     <mat-list-item class ="list-row" *ngFor="let event of events "  (click)="displayEvent(event)">
-        <tr >
-     <fa-icon class="timeline-event-icon fa-2x" aria-label="timeline event icon" [icon]="event.icon"></fa-icon>
-     {{ event.date | date:'yyyy/MM/dd HH:mm '}} 
-     
-    </tr>
+        <tr > Prov Taget - {{ event.date | date:'yyyy/MM/dd HH:mm '}} </tr>
     </mat-list-item>
-  </mat-selection-list>
+  </mat-action-list>
 
 
 
    <mat-card-subtitle>
        
         <div *ngIf="displayedEvent"  class="lab-info">
-            <h2>Labbresultat : {{displayedEvent.date | date:'yyyy/MM/dd HH:mm'}}</h2>
+            <h2> Labbresultat : {{displayedEvent.date | date:'yyyy/MM/dd HH:mm'}}</h2>
             <table>
                 <tr>
                     <th style="text-align: center;">Namn</th>
@@ -29,4 +26,5 @@
         </div>
      
     </mat-card-subtitle>
+
 </div>

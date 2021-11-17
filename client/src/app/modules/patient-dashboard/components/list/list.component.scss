@@ -1,23 +1,37 @@
 
+.lab-overview{
+    margin-top: 5%;
+    float: right;
+    width: 40%;
+    margin-bottom: 5%;
+    background-color: white;
+    padding: 20px;
+}
 
 .list {
-    margin-top: 5%;
-    float:left;
-    padding-right: 20px;
-   
+   // margin-top: 5%;
+  //  float:left;
+  //  padding-right: 20px;
+ //   background-color: white;
+ //   border-width: 2px;
+ //   height: 200px;
+ height: 320px;
+ width: 100%;
 }
 .list-row{
 
     padding: 5px;
+    font-weight: bold;
+    border-bottom: black;
+    
 
 }
 
 .lab-info {
-   
+ border-top: rgba(26, 26, 26, 0.623);
+ border-width: 2px;
+ 
+ padding: 20 px;   
 
-z-index: -1;
-float:right;
-//width: 10%;
-padding: 80px;
 
 }
