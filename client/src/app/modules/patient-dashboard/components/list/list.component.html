@@ -1,0 +1,32 @@
+
+<div class="lab-overview">
+<mat-selection-list class="list" #labs>
+    <mat-list-item class ="list-row" *ngFor="let event of events "  (click)="displayEvent(event)">
+        <tr >
+     <fa-icon class="timeline-event-icon fa-2x" aria-label="timeline event icon" [icon]="event.icon"></fa-icon>
+     {{ event.date | date:'yyyy/MM/dd HH:mm '}} 
+     
+    </tr>
+    </mat-list-item>
+  </mat-selection-list>
+
+
+
+   <mat-card-subtitle>
+       
+        <div *ngIf="displayedEvent"  class="lab-info">
+            <h2>Labbresultat : {{displayedEvent.date | date:'yyyy/MM/dd HH:mm'}}</h2>
+            <table>
+                <tr>
+                    <th style="text-align: center;">Namn</th>
+                    <th>Värde</th>
+                </tr>
+                <tr *ngFor="let lab of displayedEvent.data">
+                    <td>{{lab.marker}}</td>
+                    <td>{{lab.value}}</td>
+                </tr>
+            </table>
+        </div>
+     
+    </mat-card-subtitle>
+</div>

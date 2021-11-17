@@ -50,6 +50,15 @@
           </div>
         </div>
       </mat-list-item>
+      <mat-list-item (click)="toggleLabs()">
+        <mat-icon matListIcon>placeholder</mat-icon>
+        <h3 matLine>Lab resultat</h3>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30"> Senaste resultat: {{showPatientLabs()}}  </div>
+          </div>
+        </div>
+      </mat-list-item>
     </mat-action-list>
   </mat-card-content>
 </mat-card>
@@ -63,5 +72,6 @@
 
 <app-my-graph *ngIf="isRespiratoryRateDisplayed"[vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
 
+ <app-list *ngIf="isLabsDisplayed" [patientId]="patientId"></app-list>
 
 </div>

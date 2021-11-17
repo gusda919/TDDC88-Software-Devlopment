@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
+import { Lab } from 'src/app/shared/models/patient';
 
 import { PatientService } from '../../../../core/services/patient.service'
 
@@ -19,13 +20,16 @@ export class VpboxComponent implements OnInit {
   isBloodPressureAndPulseDisplayed = false;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
+  isLabsDisplayed = false;
  
   vitalParameters: VitalParameters;
+  labs: Lab[];
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.getVitalParameters();
+    this.getPatientLabs();
     
   }
 
@@ -37,6 +41,21 @@ export class VpboxComponent implements OnInit {
     });
   }
 
+
+  getPatientLabs() {
+    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
+      this.labs = labs;
+      this.isLoaded = true;
+      this.cdr.detectChanges();;    
+    });
+  }
+
+  showPatientLabs() {
+    
+
+    let data = this.labs;
+    return data[data.length-1].date;
+  }
 
   //Get functions for displaying the latest value for each vital parameter
   getLatestBloodOxygenLevel() {
@@ -96,15 +115,24 @@ export class VpboxComponent implements OnInit {
     this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;
   }
 
+  toggleLabs() {
+    if(!this.isLabsDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
+    this.isLabsDisplayed = ! this.isLabsDisplayed;
+  }
+
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
-      this.isRespiratoryRateDisplayed) {
+      this.isRespiratoryRateDisplayed|| 
+      this.isLabsDisplayed) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
+        this.isLabsDisplayed= false;
     }
   }
 }

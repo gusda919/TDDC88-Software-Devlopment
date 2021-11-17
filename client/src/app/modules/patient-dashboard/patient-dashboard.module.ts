@@ -23,6 +23,7 @@ import { MyGraphComponent } from './components/my-graph/my-graph.component';
 import { BodySilhouetteComponent } from './components/body-silhouette/body-silhouette.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { JournalWidgetComponent } from './components/journal-widget/journal-widget.component';
+import { ListComponent } from './components/list/list.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { JournalWidgetComponent } from './components/journal-widget/journal-widg
     VpboxComponent,
     BodySilhouetteComponent,
     JournalWidgetComponent,
+    ListComponent,
   ],
   imports: [
     CommonModule,
