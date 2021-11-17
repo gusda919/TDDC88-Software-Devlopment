@@ -33,17 +33,29 @@
 
 .timeline-event-icon {
   position: relative;
-  top: 32px;
-  left: -65px;
+  top: 55px;
+  left: -114px;
   transform: scale(1.5);
   z-index: 10;
   background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .timeline-line {
   border: 2px dashed #000;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px;
   position: absolute;
   width: 95%;
+}
+
+.event-date {
+  position: relative;
+  top: 15px;
+  left: -56px;
+}
+
+.clicked {
+  color: #015fa7;
 }
