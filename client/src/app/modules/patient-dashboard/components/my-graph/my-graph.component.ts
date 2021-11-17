@@ -12,6 +12,7 @@ export class MyGraphComponent implements OnInit {
   
   constructor() {}
 
+  @Input() graphId: any;
   @Input() vitalParameters: any;
   @Input() bloodPressure: any;
   @Input() pulse: any;
@@ -21,13 +22,18 @@ export class MyGraphComponent implements OnInit {
   systolic: number[] = [];
   diastolic: number[] = [];
 
+  myGraph: Chart;
+  myGraph2: Chart;
+
 
   ngOnInit() {
 
     this.addTimestamps();
     this.addValues();
 
- 
+    let element = document.getElementById('id');
+    element?.setAttribute("id", "myGraph" + this.graphId);
+
     if(this.vitalParameters == null) {
 
       const arrowDown = new Image(10,15);
@@ -35,7 +41,7 @@ export class MyGraphComponent implements OnInit {
       const arrowUp = new Image(10,15);
       arrowUp.src = '../../../../assets/arrow_up_bloodpressure_graph.png'      
 
-      var myGraph = new Chart('myGraph', {
+      this.myGraph = new Chart('myGraph' + this.graphId, {
         type: 'line',        
         data: {
           labels: this.labels,
@@ -76,7 +82,7 @@ export class MyGraphComponent implements OnInit {
         },
       });
     } else {
-      var myGraph = new Chart('myGraph', {
+      this.myGraph = new Chart('myGraph' + this.graphId, {
         type: 'line',
         data: {
           labels: this.labels,
@@ -103,6 +109,10 @@ export class MyGraphComponent implements OnInit {
         },
       });
     }
+  }
+
+  ngOnDestroy() {
+    this.myGraph.destroy();
   }
 
   addTimestamps() {
