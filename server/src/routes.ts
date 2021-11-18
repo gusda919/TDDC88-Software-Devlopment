@@ -289,5 +289,18 @@ router.get('/patients/:patientID/caregiving', async (req: Request, res: Response
 
 
 
+router.get('/patients/:patientID/fluidBalance', async (req: Request, res: Response) => {
+  //route for getting fluid balance for the patient with patient id "patientID"
+  //This route returns an object of type FluidBalance with fluid in and out
+  let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
+  if (patient) { 
+    res.json( patient.fluidBalance ); 
+  }
+  else {
+    res.json("Patient med personnummer " + req.params.patientID + " finns inte i systemet");
+  } 
+});
+
+
 
 

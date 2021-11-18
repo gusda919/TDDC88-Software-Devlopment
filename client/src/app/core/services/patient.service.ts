@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving } from '../../shared/models/patient';
+import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving, FluidBalance } from '../../shared/models/patient';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
@@ -170,6 +170,11 @@ export class PatientService {
   //Service for getting all the caregiving given to the patient with person number "patientID"
   getPatientCaregiving(patientID: string): Observable<Caregiving[]> {
     return this.http.get<Caregiving[]>(this.baseUrl + patientID + '/caregiving');
+  }
+
+  //Service for getting the fluid balance of the patient with person number "patientID"
+  getPatientFluidBalance(patientID: string): Observable<FluidBalance> {
+    return this.http.get<FluidBalance>(this.baseUrl + patientID + '/fluidBalance');
   }
 
 }
