@@ -25,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { JournalWidgetComponent } from './components/journal-widget/journal-widget.component';
 
 
+
 @NgModule({
   declarations: [
     CardComponent,
@@ -37,6 +38,7 @@ import { JournalWidgetComponent } from './components/journal-widget/journal-widg
     VpboxComponent,
     BodySilhouetteComponent,
     JournalWidgetComponent,
+
   ],
   imports: [
     CommonModule,
