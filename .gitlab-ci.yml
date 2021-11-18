@@ -1,75 +1,24 @@
-#image: node:latest
-#juanje/angular-cli-chrome
-#image: pipekung/angular:latest
-#image: efgiese/efgiese-angular-chrome-headless
 
 stages:
-
-  - build
   
   - test
 
-#cache: 
-#  paths: 
-#    - node_modules
-
-#install_dependencies:
-#  stage: build
- # script:
-  # - npm install client/
-   #- npm rm -rf node_modules
-   
-
-  #artifacts:
-   # paths:
-    #  - node_modules
-
-#Lösningsförslag: artifacts eller caching för att spara över det som lagras i dependencies-staget?
-
-
-#before_script: 
- # - chmod 0777 ./node_modules/.bin/ng
-dependencies: 
-  stage: build
-  image: angular/ngcontainer
-  script: 
-  - cd client
-  - npm ci
-  - npm install apt 
-#  - npm audit fix --force
-  - npm install apt-get
-  #- npm install -g @angular/cli
-  #Här behövs angular/ngcontainer
-  #stod sudo här tidigare
-  - sudo apt-get update
-  - sudo apt install chromium 
-  - which chromium-browser
-  cache:
-    key: build-cache
-    paths: 
-    - client/
-
 testing_testing:
- # image: browserless/chrome
-  image: node:latest
+  image: node:lts-bullseye
   stage: test
-  before_script:
-  - export CHROME_BIN='/usr/bin/chromium'
   script: 
-  #- sudo npm install -g karma-cli
-  #- karma start
-  #- npm install karma-firefox-launcher --save-dev
+    - apt-get update
+    - apt install -y chromium 
+    
+
+    - cd client
+    - npm ci
+  
+    - npm install -g @angular/cli
+    #Här behövs angular/ngcontainer
+    #stod sudo här tidigare
 
 
-  #- RUN apt-get install chromium -y
-#  - npm i chromium
-  # Här behövs senaste node
-  - cd client
-  - node -v
-  - which chromium-browser
-  - export CHROME_BIN='/usr/bin/chromium'
-  - npm test --browsers=Headless --no-watch
-  cache:
-    key: build-cache
-    paths: 
-    - client/
+    - node -v
+    - npm test --browsers=Headless --no-watch
+
