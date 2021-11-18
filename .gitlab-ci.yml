@@ -20,5 +20,5 @@ testing_testing:
     #Här behövs angular/ngcontainer
     #stod sudo här tidigare
     - node -v
-    - npm test --browsers=Headless --no-watch 
+    - npm test --browsers=Headless --no-watch --no-sandbox
 
