@@ -39,9 +39,9 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     customLaunchers: {
-      Chrome: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
+      Headless: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable setuid-sandbox']
       }
     },
     singleRun: false,
