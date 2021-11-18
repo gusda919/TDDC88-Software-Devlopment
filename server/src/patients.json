@@ -112,6 +112,19 @@
           "dose": "1 förfylld spruta x 2 tv"
         }
       ],
+      "fluidBalance": {
+        "in": [
+          { "label": "per os", "value": 1000 },
+          { "label": "i.v.", "value": 1400 }
+        ],
+        "out": [
+          { "label": "Perspiratio", "value": 700 },
+          { "label": "Urin", "value": 700 },
+          { "label": "Blod", "value": 300 },
+          { "label": "Avföring", "value": 400 },
+          { "label": "Kräks", "value": 200 }
+        ]
+      },
       "cosmic": {
           "se:JournalNoteEHRExtracts": {
             "-xsi:schemaLocation": "http://se.cambiosys.cosmicconnect.publish.xml.journalnote JournalNote.xsd",
@@ -1102,6 +1115,19 @@
           "dose": "4 tabletter engångsdos"
         }
       ],
+      "fluidBalance": {
+        "in": [
+          { "label": "per os", "value": 1200 },
+          { "label": "i.v.", "value": 1000 }
+        ],
+        "out": [
+          { "label": "Perspiratio", "value": 800 },
+          { "label": "Urin", "value": 4500 },
+          { "label": "Blod", "value": 0 },
+          { "label": "Avföring", "value": 500 },
+          { "label": "Kräks", "value": 350 }
+        ]
+      },
       "cosmic": {
           "se:JournalNoteEHRExtracts": {
             "-xsi:schemaLocation": "http://se.cambiosys.cosmicconnect.publish.xml.journalnote JournalNote.xsd",
@@ -2044,6 +2070,19 @@
           "dose": "3 ml engångsdos"
         }
       ],
+      "fluidBalance": {
+        "in": [
+          { "label": "per os", "value": 800 },
+          { "label": "i.v.", "value": 1200 }
+        ],
+        "out": [
+          { "label": "Perspiratio", "value": 600 },
+          { "label": "Urin", "value": 500 },
+          { "label": "Blod", "value": 200 },
+          { "label": "Avföring", "value": 0 },
+          { "label": "Kräks", "value": 600 }
+        ]
+      },
       "caregiving": [
           {
               "date": "2021-03-15",
