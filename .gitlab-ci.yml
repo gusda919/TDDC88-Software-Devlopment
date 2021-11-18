@@ -1,4 +1,3 @@
-
 stages:
   
   - test
@@ -8,8 +7,11 @@ testing_testing:
   stage: test
   script: 
     - apt-get update
-    - apt install -y chromium 
-    
+  
+    - apt-get install -y ca-certificates gconf-service libasound2 libatk1.0-0 libatk1.0-0 libdbus-1-3 libgconf-2-4 libgtk-3-0 libnspr4 libnss3 libx11-xcb1 libxss1 libxtst6 fonts-liberation libappindicator3-1 xdg-utilslsb-release wget curl procps
+    - xz-utils -y --no-install-recommends
+    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - dpkg -i google-chrome*.deb
 
     - cd client
     - npm ci
@@ -17,9 +19,6 @@ testing_testing:
     - npm install -g @angular/cli
     #Här behövs angular/ngcontainer
     #stod sudo här tidigare
-
-    - export CHROME_BIN='/bin/chromium'
-
     - node -v
     - npm test --browsers=Headless --no-watch
 
