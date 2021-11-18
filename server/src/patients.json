@@ -1122,7 +1122,7 @@
         ],
         "out": [
           { "label": "Perspiratio", "value": 800 },
-          { "label": "Urin", "value": 4500 },
+          { "label": "Urin", "value": 850 },
           { "label": "Blod", "value": 0 },
           { "label": "Avföring", "value": 500 },
           { "label": "Kräks", "value": 350 }
