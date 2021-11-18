@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Chart } from "chart.js";
+import { Chart, ChartData, ChartTooltipItem } from "chart.js";
 import { PatientService } from 'src/app/core/services/patient.service';
 import { FluidBalance, FluidBalanceData } from 'src/app/shared/models/patient';
 
@@ -31,23 +31,27 @@ export class FluidBalanceComponent implements OnInit {
       let total: number = 0;
 
       fb.in.forEach((fbd: FluidBalanceData) => {
-        let vStart: number = total;
-        total += fbd.value;
-        this.data.push([vStart, total]);
-        this.labels.push(fbd.label);
-        this.backgroundColors.push('rgb(76, 175, 80)');
+        if (fbd.value != 0) {
+          let vStart: number = total;
+          total += fbd.value;
+          this.data.push([vStart, total]);
+          this.labels.push(fbd.label);
+          this.backgroundColors.push('rgb(76, 175, 80)');
+        }     
       })
 
       fb.out.forEach((fbd: FluidBalanceData) => {
-        let vStart: number = total;
-        total -= fbd.value;
-        this.data.push([vStart, total]);
-        this.labels.push(fbd.label);
-        this.backgroundColors.push('rgb(229, 57, 53)');
+        if (fbd.value != 0) {
+          let vStart: number = total;
+          total -= fbd.value;
+          this.data.push([vStart, total]);
+          this.labels.push(fbd.label);
+          this.backgroundColors.push('rgb(229, 57, 53)');
+        }  
       })
 
       this.data.push([0, total]);
-      this.labels.push("Skillnad");
+      this.labels.push("Nettoförändring");
       this.backgroundColors.push('rgb(255, 193, 7)')
       
       this.renderChart();
@@ -84,15 +88,13 @@ export class FluidBalanceComponent implements OnInit {
             anchor: 'end',
             align: 'end'
           },
-          tooltips: {
-            callbacks: {
-              label: (tooltipItem: any) => {
-                let v = tooltipItem.index ? this.data[tooltipItem.index][1] - this.data[tooltipItem.index][0] : 0;
-                console.log(v);
-                return v;
-              }
-            }
-          },
+          // tooltips: {
+          //   callbacks: {
+          //     title: function(tooltipItem: ChartTooltipItem, data: ChartData) {
+                  // add fixed tooltips later
+          //     }
+          //   }
+          // },
         }
       }
     });
