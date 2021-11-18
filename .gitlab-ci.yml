@@ -21,4 +21,4 @@ testing_testing:
     #stod sudo här tidigare
     - node -v
     - npm test --browsers=Headless --no-sandbox --no-watch
-    - ng -version
+    - node -v
