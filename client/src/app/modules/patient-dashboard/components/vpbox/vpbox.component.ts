@@ -46,27 +46,27 @@ export class VpboxComponent implements OnInit {
   //Get functions for displaying the latest value for each vital parameter
   getLatestBloodOxygenLevel() {
     let data = this.vitalParameters.bloodOxygenLevel.data;
-    return data[data.length-1].value;
+    return data[data.length-1];
   }
 
   getLatestPulse() {
     let data = this.vitalParameters.pulse.data;
-    return data[data.length-1].value;
+    return data[data.length-1];
   }
 
   getLatestBloodPressure() {
     let data = this.vitalParameters.bloodPressure.data;
-    return data[data.length-1].systolic + "/" + data[data.length-1].diastolic;
+    return data[data.length-1];
   }
 
   getLatestBodyTemperature() {
     let data = this.vitalParameters.bodyTemperature.data;
-    return data[data.length-1].value;
+    return data[data.length-1];
   }
 
   getLatestRespiratoryRate() {
     let data = this.vitalParameters.respiratoryRate.data;
-    return data[data.length-1].value;
+    return data[data.length-1];
   }
 
 
