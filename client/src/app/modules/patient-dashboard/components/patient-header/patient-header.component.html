@@ -74,8 +74,14 @@
     <span (click)="closeECGModal()" class="close">&times;</span>
   
     <!-- Modal Content (The Image) -->
-    <img class="modal-content" id="ECGimg" onerror="hideImg()">
+    <div id = "imagesModal">
+        <img class="modal-content" id="ECGimg1" onerror="hideImg()">
+        <img class="modal-content" id="ECGimg2" onerror="hideImg()">
+        <img class="modal-content" id="ECGimg3" onerror="hideImg()">
+    </div>
+
   
+    
     <!-- Modal Caption (Image Text) -->
     <div id="caption"></div>
   </div>

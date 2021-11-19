@@ -31,6 +31,8 @@ import { JournalComponent } from './modules/patient-dashboard/components/journal
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 //import { uuid } from 'uuid';
+//import { MDBBootstrapModule } from 'angular-bootstrap-md';
+//import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
 
 
 @NgModule({
@@ -62,6 +64,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FontAwesomeModule,
     MatSnackBarModule,
    // uuidv4,
+  // MDBBootstrapModule,
+   //CarouselModule,
+  // WavesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

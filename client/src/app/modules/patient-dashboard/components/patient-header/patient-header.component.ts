@@ -4,6 +4,9 @@ import { PatientService } from '../../../../core/services/patient.service';
 import { Subscription } from 'rxjs';
 import { NavComponent } from '../../../../core/header/nav/nav.component';
 import {MatDialog} from '@angular/material/dialog';
+//import { MDBBootstrapModule } from 'angular-bootstrap-md';
+//import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
+
 
 let imageSource: string;
 
@@ -28,12 +31,20 @@ export class PatientHeaderComponent implements OnInit{
     gender = "";
     subscription: Subscription;
     imageSource: string;
-
+    htmlToAdd: string;
+    ECGImages: number;
   constructor(private patientService: PatientService) {
 
     this.subscription = this.patientService.getPatientContagious(this.patientId).subscribe( (cont: any) => 
     (this.contagious = (cont ==="true") )); 
 
+  }
+
+  ImageExist(url: string) 
+  {
+     var img = new Image();
+     img.src = url;
+     return img.height != 0;
   }
   ngOnInit(){
 
@@ -62,19 +73,24 @@ export class PatientHeaderComponent implements OnInit{
 
    }
 
+ 
+
    openECGModal(patientId: string) {
+
+    this.ECGImages = 1;
+    while (this.ImageExist('/assets/ECG' + this.patientId + '_'+ this.ECGImages + '.png')) {
+      console.log('ECGimg'+this.ECGImages)
+     // this.htmlToAdd = '<img class="modal-content" id="ECGimg1" onerror="hideImg()"><img class="modal-content" id="ECGimg2" onerror="hideImg()">';
+      document.getElementById('ECGimg'+this.ECGImages)?.setAttribute('alt', 'Ingen EKG hittades för patient med personnummer ' + this.patientId );
+      document.getElementById('ECGimg'+this.ECGImages)?.setAttribute('src', '/assets/ECG' + this.patientId + '_'+ this.ECGImages + '.png');
+      //let imagesModal = document.getElementById('imagesModal')
+     // imagesModal?.innerHTML = imagesModal?.innerHTML + "hej"
+     
+      console.log(this.ECGImages);
+      this.ECGImages= this.ECGImages+1;
+    }
+
     let modal = document.getElementById("myModal");
-
-    document.getElementById('ECGimg')?.setAttribute('alt', 'Ingen EKG hittades för patient med personnummer ' + patientId );
-    document.getElementById('ECGimg')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
-    //document.getElementById('ECGimg')?.setAttribute('onerror', "this.style.display='none'");
-    //document.getElementById('ECGimg')?.setAttribute('onerror', "hideImg()");
-
-
-   // document.getElementById('ECGimg')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
-
-
-
     modal?.style.setProperty("display", "block")
     
     document.getElementById('outer-wrapper-id')?.style.setProperty('opacity', '0.7');
