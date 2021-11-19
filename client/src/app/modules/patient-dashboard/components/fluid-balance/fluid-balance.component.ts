@@ -83,18 +83,25 @@ export class FluidBalanceComponent implements OnInit {
             }
           }]
         },
+        tooltips: {
+            callbacks: {
+              label: function(tooltipItem, data: ChartData) {
+                  let i = tooltipItem.index ? tooltipItem.index : 0;
+        
+                  if (data && data.datasets && data.datasets[0].data && i >= 0) {
+                    let d = data.datasets[0].data[i];
+                    return (Array.isArray(d) ? (d[1] - d[0]) : 0).toString() + ' ml';
+                  }
+                  return '0 ml';
+              }
+            }
+          },
         plugins: {
           datalabels: {
             anchor: 'end',
             align: 'end'
           },
-          // tooltips: {
-          //   callbacks: {
-          //     title: function(tooltipItem: ChartTooltipItem, data: ChartData) {
-                  // add fixed tooltips later
-          //     }
-          //   }
-          // },
+          
         }
       }
     });
