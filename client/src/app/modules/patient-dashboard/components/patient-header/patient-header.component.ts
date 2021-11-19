@@ -68,7 +68,12 @@ export class PatientHeaderComponent implements OnInit{
     document.getElementById('ECGimg')?.setAttribute('alt', 'Ingen EKG hittades för patient med personnummer ' + patientId );
     document.getElementById('ECGimg')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
     //document.getElementById('ECGimg')?.setAttribute('onerror', "this.style.display='none'");
-    document.getElementById('ECGimg')?.setAttribute('onerror', "hideImg()");
+    //document.getElementById('ECGimg')?.setAttribute('onerror', "hideImg()");
+
+
+   // document.getElementById('ECGimg')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
+
+
 
     modal?.style.setProperty("display", "block")
     
