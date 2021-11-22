@@ -6,7 +6,7 @@
     </mat-card-header>
 
     
-    <div class="timeline-wrapper">
+    <div class="timeline-wrapper" id="timeline-wrapper">
     <mat-card-content>
         <div [class.clicked]="clickedButton == i" class="timeline-event" *ngFor="let event of events let i=index" (click)="clickedButton = i; displayEvent(event)"> 
             <span class="event-time">{{event.date | date:'HH:mm'}}</span>

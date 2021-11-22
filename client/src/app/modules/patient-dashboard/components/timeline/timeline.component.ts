@@ -52,7 +52,8 @@ export class TimelineComponent implements OnInit {
       this.events = this.events.concat(events);
       this.getPatientLabs();
     });
-
+    
+    setTimeout(this.setScroll.bind(this), 800);
   }
 
   getPatientLabs() {
@@ -82,7 +83,7 @@ export class TimelineComponent implements OnInit {
       })
       );
       this.events = this.events.concat(events);
-      this.sortData(); 
+      this.sortData();
     });
   }
 
@@ -99,6 +100,12 @@ export class TimelineComponent implements OnInit {
   closeDisplayedEvent() {
     this.displayedEvent = <TimelineEvent>{};
     this.clickedButton = null;
+  }
+
+  setScroll() {
+    // scroll to the latest event
+    let tlw = document.getElementById("timeline-wrapper");
+    if (tlw && tlw?.scrollLeft >= 0) tlw.scrollLeft = tlw?.scrollWidth;
   }
 
 }
