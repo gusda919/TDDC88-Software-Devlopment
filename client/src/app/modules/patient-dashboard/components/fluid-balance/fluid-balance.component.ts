@@ -51,7 +51,7 @@ export class FluidBalanceComponent implements OnInit {
       })
 
       this.data.push([0, total]);
-      this.labels.push("Nettoförändring");
+      this.labels.push("Vätskebalans");
       this.backgroundColors.push('rgb(255, 193, 7)')
       
       this.renderChart();
