@@ -14,7 +14,18 @@ export interface Patient {
     caregiving:           Caregiving[];
     labs:                 Lab[];
     drugs:                Drug[];
+    fluidBalance:         FluidBalance;
     cosmic:               Cosmic;
+}
+
+export interface FluidBalance {
+    in: FluidBalanceData[];
+    out: FluidBalanceData[];
+}
+
+export interface FluidBalanceData {
+    label: string;
+    value: number;
 }
 
 export interface Caregiving {
