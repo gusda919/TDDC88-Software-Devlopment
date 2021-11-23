@@ -22,7 +22,11 @@ interface TimelineEvent {
 export class TimelineComponent implements OnInit {
   
   displayedEvent: TimelineEvent;
+  
+  // attributes used for displaying arrows
   ticking: Boolean = false;
+  displayLeftArrow: Boolean = true;
+  displayRightArrow: Boolean = true;
 
 
   @Input() patientId: string;
@@ -106,19 +110,43 @@ export class TimelineComponent implements OnInit {
   setScroll() {
     // scroll to the latest event
     let tlw = document.getElementById("timeline-wrapper");
-    if (tlw && tlw?.scrollLeft >= 0) tlw.scrollLeft = tlw?.scrollWidth;
+    if (tlw && tlw?.scrollLeft >= 0) tlw.scrollLeft = tlw?.offsetWidth;
+
+    console.log(tlw?.scrollLeft)
 
     tlw?.addEventListener('scroll', (e) => {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
 
-          if (tlw && tlw?.scrollLeft <= 100) {
-            console.log("show left arrow");
+          if (tlw && tlw?.scrollLeft <= 100) { // left arrow should be hidden
+            if (this.displayLeftArrow) {
+              // only hide if currently displayed
+              document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+              this.displayLeftArrow = false;
+            }
+          } else { // left arrow should be displayed
+            if (!this.displayLeftArrow) {
+              // only display if currently hidden
+              document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+              this.displayLeftArrow = true;
+            }
           }
-          if (tlw && tlw?.scrollLeft >= tlw?.offsetWidth-150) {
-            console.log("show right arrow");
+
+          if (tlw && tlw?.scrollLeft >= tlw?.offsetWidth-150) { // right arrow should be hidden
+            if (this.displayRightArrow) {
+              // only hide if currently displayed
+              document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+              this.displayRightArrow = false;
+            }
+          } else { // right arrow should be displayed
+            if (!this.displayRightArrow) {
+              // only display if currently hidden
+              document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+              this.displayRightArrow = true;
+            }
           }
-          this.ticking = false;
+
+          this.ticking = false; // ticking variable used to optimize rendering
         }); 
         this.ticking = true;
       }

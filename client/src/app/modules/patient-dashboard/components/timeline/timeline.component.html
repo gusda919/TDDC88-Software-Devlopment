@@ -6,7 +6,7 @@
     </mat-card-header>
 
     <span id="left-arrow-wrapper"><i class="event-arrow event-arrow-left"></i><p style="display: inline-block;">Det finns fler händelser <br>längre bak i tiden</p></span>
-    <span id="right-arrow-wrapper" style="float: right;"><p style="display: inline-block;">Det finns fler händelser <br>längre fram i tiden</p><i class="event-arrow event-arrow-right"></i></span>
+    <span id="right-arrow-wrapper" style="float: right;"><p style="display: inline-block; text-align: right;">Det finns fler händelser <br>längre fram i tiden</p><i class="event-arrow event-arrow-right"></i></span>
     <div class="timeline-wrapper" id="timeline-wrapper">
     <mat-card-content>
         <div [class.clicked]="clickedButton == i" class="timeline-event" *ngFor="let event of events let i=index" (click)="clickedButton = i; displayEvent(event)"> 
