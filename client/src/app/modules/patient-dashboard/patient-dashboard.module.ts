@@ -26,6 +26,7 @@ import { JournalWidgetComponent } from './components/journal-widget/journal-widg
 import { FluidBalanceComponent } from './components/fluid-balance/fluid-balance.component';
 
 
+
 @NgModule({
   declarations: [
     CardComponent,

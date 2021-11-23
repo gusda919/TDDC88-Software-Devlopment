@@ -13,7 +13,7 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .dropdown{
@@ -61,7 +61,7 @@ border: none;
   position:fixed;
   top: 44px;
   z-index: 5;
-  left: 80%;
+  right: 10px;
   margin-top: 2%;
   max-width: 400px;
   margin-bottom: 8px;

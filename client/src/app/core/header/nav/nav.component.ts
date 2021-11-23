@@ -13,7 +13,7 @@ export class NavComponent {
 
   date : number  = Date.now();
 
-  menuLabels = ['enhetsöversikt', 'dashboard']
+  menuLabels = ['enhetsöversikt', 'patientsvy']
   menuLinks = ['overview', 'dashboard/198605119885']
 
   displayMessage = false;
