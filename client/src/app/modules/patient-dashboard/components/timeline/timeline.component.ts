@@ -22,6 +22,7 @@ interface TimelineEvent {
 export class TimelineComponent implements OnInit {
   
   displayedEvent: TimelineEvent;
+  ticking: Boolean = false;
 
 
   @Input() patientId: string;
@@ -106,6 +107,22 @@ export class TimelineComponent implements OnInit {
     // scroll to the latest event
     let tlw = document.getElementById("timeline-wrapper");
     if (tlw && tlw?.scrollLeft >= 0) tlw.scrollLeft = tlw?.scrollWidth;
+
+    tlw?.addEventListener('scroll', (e) => {
+      if (!this.ticking) {
+        window.requestAnimationFrame(() => {
+
+          if (tlw && tlw?.scrollLeft <= 100) {
+            console.log("show left arrow");
+          }
+          if (tlw && tlw?.scrollLeft >= tlw?.offsetWidth-150) {
+            console.log("show right arrow");
+          }
+          this.ticking = false;
+        }); 
+        this.ticking = true;
+      }
+    });
   }
 
 }

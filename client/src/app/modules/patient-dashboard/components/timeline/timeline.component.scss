@@ -59,3 +59,24 @@
 .clicked {
   color: #015fa7;
 }
+
+.event-arrow {
+  border: solid #015fa7;
+  border-width: 0 7px 7px 0;
+  display: inline-block;
+  padding: 7px;
+}
+
+.event-arrow-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.event-arrow-left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.display-arrow-wrapper {
+  display: none;
+}
