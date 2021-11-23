@@ -24,6 +24,7 @@ import { BodySilhouetteComponent } from './components/body-silhouette/body-silho
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { JournalWidgetComponent } from './components/journal-widget/journal-widget.component';
 import { FluidBalanceComponent } from './components/fluid-balance/fluid-balance.component';
+import { ListComponent } from './components/list/list.component';
 
 
 
@@ -40,6 +41,7 @@ import { FluidBalanceComponent } from './components/fluid-balance/fluid-balance.
     BodySilhouetteComponent,
     JournalWidgetComponent,
     FluidBalanceComponent,
+    ListComponent,
   ],
   imports: [
     CommonModule,
