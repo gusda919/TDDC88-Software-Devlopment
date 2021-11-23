@@ -1,19 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { PatientService } from '../../../core/services/patient.service';
+
+
+interface message {
+  id: any,
+  patient: any,
+  pn: string,
+  content: any,
+}
+
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent {
+export class NavComponent implements OnInit  {
 
   date : number  = Date.now();
 
-  menuLabels = ['enhetsöversikt', 'patientsvy']
+  menuLabels = ['enhetsöversikt', 'dashboard']
   menuLinks = ['overview', 'dashboard/198605119885']
 
   displayMessage = false;
@@ -21,11 +30,10 @@ export class NavComponent {
   panelOpenState = false;
   subscription: Subscription;
   pn: string;
+  
+  messages: message[]= []
 
-  messages = [
-    {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
-    {id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
-  ]
+
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset])
     .pipe(
@@ -34,22 +42,58 @@ export class NavComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver, private patientService: PatientService) {
+    
+  }
 
-    this.subscription = this.patientService.getPatients().subscribe( (pats: any) => {
-      pats.forEach((pat: any) => {
-        if (pat.newecg === "true") {
-          this.addECG(pat.patientID);
-         // patientService.setPatientNoNewECG(pat.patientID);
-        }
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
+  ;
+
+  ngOnInit (){
+    
+    (async () => { 
+      
+      console.log('before delay')
+  
+      await this.delay(5000);
+  
+      // Do something after
+      console.log('after delay')
+
+      this.subscription = this.patientService.getPatients().subscribe( (pats: any) => {
+        pats.forEach((pat: any) => {
+          if (pat.newecg === "true") {
+            this.addECG(pat.patientID);
+            this.addLAB(pat.patientID);
+            this.addCHECKUP(pat.patientID);
+           // patientService.setPatientNoNewECG(pat.patientID);
+          }
+        });
       });
-    });
+  })()
+    
 
-  };
+  }
 
   addECG(pn: string) {
     this.patientService.getPatient(pn).subscribe((patient: any) => {
     let fullname = patient.givenName +" "+ patient.familyName;
     this.messages.push({id: this.messages.length, patient: fullname, pn: pn, content: 'Nytt EKG result tillgängligt'})
+    });
+  };
+
+  addLAB(pn: string) {
+    this.patientService.getPatient(pn).subscribe((patient: any) => {
+    let fullname = patient.givenName +" "+ patient.familyName;
+    this.messages.push({id: this.messages.length, patient: fullname, pn: pn, content: 'Nytt prov result tillgängligt'})
+    });
+  };
+
+  addCHECKUP(pn: string) {
+    this.patientService.getPatient(pn).subscribe((patient: any) => {
+    let fullname = patient.givenName +" "+ patient.familyName;
+    this.messages.push({id: this.messages.length, patient: fullname, pn: pn, content: 'Ny remiss tillagd'})
     });
   };
 
@@ -77,4 +121,3 @@ export class NavComponent {
   }
 
 }
-
