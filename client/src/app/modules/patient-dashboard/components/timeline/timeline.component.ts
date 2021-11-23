@@ -27,6 +27,7 @@ export class TimelineComponent implements OnInit {
   ticking: Boolean = false;
   displayLeftArrow: Boolean = true;
   displayRightArrow: Boolean = true;
+  firstRender: Boolean = true;
 
 
   @Input() patientId: string;
@@ -112,6 +113,14 @@ export class TimelineComponent implements OnInit {
     let tlw = document.getElementById("timeline-wrapper");
     if (tlw && tlw?.scrollLeft >= 0) tlw.scrollLeft = tlw?.offsetWidth;
 
+    // if (tlw && tlw?.scrollLeft < 150 && this.firstRender) {
+    //     // extra logic for desktop, might refactor later
+    //     document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+    //     //this.displayRightArrow = false;
+    //     this.firstRender = false;
+    //     console.log("we are in boys")
+    // }
+
     console.log(tlw?.scrollLeft)
 
     tlw?.addEventListener('scroll', (e) => {
@@ -153,4 +162,15 @@ export class TimelineComponent implements OnInit {
     });
   }
 
+  scrollFarLeft() {
+    let tlw = document.getElementById("timeline-wrapper");
+    if (tlw && tlw?.scrollLeft) tlw.scrollLeft = 0;
+  }
+  scrollFarRight() {
+    let tlw = document.getElementById("timeline-wrapper");
+    if (tlw && tlw?.scrollLeft) tlw.scrollLeft = tlw.offsetWidth;
+  }
+
 }
+
+
