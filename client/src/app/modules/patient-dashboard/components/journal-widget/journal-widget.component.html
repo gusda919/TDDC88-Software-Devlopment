@@ -2,8 +2,8 @@
     <h2>Journal</h2>
     <mat-toolbar>
         <mat-toolbar-row>
-            <span (click)="showNotes()"><fa-icon [icon]="faNotesMedical"></fa-icon> Anteckningar</span>
-            <span (click)="showReferrals()"><fa-icon [icon]="faEnvelope"></fa-icon> Remisser</span>
+            <span (click)="showNotes()" [ngClass]="{'selected': isNotesDisplayed }"><fa-icon [icon]="faNotesMedical"></fa-icon> Anteckningar</span>
+            <span (click)="showReferrals()" [ngClass]="{'selected': isReferralsDisplayed }"><fa-icon [icon]="faEnvelope"></fa-icon> Remisser</span>
         </mat-toolbar-row>
         
     </mat-toolbar>

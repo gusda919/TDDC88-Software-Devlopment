@@ -2,11 +2,37 @@
   width: 100%;
 }
 
-.referral-table, .notes-table {
-  width: 80%;
-  margin:auto;
+tr.example-detail-row {
+  height: 0;
 }
 
-#journal-widget {
-  height: 100%;
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.list-element-details {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.list-element-description {
+  padding: 16px;
+}
+
+.list-element-description-attribution {
+  opacity: 0.5;
 }

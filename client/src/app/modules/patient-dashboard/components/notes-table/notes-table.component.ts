@@ -41,30 +41,27 @@ export class NotesTableComponent implements AfterViewInit {
 
   getPatientNotes() {
     if (this.patientId=='195001232296') {
-      let data: NotesTableItem[] = [
-        {date: "2021-11-15 14:00", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-15 14:20", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-14 14:30", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-13 14:50", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-12 14:40", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
+      let data: NotesTableItem[] = [      
+        {date: "2021-11-15 13:00", note_type: 'Läkemedelsanteckning', noted_by: "Helena Pettersson", unit: "Hjärtmottagningen", description: "Enkel läkemedelsgenomgång utförd. Patienten tar läkemedl enligt listan. Insättes på Eliquis 5 mg 1 x 2 tills vidare. Insättes Metoporol 50 mg depottablett 1 x 1 tills vidare. Remiss till: AK-mottagningen. Hjärtmottagningen."},
+        {date: "2021-11-16 14:20", note_type: 'Läkemedelsanteckning', noted_by: "Helena Pettersson", unit: "Hjärtmottagningen", description: "Enkel läkemedelsgenomgång utförd. Patienten tar läkemedl enligt listan. Insättes på Eliquis 5 mg 1 x 2 tills vidare. Insättes Metoporol 50 mg depottablett 1 x 1 tills vidare. Remiss till: AK-mottagningen. Hjärtmottagningen."},
+        {date: "2021-11-17 15:30", note_type: 'Läkemedelsanteckning', noted_by: "Dr Doktor", unit: "Akutmottagningen", description: "Fick ett trevligt läkemedel."},
+        
       ];
       return data;
     } else if (this.patientId=='198605119885') {
       let data: NotesTableItem[] = [
-        {date: "2021-11-15 14:00", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-15 14:20", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-14 14:30", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-13 14:50", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-12 14:40", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
+        {date: "2021-11-15 14:00", note_type: 'Läkemedelsanteckning', noted_by: "Helena Pettersson", unit: "Hjärtmottagningen", description: "Enkel läkemedelsgenomgång utförd. Patienten tar läkemedl enligt listan. Insättes på Eliquis 5 mg 1 x 2 tills vidare. Insättes Metoporol 50 mg depottablett 1 x 1 tills vidare. Remiss till: AK-mottagningen. Hjärtmottagningen."},
+        {date: "2021-11-16 14:20", note_type: 'Läkemedelsanteckning', noted_by: "Helena Pettersson", unit: "Hjärtmottagningen", description: "Enkel läkemedelsgenomgång utförd. Patienten tar läkemedl enligt listan. Insättes på Eliquis 5 mg 1 x 2 tills vidare. Insättes Metoporol 50 mg depottablett 1 x 1 tills vidare. Remiss till: AK-mottagningen. Hjärtmottagningen."},
+        
       ];
       return data;
     } else if (this.patientId=='194202269207') {
       let data: NotesTableItem[] = [
-        {date: "2021-11-15 14:00", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-15 14:20", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-14 14:30", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-13 14:50", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
-        {date: "2021-11-12 14:40", note_type: 'Hydrogen', noted_by: "Helena Pettersson", unit: "Vaccinationsmottagningen", description: "hejhejehj"},
+        {date: "2021-11-16 14:00", note_type: 'Läkemedelsanteckning', noted_by: "Helena Pettersson", unit: "Hjärtmottagningen", description: "Enkel läkemedelsgenomgång utförd. Patienten tar läkemedl enligt listan. Insättes på Eliquis 5 mg 1 x 2 tills vidare. Insättes Metoporol 50 mg depottablett 1 x 1 tills vidare. Remiss till: AK-mottagningen. Hjärtmottagningen."},
+        {date: "2021-11-17 14:20", note_type: 'Läkemedelsanteckning', noted_by: "Helena Pettersson", unit: "Hjärtmottagningen", description: "Enkel läkemedelsgenomgång utförd. Patienten tar läkemedl enligt listan. Insättes på Eliquis 5 mg 1 x 2 tills vidare. Insättes Metoporol 50 mg depottablett 1 x 1 tills vidare. Remiss till: AK-mottagningen. Hjärtmottagningen."},
+        {date: "2021-11-18 14:00", note_type: 'Läkemedelsanteckning', noted_by: "Helena Pettersson", unit: "Hjärtmottagningen", description: "Enkel läkemedelsgenomgång utförd. Patienten tar läkemedl enligt listan. Insättes på Eliquis 5 mg 1 x 2 tills vidare. Insättes Metoporol 50 mg depottablett 1 x 1 tills vidare. Remiss till: AK-mottagningen. Hjärtmottagningen."},
+        {date: "2021-11-19 14:20", note_type: 'Läkemedelsanteckning', noted_by: "Helena Pettersson", unit: "Hjärtmottagningen", description: "Enkel läkemedelsgenomgång utförd. Patienten tar läkemedl enligt listan. Insättes på Eliquis 5 mg 1 x 2 tills vidare. Insättes Metoporol 50 mg depottablett 1 x 1 tills vidare. Remiss till: AK-mottagningen. Hjärtmottagningen."},
+        
       ];
       return data;
     } else {
