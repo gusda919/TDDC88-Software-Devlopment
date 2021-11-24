@@ -1,0 +1,81 @@
+<mat-card class="patient-header-card">
+   <mat-card-content>
+
+        <!-- <ul>
+            <li>
+                <strong>Namn</strong>
+                 <p> {{name}}</p>
+            </li>
+            <li>
+                <strong>Personnummer</strong>
+                <p>{{personalNumber}}</p> 
+            </li>
+            <li>
+                <strong>Triage</strong>
+                <p>{{triage}}</p>
+            </li>
+            <li>
+                <strong>Besöksorsak</strong>
+                <p>{{visitingFor}}</p> 
+            </li>
+            <li>
+                <strong>Ansvarigt team</strong>
+                <p>Team {{teamInCharge}}</p> 
+            </li>
+        </ul> -->
+
+        <div class = patheader>
+            <div class = "patientHeaderInformationBox">
+                <strong>Namn</strong>
+                <p class = "informationBoxValue" > {{name}}</p>
+            </div>
+            <div class = "patientHeaderInformationBox">
+                <strong>Personnummer</strong>
+                <p class = "informationBoxValue" >{{patientId}}</p> 
+            </div>
+    
+            <div *ngIf="contagious" class = "patientHeaderInformationBox">
+                <strong>Smittsam</strong>
+                <p class = "triangle"> </p>
+            </div>
+    
+            <div class = "patientHeaderInformationBox">
+                <strong>Triage</strong>
+                <p id = "triageColor" class = "informationBoxValue" style="background-color: blue;" >  </p>
+            </div>
+            <div class = "patientHeaderInformationBox">
+                <strong>Besöksorsak</strong>
+                <p class = "informationBoxValue" >{{visitingFor}}</p>
+            </div>
+            <div class = "patientHeaderInformationBox">
+                <strong>Kön</strong>
+                <p class = "informationBoxValue" > {{gender}}</p> 
+            </div>   
+
+            <div id = "rosButtonDiv" class="headerButton" >
+                <button mat-raised-button color="primary" id = "rosButton" (click)="openRoS(patientId)">RoS</button>
+            </div> 
+
+            <div id = "EKGButtonDiv" class="headerButton" >
+                <button mat-raised-button color="primary" id = "erg" (click)="openECGModal(patientId)">EKG</button>
+            </div> 
+        
+        </div>
+
+
+   </mat-card-content> 
+  
+</mat-card>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- The Close Button -->
+    <span (click)="closeECGModal()" class="close">&times;</span>
+  
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="ECGimg" onerror="hideImg()">
+  
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+  </div>

@@ -1,0 +1,127 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,a4paper]{article}
+
+% Adjusting margins to personal my need
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+% Graphics
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+% Math
+\usepackage{amssymb}
+\usepackage{amsmath} % Required for some math elements 
+
+% Other
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{float}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	MAIN PART
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\title{Software Quality Assurance Plan (v. 1.2)} % Title
+\author{Company 1 - TDDC88}
+\date{} % Date for the report
+\maketitle % Inserts the title, author and date
+
+\begin{table}
+\centering
+\begin{tabular}{||c c l c c||} 
+\hline
+Version & Author & Updates & Reviewed by & Date \\ [0.5ex] 
+\hline\hline
+0.1 & Erik Sköld & Initial version & - & 2021-09-14 \\
+\hline
+1.0 & Erik Sköld & 
+    \begin{tabular}{@{}l@{}}First plans for documents,\\
+    development, testing and quality\end{tabular}
+    & Daniel Ma & 2021-09-23  \\
+\hline
+1.1 & Erik Sköld & 
+    \begin{tabular}{@{}l@{}}Updated guidelines for development\\
+    regarding workflow, software reviews\\
+    and version handling\end{tabular}  
+    & Jacob Karlén & 2021-10-13 \\
+\hline
+1.2 & Erik Sköld & 
+    \begin{tabular}{@{}l@{}}Updated scope, moved document\\
+    guidelines to Project Plan, comment\\
+    missing parts in Testing, rewrite\\
+    section 5 to describe Software\\
+    Quality Assesments \end{tabular}  
+    & Daniel Ma & 2021-11-05 \\
+\hline
+\end{tabular}
+\end{table}
+
+% Removed abstract, not needed in TDDC88
+%----------------------------------------------------------------------------------------
+%	Abstract
+%----------------------------------------------------------------------------------------
+%\begin{abstract}
+%\normalsize
+%% Text of the abstract
+%\lipsum[9]
+
+%\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	Table of Content
+%----------------------------------------------------------------------------------------
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Main Part
+%----------------------------------------------------------------------------------------
+\input{sections/01-purpose}
+\clearpage
+
+\input{sections/02-documents}
+\clearpage
+
+\input{sections/03-development}
+\clearpage
+
+\input{sections/04-testing}
+\clearpage
+
+\input{sections/05-quality}
+\clearpage
+
+
+%----------------------------------------------------------------------------------------
+%	Appendix
+%----------------------------------------------------------------------------------------
+%\input{sections/appendix}
+% Currently no need for appendix
+
+%----------------------------------------------------------------------------------------
+%	Bibliography
+%----------------------------------------------------------------------------------------
+%\clearpage
+%\bibliography{bibliography/sample}{}
+%\bibliographystyle{plain}
+
+\end{document}

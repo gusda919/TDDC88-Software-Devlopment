@@ -1,0 +1,112 @@
+<mat-toolbar color="primary">
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">{{ drawer.opened ? 'menu_open' : 'menu' }}</mat-icon>
+  </button>
+  <div id="header-logo" style="margin-left: 16px;">
+  <!-- Need new Logo && Replace onclick link to eventual homepage-->
+    <img id="logo" alt="Missing logo" src="../../../../assets/Logo_Region_Östergötland.png"
+      onclick="document.location.href='#'" >
+  </div>
+  <!--<span>Region Östergötland </span>  -->
+  <span id="spacer"></span>
+  <span id="dateTime">{{date| date: 'y/MM/dd &nbsp;HH:mm&nbsp;' }}</span>
+
+  <button  mat-icon-button id="mail_button" (click)="getMessages()" aria-label="Example icon-button with heart icon">
+    <mat-icon matBadge="{{messages.length}}" [matBadgeHidden] = "messages.length===0" matBadgeColor="warn">notifications</mat-icon>
+  </button>
+  <!--Profile section should include picture & name?-->
+  <div id="profile_div" style="margin-left: 5px; margin-right: auto; margin-top: 7px;" >
+    <div class="dropdown">
+      <button id="profile-button" (click)="getProfile()">
+
+          <img src="../../../../assets/TesP.png" width="50px" height="50px" alt="Missing profile picture" style="cursor:pointer">
+      </button>
+      </div>
+  </div>
+</mat-toolbar>
+
+<!-- Profile dropdown -->
+<div class="dropdown-menu" *ngIf="displayProfile">
+  <div id="dropdown-profile" style="text-align:center;">
+    <picture>
+      <img src="../../../../assets/TesP.png" width="50px" height="50px" alt="Missing profile picture" >
+    </picture>
+    <p>
+      <b>
+      <!-- Replace with name -->
+      Dr. A. Nonymous 
+      </b>
+    </p>
+    
+  </div>
+  <div class="dropdown-button" id="dropdown-settings">
+    <button id="dropdown-settings-button">
+      Inställningar
+
+    </button>
+  </div>
+  <!-- Maybe not required?
+  <div class="dropdown-button" id="dropdown-dashboard">
+    <button id="dropdown-dashboard-button">
+      Dashboard
+    </button>
+  </div>
+  -->
+  <div class="dropdown-button" id="dropdown-logout">
+    <button id="dropdown-logout-button">
+      Logga ut
+    </button>
+  </div>
+</div>  
+
+<!-- Cards with media area -->
+<mat-card id="message" *ngIf="displayMessage">
+  <mat-card-title-group>
+    <mat-card-title>Notifikationer</mat-card-title>
+  </mat-card-title-group>
+  <mat-card-content id="messageContent">
+    <div *ngIf="messages.length > 0; else noNots"> 
+      <div class="col-md-3 mx-auto my-5" *ngFor="let message of messages" id={{message.id}}>
+        <mat-card  class="specificMessage">
+          <mat-card-subtitle>
+            <p>{{ message.patient }}</p>
+          </mat-card-subtitle>
+          <mat-card-content>
+            <p> {{ message.pn }}</p>
+            <p>{{ message.content }}</p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-button  color="warn" (click)="deleteMessage(message.id)">Ta bort</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    <ng-template #noNots>
+      <p>Inga notifikationer just nu.</p>
+    </ng-template>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions>
+    <button mat-button (click)="getMessages()">STÄNG</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" id="sidenav-id" 
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Meny</mat-toolbar>
+    <mat-nav-list>
+      <a *ngFor="let label of menuLabels; let i = index" mat-list-item [routerLink]="'/'+menuLinks[i]">{{label | titlecase}}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
