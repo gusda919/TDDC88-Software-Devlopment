@@ -1,0 +1,128 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[10pt,a4paper]{article}
+
+% Adjusting margins to personal my need
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+% Graphics
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{floatrow}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{adjustbox}
+
+\graphicspath{{figures/}}
+
+% Math
+\usepackage{amssymb}
+\usepackage{amsmath} % Required for some math elements 
+
+% Other
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{dirtytalk}
+\usepackage{enumitem}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	MAIN PART
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} %Used for tables e.g., in section 5.3
+\floatsetup[table]{capposition=top, captionskip=2pt} %Used with floatrow package to place table captions on top of the table instead of below
+
+\title{Project Plan} % Title
+\author{Company 1 - TDDC88}
+\date{} % Date for the report
+\maketitle % Inserts the title, author and date
+
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{||c c c c c||} 
+\hline
+Version & Author & Updates & Reviewed by & Date \\ [0.5ex] 
+\hline\hline
+0.1 & \begin{tabular}{@{}l@{}} A. Nilsson \&\\S. Gharedaghi\end{tabular} 
+& Initial version & D. Ma & 2021-09-16 \\ 
+\hline
+0.2 & \begin{tabular}{@{}l@{}} A. Nilsson \&\\S. Gharedaghi\end{tabular}
+& 
+\begin{tabular}{@{}l@{}} Updated from feedback\\and added SOP\&Risks\end{tabular}
+& D. Ma & 2021-10-15 \\
+\hline
+0.3 & D. Ma  & Minor fixes in section 4 & E. Sköld & 2021-11-02 \\
+\hline
+0.3 & S. Gharedaghi  & Adding roles description in section 4 & D. Ma & 2021-11-06 \\
+\hline
+0.4 & D. Ma  & 
+\begin{tabular}{@{}l@{}} Developed section 5.1, 5.3,\\ added subsection 5.5 \end{tabular}
+ & E. Sköld & 2021-11-08 \\
+\hline
+0.5 & D. Ma  & Developed section 5.1-5.3 & A. Nilsson & 2021-11-17 \\
+\hline
+0.6 & A. Nilsson  & \begin{tabular}{@{}l@{}} Added risk process \\ in chapter 6, updated CFT \\ description in section 4.2\end{tabular}  & D. Ma & 2021-11-19 \\
+\hline
+0.7 & F. Dolk  & \begin{tabular}{@{}l@{}} Added requirements process in 5.4 \\ \end{tabular}  & D. Ma & 2021-11-20 \\
+\hline
+0.8 & E. Sköld  & \begin{tabular}{@{}l@{}} Updated section 4 with role changes \\ \end{tabular}  & D. Ma & 2021-11-24 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+%----------------------------------------------------------------------------------------
+%	Table of Content
+%----------------------------------------------------------------------------------------
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Main Part
+%----------------------------------------------------------------------------------------
+\input{sections/01-introduction}
+\input{sections/02-scope}
+\input{sections/03-delivery}
+\input{sections/04-organization}
+\input{sections/05-processes}
+\input{sections/06-milestones}
+\input{sections/07-risks}
+%\input{sections/appendix}
+
+
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Appendix
+%----------------------------------------------------------------------------------------
+\input{sections/appendix}
+
+
+%----------------------------------------------------------------------------------------
+%	Bibliography
+%----------------------------------------------------------------------------------------
+\clearpage
+%References (add if needed)
+% \bibliography{bibliography/sample}{}
+% \bibliographystyle{plain}
+
+\end{document}
