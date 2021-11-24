@@ -30,6 +30,8 @@ import { PatientsOverviewModule } from './modules/patients-overview/patients-ove
 import { JournalComponent } from './modules/patient-dashboard/components/journal/journal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { getSwedishPaginatorIntl } from './modules/patients-overview/components/overview-table/overview-table.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FontAwesomeModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: getSwedishPaginatorIntl() }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
