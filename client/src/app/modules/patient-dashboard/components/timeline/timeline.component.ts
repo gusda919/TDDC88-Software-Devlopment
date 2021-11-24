@@ -113,47 +113,47 @@ export class TimelineComponent implements OnInit {
     let tlw = document.getElementById("timeline-wrapper");
     if (tlw && tlw?.scrollLeft >= 0) tlw.scrollLeft = tlw?.offsetWidth;
 
-    // if (tlw && tlw?.scrollLeft < 150 && this.firstRender) {
-    //     // extra logic for desktop, might refactor later
-    //     document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
-    //     //this.displayRightArrow = false;
-    //     this.firstRender = false;
-    //     console.log("we are in boys")
-    // }
-
-    console.log(tlw?.scrollLeft)
+    const vw = document.documentElement.clientWidth;
+    if (vw > 1000 && this.firstRender) {
+      document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+      document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+      this.firstRender = false;
+    }
 
     tlw?.addEventListener('scroll', (e) => {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
 
-          if (tlw && tlw?.scrollLeft <= 100) { // left arrow should be hidden
-            if (this.displayLeftArrow) {
-              // only hide if currently displayed
-              document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
-              this.displayLeftArrow = false;
+          if (vw < 1000) {
+            if (tlw && tlw?.scrollLeft <= 100) { // left arrow should be hidden
+              if (this.displayLeftArrow) {
+                // only hide if currently displayed
+                document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+                this.displayLeftArrow = false;
+              }
+            } else { // left arrow should be displayed
+              if (!this.displayLeftArrow) {
+                // only display if currently hidden
+                document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+                this.displayLeftArrow = true;
+              }
             }
-          } else { // left arrow should be displayed
-            if (!this.displayLeftArrow) {
-              // only display if currently hidden
-              document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
-              this.displayLeftArrow = true;
+  
+            if (tlw && tlw?.scrollLeft >= tlw?.offsetWidth-150) { // right arrow should be hidden
+              if (this.displayRightArrow) {
+                // only hide if currently displayed
+                document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+                this.displayRightArrow = false;
+              }
+            } else { // right arrow should be displayed
+              if (!this.displayRightArrow) {
+                // only display if currently hidden
+                document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+                this.displayRightArrow = true;
+              }
             }
           }
-
-          if (tlw && tlw?.scrollLeft >= tlw?.offsetWidth-150) { // right arrow should be hidden
-            if (this.displayRightArrow) {
-              // only hide if currently displayed
-              document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
-              this.displayRightArrow = false;
-            }
-          } else { // right arrow should be displayed
-            if (!this.displayRightArrow) {
-              // only display if currently hidden
-              document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
-              this.displayRightArrow = true;
-            }
-          }
+          
 
           this.ticking = false; // ticking variable used to optimize rendering
         }); 
@@ -164,11 +164,11 @@ export class TimelineComponent implements OnInit {
 
   scrollFarLeft() {
     let tlw = document.getElementById("timeline-wrapper");
-    if (tlw && tlw?.scrollLeft) tlw.scrollLeft = 0;
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = 0;
   }
   scrollFarRight() {
     let tlw = document.getElementById("timeline-wrapper");
-    if (tlw && tlw?.scrollLeft) tlw.scrollLeft = tlw.offsetWidth;
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = tlw.offsetWidth;
   }
 
 }
