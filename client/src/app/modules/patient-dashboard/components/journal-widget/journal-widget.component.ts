@@ -33,6 +33,7 @@ export class JournalWidgetComponent implements OnInit {
   isReferralsDisplayed = false;
   faNotesMedical = faNotesMedical;
   faEnvelope = faEnvelope;
+  // lists={referral:false,notes:false}
   
 
   ngOnInit(): void {
@@ -51,6 +52,14 @@ export class JournalWidgetComponent implements OnInit {
     }
     this.isReferralsDisplayed = !this.isReferralsDisplayed;
   }
+
+  // changeCategory(el: any,event : any){
+  //   this.lists.referral=false;
+  //   this.lists.notes=false;
+  //   this.lists[event]=!this.lists[event];
+  // }
+
+  
 
 
 }
