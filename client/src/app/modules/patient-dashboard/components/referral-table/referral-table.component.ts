@@ -33,10 +33,12 @@ export class ReferralTableComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.dataSource.data = this.getPatientReferrals();
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    setTimeout(() => {
+      this.dataSource.data = this.getPatientReferrals();
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource;
+    }, 0)
   }
 
   getPatientReferrals() {

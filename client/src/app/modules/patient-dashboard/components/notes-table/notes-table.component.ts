@@ -33,10 +33,14 @@ export class NotesTableComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.dataSource.data = this.getPatientNotes();
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+
+    setTimeout(() => {
+      this.dataSource.data = this.getPatientNotes();
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource;
+    }, 0)
+    
   }
 
   getPatientNotes() {
