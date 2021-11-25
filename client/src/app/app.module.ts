@@ -32,6 +32,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { getSwedishPaginatorIntl } from './modules/patients-overview/components/overview-table/overview-table.component';
+//import { uuid } from 'uuid';
+
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { getSwedishPaginatorIntl } from './modules/patients-overview/components/
     MatBadgeModule,
     FontAwesomeModule,
     MatSnackBarModule,
+   // uuidv4,
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getSwedishPaginatorIntl() }
