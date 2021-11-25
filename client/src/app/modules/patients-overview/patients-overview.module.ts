@@ -9,6 +9,7 @@ import { OverviewTableComponent } from './components/overview-table/overview-tab
 import { OverviewPageComponent } from './pages/overview-page/overview-page.component';
 import { MatCardModule } from '@angular/material/card';
 import {  MatButtonModule } from '@angular/material/button';
+import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {  MatButtonModule } from '@angular/material/button';
     MatSortModule,
     RouterModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule
   ]
 })
 export class PatientsOverviewModule { }
