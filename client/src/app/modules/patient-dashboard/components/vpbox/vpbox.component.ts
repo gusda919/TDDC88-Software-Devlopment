@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
+import { faHeartbeat, faLungs, faThermometer } from '@fortawesome/free-solid-svg-icons';
 
 import { PatientService } from '../../../../core/services/patient.service'
 
@@ -12,12 +13,15 @@ import { PatientService } from '../../../../core/services/patient.service'
 export class VpboxComponent implements OnInit {
 
   @Input()
-  patientId: string = "198605119885";
+  patientId: string;
 
   isLoaded = false;
+  faHeartbeat = faHeartbeat;
+  faLungs = faLungs;
+  faThermometer = faThermometer;
+
   isBloodOxygenDisplayed = false;
-  isPulseDisplayed = false;
-  isBloodPressureDisplayed = false;
+  isBloodPressureAndPulseDisplayed = false;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
  
@@ -42,27 +46,27 @@ export class VpboxComponent implements OnInit {
   //Get functions for displaying the latest value for each vital parameter
   getLatestBloodOxygenLevel() {
     let data = this.vitalParameters.bloodOxygenLevel.data;
-    return data[data.length-1].value;
+    return data[data.length-1];
   }
 
   getLatestPulse() {
     let data = this.vitalParameters.pulse.data;
-    return data[data.length-1].value;
+    return data[data.length-1];
   }
 
   getLatestBloodPressure() {
     let data = this.vitalParameters.bloodPressure.data;
-    return data[data.length-1].systolic + "/" + data[data.length-1].diastolic;
+    return data[data.length-1];
   }
 
   getLatestBodyTemperature() {
     let data = this.vitalParameters.bodyTemperature.data;
-    return data[data.length-1].value;
+    return data[data.length-1];
   }
 
   getLatestRespiratoryRate() {
     let data = this.vitalParameters.respiratoryRate.data;
-    return data[data.length-1].value;
+    return data[data.length-1];
   }
 
 
@@ -75,18 +79,12 @@ export class VpboxComponent implements OnInit {
     this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;
   }
 
-  togglePulseGraph() {
-    if(!this.isPulseDisplayed) {
-      this.checkIfAnyGraphIsToggled();
-    }
-    this.isPulseDisplayed = !this.isPulseDisplayed;
-  }
 
-  toggleBloodPressureGraph() {
-    if(!this.isBloodPressureDisplayed) {
+  toggleBloodPressureAndPulseGraph() {
+    if(!this.isBloodPressureAndPulseDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodPressureDisplayed = !this.isBloodPressureDisplayed;
+    this.isBloodPressureAndPulseDisplayed = !this.isBloodPressureAndPulseDisplayed;
   }
 
   toggleBodyTemperatureGraph() {
@@ -105,13 +103,11 @@ export class VpboxComponent implements OnInit {
 
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
-      this.isPulseDisplayed || 
-      this.isBloodPressureDisplayed || 
+      this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
       this.isRespiratoryRateDisplayed) {
         this.isBloodOxygenDisplayed = false;
-        this.isPulseDisplayed = false;
-        this.isBloodPressureDisplayed = false;
+        this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
     }

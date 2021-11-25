@@ -29,6 +29,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { NotesTableComponent } from './components/notes-table/notes-table.component';
+import { FluidBalanceComponent } from './components/fluid-balance/fluid-balance.component';
+
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { NotesTableComponent } from './components/notes-table/notes-table.compon
     JournalWidgetComponent,
     ReferralTableComponent,
     NotesTableComponent,
+    FluidBalanceComponent,
   ],
   imports: [
     CommonModule,

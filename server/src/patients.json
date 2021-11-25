@@ -6,6 +6,8 @@
         "description": "man skada höft",
         "gender": "man",
         "triage": "green",
+        "contagious": "true",
+        "newECG": "true",
         "importantInformation":  null,
         "proposedMeasures": null,
         "VitalParameters": {
@@ -19,8 +21,8 @@
           "pulse": {
             "label": "Puls",
             "data": [
-              { "date": "2021-03-14", "time": "14:00", "value": 81 },
-              { "date": "2021-03-14", "time": "15:15", "value": 77 }
+              { "date": "2021-03-14", "time": "13:50", "value": 81 },
+              { "date": "2021-03-14", "time": "14:40", "value": 77 }
             ]
           },
           "bloodPressure": {
@@ -110,6 +112,19 @@
           "dose": "1 förfylld spruta x 2 tv"
         }
       ],
+      "fluidBalance": {
+        "in": [
+          { "label": "per os", "value": 1000 },
+          { "label": "i.v.", "value": 1400 }
+        ],
+        "out": [
+          { "label": "Perspiratio", "value": 700 },
+          { "label": "Urin", "value": 700 },
+          { "label": "Blod", "value": 300 },
+          { "label": "Avföring", "value": 400 },
+          { "label": "Kräks", "value": 200 }
+        ]
+      },
       "cosmic": {
           "se:JournalNoteEHRExtracts": {
             "-xsi:schemaLocation": "http://se.cambiosys.cosmicconnect.publish.xml.journalnote JournalNote.xsd",
@@ -931,6 +946,7 @@
       "gender": "kvinna",
       "triage": "yellow",
       "contagious": "false",
+      "newECG": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
@@ -954,10 +970,11 @@
         "pulse": {
           "label": "Puls",
           "data": [
-            { "date": "2021-03-16", "time": "12:15", "value": 155 },
-            { "date": "2021-03-16", "time": "13:16", "value": 125 },
-            { "date": "2021-03-16", "time": "14:18", "value": 100 },
-            { "date": "2021-03-16", "time": "14:49", "value": 91 }
+            { "date": "2021-03-16", "time": "12:01", "value": 155 },
+            { "date": "2021-03-16", "time": "13:13", "value": 125 },
+            { "date": "2021-03-16", "time": "14:04", "value": 100 },
+            { "date": "2021-03-16", "time": "14:15", "value": 91 },
+            { "date": "2021-03-16", "time": "14:56", "value": 87 }
           ]
         },
         "bloodPressure": {
@@ -1098,6 +1115,19 @@
           "dose": "4 tabletter engångsdos"
         }
       ],
+      "fluidBalance": {
+        "in": [
+          { "label": "per os", "value": 1200 },
+          { "label": "i.v.", "value": 1000 }
+        ],
+        "out": [
+          { "label": "Perspiratio", "value": 800 },
+          { "label": "Urin", "value": 850 },
+          { "label": "Blod", "value": 0 },
+          { "label": "Avföring", "value": 500 },
+          { "label": "Kräks", "value": 350 }
+        ]
+      },
       "cosmic": {
           "se:JournalNoteEHRExtracts": {
             "-xsi:schemaLocation": "http://se.cambiosys.cosmicconnect.publish.xml.journalnote JournalNote.xsd",
@@ -1862,6 +1892,7 @@
       "gender": "kvinna",
       "triage": "yellow",
       "contagious": "false",
+      "newECG": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
@@ -2039,6 +2070,19 @@
           "dose": "3 ml engångsdos"
         }
       ],
+      "fluidBalance": {
+        "in": [
+          { "label": "per os", "value": 800 },
+          { "label": "i.v.", "value": 1200 }
+        ],
+        "out": [
+          { "label": "Perspiratio", "value": 600 },
+          { "label": "Urin", "value": 500 },
+          { "label": "Blod", "value": 200 },
+          { "label": "Avföring", "value": 0 },
+          { "label": "Kräks", "value": 600 }
+        ]
+      },
       "caregiving": [
           {
               "date": "2021-03-15",

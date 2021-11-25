@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving } from '../../shared/models/patient';
+import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving, FluidBalance } from '../../shared/models/patient';
 import { Observable } from 'rxjs';
 
+const httpOptions = {
+  headers: new HttpHeaders( { 'Content-Type': 'application/json' } )
+}
 
 @Injectable({
   providedIn: 'root'
@@ -96,6 +99,24 @@ export class PatientService {
     return this.http.get<any>( this.baseUrl + patientID + '/contagious');
   }
 
+  //getPatientNewECG(patientID: string)
+  getPatientNewECG(patientID: string): Observable<any> {
+    return this.http.get<any>( this.baseUrl + patientID + '/newECG');
+  }
+
+
+  /*
+  setPatientNoNewECG(patientID: string): Observable<any> {
+    return this.http.put<any>( this.baseUrl + patientID + '/newECG', "false", httpOptions);
+  }
+
+  setPatientNoNewECG2(patientID: string): Observable<any> {
+    let pat: Patient = this.getPatient(patientID);
+    pat.newECG = "false";
+    return this.http.put<any>( this.baseUrl + patientID + '/newECG', "false", httpOptions);
+  }
+*/
+
   //Service for getting all the vital parameters for the patient with person number "patientID"
   getPatientVitalparameters(patientID: string): Observable<VitalParameters> {
     return this.http.get<VitalParameters>(this.baseUrl + patientID + '/vitalparameters');
@@ -149,6 +170,11 @@ export class PatientService {
   //Service for getting all the caregiving given to the patient with person number "patientID"
   getPatientCaregiving(patientID: string): Observable<Caregiving[]> {
     return this.http.get<Caregiving[]>(this.baseUrl + patientID + '/caregiving');
+  }
+
+  //Service for getting the fluid balance of the patient with person number "patientID"
+  getPatientFluidBalance(patientID: string): Observable<FluidBalance> {
+    return this.http.get<FluidBalance>(this.baseUrl + patientID + '/fluidBalance');
   }
 
 }

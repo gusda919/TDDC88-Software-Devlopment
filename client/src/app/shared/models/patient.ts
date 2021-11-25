@@ -5,6 +5,8 @@ export interface Patient {
     description:          string;
     gender:               string;
     triage:               string;
+    contagious:           string;
+    newECG:               string;
     importantInformation: null;
     proposedMeasures:     null;
     VitalParameters:      VitalParameters;
@@ -12,8 +14,20 @@ export interface Patient {
     caregiving:           Caregiving[];
     labs:                 Lab[];
     drugs:                Drug[];
+    fluidBalance:         FluidBalance;
     cosmic:               Cosmic;
 }
+
+export interface FluidBalance {
+    in: FluidBalanceData[];
+    out: FluidBalanceData[];
+}
+
+export interface FluidBalanceData {
+    label: string;
+    value: number;
+}
+
 
 export interface Caregiving {
     date: string;
