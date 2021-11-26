@@ -27,6 +27,12 @@ export class VpboxComponent implements OnInit {
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
   isLabsDisplayed = false;
+  
+  bloodOxygenColor = "";
+  pulseColor = "";
+  bloodPressureColor = "";
+  bodyTemperatureColor = "";
+  respiratoryRateColor = "";
  
   vitalParameters: VitalParameters;
   labs: Lab[];
@@ -42,6 +48,7 @@ export class VpboxComponent implements OnInit {
     this.patientService.getPatientVitalparameters(this.patientId).subscribe((vitalParameters: VitalParameters) => {
       this.vitalParameters = vitalParameters;
       this.isLoaded = true;
+      this.setTriageColors();
       this.cdr.detectChanges();
     });
   }
@@ -86,6 +93,59 @@ export class VpboxComponent implements OnInit {
     let data = this.labs;
     return data[data.length-1];
   }
+
+  setTriageColors() {
+
+    //Triage coloring for blood oxygen
+    if (this.getLatestBloodOxygenLevel().value >= 95) {      
+      this.bloodOxygenColor = "#4CAF50";
+    } else if (this.getLatestBloodOxygenLevel().value >= 91 && this.getLatestBloodOxygenLevel().value <= 94) {
+      this.bloodOxygenColor = "#FFEB3B";
+    } else if (this.getLatestBloodOxygenLevel().value >= 88 && this.getLatestBloodOxygenLevel().value <= 90) {
+      this.bloodOxygenColor = "#FF9800";
+    } else if (this.getLatestBloodOxygenLevel().value >= 0  && this.getLatestBloodOxygenLevel().value <= 87) {
+      this.bloodOxygenColor = "#F44336";
+    }
+
+    //Triage coloring for pulse
+    if (this.getLatestPulse().value >= 50 && this.getLatestPulse().value <= 110) {      
+      this.pulseColor = "#4CAF50";
+    } else if ((this.getLatestPulse().value >= 111 && this.getLatestPulse().value <= 120) || (this.getLatestPulse().value >= 40 && this.getLatestPulse().value <= 49)) {
+      this.pulseColor = "#FFEB3B";
+    } else if (this.getLatestPulse().value >= 30 && this.getLatestPulse().value <= 39) {
+      this.pulseColor = "#FF9800";
+    } else if (this.getLatestPulse().value >= 0  && this.getLatestPulse().value <= 29) {
+      this.pulseColor = "#F44336";
+    }
+
+    //Triage coloring for blood pressure
+    if (this.getLatestBloodPressure().systolic >= 90) {      
+      this.bloodPressureColor = "#4CAF50";
+    } else if (this.getLatestBloodPressure().systolic >= 0  && this.getLatestBloodPressure().systolic <= 89) {
+      this.bloodPressureColor = "#F44336";
+    }
+
+    //Triage coloring for body temperature
+    if (this.getLatestBodyTemperature().value >= 35 && this.getLatestBodyTemperature().value <= 38.5) {
+      this.bodyTemperatureColor = "#4CAF50";
+    } else if (this.getLatestBodyTemperature().value >= 38.6 && this.getLatestBodyTemperature().value <= 41) {
+      this.bodyTemperatureColor = "#FFEB3B";
+    } else if (this.getLatestBodyTemperature().value > 41 || this.getLatestBodyTemperature().value < 35) {
+      this.bodyTemperatureColor = "#FF9800";
+    }
+
+    //Triage coloring for respiratory rate
+    if (this.getLatestRespiratoryRate().value >= 8 && this.getLatestRespiratoryRate().value <= 25) {
+      this.respiratoryRateColor = "#4CAF50";
+    } else if (this.getLatestRespiratoryRate().value >= 26 && this.getLatestRespiratoryRate().value <= 30) {
+      this.respiratoryRateColor = "#FF9800";
+    } else if ((this.getLatestRespiratoryRate().value >= 0 && this.getLatestRespiratoryRate().value <= 7) || this.getLatestRespiratoryRate().value > 30) {
+      this.respiratoryRateColor = "#F44336";
+    }
+
+  }
+
+
 
 
 

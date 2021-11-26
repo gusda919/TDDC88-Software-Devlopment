@@ -23,6 +23,12 @@ import { MyGraphComponent } from './components/my-graph/my-graph.component';
 import { BodySilhouetteComponent } from './components/body-silhouette/body-silhouette.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { JournalWidgetComponent } from './components/journal-widget/journal-widget.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ReferralTableComponent } from './components/referral-table/referral-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { NotesTableComponent } from './components/notes-table/notes-table.component';
 import { FluidBalanceComponent } from './components/fluid-balance/fluid-balance.component';
 import { ListComponent } from './components/list/list.component';
 
@@ -40,6 +46,8 @@ import { ListComponent } from './components/list/list.component';
     VpboxComponent,
     BodySilhouetteComponent,
     JournalWidgetComponent,
+    ReferralTableComponent,
+    NotesTableComponent,
     FluidBalanceComponent,
     ListComponent,
   ],
@@ -55,6 +63,10 @@ import { ListComponent } from './components/list/list.component';
     MatButtonModule,
     MatMenuModule,
     FontAwesomeModule,
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class PatientDashboardModule {}
