@@ -34,9 +34,9 @@
                 <p class = "informationBoxValue" >{{patientId}}</p> 
             </div>
     
-            <div *ngIf="contagious" class = "patientHeaderInformationBox">
-                <strong>Smittsam</strong>
-                <p class = "triangle"> </p>
+            <div class = "patientHeaderInformationBox">
+                <img class="symbol" *ngIf="contagious" src="../../../../../assets/uppmarksamhetssymbol_smittsam.png">
+                <img class="symbol" *ngIf="!contagious" src="../../../../../assets/uppmarksamhetssymbol.png">
             </div>
     
             <div class = "patientHeaderInformationBox">
