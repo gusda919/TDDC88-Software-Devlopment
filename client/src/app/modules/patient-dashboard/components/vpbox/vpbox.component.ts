@@ -2,8 +2,7 @@ import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
 import { faHeartbeat, faLungs, faThermometer, faTint, faProcedures, faFirstAid } from '@fortawesome/free-solid-svg-icons';
 
-import { PatientService } from '../../../../core/services/patient.service'
-import { FOCUS_TRAP_INERT_STRATEGY } from '@angular/cdk/a11y';
+import { PatientService } from '../../../../core/services/patient.service';
 
 @Component({
   selector: 'app-vpbox',
