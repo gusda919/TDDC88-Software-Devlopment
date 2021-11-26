@@ -11,7 +11,7 @@
         <div matLine>{{getLatestBloodOxygenLevel().time + ' ' + getLatestBloodOxygenLevel().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBloodOxygenLevel().value}}%</div>            
+            <div class="param" fxFlex="30" style="background-color: {{bloodOxygenColor}};">{{getLatestBloodOxygenLevel().value}}%</div>            
           </div>
         </div>
       </mat-list-item>
@@ -21,7 +21,7 @@
         <div matLine>{{getLatestPulse().time + ' ' + getLatestPulse().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestPulse().value}} bpm</div>
+            <div class="param" fxFlex="30" style="background-color: {{pulseColor}};">{{getLatestPulse().value}} bpm</div>
           </div>
         </div>
       </mat-list-item>
@@ -31,7 +31,7 @@
         <div matLine>{{getLatestBloodPressure().time + ' ' + getLatestBloodPressure().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBloodPressure().systolic + '/' + getLatestBloodPressure().diastolic}} mmHg</div>
+            <div class="param" fxFlex="30" style="background-color: {{bloodPressureColor}};">{{getLatestBloodPressure().systolic + '/' + getLatestBloodPressure().diastolic}} mmHg</div>
           </div>
         </div>
       </mat-list-item>
@@ -41,7 +41,7 @@
         <div matLine>{{getLatestBodyTemperature().time + ' ' + getLatestBodyTemperature().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBodyTemperature().value}}°C</div>
+            <div class="param" fxFlex="30" style="background-color: {{bodyTemperatureColor}};">{{getLatestBodyTemperature().value}}°C</div>
           </div>
         </div>
       </mat-list-item>
@@ -51,7 +51,7 @@
         <div matLine>{{getLatestRespiratoryRate().time + ' ' + getLatestRespiratoryRate().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestRespiratoryRate().value}} / min</div>
+            <div class="param" fxFlex="30" style="background-color: {{respiratoryRateColor}};">{{getLatestRespiratoryRate().value}} / min</div>
           </div>
         </div>
       </mat-list-item>
