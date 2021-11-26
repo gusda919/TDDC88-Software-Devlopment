@@ -90,28 +90,13 @@
 </mat-card>
 
 
-  <!--<div [ngSwitch]="true">
+  <div [ngSwitch]="true">
     <app-my-graph *ngSwitchCase="isBloodOxygenDisplayed" [graphId]="1" [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
     <app-my-graph *ngSwitchCase="isBloodPressureAndPulseDisplayed" [graphId]="2" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
     <app-my-graph *ngSwitchCase="isBodyTemperatureDisplayed" [graphId]="3" [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
     <app-my-graph *ngSwitchCase="isRespiratoryRateDisplayed" [graphId]="4" [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
     <app-fluid-balance *ngSwitchCase="isFluidBalanceDisplayed" [patientId]="patientId"></app-fluid-balance>
-  </div>-->
-
-  <div [ngSwitch]="first">
-    <app-my-graph *ngSwitchCase="one" [graphId]="1" [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
-    <app-my-graph *ngSwitchCase="two" [graphId]="2" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
-    <app-my-graph *ngSwitchCase="three" [graphId]="3" [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
-    <app-my-graph *ngSwitchCase="four" [graphId]="4" [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
-    <app-fluid-balance *ngSwitchCase="five" [patientId]="patientId"></app-fluid-balance>
   </div>
 
-  <div [ngSwitch]="second">
-    <app-my-graph *ngSwitchCase="one" [graphId]="1" [vitalParameters]="vitalParameters.bloodOxygenLevel"></app-my-graph>
-    <app-my-graph *ngSwitchCase="two" [graphId]="2" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
-    <app-my-graph *ngSwitchCase="three" [graphId]="3" [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
-    <app-my-graph *ngSwitchCase="four" [graphId]="4" [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
-    <app-fluid-balance *ngSwitchCase="five" [patientId]="patientId"></app-fluid-balance>
-  </div>
 
 </div>

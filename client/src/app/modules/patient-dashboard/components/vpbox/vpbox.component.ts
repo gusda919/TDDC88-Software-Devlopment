@@ -24,8 +24,8 @@ export class VpboxComponent implements OnInit {
   faProcedures = faProcedures;
   faFirstAid = faFirstAid;
 
-  isBloodOxygenDisplayed = false;
-  isBloodPressureAndPulseDisplayed = false;
+  isBloodOxygenDisplayed = true;
+  isBloodPressureAndPulseDisplayed = true;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
   isFluidBalanceDisplayed = false;
@@ -37,8 +37,8 @@ export class VpboxComponent implements OnInit {
   five = "";
 
 
-  first = "first";
-  second = "second";
+  firstGraph = "oxygen";
+  secondGraph = "pressure";
  
   vitalParameters: VitalParameters;
 
@@ -84,63 +84,101 @@ export class VpboxComponent implements OnInit {
   }
 
 
+  graphToggler() {
+   // firstGraph = "oxygen";
+    //secondGraph = "pressure";
+    if(this.firstGraph === "oxygen" || this.secondGraph === "oxygen") {
+      this.isBloodOxygenDisplayed = true;
+    }
+    if(this.firstGraph === "pressure" || this.secondGraph === "pressure") {
+      this.isBloodPressureAndPulseDisplayed = true;
+    }
+    if(this.firstGraph === "temp" || this.secondGraph === "temp") {
+      this.isBodyTemperatureDisplayed = true;
+    }
+    if(this.firstGraph === "resp" || this.secondGraph === "resp") {
+      this.isRespiratoryRateDisplayed = true;
+    }
+    if(this.firstGraph === "fluid" || this.secondGraph === "fluid") {
+      this.isFluidBalanceDisplayed = true;
+    }
+  }
+
+
 
   //Toggle functions for displaying graphs
   toggleBloodOxygenGraph() {
-    /*if(!this.isBloodOxygenDisplayed) {
+    if(!this.isBloodOxygenDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;*/
+    //this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;*/
 
-    this.one = "first";
-    this.second = this.first;
-    this.first = this.one;
+    //this.isBloodOxygenDisplayed = true;
+    //this.checkIfAnyGraphIsToggled()
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "oxygen";
+    this.graphToggler()
   }
 
 
   toggleBloodPressureAndPulseGraph() {
-    /*if(!this.isBloodPressureAndPulseDisplayed) {
+    if(!this.isBloodPressureAndPulseDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodPressureAndPulseDisplayed = !this.isBloodPressureAndPulseDisplayed;*/
+  //  this.isBloodPressureAndPulseDisplayed = !this.isBloodPressureAndPulseDisplayed;*/
 
-    this.two = "first";
-    this.second = this.first;
-    this.first = this.two;
+    //this.isBloodPressureAndPulseDisplayed = true;
+    //this.checkIfAnyGraphIsToggled()
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "pressure";
+    this.graphToggler()
 
   }
 
   toggleBodyTemperatureGraph() {
-    /*if(!this.isBodyTemperatureDisplayed) {
+    if(!this.isBodyTemperatureDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBodyTemperatureDisplayed = !this.isBodyTemperatureDisplayed;*/
+   // this.isBodyTemperatureDisplayed = !this.isBodyTemperatureDisplayed;*/
 
-    this.three = "first";
-    this.second = this.first;
-    this.first = this.three;
+  //  this.isBodyTemperatureDisplayed = true;
+   // this.checkIfAnyGraphIsToggled()
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "temp";
+    this.graphToggler()
+
   }
 
   toggleRespiratoryRateGraph() {
-    /*if(!this.isRespiratoryRateDisplayed) {
+    if(!this.isRespiratoryRateDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;*/
+    //this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;*/
 
-    this.four = "first";
-    this.second = this.first;
-    this.first = this.four;
+//this.isRespiratoryRateDisplayed = true;
+//this.checkIfAnyGraphIsToggled()
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "resp";
+    this.graphToggler()
+
   }
 
   toggleFluidBalance() {
-    /*if(!this.isFluidBalanceDisplayed) {
+    if(!this.isFluidBalanceDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isFluidBalanceDisplayed = !this.isFluidBalanceDisplayed;*/
+    //this.isFluidBalanceDisplayed = !this.isFluidBalanceDisplayed;*/
 
-    this.five = "first";
-    this.second = this.first;
-    this.first = this.five;
+    //this.isFluidBalanceDisplayed = true;
+    //this.checkIfAnyGraphIsToggled()
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "fluid";
+    this.graphToggler()
+
   }
   
   checkIfAnyGraphIsToggled() {
