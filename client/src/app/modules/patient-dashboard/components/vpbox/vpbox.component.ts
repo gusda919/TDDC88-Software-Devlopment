@@ -1,8 +1,9 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
-import { faHeartbeat, faLungs, faThermometer } from '@fortawesome/free-solid-svg-icons';
+import { faHeartbeat, faLungs, faThermometer, faTint, faProcedures, faFirstAid } from '@fortawesome/free-solid-svg-icons';
 
 import { PatientService } from '../../../../core/services/patient.service'
+import { FOCUS_TRAP_INERT_STRATEGY } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-vpbox',
@@ -19,11 +20,25 @@ export class VpboxComponent implements OnInit {
   faHeartbeat = faHeartbeat;
   faLungs = faLungs;
   faThermometer = faThermometer;
+  faTint = faTint;
+  faProcedures = faProcedures;
+  faFirstAid = faFirstAid;
 
   isBloodOxygenDisplayed = false;
   isBloodPressureAndPulseDisplayed = false;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
+  isFluidBalanceDisplayed = false;
+
+  one = "";
+  two = "";
+  three = "";
+  four = "";
+  five = "";
+
+
+  first = "first";
+  second = "second";
  
   vitalParameters: VitalParameters;
 
@@ -31,7 +46,6 @@ export class VpboxComponent implements OnInit {
 
   ngOnInit(): void {
     this.getVitalParameters();
-    
   }
 
   getVitalParameters() {
@@ -73,43 +87,73 @@ export class VpboxComponent implements OnInit {
 
   //Toggle functions for displaying graphs
   toggleBloodOxygenGraph() {
-    if(!this.isBloodOxygenDisplayed) {
+    /*if(!this.isBloodOxygenDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;
+    this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;*/
+
+    this.one = "first";
+    this.second = this.first;
+    this.first = this.one;
   }
 
 
   toggleBloodPressureAndPulseGraph() {
-    if(!this.isBloodPressureAndPulseDisplayed) {
+    /*if(!this.isBloodPressureAndPulseDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodPressureAndPulseDisplayed = !this.isBloodPressureAndPulseDisplayed;
+    this.isBloodPressureAndPulseDisplayed = !this.isBloodPressureAndPulseDisplayed;*/
+
+    this.two = "first";
+    this.second = this.first;
+    this.first = this.two;
+
   }
 
   toggleBodyTemperatureGraph() {
-    if(!this.isBodyTemperatureDisplayed) {
+    /*if(!this.isBodyTemperatureDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBodyTemperatureDisplayed = !this.isBodyTemperatureDisplayed;
+    this.isBodyTemperatureDisplayed = !this.isBodyTemperatureDisplayed;*/
+
+    this.three = "first";
+    this.second = this.first;
+    this.first = this.three;
   }
 
   toggleRespiratoryRateGraph() {
-    if(!this.isRespiratoryRateDisplayed) {
+    /*if(!this.isRespiratoryRateDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;
+    this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;*/
+
+    this.four = "first";
+    this.second = this.first;
+    this.first = this.four;
   }
 
+  toggleFluidBalance() {
+    /*if(!this.isFluidBalanceDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
+    this.isFluidBalanceDisplayed = !this.isFluidBalanceDisplayed;*/
+
+    this.five = "first";
+    this.second = this.first;
+    this.first = this.five;
+  }
+  
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
-      this.isRespiratoryRateDisplayed) {
+      this.isRespiratoryRateDisplayed ||
+      this.isFluidBalanceDisplayed) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
+        this.isFluidBalanceDisplayed = false;
     }
   }
 }
