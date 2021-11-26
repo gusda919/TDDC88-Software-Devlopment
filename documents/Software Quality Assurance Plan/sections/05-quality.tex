@@ -1,5 +1,5 @@
 \section{Software Quality Assessments}
-This section describes the plan for Software Quality Assessments (excluding testing). The plan includes a schedule of the assesments, their purpose and the metrics to be used.
+This section describes the plan for Software Quality Assessments (excluding testing). The plan includes a schedule of the assessments, their purpose and the metrics to be used.
 
 %highlights the expected resources to be spent on Quality Assurance (excluding testing) and the standard metrics to be used. \emph{Will be further developed in a future version.}
 
@@ -25,7 +25,7 @@ Date & Iteration to be monitored \\ [0.5ex]
 \hline\hline
 2021-11-09 & Work until iteration 2 \\
 \hline
-2021-11-24 & Iteration 3 \\
+2021-11-29 & Iteration 3 \\
 \hline
 2021-12-07 & Iteration 4 \\
 \hline
@@ -45,16 +45,21 @@ The purpose of this procedure is to monitor and measure the product quality. Dat
 %\end{itemize}
 
 \subsection{Metrics}
-For each assessment, the Quality Coordinator will measure and produce the metrics listed below. The results shall be documented in a spreadsheet available to the entire company in MS Teams. An overview of the results from each assessment will be presented on the upcoming company-wide meeting. The most significant findings will be brought up at the weekly manager meeting by the Quality Coordinator, where a decision is made whether any further action needs to be taken.
+For each assessment, the Quality Coordinator will measure and produce the metrics listed below. The results shall be documented in a spreadsheet available to the entire company in MS Teams. A summary of the assessment will be placed in the Output folder on MS Teams. The most significant findings will be brought up at the weekly manager meeting by the Quality Coordinator, where a decision is made whether any further action needs to be taken.
 
-\subsubsection{CodeMR}
+\subsubsection{Quality of code}
+%\subsubsection{CodeMR}
 \begin{itemize}
-    \item Complexity
-    \item Coupling
-    \item Lack of Cohesion
-    \item Size
+%    \item Complexity
+%    \item Coupling
+%    \item Lack of Cohesion
+%    \item Size
+\item Ratio of comments per function
+\item Ratio of commit messages following the company guidelines
+\item Number of files and directories within server and client respectively
 \end{itemize}
-These metrics are given from the code analysis tool CodeMR. The metrics will give an overview of which classes have for example high complexity. If certain classes have too high values, this will be noticed and remedied. The goal is that no class should have a high or very-high value of these quality attributes.
+These metrics are noted manually and will indicate the quality of the code with regards to maintainability and understandability.
+%These metrics are given from the code analysis tool CodeMR. The metrics will give an overview of which classes have for example high complexity. If certain classes have too high values, this will be noticed and remedied. The goal is that no class should have a high or very-high value of these quality attributes.
 
 \subsubsection{GitLab}
 \begin{itemize}
