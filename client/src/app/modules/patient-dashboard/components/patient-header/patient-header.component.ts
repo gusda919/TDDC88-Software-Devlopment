@@ -26,6 +26,7 @@ export class PatientHeaderComponent implements OnInit{
     contagious: boolean;
     visitingFor = "";
     gender = "";
+    roomBed = "";
     subscription: Subscription;
     imageSource: string;
     htmlToAdd: string;
@@ -45,12 +46,13 @@ export class PatientHeaderComponent implements OnInit{
   }
   ngOnInit(){
 
-    this.patientService.getPatient(this.patientId).subscribe( (cont: any) => {
-      this.name = cont.givenName + " " + cont.familyName,
-      this.triage = cont.triage,
-      this.contagious = cont.contagious ==="true",
-      this.visitingFor = cont.description.substr(cont.description.indexOf(" ") + 1).charAt(0).toUpperCase() + cont.description.substr(cont.description.indexOf(" ") + 1).slice(1),
-      this.gender = cont.gender.charAt(0).toUpperCase() + cont.gender.slice(1)
+    this.patientService.getPatient(this.patientId).subscribe( (pat: any) => {
+      this.name = pat.givenName + " " + pat.familyName,
+      this.triage = pat.triage,
+      this.contagious = pat.contagious ==="true",
+      this.visitingFor = pat.description.substr(pat.description.indexOf(" ") + 1).charAt(0).toUpperCase() + pat.description.substr(pat.description.indexOf(" ") + 1).slice(1),
+      this.gender = pat.gender.charAt(0).toUpperCase() + pat.gender.slice(1);
+      this.roomBed = pat.roomBed;
       this.updateTriageColor();
     });
 

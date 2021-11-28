@@ -25,7 +25,8 @@ router.get('/patients', async (req: Request, res: Response) => {
     contagious: p.contagious,
     newecg: p.newECG,
     newxray: p.newXray,
-    caregiving: p.caregiving
+    caregiving: p.caregiving,
+    roomBed: p.roomBed
   })
   ));
 });
@@ -43,7 +44,8 @@ router.get('/patients/:patientID', async (req: Request, res: Response) => {
       contagious: patient.contagious,
       newecg: patient.newECG,
       newxray: patient.newXray,
-      caregiving: patient.caregiving
+      caregiving: patient.caregiving,
+      roomBed: patient.roomBed
     }))
   }
   else {
