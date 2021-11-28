@@ -7,6 +7,7 @@ export interface Patient {
     triage:               string;
     contagious:           string;
     newECG:               string;
+    newXray:              string;
     importantInformation: null;
     proposedMeasures:     null;
     VitalParameters:      VitalParameters;
