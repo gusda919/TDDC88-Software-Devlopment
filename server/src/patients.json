@@ -9,6 +9,7 @@
         "contagious": "true",
         "newECG": "true",
         "newXray": "true",
+        "roomBed": "3:1",
         "importantInformation":  null,
         "proposedMeasures": null,
         "VitalParameters": {
@@ -949,6 +950,7 @@
       "contagious": "false",
       "newECG": "false",
       "newXray": "false",
+      "roomBed": "6:1",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
@@ -1894,8 +1896,9 @@
       "gender": "kvinna",
       "triage": "yellow",
       "contagious": "false",
-      "newECG": "true",
       "newXray": "false",
+      "newECG": "false",
+      "roomBed": "14:1",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
