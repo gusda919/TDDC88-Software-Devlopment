@@ -29,6 +29,9 @@ export class TimelineComponent implements OnInit {
   displayRightArrow: Boolean = true;
   firstRender: Boolean = true;
 
+  currentDate: string = '';
+  currentTime: string = '';
+
 
   @Input() patientId: string;
 
@@ -90,6 +93,7 @@ export class TimelineComponent implements OnInit {
       );
       this.events = this.events.concat(events);
       this.sortData();
+      this.setCurrentDateMarker();
     });
   }
 
@@ -106,6 +110,27 @@ export class TimelineComponent implements OnInit {
   closeDisplayedEvent() {
     this.displayedEvent = <TimelineEvent>{};
     this.clickedButton = null;
+  }
+
+  setCurrentDateMarker() {
+    let today = new Date();
+    this.currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    this.currentTime = today.getHours() + ':' + today.getMinutes();
+
+    let counter = 0;
+    this.events.forEach((event) => {
+      if (event.date < today) {
+        counter++;
+      }
+    });
+
+    let px  = 60 +  245 * 6;
+    let marker = document.getElementById("current-date-marker");
+    if (marker) marker.style.left = px.toString() + "px";
+
+    let overlay = document.getElementById("timeline-overlay");
+    if (overlay) overlay.style.width = (px+57).toString() + "px";
+
   }
 
   setScroll() {

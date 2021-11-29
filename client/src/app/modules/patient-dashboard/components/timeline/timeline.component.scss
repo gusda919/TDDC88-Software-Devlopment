@@ -44,11 +44,22 @@
 }
 
 .timeline-line {
-  border: 2px dashed #000;
+  border: 2px dashed black;
   margin-top: 40px;
   margin-bottom: 20px;
   position: absolute;
   width: 95%;
+}
+
+.timeline-past-overlay {
+  background-color: #015fa7;
+  position: relative;
+  margin-top: 37px;
+  margin-bottom: 20px;
+  height: 7px;
+  width: 1000px;
+  z-index: 8;
+  float: left;
 }
 
 .event-date {
@@ -80,4 +91,22 @@
 
 .hide-arrow-wrapper {
   display: none;
+}
+
+.current-date-marker {
+  position: relative;
+  display: inline;
+  left: 1000px;
+}
+
+.current-date-arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #015fa7;
+  display: inline-block;
+  position: relative;
+  top: 45px;
+  left: -114px;
 }
