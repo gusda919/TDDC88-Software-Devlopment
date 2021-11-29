@@ -109,23 +109,15 @@ export class TimelineComponent implements OnInit {
   }
 
   setScroll() {
-    // scroll to the latest event
+    this.scrollFarRight();
     let tlw = document.getElementById("timeline-wrapper");
-    if (tlw && tlw?.scrollLeft >= 0) tlw.scrollLeft = tlw?.offsetWidth;
-
-    const vw = document.documentElement.clientWidth;
-    if (vw > 1000 && this.firstRender) {
-      document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
-      document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
-      this.firstRender = false;
-    }
 
     tlw?.addEventListener('scroll', (e) => {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
 
-          if (vw < 1000) {
-            if (tlw && tlw?.scrollLeft <= 100) { // left arrow should be hidden
+          // if (vw && vw < (this.events.length + 4) * 160) {
+            if (tlw && tlw?.scrollLeft <= 40) { // left arrow should be hidden
               if (this.displayLeftArrow) {
                 // only hide if currently displayed
                 document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
@@ -138,8 +130,8 @@ export class TimelineComponent implements OnInit {
                 this.displayLeftArrow = true;
               }
             }
-  
-            if (tlw && tlw?.scrollLeft >= tlw?.offsetWidth-150) { // right arrow should be hidden
+            
+            if (tlw && tlw.scrollLeft + tlw.offsetWidth >= tlw.scrollWidth-160) { // right arrow should be hidden
               if (this.displayRightArrow) {
                 // only hide if currently displayed
                 document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
@@ -152,7 +144,6 @@ export class TimelineComponent implements OnInit {
                 this.displayRightArrow = true;
               }
             }
-          }
           
 
           this.ticking = false; // ticking variable used to optimize rendering
@@ -160,6 +151,8 @@ export class TimelineComponent implements OnInit {
         this.ticking = true;
       }
     });
+
+    tlw?.dispatchEvent(new Event("scroll"));
   }
 
   scrollFarLeft() {
