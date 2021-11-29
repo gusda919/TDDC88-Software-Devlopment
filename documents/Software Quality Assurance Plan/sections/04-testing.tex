@@ -1,8 +1,8 @@
 \section{Testing}
 
-The Quality Coordinator will assure that the test management processes and products are being implemented per the Test Plan. This includes all types of testing of software system components as described in the test plan, specifically during integration testing (verification) and acceptance testing (validation).
+The Quality Coordinator will assure that the test management processes and products are being implemented per the Test Plan. This includes all types of testing of software system components as described in the test plan, specifically during acceptance testing (validation).
 
-The Quality Coordinator together with the Test Leader will monitor testing efforts to assure that test schedules are adhered to and maintained to reflect an accurate progression of the testing activities. It will be assured that tests are conducted using approved test procedures and appropriate test tools, and that test anomalies are identified, documented, addressed, and tracked to closure.
+The Quality Coordinator together with the Test Leader will monitor testing efforts to assure that test plans are adhered to and maintained to reflect an accurate progression of the testing activities. It will be assured that tests are conducted using approved test procedures and appropriate test tools, and that test anomalies are identified, documented, addressed, and tracked to closure.
 
 Members of the Test Team will review post-test execution related artifacts including test results and test reports.
 
@@ -10,10 +10,10 @@ Members of the Test Team will review post-test execution related artifacts inclu
 Testing will be conducted in order to verify that the product is working as intended. Solutions will be evaluated to reduce the risk of problems and improve the performance of the product. Testing is an important part of the work to ensure that the requirements are complied with and thus assuring quality.
 
 \subsection{Test plan}
-\emph{The latest published version of the Testplan is available in the Output folder on MS Teams.}
+The latest published version of the Testplan is available in the Output folder on MS Teams and on \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/tree/develop/documents/Test\%20Plan}{GitLab}. The test tools used are different features on GitLab (automatic test pipeline in merge requests, bug tracking with the help of issues and comments), Karma and Selenium. If bugs are found during system and acceptance testing, they are reported using comments and issues in GitLab. Test results from CTA and SUS testing are recorded and noted in a document template for each test. The results are summarized and feedback from the users are forwarded to developers and UX-designers.  
 
-\bigskip
-\noindent \textcolor{red}{Need to include links to testing documentation, specify what tools are used for testing and how test results are reported. This will be inlcuded once the test plan is updated.}
+%\bigskip
+%\noindent \textcolor{red}{Need to include links to testing documentation, specify what tools are used for testing and how test results are reported. A plan for assuring quality for the test cases...}
 
-
-
+\subsection{Quality assurance with test cases}
+To avoid biased testing and a limited coverage, the test plan and test cases are written and developed by designated testers who have not worked with the code that is to be tested. Every test case shall have a clear objective, for example focus on one feature at the time. The test case is broken down into a series of concise steps and when an action is taken, the tester or an automated test should be able to easily measure the success of the action. To ensure meeting expectations from the intended end-user, the acceptance testing is primarily made with medical personnel.
