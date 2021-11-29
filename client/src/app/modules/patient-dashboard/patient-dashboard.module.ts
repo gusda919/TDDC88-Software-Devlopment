@@ -30,6 +30,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { NotesTableComponent } from './components/notes-table/notes-table.component';
 import { FluidBalanceComponent } from './components/fluid-balance/fluid-balance.component';
+import { ListComponent } from './components/list/list.component';
 
 
 
@@ -48,6 +49,7 @@ import { FluidBalanceComponent } from './components/fluid-balance/fluid-balance.
     ReferralTableComponent,
     NotesTableComponent,
     FluidBalanceComponent,
+    ListComponent,
   ],
   imports: [
     CommonModule,

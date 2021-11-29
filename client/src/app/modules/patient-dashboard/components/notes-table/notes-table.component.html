@@ -1,5 +1,5 @@
 <div class="mat-elevation-z8">
-  <table mat-table class="full-width-table" matSort aria-label="Elements" [dataSource]="dataSource" multiTemplateDataRows>
+  <table mat-table class="full-width-table" matSort aria-label="Elements" matSortActive="date" matSortDisableClear matSortDirection="desc" [dataSource]="dataSource" multiTemplateDataRows>
     <!-- Date Column -->
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Datum</th>
