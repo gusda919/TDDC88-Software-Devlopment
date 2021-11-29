@@ -32,11 +32,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { getSwedishPaginatorIntl } from './modules/patients-overview/components/overview-table/overview-table.component';
+import { SearchBarComponent } from './core/header/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,14 @@
   <div id="unit-button">
     <button mat-stroked-button color="Accent" [routerLink]="'/'+menuLinks[0]">Enhetsöversikt</button>
   </div>
-  <!--<span>Region Östergötland </span>  -->
+  <div class="search-bar-div">
+    <app-search-bar (searchcriteria)="searchForPatient($event)"></app-search-bar>
+  </div>
+  <div class="search-results">
+    <p *ngFor="let patient of content" [routerLink]="['/dashboard', patient]">
+      {{patient}}
+    </p>
+  </div>
   <span id="spacer"></span>
   <span id="dateTime">{{date| date: 'y/MM/dd &nbsp;HH:mm&nbsp;' }}</span>
 

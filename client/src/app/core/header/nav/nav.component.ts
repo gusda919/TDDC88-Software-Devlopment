@@ -4,6 +4,7 @@ import { Observable, Subscription} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { PatientService } from '../../../core/services/patient.service';
 
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -15,6 +16,9 @@ export class NavComponent {
 
   menuLabels = ['enhetsöversikt', 'patientsvy']
   menuLinks = ['overview', 'dashboard/198605119885']
+
+  patientIds: string[] = [];
+  content: string[] = [];
 
   displayMessage = false;
   displayProfile = false;
@@ -41,7 +45,9 @@ export class NavComponent {
           this.addECG(pat.patientID);
          // patientService.setPatientNoNewECG(pat.patientID);
         }
+        this.patientIds.push(pat.patientID);
       });
+      console.log(this.patientIds);
     });
 
   };
@@ -74,6 +80,20 @@ export class NavComponent {
     else {
       this.displayProfile = true;
     }
+  }
+
+  searchForPatient(data: any) {
+    this.content = this.patientIds;
+    if (data) {
+      this.content = this.content.filter(function (ele, i, array) {
+        let arrayelement = ele.toLowerCase();
+        return arrayelement.includes(data);
+      })
+    }
+    else {
+      console.log(this.content);
+    }
+    console.log(this.content);
   }
 
 }
