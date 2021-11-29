@@ -4,6 +4,7 @@ export interface Patient {
     givenName:            string;
     description:          string;
     gender:               string;
+    nextCheckupIn:        string;
     triage:               string;
     contagious:           string;
     newECG:               string;
