@@ -26,28 +26,37 @@ export class PatientHeaderComponent implements OnInit{
     contagious: boolean;
     visitingFor = "";
     gender = "";
+    roomBed = "";
     subscription: Subscription;
     imageSource: string;
-
+    htmlToAdd: string;
+    ECGImages: number;
   constructor(private patientService: PatientService) {
 
     this.subscription = this.patientService.getPatientContagious(this.patientId).subscribe( (cont: any) => 
     (this.contagious = (cont ==="true") )); 
 
   }
+
+  ImageExist(url: string) 
+  {
+     var img = new Image();
+     img.src = url;
+     return img.height != 0;
+  }
   ngOnInit(){
 
-    this.patientService.getPatient(this.patientId).subscribe( (cont: any) => {
-      this.name = cont.givenName + " " + cont.familyName,
-      this.triage = cont.triage,
-      this.contagious = cont.contagious ==="true",
-      this.visitingFor = cont.description.substr(cont.description.indexOf(" ") + 1).charAt(0).toUpperCase() + cont.description.substr(cont.description.indexOf(" ") + 1).slice(1),
-      this.gender = cont.gender.charAt(0).toUpperCase() + cont.gender.slice(1)
+    this.patientService.getPatient(this.patientId).subscribe( (pat: any) => {
+      this.name = pat.givenName + " " + pat.familyName,
+      this.triage = pat.triage,
+      this.contagious = pat.contagious ==="true",
+      this.visitingFor = pat.description.substr(pat.description.indexOf(" ") + 1).charAt(0).toUpperCase() + pat.description.substr(pat.description.indexOf(" ") + 1).slice(1),
+      this.gender = pat.gender.charAt(0).toUpperCase() + pat.gender.slice(1);
+      this.roomBed = pat.roomBed;
       this.updateTriageColor();
     });
 
   }
-
 
   openRoS(pn: string) {
     console.log("Open RoS for " + pn);
@@ -59,28 +68,18 @@ export class PatientHeaderComponent implements OnInit{
   }
 
    hideImg() {
-
    }
 
-   openECGModal(patientId: string) {
+   openECGModal(patID: string) {
     let modal = document.getElementById("myModal");
-
-    document.getElementById('ECGimg')?.setAttribute('alt', 'Ingen EKG hittades för patient med personnummer ' + patientId );
-    document.getElementById('ECGimg')?.setAttribute('src', '/assets/ECG' + patientId + '.png');
-    //document.getElementById('ECGimg')?.setAttribute('onerror', "this.style.display='none'");
-    document.getElementById('ECGimg')?.setAttribute('onerror', "hideImg()");
-
     modal?.style.setProperty("display", "block")
-    
     document.getElementById('outer-wrapper-id')?.style.setProperty('opacity', '0.7');
     document.getElementById('sidenav-id')?.style.setProperty('opacity', '0.2');
   }
 
   closeECGModal() {
-    console.log("closing")
     let modal = document.getElementById("myModal");
     modal?.style.setProperty("display", "none")
-
     document.getElementById('outer-wrapper-id')?.style.setProperty('opacity', '1');
     document.getElementById('sidenav-id')?.style.setProperty('opacity', '1');
   }
