@@ -104,24 +104,19 @@ export class PatientService {
     return this.http.get<any>( this.baseUrl + patientID + '/newECG');
   }
 
-  //getPatientNewXray(patientID: string)
-  getPatientNewXray(patientID: string): Observable<any> {
-    return this.http.get<any>( this.baseUrl + patientID + '/newXray');
-  }
 
+  /*
   setPatientNoNewECG(patientID: string): Observable<any> {
-    console.log("!!!!!!!!!!!!!!!!")
-    return this.http.put<any>( this.baseUrl + patientID, 'newecg: "false"', httpOptions);  
+    return this.http.put<any>( this.baseUrl + patientID + '/newECG', "false", httpOptions);
   }
 
   setPatientNoNewECG2(patientID: string): Observable<any> {
-    console.log("!!!!!!!!!!!!!!!!")
-    let pat: any = this.getPatient(patientID);
+    let pat: Patient = this.getPatient(patientID);
     pat.newECG = "false";
-    return this.http.put<any>( this.baseUrl + patientID, pat, httpOptions);  
-   }
+    return this.http.put<any>( this.baseUrl + patientID + '/newECG', "false", httpOptions);
+  }
+*/
 
-  
   //Service for getting all the vital parameters for the patient with person number "patientID"
   getPatientVitalparameters(patientID: string): Observable<VitalParameters> {
     return this.http.get<VitalParameters>(this.baseUrl + patientID + '/vitalparameters');

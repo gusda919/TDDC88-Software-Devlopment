@@ -14,6 +14,13 @@ import { Patient } from 'src/app/core/mocks/patient';
   selector: 'app-journal-widget',
   templateUrl: './journal-widget.component.html',
   styleUrls: ['./journal-widget.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class JournalWidgetComponent implements OnInit {
 
@@ -26,7 +33,7 @@ export class JournalWidgetComponent implements OnInit {
   isReferralsDisplayed = false;
   faNotesMedical = faNotesMedical;
   faEnvelope = faEnvelope;
-  
+  // lists={referral:false,notes:false}
   
 
   ngOnInit(): void {
@@ -45,5 +52,14 @@ export class JournalWidgetComponent implements OnInit {
     }
     this.isReferralsDisplayed = !this.isReferralsDisplayed;
   }
+
+  // changeCategory(el: any,event : any){
+  //   this.lists.referral=false;
+  //   this.lists.notes=false;
+  //   this.lists[event]=!this.lists[event];
+  // }
+
+  
+
 
 }

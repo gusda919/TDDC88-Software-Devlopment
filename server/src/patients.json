@@ -9,8 +9,6 @@
         "triage": "green",
         "contagious": "true",
         "newECG": "true",
-        "newXray": "true",
-        "roomBed": "3:1",
         "importantInformation":  null,
         "proposedMeasures": null,
         "VitalParameters": {
@@ -951,8 +949,6 @@
       "triage": "yellow",
       "contagious": "false",
       "newECG": "false",
-      "newXray": "false",
-      "roomBed": "6:1",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [
@@ -1899,9 +1895,7 @@
       "nextCheckupIn": "04:45",
       "triage": "yellow",
       "contagious": "false",
-      "newECG": "true",
-      "newXray": "false",
-      "roomBed": "14:1",
+      "newECG": "false",
       "importantInformation": "Antikoagulantiabehandling",
       "proposedMeasures": {
         "generalMeasures": [

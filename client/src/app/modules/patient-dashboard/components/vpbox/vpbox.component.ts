@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
-import { faHeartbeat, faLungs, faThermometer, faMicroscope } from '@fortawesome/free-solid-svg-icons';
-import { Lab } from 'src/app/shared/models/patient';
+import { faHeartbeat, faLungs, faThermometer } from '@fortawesome/free-solid-svg-icons';
 
 import { PatientService } from '../../../../core/services/patient.service'
 
@@ -20,13 +19,11 @@ export class VpboxComponent implements OnInit {
   faHeartbeat = faHeartbeat;
   faLungs = faLungs;
   faThermometer = faThermometer;
-  faMicroscope  = faMicroscope ;
 
   isBloodOxygenDisplayed = false;
   isBloodPressureAndPulseDisplayed = false;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
-  isLabsDisplayed = false;
   
   bloodOxygenColor = "";
   pulseColor = "";
@@ -35,13 +32,11 @@ export class VpboxComponent implements OnInit {
   respiratoryRateColor = "";
  
   vitalParameters: VitalParameters;
-  labs: Lab[];
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.getVitalParameters();
-    this.getPatientLabs();
   }
 
   getVitalParameters() {
@@ -52,14 +47,7 @@ export class VpboxComponent implements OnInit {
       this.cdr.detectChanges();
     });
   }
- 
-  getPatientLabs() {
-    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
-      this.labs = labs;
-      this.isLoaded = true;
-      this.cdr.detectChanges();;    
-    });
-  }
+
 
   //Get functions for displaying the latest value for each vital parameter
   getLatestBloodOxygenLevel() {
@@ -84,13 +72,6 @@ export class VpboxComponent implements OnInit {
 
   getLatestRespiratoryRate() {
     let data = this.vitalParameters.respiratoryRate.data;
-    return data[data.length-1];
-  }
-  
-  getLatestLab() {
-    
-
-    let data = this.labs;
     return data[data.length-1];
   }
 
@@ -178,23 +159,16 @@ export class VpboxComponent implements OnInit {
     }
     this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;
   }
-  toggleLabs() {
-    if(!this.isLabsDisplayed) {
-      this.checkIfAnyGraphIsToggled();
-    }
-    this.isLabsDisplayed = ! this.isLabsDisplayed;
-  }
+
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
-      this.isRespiratoryRateDisplayed|| 
-      this.isLabsDisplayed) {
+      this.isRespiratoryRateDisplayed) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
-        this.isLabsDisplayed = false;
     }
   }
 }
