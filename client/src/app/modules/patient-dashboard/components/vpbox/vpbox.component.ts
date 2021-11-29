@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
-import { faHeartbeat, faLungs, faThermometer, faTint, faProcedures, faFirstAid } from '@fortawesome/free-solid-svg-icons';
+import { faHeartbeat, faLungs, faThermometer, faTint, faProcedures, faFirstAid, faMicroscope } from '@fortawesome/free-solid-svg-icons';
+import { Lab } from 'src/app/shared/models/patient';
 
 import { PatientService } from '../../../../core/services/patient.service';
 
@@ -22,12 +23,14 @@ export class VpboxComponent implements OnInit {
   faTint = faTint;
   faProcedures = faProcedures;
   faFirstAid = faFirstAid;
+  faMicroscope  = faMicroscope;
 
   isBloodOxygenDisplayed = true;
   isBloodPressureAndPulseDisplayed = true;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
   isFluidBalanceDisplayed = false;
+  isLabsDisplayed = false;
 
   firstGraph = "oxygen";
   secondGraph = "pressure";
@@ -39,11 +42,13 @@ export class VpboxComponent implements OnInit {
   respiratoryRateColor = "";
  
   vitalParameters: VitalParameters;
+  labs: Lab[];
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.getVitalParameters();
+    this.getPatientLabs();
   }
 
   getVitalParameters() {
@@ -54,7 +59,14 @@ export class VpboxComponent implements OnInit {
       this.cdr.detectChanges();
     });
   }
-
+ 
+  getPatientLabs() {
+    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
+      this.labs = labs;
+      this.isLoaded = true;
+      this.cdr.detectChanges();;    
+    });
+  }
 
   //Get functions for displaying the latest value for each vital parameter
   getLatestBloodOxygenLevel() {
@@ -79,6 +91,11 @@ export class VpboxComponent implements OnInit {
 
   getLatestRespiratoryRate() {
     let data = this.vitalParameters.respiratoryRate.data;
+    return data[data.length-1];
+  }
+  
+  getLatestLab() {
+    let data = this.labs;
     return data[data.length-1];
   }
 
@@ -211,17 +228,25 @@ export class VpboxComponent implements OnInit {
 
   }
   
+  toggleLabs() {
+    if(!this.isLabsDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
+    this.isLabsDisplayed = ! this.isLabsDisplayed;
+  }
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
       this.isRespiratoryRateDisplayed ||
-      this.isFluidBalanceDisplayed) {
+      this.isFluidBalanceDisplayed ||
+      this.isLabsDisplayed) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
         this.isFluidBalanceDisplayed = false;
+        this.isLabsDisplayed = false;
     }
   }
 }
