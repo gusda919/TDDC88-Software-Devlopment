@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardComponent } from './card.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 describe('CardComponent', () => {
   let component: CardComponent;

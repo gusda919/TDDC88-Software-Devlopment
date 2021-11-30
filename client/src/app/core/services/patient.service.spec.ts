@@ -7,6 +7,8 @@ import { HttpClient} from '@angular/common/http';
 
 describe('PatientService', () => {
   let service: PatientService;
+  let httpMock: HttpTestingController;
+  let httpClient: HttpClient;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

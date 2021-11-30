@@ -1,15 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving, FluidBalance } from '../../shared/models/patient';
+//import { HttpClient, HttpHeaders } from '@angular/common/http';
+//import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving, FluidBalance } from '../../shared/models/patient';
 import { Observable } from 'rxjs';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-const httpOptions = {
-  headers: new HttpHeaders( { 'Content-Type': 'application/json' } )
-}
+//const httpOptions = {
+//  headers: new HttpHeaders( { 'Content-Type': 'application/json' } )
+//}
 
 @Injectable({
   providedIn: 'root'
 })
+
+@NgModule({
+  imports: [
+   HttpClientModule
+  ]
+ })
+
+
 export class PatientService {
 
   private baseUrl = 'http://localhost:8080/patients/';
@@ -18,14 +28,14 @@ export class PatientService {
 
 
   /*
-  Services for all available backend routes. 
-  Each service species what data is returned and eventual input parameters. 
+  Services for all available backend routes.
+  Each service species what data is returned and eventual input parameters.
 
   importing PatientService from this file and adding it as a provider in the constructor
   (e.g. "private patientService: PatientService" )
   then allows you to access all these services using this.patientService.<service name>
   in order to subscribe to the service and access corresponding data
- 
+
   NOTE: not all patients have data for every service
   */
 
@@ -39,7 +49,7 @@ export class PatientService {
     return this.http.get<any>(this.baseUrl + patientID);
   }
 
-  // Service for getting the contact reason for the patient with person number "patientID" 
+  // Service for getting the contact reason for the patient with person number "patientID"
   getPatientCosmicContactReason(patientID: string): Observable<any> {
     return this.http.get<any>( this.baseUrl + patientID + '/cosmic' + '/contactreason');
   }
@@ -111,22 +121,22 @@ export class PatientService {
 
   setPatientNoNewECG(patientID: string): Observable<any> {
     console.log("!!!!!!!!!!!!!!!!")
-    return this.http.put<any>( this.baseUrl + patientID, 'newecg: "false"', httpOptions);  
+    return this.http.put<any>( this.baseUrl + patientID, 'newecg: "false"', httpOptions);
   }
 
   setPatientNoNewECG2(patientID: string): Observable<any> {
     console.log("!!!!!!!!!!!!!!!!")
     let pat: any = this.getPatient(patientID);
     pat.newECG = "false";
-    return this.http.put<any>( this.baseUrl + patientID, pat, httpOptions);  
+    return this.http.put<any>( this.baseUrl + patientID, pat, httpOptions);
    }
 
-  
+
   //Service for getting all the vital parameters for the patient with person number "patientID"
   getPatientVitalparameters(patientID: string): Observable<VitalParameters> {
     return this.http.get<VitalParameters>(this.baseUrl + patientID + '/vitalparameters');
   }
-  
+
   //Service for getting the values of vital parameter "bloodOxygenLevel" for the patient with person number "patientID"
   getPatientVitalParameterBloodOxygenLevel(patientID: string): Observable<BloodOxygenLevel> {
     return this.http.get<BloodOxygenLevel>(this.baseUrl + patientID + '/vitalparameters' +'/bloodOxygenLevel');

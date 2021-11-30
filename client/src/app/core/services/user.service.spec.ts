@@ -7,11 +7,19 @@ import { HttpClient} from '@angular/common/http';
 
 describe('UserService', () => {
   let service: UserService;
+  let httpMock: HttpTestingController;
+  let httpClient: HttpClient;
+
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ]
+    });
     service = TestBed.inject(UserService);
+    httpMock = TestBed.get(HttpTestingController);
+    httpMock = TestBed.inject(HttpTestingController);
   });
+
 
   it('should be created', () => {
     expect(service).toBeTruthy();
