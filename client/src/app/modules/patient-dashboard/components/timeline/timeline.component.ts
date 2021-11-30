@@ -123,7 +123,7 @@ export class TimelineComponent implements OnInit {
       }
     });
 
-    let px  = 65 +  242 * counter;
+    let px  = 65 +  241 * counter;
     let marker = document.getElementById("current-date-marker");
     if (marker) marker.style.left = px.toString() + "px";
 
