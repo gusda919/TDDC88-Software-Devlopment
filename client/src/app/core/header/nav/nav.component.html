@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <div id="header-logo" style="margin-left: 16px;">
+  <div id="header-logo" style="margin-left: 0px;">
   <!-- Need new Logo && Replace onclick link to eventual homepage-->
     <img id="logo" alt="Missing logo" src="../../../../assets/Logo_Region_Östergötland.png"
       onclick="document.location.href='#'" >
@@ -40,22 +40,11 @@
     
   </div>
   <div class="dropdown-button" id="dropdown-settings">
-    <button id="dropdown-settings-button">
-      Inställningar
-
-    </button>
+    <button id="dropdown-settings-button" mat-raised-button color="primary">Inställningar</button>
   </div>
-  <!-- Maybe not required?
-  <div class="dropdown-button" id="dropdown-dashboard">
-    <button id="dropdown-dashboard-button">
-      Dashboard
-    </button>
-  </div>
-  -->
+  <div style="margin:10px"></div>
   <div class="dropdown-button" id="dropdown-logout">
-    <button id="dropdown-logout-button">
-      Logga ut
-    </button>
+    <button id="dropdown-settings-button" mat-raised-button color="primary">Logga ut</button>
   </div>
 </div>  
 
