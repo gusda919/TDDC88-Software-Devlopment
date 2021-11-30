@@ -11,9 +11,15 @@ describe('PatientService', () => {
   let httpClient: HttpClient;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ]
+    });
+
     service = TestBed.inject(PatientService);
+    httpMock = TestBed.get(HttpTestingController);
+    httpMock = TestBed.inject(HttpTestingController);
   });
+
 
   it('should be created', () => {
     expect(service).toBeTruthy();
