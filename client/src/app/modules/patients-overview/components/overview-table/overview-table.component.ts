@@ -8,11 +8,17 @@ import { PatientService } from 'src/app/core/services/patient.service';
 import { Patient } from 'src/app/shared/models/patient';
 import { DataSource } from '@angular/cdk/collections';
 
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @Component({
   selector: 'app-overview-table',
   templateUrl: './overview-table.component.html',
   styleUrls: ['./overview-table.component.scss']
 })
+
+
 export class OverviewTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -54,7 +60,7 @@ export class OverviewTableComponent implements AfterViewInit {
   }
 
   getPatientData() {
-    this.patientService.getPatients().subscribe(patients => { 
+    this.patientService.getPatients().subscribe(patients => {
       this.dataSource.data = patients;
     });
 
@@ -93,7 +99,7 @@ export class OverviewTableComponent implements AfterViewInit {
 
   }
 
-  
+
 }
 
 function compare(a: number | string, b: number | string, isAsc: boolean) {
@@ -104,7 +110,7 @@ function compare(a: number | string, b: number | string, isAsc: boolean) {
 }
 const SwedishRangeLabel = (page: number, pageSize: number, length: number) => {
   if (length == 0 || pageSize == 0) { return `0 till ${length}`; }
-  
+
   length = Math.max(length, 0);
 
   const startIndex = page * pageSize;
@@ -120,11 +126,11 @@ const SwedishRangeLabel = (page: number, pageSize: number, length: number) => {
 
 export function getSwedishPaginatorIntl() {
   const paginatorIntl = new MatPaginatorIntl();
-  
+
   paginatorIntl.itemsPerPageLabel = 'Patienter per sida:';
   paginatorIntl.nextPageLabel = 'Nästa sida';
   paginatorIntl.previousPageLabel = 'Föregående sida';
   paginatorIntl.getRangeLabel = SwedishRangeLabel;
-  
+
   return paginatorIntl;
 }

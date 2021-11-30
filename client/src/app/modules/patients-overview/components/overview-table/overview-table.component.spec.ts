@@ -7,9 +7,14 @@ import { MatTableModule } from '@angular/material/table';
 
 import { OverviewTableComponent } from './overview-table.component';
 
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient} from '@angular/common/http';
+
 describe('OverviewTableComponent', () => {
   let component: OverviewTableComponent;
   let fixture: ComponentFixture<OverviewTableComponent>;
+  let httpMock: HttpTestingController;
+  let httpClient: HttpClient;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -27,6 +32,9 @@ describe('OverviewTableComponent', () => {
     fixture = TestBed.createComponent(OverviewTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    httpMock = TestBed.get(HttpTestingController);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
   it('should compile', () => {
