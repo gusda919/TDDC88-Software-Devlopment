@@ -31,6 +31,7 @@ export class TimelineComponent implements OnInit {
 
   currentDate: string = '';
   currentTime: string = '';
+  currentMarkerPosition: number = 0;
 
 
   @Input() patientId: string;
@@ -124,17 +125,19 @@ export class TimelineComponent implements OnInit {
       }
     });
 
-    let px  = 60 +  245 * 6;
+    let px  = 60 +  245 * counter;
     let marker = document.getElementById("current-date-marker");
     if (marker) marker.style.left = px.toString() + "px";
 
     let overlay = document.getElementById("timeline-overlay");
-    if (overlay) overlay.style.width = (px+57).toString() + "px";
+    if (overlay) overlay.style.width = (px+47).toString() + "px";
+
+    this.currentMarkerPosition = px;
 
   }
 
   setScroll() {
-    this.scrollFarRight();
+    this.scrollCurrentDate();
     let tlw = document.getElementById("timeline-wrapper");
 
     tlw?.addEventListener('scroll', (e) => {
@@ -142,7 +145,7 @@ export class TimelineComponent implements OnInit {
         window.requestAnimationFrame(() => {
 
           // if (vw && vw < (this.events.length + 4) * 160) {
-            if (tlw && tlw?.scrollLeft <= 40) { // left arrow should be hidden
+            if (tlw && tlw?.scrollLeft <= 160) { // left arrow should be hidden
               if (this.displayLeftArrow) {
                 // only hide if currently displayed
                 document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
@@ -186,7 +189,12 @@ export class TimelineComponent implements OnInit {
   }
   scrollFarRight() {
     let tlw = document.getElementById("timeline-wrapper");
-    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = tlw.offsetWidth;
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = tlw.scrollWidth;
+  }
+
+  scrollCurrentDate() {
+    let tlw = document.getElementById("timeline-wrapper");
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = this.currentMarkerPosition;
   }
 
 }
