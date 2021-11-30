@@ -31,6 +31,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { NotesTableComponent } from './components/notes-table/notes-table.component';
 import { FluidBalanceComponent } from './components/fluid-balance/fluid-balance.component';
 import { ListComponent } from './components/list/list.component';
+import { OrdineringComponent } from './components/ordinering/ordinering.component';
 
 
 
@@ -50,6 +51,7 @@ import { ListComponent } from './components/list/list.component';
     NotesTableComponent,
     FluidBalanceComponent,
     ListComponent,
+    OrdineringComponent,
   ],
   imports: [
     CommonModule,
