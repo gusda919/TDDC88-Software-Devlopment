@@ -1,9 +1,9 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
-import { faHeartbeat, faLungs, faThermometer, faMicroscope } from '@fortawesome/free-solid-svg-icons';
+import { faHeartbeat, faLungs, faThermometer, faTint, faProcedures, faFirstAid, faMicroscope } from '@fortawesome/free-solid-svg-icons';
 import { Lab } from 'src/app/shared/models/patient';
 
-import { PatientService } from '../../../../core/services/patient.service'
+import { PatientService } from '../../../../core/services/patient.service';
 
 @Component({
   selector: 'app-vpbox',
@@ -20,13 +20,20 @@ export class VpboxComponent implements OnInit {
   faHeartbeat = faHeartbeat;
   faLungs = faLungs;
   faThermometer = faThermometer;
-  faMicroscope  = faMicroscope ;
+  faTint = faTint;
+  faProcedures = faProcedures;
+  faFirstAid = faFirstAid;
+  faMicroscope  = faMicroscope;
 
-  isBloodOxygenDisplayed = false;
-  isBloodPressureAndPulseDisplayed = false;
+  isBloodOxygenDisplayed = true;
+  isBloodPressureAndPulseDisplayed = true;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
+  isFluidBalanceDisplayed = false;
   isLabsDisplayed = false;
+
+  firstGraph = "oxygen";
+  secondGraph = "pressure";
   
   bloodOxygenColor = "";
   pulseColor = "";
@@ -88,8 +95,6 @@ export class VpboxComponent implements OnInit {
   }
   
   getLatestLab() {
-    
-
     let data = this.labs;
     return data[data.length-1];
   }
@@ -148,13 +153,34 @@ export class VpboxComponent implements OnInit {
 
 
 
+  graphToggler() {
+    if(this.firstGraph === "oxygen" || this.secondGraph === "oxygen") {
+      this.isBloodOxygenDisplayed = true;
+    }
+    if(this.firstGraph === "pressure" || this.secondGraph === "pressure") {
+      this.isBloodPressureAndPulseDisplayed = true;
+    }
+    if(this.firstGraph === "temp" || this.secondGraph === "temp") {
+      this.isBodyTemperatureDisplayed = true;
+    }
+    if(this.firstGraph === "resp" || this.secondGraph === "resp") {
+      this.isRespiratoryRateDisplayed = true;
+    }
+    if(this.firstGraph === "fluid" || this.secondGraph === "fluid") {
+      this.isFluidBalanceDisplayed = true;
+    }
+  }
+
+
 
   //Toggle functions for displaying graphs
   toggleBloodOxygenGraph() {
     if(!this.isBloodOxygenDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "oxygen";
+    this.graphToggler()
   }
 
 
@@ -162,22 +188,46 @@ export class VpboxComponent implements OnInit {
     if(!this.isBloodPressureAndPulseDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodPressureAndPulseDisplayed = !this.isBloodPressureAndPulseDisplayed;
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "pressure";
+    this.graphToggler()
+
   }
 
   toggleBodyTemperatureGraph() {
     if(!this.isBodyTemperatureDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBodyTemperatureDisplayed = !this.isBodyTemperatureDisplayed;
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "temp";
+    this.graphToggler()
+
   }
 
   toggleRespiratoryRateGraph() {
     if(!this.isRespiratoryRateDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "resp";
+    this.graphToggler()
+
   }
+
+  toggleFluidBalance() {
+    if(!this.isFluidBalanceDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "fluid";
+    this.graphToggler()
+
+  }
+  
   toggleLabs() {
     if(!this.isLabsDisplayed) {
       this.checkIfAnyGraphIsToggled();
@@ -188,12 +238,14 @@ export class VpboxComponent implements OnInit {
     if(this.isBloodOxygenDisplayed || 
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
-      this.isRespiratoryRateDisplayed|| 
+      this.isRespiratoryRateDisplayed ||
+      this.isFluidBalanceDisplayed ||
       this.isLabsDisplayed) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
+        this.isFluidBalanceDisplayed = false;
         this.isLabsDisplayed = false;
     }
   }
