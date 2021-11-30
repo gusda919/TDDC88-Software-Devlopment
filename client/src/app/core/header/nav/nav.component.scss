@@ -2,15 +2,19 @@
   height: 100%;
 }
 
-.search-results {
-  margin-top: 100px;
-  background-color: lightgray;
-  font-size: 16px;
-  color: black;
-}
-
 .sidenav {
   width: 200px;
+}
+
+.search-bar-div {
+  margin: 10px 50px 0px 50px;
+  height: 100px;
+  display: flex;
+}
+
+#search-icon {
+  margin-top: 30px;
+  margin-right: 10px;
 }
 
 .sidenav .mat-toolbar {

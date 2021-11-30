@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { PatientService } from '../../../core/services/patient.service';
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
 
 
 @Component({
@@ -23,8 +25,12 @@ export class NavComponent {
   displayMessage = false;
   displayProfile = false;
   panelOpenState = false;
+  patientIdsAreLoaded = false;
   subscription: Subscription;
   pn: string;
+
+  faSearch = faSearch;
+
 
   messages = [
     {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
@@ -47,7 +53,7 @@ export class NavComponent {
         }
         this.patientIds.push(pat.patientID);
       });
-      console.log(this.patientIds);
+      this.patientIdsAreLoaded = true;
     });
 
   };
@@ -80,20 +86,6 @@ export class NavComponent {
     else {
       this.displayProfile = true;
     }
-  }
-
-  searchForPatient(data: any) {
-    this.content = this.patientIds;
-    if (data) {
-      this.content = this.content.filter(function (ele, i, array) {
-        let arrayelement = ele.toLowerCase();
-        return arrayelement.includes(data);
-      })
-    }
-    else {
-      console.log(this.content);
-    }
-    console.log(this.content);
   }
 
 }

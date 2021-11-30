@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -17,7 +17,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ],
   
 })
-export class NotesTableComponent implements AfterViewInit {
+export class NotesTableComponent implements OnChanges {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<NotesTableItem>;
@@ -32,7 +32,7 @@ export class NotesTableComponent implements AfterViewInit {
   constructor() {
   }
 
-  ngAfterViewInit(): void {
+  ngOnChanges(): void {
 
     setTimeout(() => {
       this.dataSource.data = this.getPatientNotes();

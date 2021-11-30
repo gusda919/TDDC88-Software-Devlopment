@@ -1,5 +1,5 @@
 import { ThrowStmt } from '@angular/compiler';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Caregiving, Lab, Drug } from 'src/app/shared/models/patient';
 import { faMicroscope, faPills, faHandHoldingMedical } from '@fortawesome/free-solid-svg-icons'
 
@@ -21,7 +21,7 @@ interface TimelineEvent {
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnChanges {
 
   displayedEvent: TimelineEvent;
 
@@ -41,7 +41,13 @@ export class ListComponent implements OnInit {
   constructor(private patientService: PatientService) { }
 
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+
+    this.events = [];
+    this.labs = [];
+    this.drugs = [];
+    this.caregiving = [];
+
     this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
       let events: TimelineEvent[] = labs.map((l: Lab): TimelineEvent => ({
         date: new Date(l.date+"T"+l.time),

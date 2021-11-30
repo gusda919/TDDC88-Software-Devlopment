@@ -5,11 +5,16 @@ import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatOptionModule } from '@angular/material/core';
 import { OverviewTableComponent } from './components/overview-table/overview-table.component';
 import { OverviewPageComponent } from './pages/overview-page/overview-page.component';
 import { MatCardModule } from '@angular/material/card';
 import {  MatButtonModule } from '@angular/material/button';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -26,7 +31,13 @@ import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
     RouterModule,
     MatCardModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatOptionModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ]
 })
 export class PatientsOverviewModule { }

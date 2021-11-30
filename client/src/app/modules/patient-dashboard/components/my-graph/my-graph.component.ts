@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 //import {Chart} from 'node_modules/chart.js';
 import { Chart, ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { VitalParameters } from 'src/app/shared/models/patient';
@@ -8,7 +8,7 @@ import { VitalParameters } from 'src/app/shared/models/patient';
   templateUrl: './my-graph.component.html',
   styleUrls: ['./my-graph.component.scss'],
 })
-export class MyGraphComponent implements OnInit {
+export class MyGraphComponent implements OnChanges {
   
   constructor() {}
 
@@ -26,7 +26,7 @@ export class MyGraphComponent implements OnInit {
   myGraph2: Chart;
 
 
-  ngOnInit() {
+  ngOnChanges() {
 
     this.addTimestamps();
     this.addValues();
@@ -116,6 +116,8 @@ export class MyGraphComponent implements OnInit {
   }
 
   addTimestamps() {
+    
+    this.labels = [];
 
     if(this.vitalParameters==null) {
       for(let i = 0; i < this.bloodPressure.data.length; i++) {
@@ -130,6 +132,9 @@ export class MyGraphComponent implements OnInit {
   }
 
   addValues() {
+    this.data = [];
+    this.systolic = [];
+    this.diastolic = [];
 
     if(this.vitalParameters==null) {
       for(let i = 0; i < this.bloodPressure.data.length; i++) {

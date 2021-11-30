@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,9 +17,12 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input'
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { MatOption, MatOptionModule } from '@angular/material/core';
 
 import { MatTableModule } from '@angular/material/table';  
 import {CdkTableModule} from '@angular/cdk/table';
@@ -29,6 +32,7 @@ import { PatientDashboardModule } from './modules/patient-dashboard/patient-dash
 import { PatientsOverviewModule } from './modules/patients-overview/patients-overview.module';
 import { JournalComponent } from './modules/patient-dashboard/components/journal/journal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { getSwedishPaginatorIntl } from './modules/patients-overview/components/overview-table/overview-table.component';
@@ -63,6 +67,11 @@ import { SearchBarComponent } from './core/header/search-bar/search-bar.componen
     MatBadgeModule,
     FontAwesomeModule,
     MatSnackBarModule,
+    MatOptionModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getSwedishPaginatorIntl() }

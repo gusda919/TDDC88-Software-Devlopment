@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { __values } from 'tslib';
 import { PatientService } from '../../../../core/services/patient.service';
 import { Subscription } from 'rxjs';
@@ -13,7 +13,7 @@ let imageSource: string;
   styleUrls: ['./patient-header.component.scss'],
 })
 
-export class PatientHeaderComponent implements OnInit{
+export class PatientHeaderComponent implements OnChanges {
     //change this to dynamically change with real test data later
     name = "";
     
@@ -36,7 +36,8 @@ export class PatientHeaderComponent implements OnInit{
     (this.contagious = (cont ==="true") )); 
 
   }
-  ngOnInit(){
+  
+  ngOnChanges(){
 
     this.patientService.getPatient(this.patientId).subscribe( (pat: any) => {
       this.name = pat.givenName + " " + pat.familyName,

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { PatientService } from 'src/app/core/services/patient.service';
 import { Caregiving, Lab, Drug } from 'src/app/shared/models/patient';
 import { faMicroscope, faPills, faHandHoldingMedical } from '@fortawesome/free-solid-svg-icons'
@@ -19,7 +19,7 @@ interface TimelineEvent {
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss']
 })
-export class TimelineComponent implements OnInit {
+export class TimelineComponent implements OnChanges {
   
   displayedEvent: TimelineEvent;
 
@@ -40,7 +40,14 @@ export class TimelineComponent implements OnInit {
   constructor(private patientService: PatientService) { }
 
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+
+    this.caregiving = [];
+    this.labs = [];
+    this.drugs = [];
+    this.events = [];
+    this.closeDisplayedEvent();
+
     this.patientService.getPatientCaregiving(this.patientId).subscribe((caregiving: Caregiving[]) => {      
       let events: TimelineEvent[] = caregiving.map((c: Caregiving): TimelineEvent => ({
         date: new Date(c.date+"T"+c.time),

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input, OnChanges } from '@angular/core';
 import { VitalParameters } from 'src/app/shared/models/patient';
 import { faHeartbeat, faLungs, faThermometer, faMicroscope } from '@fortawesome/free-solid-svg-icons';
 import { Lab } from 'src/app/shared/models/patient';
@@ -11,7 +11,7 @@ import { PatientService } from '../../../../core/services/patient.service'
   styleUrls: ['./vpbox.component.scss'],
 })
 
-export class VpboxComponent implements OnInit {
+export class VpboxComponent implements OnChanges {
 
   @Input()
   patientId: string;
@@ -39,7 +39,7 @@ export class VpboxComponent implements OnInit {
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.getVitalParameters();
     this.getPatientLabs();
   }

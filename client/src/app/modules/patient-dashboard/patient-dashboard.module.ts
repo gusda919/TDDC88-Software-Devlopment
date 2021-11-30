@@ -11,7 +11,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { ChartsModule } from 'ng2-charts';
@@ -22,6 +26,8 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { MyGraphComponent } from './components/my-graph/my-graph.component';
 import { BodySilhouetteComponent } from './components/body-silhouette/body-silhouette.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatOption, MatOptionModule } from '@angular/material/core';  
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { JournalWidgetComponent } from './components/journal-widget/journal-widget.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ReferralTableComponent } from './components/referral-table/referral-table.component';
@@ -67,6 +73,11 @@ import { ListComponent } from './components/list/list.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatOptionModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
 })
 export class PatientDashboardModule {}

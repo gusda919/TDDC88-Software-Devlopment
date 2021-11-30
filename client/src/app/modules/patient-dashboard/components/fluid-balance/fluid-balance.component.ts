@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Chart, ChartData, ChartTooltipItem } from "chart.js";
 import { PatientService } from 'src/app/core/services/patient.service';
 import { FluidBalance, FluidBalanceData } from 'src/app/shared/models/patient';
@@ -8,7 +8,7 @@ import { FluidBalance, FluidBalanceData } from 'src/app/shared/models/patient';
   templateUrl: './fluid-balance.component.html',
   styleUrls: ['./fluid-balance.component.scss']
 })
-export class FluidBalanceComponent implements OnInit {
+export class FluidBalanceComponent implements OnChanges {
 
   @Input()
   patientId: string;
@@ -21,12 +21,17 @@ export class FluidBalanceComponent implements OnInit {
 
   constructor(private patientService: PatientService) { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.getChartData();
 
   }
 
   getChartData() { 
+
+    this.data = [];
+    this.labels = [];
+
+
     this.patientService.getPatientFluidBalance(this.patientId).subscribe((fb: FluidBalance) => {
       let total: number = 0;
 

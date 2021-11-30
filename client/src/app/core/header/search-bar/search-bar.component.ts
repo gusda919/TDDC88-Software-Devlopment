@@ -1,4 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {filter, map, startWith} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-search-bar',
@@ -7,17 +11,25 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  searchId: any;
+  @Input() patientIds: string[] = [];
+  myControl = new FormControl();
+  options: string[] = ['One', 'Two', 'Three'];
+  filteredOptions: Observable<string[]>;
+
 
   constructor() { }
 
-  @Output() searchcriteria = new EventEmitter<String>();
-
-  searchForPatient() {
-    this.searchcriteria.emit(this.searchId);
+  ngOnInit(): void {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value)),
+    );
   }
 
-  ngOnInit(): void {
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    console.log(this.filteredOptions);
+    return this.patientIds.filter(patientId => patientId.toLowerCase().includes(filterValue));
   }
 
 }

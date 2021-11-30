@@ -1,1 +1,16 @@
-<input matInput [(ngModel)]="searchId" (input)="searchForPatient()">
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Sök efter patient</mat-label>
+      <input type="text"
+             placeholder="Personnummer"
+             aria-label="Patient ID"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let patientId of filteredOptions | async" [value]="patientId" [routerLink]="['/dashboard', patientId]">
+          {{patientId}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
