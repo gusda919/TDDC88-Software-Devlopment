@@ -97,6 +97,34 @@
             { "marker": "P-Kreatinin", "value": 69 },
             { "marker": "Pt-Krea, eGFR, MDRD", "value": 71 }
           ] 
+        },
+        {
+          "date": "2021-12-28",
+          "time": "11:45",
+          "tests": [
+            { "marker": "B-Hb (Hemoglobin)" },
+            { "marker": "B-EVF" },
+            { "marker": "B-Erytrocter" },
+            { "marker": "B-MCV" },
+            { "marker": "ERC(B)-MCH" },
+            { "marker": "ERC(B)-MCHC" },
+            { "marker": "B-Lekocyter" }
+          ] 
+        },
+        {
+          "date": "2021-12-29",
+          "time": "10:05",
+          "tests": [
+            { "marker": "B-Trombocyter" },
+            { "marker": "P-APT-tid" },
+            { "marker": "P-KR (INR)" },
+            { "marker": "P-CRP" },
+            { "marker": "P-Natrium" },
+            { "marker": "P-Kalium" },
+            { "marker": "P-Kreatinin" },
+            { "marker": "Pt-Krea, eGFR, MDRD"},
+            { "marker": "P-Glukos"}
+          ]
         }
       ],
       "drugs": [
@@ -1095,6 +1123,34 @@
             { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
             { "marker": "P-Glukos", "value": 5.4 }
           ] 
+        },
+        {
+          "date": "2021-12-30",
+          "time": "10:45",
+          "tests": [
+            { "marker": "B-Hb (Hemoglobin)" },
+            { "marker": "B-EVF" },
+            { "marker": "B-Erytrocter" },
+            { "marker": "B-MCV" },
+            { "marker": "ERC(B)-MCH" },
+            { "marker": "ERC(B)-MCHC" },
+            { "marker": "B-Lekocyter" }
+          ] 
+        },
+        {
+          "date": "2021-12-30",
+          "time": "11:05",
+          "tests": [
+            { "marker": "B-Trombocyter" },
+            { "marker": "P-APT-tid" },
+            { "marker": "P-KR (INR)" },
+            { "marker": "P-CRP" },
+            { "marker": "P-Natrium" },
+            { "marker": "P-Kalium" },
+            { "marker": "P-Kreatinin" },
+            { "marker": "Pt-Krea, eGFR, MDRD"},
+            { "marker": "P-Glukos"}
+          ]
         }
       ],
       "drugs": [
@@ -2039,7 +2095,36 @@
             { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
             { "marker": "P-Glukos", "value": 5.4 }
           ] 
+        },
+        {
+          "date": "2021-12-30",
+          "time": "10:45",
+          "tests": [
+            { "marker": "B-Hb (Hemoglobin)" },
+            { "marker": "B-EVF" },
+            { "marker": "B-Erytrocter" },
+            { "marker": "B-MCV" },
+            { "marker": "ERC(B)-MCH" },
+            { "marker": "ERC(B)-MCHC" },
+            { "marker": "B-Lekocyter" }
+          ] 
+        },
+        {
+          "date": "2021-12-30",
+          "time": "11:05",
+          "tests": [
+            { "marker": "B-Trombocyter" },
+            { "marker": "P-APT-tid" },
+            { "marker": "P-KR (INR)" },
+            { "marker": "P-CRP" },
+            { "marker": "P-Natrium" },
+            { "marker": "P-Kalium" },
+            { "marker": "P-Kreatinin" },
+            { "marker": "Pt-Krea, eGFR, MDRD"},
+            { "marker": "P-Glukos"}
+          ]
         }
+
       ],
       "drugs": [
         {

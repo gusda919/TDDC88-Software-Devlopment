@@ -91,7 +91,8 @@
 }
 
 .hide-arrow-wrapper {
-  display: none;
+  // display: none;
+  visibility: hidden;
 }
 
 .current-date-marker {
