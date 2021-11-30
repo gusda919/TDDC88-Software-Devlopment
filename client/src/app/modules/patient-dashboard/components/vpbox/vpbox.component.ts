@@ -26,7 +26,7 @@ export class VpboxComponent implements OnInit {
   isBloodPressureAndPulseDisplayed = false;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
-  isLabsDisplayed = false;
+  
   
   bloodOxygenColor = "";
   pulseColor = "";
@@ -178,23 +178,17 @@ export class VpboxComponent implements OnInit {
     }
     this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;
   }
-  toggleLabs() {
-    if(!this.isLabsDisplayed) {
-      this.checkIfAnyGraphIsToggled();
-    }
-    this.isLabsDisplayed = ! this.isLabsDisplayed;
-  }
+
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
-      this.isRespiratoryRateDisplayed|| 
-      this.isLabsDisplayed) {
+      this.isRespiratoryRateDisplayed ) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
-        this.isLabsDisplayed = false;
+    
     }
   }
 }

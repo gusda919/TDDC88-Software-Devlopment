@@ -55,16 +55,6 @@
           </div>
         </div>
       </mat-list-item>
-      <mat-list-item (click)="toggleLabs()">
-        <fa-icon matListIcon [icon]='faMicroscope'></fa-icon>
-        <h3 matLine>Senaste provresutat</h3>
-        <div matLine>{{getLatestLab().time + ' ' + getLatestRespiratoryRate().date}}</div>
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <div fxLayout="row">
-            <div class="param" fxFlex="30"> Se prov</div>
-          </div>
-        </div>
-      </mat-list-item>
     </mat-action-list>
   </mat-card-content>
 </mat-card>
@@ -75,7 +65,6 @@
     <app-my-graph *ngSwitchCase="isBloodPressureAndPulseDisplayed" [graphId]="2" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
     <app-my-graph *ngSwitchCase="isBodyTemperatureDisplayed" [graphId]="3" [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
     <app-my-graph *ngSwitchCase="isRespiratoryRateDisplayed" [graphId]="4" [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
-    <app-list *ngSwitchCase="isLabsDisplayed" [patientId]="patientId"></app-list>
   </div>
 
 </div>

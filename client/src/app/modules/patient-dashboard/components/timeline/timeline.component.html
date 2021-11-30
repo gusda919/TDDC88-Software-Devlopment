@@ -32,8 +32,10 @@
                     <th>Värde</th>
                 </tr>
                 <tr *ngFor="let lab of displayedEvent.data">
+                    <div style="color: {{markerColour(lab.marker,lab.value)}};">
                     <td>{{lab.marker}}</td>
                     <td>{{lab.value}}</td>
+                </div>
                 </tr>
             </table>
         </div>

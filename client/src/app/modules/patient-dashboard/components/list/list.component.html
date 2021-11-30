@@ -1,26 +1,39 @@
 
 <div class="lab-overview">
-    <h1>Labbresultat</h1>
+    <h1 class="header-lab">Laborationsresultat</h1>
 <mat-action-list class="list" #labs>
-    <mat-list-item class ="list-row" *ngFor="let event of events "  (click)="displayEvent(event)">
-        <tr > {{ event.date | date:'yyyy/MM/dd HH:mm '}} </tr>
+    <mat-list-item class ="list-row" *ngFor="let event of events " >
+        <fa-icon matListIcon [icon]='faClock'></fa-icon>
+        <tr > {{ event.date | date:'yyyy/MM/dd HH:mm ' }} </tr>
+        <div [ngSwitch]="event">
+         <tr *ngSwitchCase="displayedEvent">
+          <th class="showResult" (click)="closeDisplayedEvent()"> &#160; Dölj Resultat  </th> 
+        </tr>
+        
+       <tr *ngSwitchDefault> 
+       <th class="showResult" (click)="displayEvent(event)"> &#160; Visa Resultat </th> 
+      </tr>
+        </div>
+        
     </mat-list-item>
   </mat-action-list>
 
-
+ 
 
    <mat-card-subtitle>
 
         <div *ngIf="displayedEvent"  class="lab-info">
-            <h2> Labbresultat : {{displayedEvent.date | date:'yyyy/MM/dd HH:mm'}}</h2>
             <table>
                 <tr>
-                    <th style="text-align: center;">Namn</th>
+                    <th style="text-align: left;">Namn</th>
                     <th>Värde</th>
                 </tr>
-                <tr *ngFor="let lab of displayedEvent.data">
+                <tr *ngFor="let lab of displayedEvent.data" >
+                    <div style="color: {{markerColour(lab.marker,lab.value)}};">
+                    
                     <td>{{lab.marker}}</td>
                     <td>{{lab.value}}</td>
+                </div>
                 </tr>
             </table>
         </div>
