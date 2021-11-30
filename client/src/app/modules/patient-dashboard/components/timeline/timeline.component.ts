@@ -29,8 +29,7 @@ export class TimelineComponent implements OnInit {
   displayRightArrow: Boolean = true;
   firstRender: Boolean = true;
 
-  currentDate: string = '';
-  currentTime: string = '';
+  currentDate: Date;
   currentMarkerPosition: number = 0;
 
 
@@ -115,8 +114,7 @@ export class TimelineComponent implements OnInit {
 
   setCurrentDateMarker() {
     let today = new Date();
-    this.currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    this.currentTime = today.getHours() + ':' + today.getMinutes();
+    this.currentDate = today;
 
     let counter = 0;
     this.events.forEach((event) => {
@@ -130,7 +128,7 @@ export class TimelineComponent implements OnInit {
     if (marker) marker.style.left = px.toString() + "px";
 
     let overlay = document.getElementById("timeline-overlay");
-    if (overlay) overlay.style.width = (px+47).toString() + "px";
+    if (overlay) overlay.style.width = (px+56).toString() + "px";
 
     this.currentMarkerPosition = px;
 
@@ -194,7 +192,7 @@ export class TimelineComponent implements OnInit {
 
   scrollCurrentDate() {
     let tlw = document.getElementById("timeline-wrapper");
-    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = this.currentMarkerPosition;
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = this.currentMarkerPosition - (tlw.offsetWidth/2 - 60);
   }
 
 }
