@@ -24,7 +24,7 @@ router.get('/patients', async (req: Request, res: Response) => {
     triage: p.triage,
     contagious: p.contagious,
     newecg: p.newECG,
-    nextCheckupIn: p.nextCheckupIn
+    nextCheckupIn: p.nextCheckupIn,
     newxray: p.newXray,
     caregiving: p.caregiving,
     roomBed: p.roomBed
