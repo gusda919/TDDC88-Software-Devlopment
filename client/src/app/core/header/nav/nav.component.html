@@ -16,7 +16,7 @@
   <span id="dateTime">{{date| date: 'y/MM/dd &nbsp;HH:mm&nbsp;' }}</span>
 
   <button  mat-icon-button id="mail_button" (click)="getMessages()" aria-label="Example icon-button with heart icon">
-    <mat-icon matBadge="{{messages.length}}" [matBadgeHidden] = "messages.length===0" matBadgeColor="warn">notifications</mat-icon>
+    <mat-icon matBadge="{{messages.length}}" [matBadgeHidden] = "displayRed===0" matBadgeColor="warn">notifications</mat-icon>
   </button>
   <!--Profile section should include picture & name?-->
   <div id="profile_div" style="margin-left: 5px; margin-right: auto; margin-top: 7px;" >
@@ -92,7 +92,7 @@
   </mat-card-content>
   <mat-divider inset></mat-divider>
   <mat-card-actions>
-    <button mat-button (click)="getMessages()">STÄNG</button>
+    <button mat-button (click)="getMessages()" (click)="closeNotifications()" >STÄNG</button>
   </mat-card-actions>
 </mat-card>
 
