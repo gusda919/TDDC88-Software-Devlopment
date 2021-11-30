@@ -24,6 +24,7 @@ router.get('/patients', async (req: Request, res: Response) => {
     triage: p.triage,
     contagious: p.contagious,
     newecg: p.newECG,
+    newxray: p.newXray,
     caregiving: p.caregiving,
     roomBed: p.roomBed
   })
@@ -42,6 +43,8 @@ router.get('/patients/:patientID', async (req: Request, res: Response) => {
       triage: patient.triage,
       contagious: patient.contagious,
       newecg: patient.newECG,
+      newxray: patient.newXray,
+      caregiving: patient.caregiving,
       roomBed: patient.roomBed
     }))
   }
@@ -149,6 +152,17 @@ router.get('/patients/:patientID/newECG', async (req: Request, res: Response) =>
   let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
   if (patient) {
     res.json(patient.newECG);
+  }
+  else {
+    res.json("Patient med personnummer " + req.params.patientID + " finns inte i systemet");
+  }
+});
+
+router.get('/patients/:patientID/newXray', async (req: Request, res: Response) => {
+  //route for getting data whether a patient has a new Xray or not. 
+  let patient = patients.filter((p: Patient) => p.patientID == req.params.patientID)[0];
+  if (patient) {
+    res.json(patient.newXray);
   }
   else {
     res.json("Patient med personnummer " + req.params.patientID + " finns inte i systemet");
