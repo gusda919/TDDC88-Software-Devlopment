@@ -22,6 +22,15 @@ interface TimelineEvent {
 export class TimelineComponent implements OnInit {
   
   displayedEvent: TimelineEvent;
+  
+  // attributes used for displaying arrows
+  ticking: Boolean = false;
+  displayLeftArrow: Boolean = true;
+  displayRightArrow: Boolean = true;
+  firstRender: Boolean = true;
+
+  currentDate: Date;
+  currentMarkerPosition: number = 0;
 
 
   @Input() patientId: string;
@@ -52,7 +61,8 @@ export class TimelineComponent implements OnInit {
       this.events = this.events.concat(events);
       this.getPatientLabs();
     });
-
+    
+    setTimeout(this.setScroll.bind(this), 800);
   }
 
   getPatientLabs() {
@@ -82,7 +92,8 @@ export class TimelineComponent implements OnInit {
       })
       );
       this.events = this.events.concat(events);
-      this.sortData(); 
+      this.sortData();
+      this.setCurrentDateMarker();
     });
   }
 
@@ -101,4 +112,89 @@ export class TimelineComponent implements OnInit {
     this.clickedButton = null;
   }
 
+  setCurrentDateMarker() {
+    let today = new Date();
+    this.currentDate = today;
+
+    let counter = 0;
+    this.events.forEach((event) => {
+      if (event.date < today) {
+        counter++;
+      }
+    });
+
+    let px  = 65 +  241 * counter;
+    let marker = document.getElementById("current-date-marker");
+    if (marker) marker.style.left = px.toString() + "px";
+
+    let overlay = document.getElementById("timeline-overlay");
+    if (overlay) overlay.style.width = (px+56).toString() + "px";
+
+    this.currentMarkerPosition = px;
+
+  }
+
+  setScroll() {
+    this.scrollCurrentDate();
+    let tlw = document.getElementById("timeline-wrapper");
+
+    tlw?.addEventListener('scroll', (e) => {
+      if (!this.ticking) {
+        window.requestAnimationFrame(() => {
+
+          // if (vw && vw < (this.events.length + 4) * 160) {
+            if (tlw && tlw?.scrollLeft <= 160) { // left arrow should be hidden
+              if (this.displayLeftArrow) {
+                // only hide if currently displayed
+                document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+                this.displayLeftArrow = false;
+              }
+            } else { // left arrow should be displayed
+              if (!this.displayLeftArrow) {
+                // only display if currently hidden
+                document.getElementById("left-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+                this.displayLeftArrow = true;
+              }
+            }
+            
+            if (tlw && tlw.scrollLeft + tlw.offsetWidth >= tlw.scrollWidth-160) { // right arrow should be hidden
+              if (this.displayRightArrow) {
+                // only hide if currently displayed
+                document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+                this.displayRightArrow = false;
+              }
+            } else { // right arrow should be displayed
+              if (!this.displayRightArrow) {
+                // only display if currently hidden
+                document.getElementById("right-arrow-wrapper")?.classList.toggle("hide-arrow-wrapper");
+                this.displayRightArrow = true;
+              }
+            }
+          
+
+          this.ticking = false; // ticking variable used to optimize rendering
+        }); 
+        this.ticking = true;
+      }
+    });
+
+    tlw?.dispatchEvent(new Event("scroll"));
+  }
+
+  scrollFarLeft() {
+    let tlw = document.getElementById("timeline-wrapper");
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = 0;
+  }
+  scrollFarRight() {
+    let tlw = document.getElementById("timeline-wrapper");
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = tlw.scrollWidth;
+  }
+
+  scrollCurrentDate() {
+    let tlw = document.getElementById("timeline-wrapper");
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = this.currentMarkerPosition - (tlw.offsetWidth/2 - 60);
+  }
+
 }
+
+

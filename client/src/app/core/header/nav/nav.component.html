@@ -1,15 +1,11 @@
 <mat-toolbar color="primary">
-  <button
-    type="button"
-    aria-label="Toggle sidenav"
-    mat-icon-button
-    (click)="drawer.toggle()">
-    <mat-icon aria-label="Side nav toggle icon">{{ drawer.opened ? 'menu_open' : 'menu' }}</mat-icon>
-  </button>
   <div id="header-logo" style="margin-left: 16px;">
   <!-- Need new Logo && Replace onclick link to eventual homepage-->
     <img id="logo" alt="Missing logo" src="../../../../assets/Logo_Region_Östergötland.png"
       onclick="document.location.href='#'" >
+  </div>
+  <div id="unit-button">
+    <button mat-stroked-button color="Accent" [routerLink]="'/'+menuLinks[0]">Enhetsöversikt</button>
   </div>
   <!--<span>Region Östergötland </span>  -->
   <span id="spacer"></span>
@@ -97,15 +93,6 @@
 </mat-card>
 
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" id="sidenav-id" 
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Meny</mat-toolbar>
-    <mat-nav-list>
-      <a *ngFor="let label of menuLabels; let i = index" mat-list-item [routerLink]="'/'+menuLinks[i]">{{label | titlecase}}</a>
-    </mat-nav-list>
-  </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

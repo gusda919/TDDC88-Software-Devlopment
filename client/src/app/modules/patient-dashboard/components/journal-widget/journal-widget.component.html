@@ -1,8 +1,14 @@
-<mat-card class="journal-widget">
-    
-
-
-
-
-
+<mat-card id="journal-widget">
+    <h2>Journal</h2>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span (click)="showNotes()" [ngClass]="{'selected': isNotesDisplayed }"><fa-icon [icon]="faNotesMedical"></fa-icon> Anteckningar</span>
+            <span (click)="showReferrals()" [ngClass]="{'selected': isReferralsDisplayed }"><fa-icon [icon]="faEnvelope"></fa-icon> Remisser</span>
+        </mat-toolbar-row>
+        
+    </mat-toolbar>
+    <app-notes-table [patientId]="patientId" *ngIf="isNotesDisplayed"></app-notes-table>
+    <app-referral-table [patientId]="patientId" *ngIf="isReferralsDisplayed"></app-referral-table>
 </mat-card>
+ 
+

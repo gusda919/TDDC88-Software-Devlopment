@@ -11,7 +11,7 @@
         <div matLine>{{getLatestBloodOxygenLevel().time + ' ' + getLatestBloodOxygenLevel().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBloodOxygenLevel().value}}%</div>            
+            <div class="param" fxFlex="30" style="background-color: {{bloodOxygenColor}};">{{getLatestBloodOxygenLevel().value}}%</div>            
           </div>
         </div>
       </mat-list-item>
@@ -21,7 +21,7 @@
         <div matLine>{{getLatestPulse().time + ' ' + getLatestPulse().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestPulse().value}} bpm</div>
+            <div class="param" fxFlex="30" style="background-color: {{pulseColor}};">{{getLatestPulse().value}} bpm</div>
           </div>
         </div>
       </mat-list-item>
@@ -31,7 +31,7 @@
         <div matLine>{{getLatestBloodPressure().time + ' ' + getLatestBloodPressure().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBloodPressure().systolic + '/' + getLatestBloodPressure().diastolic}} mmHg</div>
+            <div class="param" fxFlex="30" style="background-color: {{bloodPressureColor}};">{{getLatestBloodPressure().systolic + '/' + getLatestBloodPressure().diastolic}} mmHg</div>
           </div>
         </div>
       </mat-list-item>
@@ -41,7 +41,7 @@
         <div matLine>{{getLatestBodyTemperature().time + ' ' + getLatestBodyTemperature().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestBodyTemperature().value}}°C</div>
+            <div class="param" fxFlex="30" style="background-color: {{bodyTemperatureColor}};">{{getLatestBodyTemperature().value}}°C</div>
           </div>
         </div>
       </mat-list-item>
@@ -51,7 +51,47 @@
         <div matLine>{{getLatestRespiratoryRate().time + ' ' + getLatestRespiratoryRate().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30">{{getLatestRespiratoryRate().value}} / min</div>
+            <div class="param" fxFlex="30" style="background-color: {{respiratoryRateColor}};">{{getLatestRespiratoryRate().value}} / min</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleRespiratoryRateGraph()">
+        <fa-icon matListIcon [icon]='faProcedures'></fa-icon>
+        <h3 matLine>ACVPU</h3>
+        <div matLine>DATUM</div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">VÄRDE</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleRespiratoryRateGraph()">
+        <fa-icon matListIcon [icon]='faFirstAid'></fa-icon>
+        <h3 matLine>NRS</h3>
+        <div matLine>DATUM</div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">VÄRDE</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleFluidBalance()">
+        <fa-icon matListIcon [icon]='faTint'></fa-icon>
+        <h3 matLine>Vätskebalans</h3>
+        <div matLine>DATUM</div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">VÄRDE</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleLabs()">
+        <fa-icon matListIcon [icon]='faMicroscope'></fa-icon>
+        <h3 matLine>Senaste provresutat</h3>
+        <div matLine>{{getLatestLab().time + ' ' + getLatestRespiratoryRate().date}}</div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30"> Se prov</div>
           </div>
         </div>
       </mat-list-item>
@@ -65,6 +105,9 @@
     <app-my-graph *ngSwitchCase="isBloodPressureAndPulseDisplayed" [graphId]="2" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
     <app-my-graph *ngSwitchCase="isBodyTemperatureDisplayed" [graphId]="3" [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
     <app-my-graph *ngSwitchCase="isRespiratoryRateDisplayed" [graphId]="4" [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
+    <app-fluid-balance *ngSwitchCase="isFluidBalanceDisplayed" [patientId]="patientId"></app-fluid-balance>
+    <app-list *ngSwitchCase="isLabsDisplayed" [patientId]="patientId"></app-list>
   </div>
+
 
 </div>
