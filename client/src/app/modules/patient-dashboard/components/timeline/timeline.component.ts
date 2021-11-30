@@ -161,7 +161,7 @@ export class TimelineComponent implements OnInit {
   }
   scrollFarRight() {
     let tlw = document.getElementById("timeline-wrapper");
-    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = tlw.offsetWidth;
+    if (tlw && tlw?.scrollLeft >=0) tlw.scrollLeft = tlw.scrollWidth;
   }
 
 }
