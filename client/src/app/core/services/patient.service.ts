@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-//import { HttpClient, HttpHeaders } from '@angular/common/http';
-//import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving, FluidBalance } from '../../shared/models/patient';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Patient, Lab, VitalParameters, BloodPressure, BodyTemperature, BloodOxygenLevel, Drug, EntrancesAndExit, Caregiving, FluidBalance } from '../../shared/models/patient';
 import { Observable } from 'rxjs';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-//const httpOptions = {
-//  headers: new HttpHeaders( { 'Content-Type': 'application/json' } )
-//}
+const httpOptions = {
+  headers: new HttpHeaders( { 'Content-Type': 'application/json' } )
+}
 
 @Injectable({
   providedIn: 'root'
