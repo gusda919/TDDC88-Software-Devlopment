@@ -1,0 +1,28 @@
+\section{Overall description}
+In this chapter the core principles of the product will be presented. These principles will be the foundation of the development of the application and is written to ensure a deeper understanding of the products functions connected to the need from the users.
+\newline
+
+\label{sec:overalldescription}
+
+\subsection{Product perspective}
+\label{sec:dataset:subsection}
+The product is a web-based application developed for internal use at Region Östergötlands emergency rooms primely built for the healthcare worker and their needs. It will only be available inside the hospitals own local networks. 
+\\
+The first thing that the user is prompted to do is to log in to the applications with their professionally linked log in account. If the user is Infront of a desktop computer, they will have to use the physical keyboard and mouse to navigate the page. In case of a portable device as a tablet or phone the user will use the touchscreen feature built into these devices to navigate and type in their login credentials into the web-based application. This process and login procedures is overlooked by a software administration that can create, remove, and can change the levels of access for each log-in.  
+\\
+After a successful log-in the user is met with an “enhetsöversikt” that shows a list of all patients that is assigned for care into same department that the user works in. On the top of the page and search bar will be visible where the user can type in a key to search for a patient for example. One example of a key is “personnummer”. When the user start typing the search bar will be cuntinusly updating with search results that match whith what is currently in the bar. If the user chooses one patient by clicking on it either on the “enhetsöversikt” or thru the search bar it will be taken to the “patientöversikt” with is an interface displaying patient information thru data points and graphs.  
+\\
+This application will have a simple database to get and view the data. The frontend will be built in angular js. 
+
+\subsection{Product functions}
+The main function of this application is to provide the health care workers at the ER in RÖ with an application that is easy and intuitive to navigate, as well as presenting a clear visualization of all the critical data points related to a patient. Each user should be able to customize this view according to their own preferences and their role. The view should also provide the user with indications about deviating data or new events related to the patient in order to improve the efficiency in detecting new patient data.
+
+\subsection{User characteristics}
+The system is intended to be used by four different types of users who works at the ER: assistant nurses, nurses, doctors and administrators. The general assumption about these users are that they have a varying technical experience and knowledge, where most of the users have none or very low technical knowledge. Therefore, the application should not require any level of special technical experience. Instead it is very important that the application is intuitive even from a user with no technical knowledge, in order to make them prefer this application instead of the traditional paper journal system currently in use.
+The assistant nurses, nurses and doctors will want to access different types of information depending on their role, so the application will offer a different data presenting layout on the patient view for each type of user. 
+
+\subsection{General constraints}
+Due to the strict patient data protection laws, a user must be logged into the system before accessing any data from the patient view or the overview. Since the user will not be able to change any data, there are no further constraints connected to that. 
+
+\subsection{Assumptions and dependencies}
+During the development of this application, an assumption has been made that all health care workers will have access to a personal device - phone or some type of tablet - to be carried with them at all times during their day. This assumption was made based on information from the customer. Another assumption that has been made is that every user and their device will have access to the local network at the three hospitals all times, which is a prerequisite in order to enable automatic updates of lab results and examinations. The last assumption is that the tables or phones that will hold the application will have enough computing power to run the application.  

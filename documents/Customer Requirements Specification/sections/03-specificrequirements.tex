@@ -1,0 +1,707 @@
+\section{Specific Requirements}
+The requirements below are given an identification number built using three main parts. The first part "RC" stands for requirement and is meant to identify that this id belongs as a requirement. The second part is three numbers and symbolizes from what use case the requirement is based on. And the third part is three numbers giving the specific requirement and a unique identifier tied to a use case and all requirements in general.
+\\\\
+Under the requirement id a reference to which use case it is based on and given the unique use case specifier id. The first part "UC" stands for use case and is meant to identify that this id belongs as a use case. The second part is three numbers tying it to a specific use case. NUC is all requirements that is not derived by an use case
+\label{sec:specificrequirements}
+
+\subsection{Interface requirements}
+The Interface requirements are all requirements identified as interfacing between, among, or handling systems and components. Both user and external interface requirements
+\subsubsection{User interfaces}
+\textbf{RC-001-001} \\
+Use case: UC-001 \\
+Description: On the ''enhetsöversikt'' there shall be a box where the user can input the “personnummer” \\
+Priority: 3\\
+\newline
+\textbf{RC-002-001} \\
+Use case: UC-002 \\
+Description: There shall be a timeline on the patient view displaying all events and timestamp related to the patient \\
+Priority: 1\\
+\newline
+\textbf{RC-002-002} \\
+Use case: UC-002 \\
+Description: All past events from this ER visit shall be visualized as data points on the timeline\\
+Priority: 1 \\
+\newline
+\textbf{RC-002-003} \\
+Use case: UC-002 \\
+Description: All future events scheduled or planned shall be visualized as data points on the timeline \\
+Priority: 1 \\
+\newline
+\textbf{RC-002-004} \\
+Use case: UC-002 \\
+Description: The timeline shall visualize where the current position on the timeline is (i.e. what time it is right now)\\
+Priority: 1 \\
+\newline
+\textbf{RC-002-006} \\
+Use case: UC-002 \\
+Description: Whenever the user is not exposed to the full timeline, the timeline shall show an arrow that point to the left and says “Det finns fler händelser längre bak i tiden” \\
+Priority:  2\\
+\newline
+\textbf{RC-002-007} \\
+Use case: UC-002 \\
+Description: Whenever the user is not exposed to the full timeline, the timeline shall show an arrow that point to the right and says “Det finns fler händelser längre fram i tiden”. \\
+Priority: 2 \\
+\newline
+\textbf{RC-002-011} \\
+Use case: UC-002 \\
+Description: The timeline shall be split in different colors depending on if it marks the future or the past\\
+Priority: 3\\
+\newline
+\textbf{RC-004-001} \\
+Use case: UC-004 \\
+Description: The application shall show the patients “orsakskod” on the team’s overview - “Enhetsöversikt” \\
+Priority: 4 \\
+\newline
+\textbf{RC-004-002} \\
+Use case: UC-004 \\
+Description: The application shall show the patients “orsakskod” in the patient view on the top horizontal bar \\
+Priority: 1 \\
+\newline
+\textbf{RC-004-003} \\
+Use case: UC-004 \\
+Description: The application shall show the “orsakskod” as plain text and not the numerical code. Example: Kontakt med Dolk, kniv \\
+Priority: 2 \\
+\newline
+\textbf{RC-005-001} \\
+Use case: UC-005 \\
+Description: On the patient view, on a widget, there shall be information about the patients current “vätskebalans” \\
+Priority: 1 \\
+\newline
+\textbf{RC-005-002} \\
+Use case: UC-005 \\
+Description: The widget shall also present all data on past “vätskebalans” from the ER visit in a graph\\
+Priority: 1 \\
+\newline
+\textbf{RC-005-004} \\
+Use case: UC-005 \\
+Description: The application shall view “vätskeintag” and “vätskeförlust” \\
+Priority: 1 \\
+\newline
+\textbf{RC-006-001} \\
+Use case: UC-006 \\
+Description: There shall be an icon for medical referral (“remiss”) \\
+Priority: 2 \\
+\newline
+\textbf{RC-006-003} \\
+Use case: UC-006 \\
+Description: The new view shall contain one list with previous/signed medical referrals in chronological order  \\
+Priority: 2 \\
+\newline
+\textbf{RC-006-004} \\
+Use case: UC-006 \\
+Description: The new view shall contain one list one list with upcoming/unsigned medical referrals in chronological order \\
+Priority: 2 \\
+\newline
+\textbf{RC-006-006} \\
+Use case: UC-006 \\
+Description: The application shall only show one medical referral at a time \\
+Priority: 4 \\
+\newline
+\textbf{RC-007-007} \\
+Use case: UC-007 \\
+Description: The application shall show a blank page with the text “Ingen EKG” if there is no ECG measurements for the patient \\
+Priority: 2 \\
+\newline
+\textbf{RC-009-004} \\
+Use case: UC-009 \\
+Description: When a notification about a new lab result shows up on the screen, there shall be an option to dismiss the notification \\
+Priority: 1 \\
+\newline
+\textbf{RC-009-005} \\
+Use case: UC-009 \\
+Description: When a notification about a new lab result shows up on the screen, there shall be an option to click on the notification and more information about the lab result will show up \\
+Priority: 2 \\
+\newline
+\textbf{RC-008-001} \\
+Use case: UC-008 \\
+Description: When new X-ray data has been added, the application will show a notification in the upper right corner  \\
+Priority: 2 \\
+\newline
+\textbf{RC-008-002} \\
+Use case: UC-008 \\
+Description: The notification marker is marked with a red marker when there is an unread notification for the user \\
+Priority: 2 \\
+\newline
+\textbf{RC-008-006} \\
+Use case: UC-008 \\
+Description: When the user has read and closed the notification, the red marker disappears \\
+Priority: 3 \\
+\newline
+\textbf{RC-009-001} \\
+Use case: UC-009 \\
+Description: There shall be an icon for notifications in the header \\
+Priority: 1 \\
+\newline
+\textbf{RC-009-003} \\
+Use case: UC-009 \\
+Description: When the application receives information about a new lab result the responsible team (and only them) shall get a notification about this\\
+Priority: 2 \\
+\newline
+\textbf{RC-009-008} \\
+Use case: UC-009 \\
+Description: The lab results shall be visible in chronological order in the “patientöversikt” \\
+Priority: 2 \\
+\newline
+\textbf{RC-009-011} \\
+Use case: UC-009 \\
+Description: The detailed lab result view shall show the lab results in a table with the color black if within “referensvärde” and red if not \\
+Priority: 3 \\
+\newline
+\textbf{RC-009-012} \\
+Use case: UC-009 \\
+Description: If the user clicks on a specific lab result the application shall open a new view that shows the lab results as a graph and indicate if the results are outside of the “referensvärde” \\
+Priority: 4 \\
+\newline
+\textbf{RC-010-001} \\
+Use case: UC-010 \\
+Description: The application shall give a notification to the assigned healthcare user when a new x-ray assessment is available for a patient that is under their jurisdiction \\
+Priority: 2 \\
+\newline
+\textbf{RC-011-001} \\
+Use case: UC-011 \\
+Description: On the “patientöversikt”, there shall be a widget where all the patients vital parameters are gathered and presented in a list (since all vital parameters always should be visible) \\
+Priority: 1 \\
+\newline
+\textbf{RC-011-002} \\
+Use case: UC-011 \\
+Description: The widget shall show the current value of the vital parameters (for every vital parameter from the patient) \\
+Priority: 1 \\
+\newline
+\textbf{RC-011-003} \\
+Use case: UC-011 \\
+Description: The widget shall show the past values measured of the vital parameters presented as a graph (for every vital parameter from the patient) \\
+Priority: 2 \\
+\newline
+\textbf{RC-011-004} \\
+Use case: UC-011 \\
+Description: The graph shall be in different layers: one for blood pressure and one for pulse. Blood pressure is represented with connected black arrows, pulse with connected red dots \\
+Priority: 2 \\
+\newline
+\textbf{RC-011-005} \\
+Use case: UC-011 \\
+Description: Underneath each measuring point in the graph oxygen level, breathing frequency and temperature in that order (togetheter in a graph) are shown as text\\
+Priority: 2 \\
+\newline
+\textbf{RC-012-001} \\
+Use case: UC-012 \\
+Description: The user shall be able to see all the “vitalparametrar” of an patient on the “patientöversikt”  \\
+Priority: 1 \\
+\newline
+\textbf{RC-012-002} \\
+Use case: UC-012 \\
+Description: The application shall change the color behind the “vitalparametrar” depended on if the value has fallen below or gone above a threshold value  \\
+Priority: 3 \\
+\newline
+\textbf{RC-012-003} \\
+Use case: UC-012 \\
+Description: The application shall show green if the patients “vitalparametrar” value is inside the threshold values \\
+Priority: 3 \\
+\newline
+\textbf{RC-012-004} \\
+Use case: UC-012 \\
+Description: The application shall show red/orange/yellow if the patients “vitalparametrar” value is outside the threshold values, depending on how bad the values are. Same color shade as the triage colors \\
+Priority: 3 \\
+\newline
+\textbf{RC-012-008} \\
+Use case: UC-012 \\
+Description: The application shall receive constant data from backend and update patient view “vitalparametrar”  \\
+Priority: 1 \\
+\newline
+\textbf{RC-014-001} \\
+Use case: UC-014 \\
+Description: The patient shall have a parameter “smittsam” \\
+Priority: 1 \\
+\newline
+\textbf{RC-014-002} \\
+Use case: UC-014 \\
+Description: If the patient is smittsam, this shall be marked by an icon on the “enhetsöversikt” \\
+Priority: 1 \\
+\newline
+\textbf{RC-014-003} \\
+Use case: UC-014 \\
+Description: If the patient is smittsam, this shall be marked in yellow by the "uppmärksamhetssymbol" on the “patientöversikt” (if not, the "uppmärksamhetssymbol" shall be grey) \\
+Priority: 1 \\
+\newline
+\textbf{RC-014-004} \\
+Use case: UC-014 \\
+Description: The icon for smittsam shall be represented with the "uppmärksamhetssymbol" \\
+Priority: 1 \\
+\newline
+\textbf{RC-015-001} \\
+Use case: UC-015 \\
+Description: On the “patientöversikt”, there shall be a widget displaying a siluette by a human body  \\
+Priority: 1 \\
+\newline
+\textbf{RC-015-002} \\
+Use case: UC-015 \\
+Description: On the human body siluette, all the in/ut-farter currently on the patient shall be visible and placed on the body part that they are currently put on \\
+Priority: 1 \\
+\newline
+\textbf{RC-015-003} \\
+Use case: UC-015 \\
+Description: On the widget, there shall be a button called ”Visa historik” \\
+Priority: 2 \\
+\newline
+\textbf{RC-017-001} \\
+Use case: UC-017 \\
+Description: The application shall show the patients triage color on the “enhetsöversikt” \\
+Priority: 1 \\
+\newline
+\textbf{RC-017-002} \\
+Use case: UC-017 \\
+Description: The application shall show the patients triage color in the “patientöversikt” on the top horizontal bar  \\
+Priority: 1 \\
+\newline
+\textbf{RC-017-003} \\
+Use case: UC-017 \\
+Description: The application shall show the triage color of red, yellow, or green, orange and blue \\
+Priority: 1 \\
+\newline
+\textbf{RC-019-001} \\
+Use case: UC-019 \\
+Description: On the “patientöversikt” there shall be a button for print “hemgångsmeddelande”  \\
+Priority: 4 \\
+\newline
+\textbf{RC-021-005} \\
+Use case: UC-021 \\
+Description: The user shall be able to have different data fields/widgets visible depending on which patient’s “patientöversikt” they are currently looking at  \\
+Priority: 4 \\
+\newline
+\textbf{RC-024-003} \\
+Use case: UC-021 \\
+Description: The user shall be able to see the remaining time in hours and minutes to next check-up on each patients row in the “enhetsöversikt”  \\
+Priority: 4 \\
+\newline
+\textbf{RC-024-004} \\
+Use case: UC-021 \\
+Description: The user shall be able to see the remaining time in hours and minutes to next check-up on each patient “patientöversikt” \\
+Priority: 2 \\
+\newline
+\textbf{RC-026-001} \\
+Use case: UC-026 \\
+Description: There shall be a symbol for patient journal in “patientöversikt” \\
+Priority: 3 \\
+\newline
+\textbf{RC-026-004} \\
+Use case: UC-026 \\
+Description: The application shall show the journals in chronological order\\
+Priority: 3 \\
+\newline
+\textbf{RC-028-001} \\
+Use case: UC-028 \\
+Description: The user shall be able to see the next ordinering.\\
+Priority: 2 \\
+\newline
+\textbf{RC-028-002} \\
+Use case: UC-028 \\
+Description: The next ordinering shall be highlighted in a way its not easy to miss.\\
+Priority: 2 \\
+\newline
+\textbf{RC-028-004} \\
+Use case: UC-028 \\
+Description: If an ordinering is administered, it removes from the highlighted area.\\
+Priority: 3 \\
+\newline
+\textbf{RC-028-005} \\
+Use case: UC-028 \\
+Description: The user shall be able to view previous ordineringar.\\
+Priority: 2 \\
+
+
+\subsubsection{Hardware interfaces}
+\textbf{RC-019-002} \\
+Use case: UC-019 \\
+Description: If clicking on the button the application shall send an autogenerated “hemgångsmeddelande” to the printer service  \\
+Priority: 4 \\
+\newline
+\textbf{RC-027-001} \\
+Use case: UC-027 \\
+Description: A timestamp shall always be shown right beside all “vital parameter” data points on the “patientöversikt” \\
+Priority: 2 \\
+\newline
+\textbf{NUC-001} \\
+Description: The application shall have a header \\
+Priority: 1 \\
+\newline
+\textbf{NUC-002} \\
+Description: The header shall contain Region Östergötland's logotype, button for menu, search field, button for “all patients” (start view), date and time, message icon, button for the logged in user\\
+Priority: 1 \\
+\newline
+\textbf{NUC-003} \\
+Description: If the user is viewing a patient page the header should also contain: “varningssymbol”, patients “personnummer”, family name, first name, age, gender symbol, the location for the patient (room:bed)\\
+Priority: 1 \\
+\newline
+\textbf{NUC-004} \\
+Description: The application shall have a menu \\
+Priority: 1 \\
+\newline
+\textbf{NUC-006} \\
+Description: The menu shall contain "enhetsöversikt"\\
+Priority: 1 \\
+\newline
+\textbf{NUC-007} \\
+Description: There shall be a patient overview page - “Enhetsöversikt” that shall show all the patients currently in the ER in a list\\
+Priority: 1 \\
+\newline
+\textbf{NUC-008} \\
+Description: There shall be a “Patientöversikt” that always displays widget for vital parameters, triage color, orsakskod\\
+Priority: 1 \\
+\newline
+\textbf{NUC-018} \\
+Description: The colors in the application shall be strongly contrasted so that they can be seen quickly by color blind health care workers \\
+Priority: 2 \\
+\newline
+\subsubsection{Software interfaces}
+-
+\subsubsection{Communication interfaces}
+\textbf{RC-001-004}\\
+Use case: UC-001\\
+Description: The system shall request information from backend based on the user input “personnummer” \\
+Priority: 3\\
+\newline
+\textbf{RC-002-012} \\
+Use case: UC-002 \\
+Description: The timeline shall request all data related to the patient from backend \\
+Priority: 1 \\
+\newline
+\textbf{RC-017-004} \\
+Use case: UC-017 \\
+Description: The application shall be able to pull patient data from backend with the patients already assigned triage color  \\
+Priority: 1 \\
+\newline
+\textbf{RC-004-004} \\
+Use case: UC-004 \\
+Description: The application shall be able to pull patient data from backend with the patients already assigned “orsakskod” \\
+Priority: 1 \\
+\newline
+\textbf{RC-005-003} \\
+Use case: UC-005 \\
+Description: The information about the “vätskebalans” shall be requested from backend by providing the patients “personnummer”\\
+Priority: 1 \\
+\newline
+\textbf{RC-007-004} \\
+Use case: UC-007 \\
+Description: The system shall be able to pull data from backend based on person number\\
+Priority: 1 \\
+\newline
+\textbf{RC-010-002} \\
+Use case: UC-010 \\
+Description: The application shall send a request to backend with the “personnummer” and x-ray assessments when the user presses the button for x-ray assessment \\
+Priority: 1 \\
+\newline
+\textbf{RC-011-006} \\
+Use case: UC-011 \\
+Description: The widget shall request information about the vital parameters from backend( and update automatically)  \\
+Priority: 1 \\
+\newline
+\textbf{RC-014-005} \\
+Use case: UC-014 \\
+Description: The information about if a patient is “smittsam” or not shall be requested from backend \\
+Priority: 1 \\
+\newline
+\textbf{RC-015-006} \\
+Use case: UC-015 \\
+Description: The widget shall request data about “in-utfarter” from backend  (based on patients “personnummer”)  \\
+Priority: 1 \\
+\newline
+\textbf{RC-021-002} \\
+Use case: UC-021 \\
+Description: The users settings on their visible data fields on the “Enhetsöversikt” shall be saved in the backend even when the user logs out and logs in again  \\
+Priority: 4 \\
+\newline
+\textbf{RC-021-004} \\
+Use case: UC-021 \\
+Description: The users settings on their visible data fields on the “patientöversikt” shall be saved in the backend even when the user logs in or logs out \\
+Priority: 2 \\
+\newline
+\textbf{RC-024-001} \\
+Use case: UC-021 \\
+Description: The application shall calculate, based in the triage-color of the patient, how much time that is left from last check-up  \\
+Priority: 3 \\
+\newline
+\textbf{RC-024-002} \\
+Use case: UC-021 \\
+Description: The application shall pull data about last time when the check-up happened from the database \\
+Priority: 4 \\
+\newline
+\textbf{RC-026-002} \\
+Use case: UC-026 \\
+Description: The application shall fetch the journal from backend when requested \\
+Priority: 3 \\
+\newline
+\textbf{RC-026-006} \\
+Use case: UC-026 \\
+Description: If the user clicks on a specific journal entry the application shall send a request to the back end\\
+Priority: 4 \\
+\newline
+\subsection{Functional requirements}
+
+The functional requirements define all the requirements for functionality in the application. Company 1 have worked with developing detailed use case, use case diagrams, and user stories from the collected materials of the customer's needs, pain points, and wishes. This material was later translated into requirements with the analyst in charge of the process.
+\newline
+\newline
+\textbf{RC-001-002} \\
+Use case: UC-001 \\
+Description: When a number is put in the “personummer”-box, the system shall instantly update the displayed list with the best matching “personnummer” in the backend \\
+Priority: 3\\
+\newline
+\textbf{RC-001-003}\\
+Use case: UC-001\\
+Description: If there is no match of the “personnummer” from the database, the list will not show up but instead display a text that says “Det finns ingen patient med angivet personnummer” \\
+Priority: 3\\
+\newline
+\textbf{RC-001-005}\\
+Use case: UC-001\\
+Description: When a number is put in the “personnummer”-box, the system shall mark the matching numbers from every patient showing up on the displayed list in bold.\\
+Ex. User enters: 9705 \\
+Result list show up as:\\
+Test Testsson\\
+\textbf{9705}14-1213 \\
+Exempel Exempelsson \\
+\textbf{9705}16-1395
+\\
+Priority: 3\\
+\newline
+\textbf{RC-002-005} \\
+Use case: UC-002 \\
+Description: The timeline shall have a feature that enables zooming in or zooming out by the user pinch zooming the screen\\
+Priority: 4\\
+\newline
+\textbf{RC-002-008} \\
+Use case: UC-002 \\
+Description: The application shall be able to show more specific information about each event by user tapping on the icon. (Ex user who was responsible for the event, all relevant lab results or “utlåtanden” from doctors)\\
+Priority: 2 \\
+\newline
+\textbf{RC-002-009} \\
+Use case: UC-002 \\
+Description: The application shall close the box with specific information by either clicking a cross on the box or somewhere on the screen that is not the box \\
+Priority: 1 \\
+\newline
+\textbf{RC-002-010} \\
+Use case: UC-002 \\
+Description: The timeline shall have a feature that enables scrolling back or forth on the timeline by swiping the user’s finger to the right or left \\
+Priority: 2 \\
+\newline
+\textbf{RC-006-002} \\
+Use case: UC-006 \\
+Description: When clicking on the icon the system shall open a new view/pop up \\
+Priority: 2 \\
+\newline
+\textbf{RC-006-005} \\
+Use case: UC-006 \\
+Description: If the user clicks on a certain medical referral it shall open up and show what’s written in it \\
+Priority: 2 \\
+\newline
+\textbf{RC-006-007} \\
+Use case: UC-006 \\
+Description: If the user clicks on “close”-button the application shall close the medical referral view and get back to the patient view \\
+Priority: 2 \\
+\newline
+\textbf{RC-006-008} \\
+Use case: UC-006 \\
+Description: When a new “remissvar” is added the application shall notify the user  \\
+Priority: 2 \\
+\newline
+\textbf{RC-007-001} \\
+Use case: UC-007 \\
+Description: When a new "ECG" is added the application shall notify the user \\
+Priority: 1 \\
+\newline
+\textbf{RC-007-002} \\
+Use case: UC-007 \\
+Description: The application shall be able to visualize older ECGs data that the patient has done at an earlier checkup during the ER visit\\
+Priority: 2 \\
+\newline
+\textbf{RC-007-003} \\
+Use case: UC-007 \\
+Description: If the user press the icon for "ECG" on the “patientöversikt” The application shall show the ECG data \\
+Priority: 1 \\
+\newline
+\textbf{RC-007-006} \\
+Use case: UC-007 \\
+Description: If the user clicks on two points on the ECG, the application shall be able to measure the distance between those \\
+Priority: 4 \\
+\newline
+\textbf{RC-007-009} \\
+Use case: UC-007 \\
+Description: If the user pinch zoom on the ECG, the application shall zoom on the ECG curve\\
+Priority: 4 \\
+\newline
+\textbf{RC-008-003} \\
+Use case: UC-008 \\
+Description: The user is only notified about new results related to patients belonging to their team \\
+Priority: 2 \\
+\newline
+\textbf{RC-008-004} \\
+Use case: UC-008 \\
+Description: When the user has clicked the red marker in the notification, the application shows the user what the result was \\
+Priority: 3 \\
+\newline
+\textbf{RC-008-005} \\
+Use case: UC-008 \\
+Description: The user can close the  result box by clicking on a cross in the right corner\\
+Priority: 3 \\
+\newline
+\textbf{RC-009-006} \\
+Use case: UC-009 \\
+Description: The user shall be able to click on the notification for the lab results and get details about the lab results\\
+Priority: 3 \\
+\newline
+\textbf{RC-009-007} \\
+Use case: UC-009 \\
+Description: The user shall be able to validate the lab results by checking a check box \\
+Priority: 3 \\
+\newline
+\textbf{RC-009-010} \\
+Use case: UC-009 \\
+Description: The user shall be able to click on the lab results in the “patientöversikt” and get details about the lab results \\
+Priority: 3 \\
+\newline
+\textbf{RC-009-013} \\
+Use case: UC-009 \\
+Description: The user shall be able to get back to the lab result table by clicking on a close button \\
+Priority: 4 \\
+\newline
+\textbf{RC-009-014} \\
+Use case: UC-009 \\
+Description: The user shall be able to click on a close button to get back to the patient view \\
+Priority: 2 \\
+\newline
+\textbf{RC-010-003} \\
+Use case: UC-010 \\
+Description: The user shall be able to select the x-ray assessment module and get the picture of the newest x-ray assessment\\
+Priority: 4 \\
+\newline
+\textbf{RC-010-004} \\
+Use case: UC-010 \\
+Description: The user shall be able to press a button beside the x-ray assessment to access the picture of the x-ray in a new popup that the assessment is about \\
+Priority: 4 \\
+\newline
+\textbf{RC-010-007} \\
+Use case: UC-010 \\
+Description: The user shall be able to close the x-ray assessment module by pressing on a white space outside the module or an “X” button on the top right corner \\
+Priority: 3 \\
+\newline
+\textbf{RC-010-008} \\
+Use case: UC-010 \\
+Description: The user shall be able to close the x-ray picture popup by pressing on a white space outside the module or an “X” button on the top right corner \\
+Priority: 4 \\
+\newline
+\textbf{RC-010-009} \\
+Use case: UC-010 \\
+Description: The user shall be able to zoom in and out on the picture in RC-010-005 by pinching on mobile devices \\
+Priority: 4 \\
+\newline
+\textbf{RC-010-010} \\
+Use case: UC-010 \\
+Description: The user shall be able to show two x-ray pictures side by side by opening another and older x-ray and drag it to the side of the new picture \\
+Priority: 4 \\
+\newline
+\textbf{RC-012-005} \\
+Use case: UC-012 \\
+Description: If the conditions in RC-012-004 are met the application shall send a notification including time, value and patient to nurse and/or doctor in charge of the patient \\
+Priority: 3 \\
+\newline
+\newline
+\textbf{RC-013-001} \\
+Use case: UC-013 \\
+Description: The application shall get incoming transmissions with information from backend (ambulace system) \\
+Priority: 1 \\
+\newline
+\textbf{RC-013-002} \\
+Use case: UC-013 \\
+Description: The start page shall have an information box about incoming patient on the start page \\
+Priority: 1 \\
+\newline
+\textbf{RC-013-003} \\
+Use case: UC-013 \\
+Description: The information shall contain estimated arrival time and condition (ex: vital parameters, illness/trauma etc) \\
+Priority: 1 \\
+\newline
+\textbf{RC-013-004} \\
+Use case: UC-013 \\
+Description: If critical the application shall send notification to the coordinator/responsible doctor \\
+Priority: 1 \\
+\newline
+\textbf{RC-015-004} \\
+Use case: UC-015 \\
+Description: The user shall be able to click “Visa historik” and get a list of all “in/utfarter” that the patient has had during the ER visit as well as start time and removal time \\
+Priority: 2 \\
+\newline
+\textbf{RC-015-005} \\
+Use case: UC-015 \\
+Description: The user shall be able to click a button ”Stäng” on the display list of historical data to get the list to disappear and the user will be back on looking at the widget \\
+Priority: 2 \\
+\newline
+\textbf{RC-021-001} \\
+Use case: UC-021 \\
+Description: If the user clicks on the button “Välj synliga fält” the application shall show options for add or remove data fields on "enhetsöversikten"  \\
+Priority: 4 \\
+\newline
+\textbf{RC-021-003} \\
+Use case: UC-021 \\
+Description: If the user clicks on the button “Välj synliga fält” the application shall show options for add or remove data fields on "patientöversikten" \\
+Priority: 4 \\
+\newline
+\textbf{RC-026-003} \\
+Use case: UC-026 \\
+Description: If the user clicks on the symbol a pop-up shall appear with the patient’s journal \\
+Priority: 3 \\
+\newline
+\textbf{RC-026-005} \\
+Use case: UC-026 \\
+Description: The user shall be able to click on a specific journal entry to retrieve more information\\
+Priority: 4 \\
+\newline
+\textbf{NUC-005} \\
+Description: If the user clicks on the menu button in the header the application shall show or hide the menu \\
+Priority: 1 \\
+\newline
+\textbf{RC-028-003} \\
+Description: The user shall be able to make a check that they have administered the ordinering.  \\
+Priority: 3 \\
+\newline
+
+
+
+
+\subsection{Non-Functional requirements}
+Non-functional requirements are the requirements that define how our application should perform and shall have in terms of quality, language, and systems.
+\newline
+\newline
+\textbf{NUC-010} \\
+Description: Every user shall per default always belong to a team \\
+Priority: 1 \\
+\newline
+\textbf{NUC-011} \\
+Description: The application shall be in swedish\\
+Priority: 1 \\
+\newline
+\textbf{NUC-012} \\
+Description: Every user shall always have an assigned role \\
+Priority: 2 \\
+\newline
+\textbf{NUC-013} \\
+Description: The application shall be adaptable for screens such as ipad mini, desktop and phone \\
+Priority: 1 \\
+\newline
+\textbf{NUC-014} \\
+Description: OS-neutral web application that doesn’t have to be installed\\
+Priority: 1 \\
+\newline
+\textbf{NUC-015} \\
+Description: Use functions that are commonly available on most smart phones/tablets\\
+Priority: 1 \\
+\newline
+\textbf{NUC-016} \\
+Description: Server calls should be through open API:s, for example based on REST/HTTPS \\
+Priority: 1 \\
+\newline
+\textbf{NUC-017} \\
+Description: Important information on the application shall be quickly accessible (i.e. need less than 3 clicks to be found)  \\
+Priority: 2 \\
+\newline
+
+\subsection{Performance requirements}
+\subsection{Design constraints}
+\subsection{Software system attributes}
+\subsection{Other requirements}
