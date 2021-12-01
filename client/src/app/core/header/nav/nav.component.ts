@@ -44,11 +44,7 @@ export class NavComponent {
         console.log(pat)
         if (pat.newecg === "true") {
           this.addECG(pat.patientID);
-        }
-        if (pat.newxray === "true") {
-          this.addXrayNotification(pat.patientID);
-        }
- 
+        } 
       });
     });
   };
