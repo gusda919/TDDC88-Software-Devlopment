@@ -1,9 +1,10 @@
 
 .lab-overview{
     
-    float: right;
-    padding: 40px;
-    width: 30%;
+    float: left;
+    margin: 4%;
+    width: 400px;
+    height: 320px;
     text-size-adjust: 14px;
     background-color: white;
 }
@@ -18,20 +19,16 @@ padding-left: 20px;
  color: rgb(38, 77, 204);
 
 }
-.list {
-    
-    float:left;
 
-}
 .list-row{
     padding: 10px;
-  //  font-weight: bold;
+
     
 
 }
 
 .lab-info {
- float: left;
+ float: right;
 
 
 }

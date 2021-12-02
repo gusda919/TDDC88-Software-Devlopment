@@ -1,0 +1,99 @@
+<mat-card id="ordinering">
+    
+    <div id="abc"style="height: 30px;">
+        <h2> Medicinering</h2>
+    </div>
+    <!-- Base view -->  
+    <div id="wrapper-base">
+        
+        <div> 
+            <h3 style="height: 10px;"> Ordinerat </h3>
+            <div id="ord-med" style="width: 100%; margin-top: 21px; border-left: 2px solid gray; background-color: lightcyan;">
+                <!-- Insert ordinated medication here -->
+                <mat-icon style="float: left; font-size: large;" aria-hidden="false" aria-label="Medicinering">healing</mat-icon>
+                <span style="height: 24px;">Ringer-Acetat <br/> 1000ml engångsdos</span>
+            </div>
+            <div style="float: left; width: 100%;">
+                <button (click)="showMore()" style=" float:left; text-align: center;" mat-button color="primary">Visa mer</button>
+            </div>
+
+        </div>
+        <div style="padding-top: 30px;"> 
+            <h3 style="height: 20px;"> Administrerat </h3>
+            <div style="width: 100%; border-left: 2px solid gray;">
+                <!-- Insert coming medication here -->
+                <mat-icon style="float: left; font-size: large;" aria-hidden="false" aria-label="Medicinering">healing</mat-icon>
+
+                <span style="height: 24px;">Innohep <br/> 1 förfylld spruta x2 tv</span>
+                <div>    
+                    <mat-icon style="margin-left: 25px; font-size: large;" aria-hidden="false" aria-label="Medicinering">access_time</mat-icon>
+                    <span>2021-03-14 12:30</span>
+                </div>
+                <div>
+                    <button (click)="showHistory()" style=" float:left; text-align: center;" mat-button color="primary">Visa historik</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <!-- End of Base view -->
+        <!-- Start of Extended view -->
+    <div id="wrapper-extended" style="display: none;">
+        <div> 
+            <h3 style="height: 15px;"> Ordinerat </h3>
+            <div id="ord-med" style="width: 100%;">
+                <!-- Insert ordinated medication here -->
+                <div style="width: 100%; float: left; border-left: 2px solid gray">
+                    <mat-icon style="float: left; font-size: large;" aria-hidden="false" aria-label="Medicinering">healing</mat-icon>
+                    <span> Ringer-Acetat Fresnius Kabi <br/> 1000ml engångsdos</span>
+                </div>
+                
+                <div style="width: 100%; float: left; margin-top: 10px; border-left: 2px solid gray">                
+                    <mat-icon style="float: left; font-size: large;" aria-hidden="false" aria-label="Medicinering">healing</mat-icon>
+                    <span style="height: 10px;">Innohep <br/> 1 förfylld spruta x2 tv</span>
+
+                </div>
+<!--                 <div style="width: 100%; float: left; padding-top: 10px;">                
+                    <mat-icon style="float: left; font-size: large;" aria-hidden="false" aria-label="Medicinering">healing</mat-icon>
+                    <span>Innohep <br/> 1 förfylld spruta x2 tv</span>
+                    <mat-icon style="padding-left: 50px; font-size: large;" aria-hidden="false" aria-label="Medicinering">access_time</mat-icon>
+                    <span>2021-03-14 12:30</span>
+                </div>
+-->
+                <div style="float: left; width: 100%; padding-top: 0px;">
+                    <button (click)="showLess()" style=" float:left; text-align: center;" mat-button color="primary">Dölj</button>
+                </div>
+            </div>
+        </div>
+        <!-- End of Extended view -->
+    </div>
+    <!-- Start of History view -->
+    <div id="wrapper-history" style="display: none;">
+        <div> 
+            <h3 style="height: 15px;"> Administrerat </h3>
+            <div id="ord-med" style="width: 100%; height: 20px;">
+                <!-- Insert ordinated medication here -->
+                <div style="width: 100%; float: left; border-left: 2px solid gray">
+                    <mat-icon style="float: left; font-size: large;" aria-hidden="false" aria-label="Medicinering">healing</mat-icon>
+                    <span> Ringer-Acetat Fresnius Kabi <br/> 1000ml engångsdos</span>
+                </div>
+                
+                <div style="width: 100%; float: left; margin-top: 10px; border-left: 2px solid gray">                
+                    <mat-icon style="float: left; font-size: large;" aria-hidden="false" aria-label="Medicinering">healing</mat-icon>
+                    <span style="height: 10px;">Innohep <br/> 1 förfylld spruta x2 tv</span>
+                    <div>
+                        <mat-icon style="margin-left: 25px; font-size: large;" aria-hidden="false" aria-label="Medicinering">access_time</mat-icon>
+                        <span>2021-03-14 14:30</span>
+                    </div>
+                </div>
+
+                <div style="float: left; width: 100%; padding-top: 0px;">
+                    <button (click)="showLess()" style=" float:left; text-align: center;" mat-button color="primary">Dölj</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- End of History view -->
+    </div>
+</mat-card>
