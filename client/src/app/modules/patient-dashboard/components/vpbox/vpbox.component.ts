@@ -30,7 +30,7 @@ export class VpboxComponent implements OnInit {
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
   isFluidBalanceDisplayed = false;
-  isLabsDisplayed = false;
+
 
   firstGraph = "oxygen";
   secondGraph = "pressure";
@@ -228,25 +228,19 @@ export class VpboxComponent implements OnInit {
 
   }
   
-  toggleLabs() {
-    if(!this.isLabsDisplayed) {
-      this.checkIfAnyGraphIsToggled();
-    }
-    this.isLabsDisplayed = ! this.isLabsDisplayed;
-  }
+ 
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
       this.isRespiratoryRateDisplayed ||
-      this.isFluidBalanceDisplayed ||
-      this.isLabsDisplayed) {
+      this.isFluidBalanceDisplayed ) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
         this.isFluidBalanceDisplayed = false;
-        this.isLabsDisplayed = false;
+        
     }
   }
 }

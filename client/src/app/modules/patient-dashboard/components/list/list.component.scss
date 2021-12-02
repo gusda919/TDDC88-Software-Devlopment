@@ -1,26 +1,34 @@
 
 .lab-overview{
     
-    float: right;
-    padding: 40px;
-    width: 40%;
+    float: left;
+    margin: 4%;
+    width: 400px;
+    height: 320px;
+    text-size-adjust: 14px;
     background-color: white;
 }
+.header-lab{
 
-.list {
-    
-    float:left;
+background-color: rgb(240, 240, 240);
+padding-left: 20px;
 
 }
+.showResult{
+
+ color: rgb(38, 77, 204);
+
+}
+
 .list-row{
     padding: 10px;
-    font-weight: bold;
+
     
 
 }
 
 .lab-info {
- float: left;
+ float: right;
 
 
 }
