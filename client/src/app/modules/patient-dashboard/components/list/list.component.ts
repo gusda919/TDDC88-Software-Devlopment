@@ -1,12 +1,14 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Caregiving, Lab, Drug } from 'src/app/shared/models/patient';
-import { faMicroscope, faPills, faHandHoldingMedical } from '@fortawesome/free-solid-svg-icons'
+import { faMicroscope, faPills, faHandHoldingMedical, faClock} from '@fortawesome/free-solid-svg-icons'
 
 
 
 
 import { PatientService } from '../../../../core/services/patient.service'
+import { reduce } from 'rxjs/operators';
+import { BLACK_ON_WHITE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 
 interface TimelineEvent {
   date: Date,
@@ -36,6 +38,31 @@ export class ListComponent implements OnInit {
   faMicroscope = faMicroscope;
   faPills = faPills;
   faHandHoldingMedical = faHandHoldingMedical;
+  faClock = faClock;
+  clickedButton: any;
+  
+  items = [
+    ["B-Hb (Hemoglobin)" , 120, 170],
+    ["B-EVF", 0.4, 0.5],
+    ["B-Erytrocter", 3.9, 5.7],
+    ["B-MCV", 82, 98],
+    ["ERC(B)-MCH", 27, 33],
+    ["ERC(B)-MCHC", 317, 357],
+    ["B-Lekocyter", 3.5, 8.8],
+    ["B-Trombocyter", 145, 348],
+    ["P-APT-tid", 28, 40],
+    ["P-KR (INR)", 0, 1.2],
+    ["P-CRP", 0, 3],
+    ["P-Natrium", 40, 240],
+    ["P-Kalium", 3.6, 6.0],
+    ["P-Kreatinin", 0, 133],
+    ["Pt-Krea, eGFR, MDRD", 75, 150],
+    ["Pt-Glukos", 4.0, 6.0],
+    
+    
+  ];
+        
+
   
 
   constructor(private patientService: PatientService) { }
@@ -55,6 +82,22 @@ export class ListComponent implements OnInit {
     });
 
   }
+
+  markerColour(marker: string , value: any) {
+   
+    for (var item of this.items) {
+      if(item[0]===marker) {
+       if( value<item[1] || value>item[2]){
+        return "red";
+       }
+      }
+      
+ }
+ 
+  return "black";
+  }
+
+ 
 
   getPatientLabs() {
     this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
@@ -81,7 +124,10 @@ export class ListComponent implements OnInit {
   displayEvent(event: any) {
     this.displayedEvent = event;
   }
-
+  closeDisplayedEvent() {
+    this.displayedEvent = <TimelineEvent>{};
+    this.clickedButton = null;
+  }
 }
 
 
