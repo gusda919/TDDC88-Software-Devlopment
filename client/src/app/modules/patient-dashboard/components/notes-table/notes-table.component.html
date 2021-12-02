@@ -1,0 +1,52 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements" matSortActive="date" matSortDisableClear matSortDirection="desc" [dataSource]="dataSource" multiTemplateDataRows>
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Datum</th>
+      <td mat-cell *matCellDef="let row">{{row.date}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let row" [attr.colspan]="displayedColumns.length">
+        <div class="list-element-details" [@detailExpand]="row == expandedElement ? 'expanded' : 'collapsed'">
+          
+          <div class="list-element-description">
+            {{row.description}}
+            
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Note type Column -->
+    <ng-container matColumnDef="note_type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Anteckningstyp</th>
+      <td mat-cell *matCellDef="let row">{{row.note_type}}</td>
+    </ng-container>
+
+    <!-- Noter Column -->
+    <ng-container matColumnDef="noted_by">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Antecknad av</th>
+      <td mat-cell *matCellDef="let row">{{row.noted_by}}</td>
+    </ng-container>
+
+    <!-- Unit Column -->
+    <ng-container matColumnDef="unit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Enhet</th>
+      <td mat-cell *matCellDef="let row">{{row.unit}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="example-element-row" [class.example-expanded-row]="expandedElement === row"
+    (click)="expandedElement = expandedElement === row ? null : row"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>

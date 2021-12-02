@@ -1,29 +1,6 @@
 <mat-card class="patient-header-card">
    <mat-card-content>
 
-        <!-- <ul>
-            <li>
-                <strong>Namn</strong>
-                 <p> {{name}}</p>
-            </li>
-            <li>
-                <strong>Personnummer</strong>
-                <p>{{personalNumber}}</p> 
-            </li>
-            <li>
-                <strong>Triage</strong>
-                <p>{{triage}}</p>
-            </li>
-            <li>
-                <strong>Besöksorsak</strong>
-                <p>{{visitingFor}}</p> 
-            </li>
-            <li>
-                <strong>Ansvarigt team</strong>
-                <p>Team {{teamInCharge}}</p> 
-            </li>
-        </ul> -->
-
         <div class = patheader>
             <div class = "patientHeaderInformationBox">
                 <strong>Namn</strong>
@@ -34,9 +11,9 @@
                 <p class = "informationBoxValue" >{{patientId}}</p> 
             </div>
     
-            <div *ngIf="contagious" class = "patientHeaderInformationBox">
-                <strong>Smittsam</strong>
-                <p class = "triangle"> </p>
+            <div class = "patientHeaderInformationBox">
+                <img class="symbol" *ngIf="contagious" src="../../../../../assets/uppmarksamhetssymbol_smittsam.png">
+                <img class="symbol" *ngIf="!contagious" src="../../../../../assets/uppmarksamhetssymbol.png">
             </div>
     
             <div class = "patientHeaderInformationBox">
@@ -51,6 +28,10 @@
                 <strong>Kön</strong>
                 <p class = "informationBoxValue" > {{gender}}</p> 
             </div>   
+            <div class = "patientHeaderInformationBox">
+                <strong>Rum</strong>
+                <p class = "informationBoxValue" > {{roomBed}}</p> 
+            </div>  
 
             <div id = "rosButtonDiv" class="headerButton" >
                 <button mat-raised-button color="primary" id = "rosButton" (click)="openRoS(patientId)">RoS</button>
@@ -67,15 +48,15 @@
   
 </mat-card>
 
-<!-- The Modal -->
 <div id="myModal" class="modal">
 
-    <!-- The Close Button -->
     <span (click)="closeECGModal()" class="close">&times;</span>
   
-    <!-- Modal Content (The Image) -->
-    <img class="modal-content" id="ECGimg" onerror="hideImg()">
-  
-    <!-- Modal Caption (Image Text) -->
+    <div id = "imagesModal">
+        <img class="modal-content" src="/assets/ECG195001232296_1.png" onerror="hideImg()">
+        <img class="modal-content" src="/assets/ECG195001232296_2.png" onerror="hideImg()">
+        <img class="modal-content" src="/assets/ECG195001232296_3.png" onerror="hideImg()">
+    </div>
+
     <div id="caption"></div>
   </div>

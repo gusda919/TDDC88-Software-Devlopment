@@ -14,6 +14,11 @@
   position: sticky;
   top: 0;
   z-index: 2;
+  //Background color of header
+  background: #004a82;
+  //Text color of header
+  color:#fff;
+
 }
 
 .dropdown{
@@ -22,7 +27,7 @@
 }
 
 .dropdown-menu{
-  position: absolute;
+  position: fixed;
   right: 1rem;
   top: 4rem;
   background-color: white;
@@ -71,4 +76,9 @@ border: none;
 .specificMessage {
   background-color: aliceblue;
   margin-bottom: 10px;
+}
+
+#unit-button {
+  margin-left: 2%;
+  background-color: #004a82;
 }

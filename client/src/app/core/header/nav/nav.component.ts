@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { PatientService } from '../../../core/services/patient.service';
+//import { uuid } from 'uuidv4';
+ 
 
 @Component({
   selector: 'app-nav',
@@ -21,10 +23,12 @@ export class NavComponent {
   panelOpenState = false;
   subscription: Subscription;
   pn: string;
+  displayRed: number;
 
   messages = [
-    {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
-    {id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
+      {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
+   // {id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
+   // {id: 2, patient: 'Sven Svensson', pn:"941212-0110",content: 'Blodprov är nu tillgängligt'},
   ]
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset])
@@ -37,21 +41,24 @@ export class NavComponent {
 
     this.subscription = this.patientService.getPatients().subscribe( (pats: any) => {
       pats.forEach((pat: any) => {
+        console.log(pat)
         if (pat.newecg === "true") {
           this.addECG(pat.patientID);
-         // patientService.setPatientNoNewECG(pat.patientID);
-        }
+        } 
       });
     });
-
   };
 
+  setRedVisible() {
+    this.displayRed = this.messages.length;
+  }
   addECG(pn: string) {
     this.patientService.getPatient(pn).subscribe((patient: any) => {
     let fullname = patient.givenName +" "+ patient.familyName;
     this.messages.push({id: this.messages.length, patient: fullname, pn: pn, content: 'Nytt EKG result tillgängligt'})
+    this.setRedVisible();
     });
-  };
+  }
 
   getMessages() {
     if(this.displayMessage) {
@@ -59,12 +66,18 @@ export class NavComponent {
     } else {
       this.displayMessage = true;
     }
+    this.setRedVisible();
   }
 
   deleteMessage(i:number) {
     this.messages.forEach((value,index)=>{
       if(value.id == i) this.messages.splice(index,1);
-  });
+      this.setRedVisible();
+    });
+  }
+
+  closeNotifications() {
+    this.displayRed = 0;
   }
 
   getProfile() {
@@ -76,5 +89,12 @@ export class NavComponent {
     }
   }
 
+  ngOnInit(){
+  }
+
+}
+
+function c(arg0: RegExp, c: any, arg2: (any: any) => string) {
+  throw new Error('Function not implemented.');
 }
 

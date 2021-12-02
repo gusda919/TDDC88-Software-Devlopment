@@ -38,7 +38,9 @@ export class OverviewTableComponent implements AfterViewInit {
   }
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['issue', 'gender', 'name', 'id' ,'date', 'triage'];
+  displayedColumns = ['issue', 'gender', 'name', 'id' ,'date', 'nextVisit', 'triage'];
+  //displayedColumns = ['issue', 'gender', 'name', 'id' ,'date', 'triage'];
+
   groupedColumns = ['header'];
   sortedData: Patient[];
 
@@ -84,6 +86,8 @@ export class OverviewTableComponent implements AfterViewInit {
           return compare(a.caregiving[a.caregiving.length-1].time, b.caregiving[b.caregiving.length-1].time, isAsc);
         case 'triage':
           return compare(this.triageValueMap[a.triage], this.triageValueMap[b.triage], isAsc);
+        case 'nextVisit':
+          return compare(a.nextCheckupIn, b.nextCheckupIn, isAsc);
         default:
           return 0;
 
