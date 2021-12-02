@@ -8,7 +8,7 @@
       <mat-list-item (click)="toggleBloodOxygenGraph()">
         <img matListIcon src='../../../../../assets/spo2-icon.png'>
         <h3 matLine>{{vitalParameters.bloodOxygenLevel.label}}</h3>
-        <div matLine>{{getLatestBloodOxygenLevel().time + ' ' + getLatestBloodOxygenLevel().date}}</div>
+        <div matLine class="date">{{getLatestBloodOxygenLevel().time + ' ' + getLatestBloodOxygenLevel().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
             <div class="param" fxFlex="30" style="background-color: {{bloodOxygenColor}};">{{getLatestBloodOxygenLevel().value}}%</div>            
@@ -18,7 +18,7 @@
       <mat-list-item (click)="toggleBloodPressureAndPulseGraph()">
         <fa-icon matListIcon [icon]='faHeartbeat'></fa-icon>
         <h3 matLine>{{vitalParameters.pulse.label}}</h3>
-        <div matLine>{{getLatestPulse().time + ' ' + getLatestPulse().date}}</div>
+        <div matLine class="date">{{getLatestPulse().time + ' ' + getLatestPulse().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
             <div class="param" fxFlex="30" style="background-color: {{pulseColor}};">{{getLatestPulse().value}} bpm</div>
@@ -28,7 +28,7 @@
       <mat-list-item (click)="toggleBloodPressureAndPulseGraph()">
         <img matListIcon src='../../../../../assets/blood-pressure-icon.png'>
         <h3 matLine>{{vitalParameters.bloodPressure.label}}</h3>
-        <div matLine>{{getLatestBloodPressure().time + ' ' + getLatestBloodPressure().date}}</div>
+        <div matLine class="date">{{getLatestBloodPressure().time + ' ' + getLatestBloodPressure().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
             <div class="param" fxFlex="30" style="background-color: {{bloodPressureColor}};">{{getLatestBloodPressure().systolic + '/' + getLatestBloodPressure().diastolic}} mmHg</div>
@@ -38,7 +38,7 @@
       <mat-list-item (click)="toggleBodyTemperatureGraph()">
         <fa-icon matListIcon [icon]='faThermometer'></fa-icon>
         <h3 matLine>{{vitalParameters.bodyTemperature.label}}</h3>
-        <div matLine>{{getLatestBodyTemperature().time + ' ' + getLatestBodyTemperature().date}}</div>
+        <div matLine class="date">{{getLatestBodyTemperature().time + ' ' + getLatestBodyTemperature().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
             <div class="param" fxFlex="30" style="background-color: {{bodyTemperatureColor}};">{{getLatestBodyTemperature().value}}°C</div>
@@ -48,7 +48,7 @@
       <mat-list-item (click)="toggleRespiratoryRateGraph()">
         <fa-icon matListIcon [icon]='faLungs'></fa-icon>
         <h3 matLine>{{vitalParameters.respiratoryRate.label}}</h3>
-        <div matLine>{{getLatestRespiratoryRate().time + ' ' + getLatestRespiratoryRate().date}}</div>
+        <div matLine class="date">{{getLatestRespiratoryRate().time + ' ' + getLatestRespiratoryRate().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
             <div class="param" fxFlex="30" style="background-color: {{respiratoryRateColor}};">{{getLatestRespiratoryRate().value}} / min</div>

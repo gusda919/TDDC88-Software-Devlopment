@@ -1,6 +1,8 @@
-
-<div class="lab-overview">
-    <h1 class="header-lab">Laborationsresultat</h1>
+<mat-card class="lab-overview">
+    <mat-card-header>
+        <mat-card-title>Laborationsresultat</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
 <mat-action-list class="list" #labs>
     <mat-list-item class ="list-row" *ngFor="let event of events " >
         <fa-icon matListIcon [icon]='faClock'></fa-icon>
@@ -17,7 +19,7 @@
         
     </mat-list-item>
   </mat-action-list>
-
+</mat-card-content>
  
 
    <mat-card-subtitle>
@@ -47,4 +49,4 @@
 
     </mat-card-subtitle>
 
-</div>
+</mat-card>
