@@ -1,4 +1,5 @@
 \section{Software Quality Assessments}
+\label{sec:sqa}
 This section describes the plan for Software Quality Assessments (excluding testing). The plan includes a schedule of the assessments, their purpose and the metrics to be used.
 
 %highlights the expected resources to be spent on Quality Assurance (excluding testing) and the standard metrics to be used. \emph{Will be further developed in a future version.}
@@ -17,6 +18,7 @@ This section describes the plan for Software Quality Assessments (excluding test
 %\end{table}
 
 \subsection{Assessment schedule}
+\label{subsec:assessment-schedule}
 \begin{table}[H]
 \centering
 \begin{tabular}{||c c||} 
@@ -45,38 +47,76 @@ The purpose of this procedure is to monitor and measure the product quality. Dat
 %\end{itemize}
 
 \subsection{Metrics}
+\label{subsec:metrics}
 For each assessment, the Quality Coordinator will measure and produce the metrics listed below. The results shall be documented in a spreadsheet available to the entire company in MS Teams. A summary of the assessment will be placed in the Output folder on MS Teams. The most significant findings will be brought up at the weekly manager meeting by the Quality Coordinator, where a decision is made whether any further action needs to be taken.
 
 \subsubsection{Quality of code}
+These metrics are noted manually and will indicate the quality of the code with regards to maintainability and understandability.
+
 %\subsubsection{CodeMR}
+%These metrics are given from the code analysis tool CodeMR. The metrics will give an overview of which classes have for example high complexity. If certain classes have too high values, this will be noticed and remedied. The goal is that no class should have a high or very-high value of these quality attributes.
 \begin{itemize}
 %    \item Complexity
 %    \item Coupling
 %    \item Lack of Cohesion
 %    \item Size
-\item Ratio of comments per function
-\item Ratio of commit messages following the company guidelines
-\item Number of files and directories within server and client respectively
+
+\item Amount of comments per function.
+
+10 functions chosen randomly from merged code during the the current iteration will be examined. The number of comments from each function are added together and then divided by 10 to get the metric. The metric should have a value above 1 for the code to be able to achieve maintainability and understandability.
+
+\item Ratio of commit messages following the company guidelines.
+
+The commit messages from the current iteration are monitored and determined of they follow the \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/tree/main#semantic-commit-messages}{company guidelines}. The number of commit messages following the company guidelines is divided by the total number of commit messages monitored to get the metric. To achieve understandability and maintainability, the metric should be as close to 1 as possible.
+
+\item Number of files and directories within server and client respectively.
+
+The number of files in each directory within the server and client directory on the \emph{develop} branch is mapped at the time of the assessment. The measurements will result in a tree structure of directories and files which will be evaluated to see if restructuring is needed to achieve better understandability in the code structure.
 \end{itemize}
-These metrics are noted manually and will indicate the quality of the code with regards to maintainability and understandability.
-%These metrics are given from the code analysis tool CodeMR. The metrics will give an overview of which classes have for example high complexity. If certain classes have too high values, this will be noticed and remedied. The goal is that no class should have a high or very-high value of these quality attributes.
 
 \subsubsection{GitLab}
-\begin{itemize}
-    \item Deployment frequency (Planned vs Actual)
-    \item WIP amount (amount of "cards" or tasks in progress at the time)
-    \item Number of Peer Reviews (reviewed Merge Requests)
-    \item Ratio of merges without review
-    \item Time to merge (time from first commit to merge request sent)
-    \item Merge request review time
-    \item Number of Issues found when reviewing Merge requests
-\end{itemize}
 These metrics are produced from the activities on the company GitLab. The purpose of them is to monitor and evaluate the processes and workflow on GitLab. If the metrics show values worse than the set guidelines, actions will be taken to meet the guidelines.
 
-\subsubsection{Quality process}
-\begin{itemize}    
-    \item Number of Software Quality Assessments (Planned versus Actual)
-    \item Number of Software Quality Assessment Findings (Open versus Closed)
-    \item Number of Risks identified as a result of Software Quality Assessments
+\begin{itemize}
+    \item Deployment frequency (Planned vs Actual).
+    
+    The goal for the company is to deploy code to the \emph{main} branch once per iteration. The metric is determined by looking at the merge history on GitLab.
+    
+    \item WIP amount (amount of "cards" or tasks in progress at the time).
+    
+    This metric is measured by looking at the issue boards on GitLab. The number of cards placed on each "doing" boards is added together to get the metric. 
+    
+    \item Number of Peer Reviews (reviewed Merge Requests).
+    
+    This metric is obtained by checking the number of Merge Requests that have been reviewed in the current iteration.
+    
+    \item Ratio of merges without review.
+    
+    To calculate this metric, the Number of Peer Reviews metric is divided by the total number of merges in the iteration. This value is then subtracted from 1 to get the ratio of merges without review.
+    
+    \item Time to merge (time from first commit to merge request sent).
+    
+    The time elapsed from the first commit on the relevant branch to when the merge request is sent is measured by looking at commits and timestamps on GitLab. The metric is calculated from the average of the these times from the current iteration. 
+    
+    \item Merge request review time.
+    
+    The measurements needed for this metric is provided by GitLab in the analytics tab. After setting start and end date, the "mean time to merge" is given by GitLab, which is the same as the average time it takes for a merge request to be approved. 
+    
+    \item Number of issues found when reviewing Merge requests.
+    
+    The metric is calculated by counting the number issues in GitLab created in the current iteration marked with "bug" and the number of merge requests with issue related comments. This metric is compared to the Number of Peer Reviews metric to determine the ratio of issues per review.
 \end{itemize}
-The purpose of these metrics is to evaluate the Software Quality Assessments. The values of these metrics will indicate how rewarding the process is.
+
+
+\subsubsection{Quality process}
+The purpose of these metrics is to evaluate the Software Quality Assessments. The values of these metrics will indicate the progress of the process.
+
+\begin{itemize}    
+    \item Number of Software Quality Assessments (Planned versus Actual).
+    
+    This metric is measured by checking the number of Software Quality Assessments conducted through the number of protocols made. This is compared to the planned number of assessments in the assessment schedule, see subsection \ref{subsec:assessment-schedule}. 
+     
+    \item Number of Risks identified as a result of Software Quality Assessments.
+    
+    Based on the result of the assessment, risks are identified and brought up to the rest of the company. The metric is the total number of risks identified in the current iteration.
+\end{itemize}
