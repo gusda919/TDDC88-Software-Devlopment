@@ -20,7 +20,8 @@ export class JournalWidgetComponent implements OnInit {
 
   constructor(private patientService : PatientService) { }
 
-  @Input() patientId: string;
+  @Input() 
+  patientId: string;
   
   isNotesDisplayed = false;
   isReferralsDisplayed = false;
