@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_PATH=./build node build/index.js",
-    "build": "tsc -p .",
+    "build": "tsc -p . && cp src/patients.json build",
     "dev": "./node_modules/.bin/nodemon src/index.ts"
   },
   "author": "",
