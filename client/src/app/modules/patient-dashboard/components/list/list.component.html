@@ -7,18 +7,18 @@
         <tr > {{ event.date | date:'yyyy/MM/dd HH:mm ' }} </tr>
         <div [ngSwitch]="event">
          <tr *ngSwitchCase="displayedEvent">
-          <th class="showResult" (click)="closeDisplayedEvent()"> &#160; Dölj Resultat  </th> 
+          <th class="showResult" (click)="closeDisplayedEvent()"> &#160; Dölj Resultat  </th>
         </tr>
-        
-       <tr *ngSwitchDefault> 
-       <th class="showResult" (click)="displayEvent(event)"> &#160; Visa Resultat </th> 
+
+       <tr *ngSwitchDefault>
+       <th class="showResult" (click)="displayEvent(event)"> &#160; Visa Resultat </th>
       </tr>
         </div>
-        
+
     </mat-list-item>
   </mat-action-list>
 
- 
+
 
    <mat-card-subtitle>
 
@@ -31,7 +31,7 @@
                 <tr *ngFor="let lab of displayedEvent.data" >
 
                     <div style="color: {{markerColour(lab.marker,lab.value)}};">
-                    
+
                     <td>{{lab.marker}}</td>
                     <td>{{lab.value}}</td>
                  <!--- <div *ngif="!lab.value" >

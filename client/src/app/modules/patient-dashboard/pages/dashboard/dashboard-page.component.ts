@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { PatientService } from '../../../../core/services/patient.service'
@@ -45,7 +45,7 @@ export class DashboardPageComponent implements OnInit {
             { title: 'Silhouette', contentType: 'img', cols: 1, rows: 1 ,}
           ];
         }
-        
+
       }
 
       return [
@@ -67,10 +67,10 @@ export class DashboardPageComponent implements OnInit {
     });
   }
 
-  constructor(private breakpointObserver: BreakpointObserver, private route: ActivatedRoute, 
-    private patientService: PatientService, private router: Router, 
-    private _snackBar: MatSnackBar
-    ) {}
+  constructor(private breakpointObserver: BreakpointObserver, private route: ActivatedRoute,
+    private patientService: PatientService, private router: Router,
+    private _snackBar: MatSnackBar,
+    private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
 
