@@ -396,6 +396,8 @@ export interface VitalParameters {
     bloodPressure:    BloodPressure;
     bodyTemperature:  BodyTemperature;
     respiratoryRate:  BodyTemperature;
+    acvpu: ACVPU;
+    nrs: BodyTemperature;
 }
 
 export interface BloodOxygenLevel {
@@ -424,4 +426,15 @@ export interface BloodPressure {
 export interface BodyTemperature {
     label: string;
     data:  Datum[];
+}
+
+export interface ACVPU {
+    label: string;
+    data: ACVPUData[];
+}
+
+export interface ACVPUData {
+    date: string;
+    time: string;
+    value: string;
 }

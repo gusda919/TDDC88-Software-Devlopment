@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
-import { VitalParameters } from 'src/app/shared/models/patient';
+import { VitalParameters, FluidBalance } from 'src/app/shared/models/patient';
 import { faHeartbeat, faLungs, faThermometer, faTint, faProcedures, faFirstAid, faMicroscope } from '@fortawesome/free-solid-svg-icons';
 import { Lab } from 'src/app/shared/models/patient';
 
@@ -30,6 +30,7 @@ export class VpboxComponent implements OnInit {
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
   isFluidBalanceDisplayed = false;
+  isNRSDisplayed = false;
 
 
   firstGraph = "oxygen";
@@ -40,34 +41,34 @@ export class VpboxComponent implements OnInit {
   bloodPressureColor = "";
   bodyTemperatureColor = "";
   respiratoryRateColor = "";
+  ACVPUColor = "";
  
   vitalParameters: VitalParameters;
+  fluidBalance: FluidBalance;
   labs: Lab[];
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.getVitalParameters();
-    this.getPatientLabs();
+    this.getFluidBalanceData();
   }
 
   getVitalParameters() {
     this.patientService.getPatientVitalparameters(this.patientId).subscribe((vitalParameters: VitalParameters) => {
       this.vitalParameters = vitalParameters;
-      this.isLoaded = true;
       this.setTriageColors();
       this.cdr.detectChanges();
     });
   }
- 
-  getPatientLabs() {
-    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
-      this.labs = labs;
-      this.isLoaded = true;
-      this.cdr.detectChanges();;    
-    });
-  }
 
+  getFluidBalanceData() {
+    this.patientService.getPatientFluidBalance(this.patientId).subscribe((fluidBalance: FluidBalance) => {
+      this.fluidBalance = fluidBalance;
+      this.isLoaded = true;
+    })
+  }
+ 
   //Get functions for displaying the latest value for each vital parameter
   getLatestBloodOxygenLevel() {
     let data = this.vitalParameters.bloodOxygenLevel.data;
@@ -93,10 +94,26 @@ export class VpboxComponent implements OnInit {
     let data = this.vitalParameters.respiratoryRate.data;
     return data[data.length-1];
   }
-  
-  getLatestLab() {
-    let data = this.labs;
+
+  getLatestACVPU() {
+    let data = this.vitalParameters.acvpu.data;
     return data[data.length-1];
+  }
+
+  getLatestNRS() {
+    let data = this.vitalParameters.nrs.data;
+    return data[data.length-1];
+  }
+
+  getFluidBalance() {
+    let fb = 0;
+    this.fluidBalance.in.forEach((fbIn) => {
+      fb += fbIn.value;
+    })
+    this.fluidBalance.out.forEach((fbOut) => {
+      fb -= fbOut.value;
+    })
+    return fb;
   }
 
   setTriageColors() {
@@ -148,6 +165,18 @@ export class VpboxComponent implements OnInit {
       this.respiratoryRateColor = "#F44336";
     }
 
+
+    //Triage coloring for ACVPU
+    if (this.getLatestACVPU().value === "A") {
+      this.ACVPUColor = "#4CAF50";
+    } else if (this.getLatestACVPU().value === "C") {
+      this.ACVPUColor = "#FFEB3B";
+    } else if (this.getLatestACVPU().value === "V") {
+      this.ACVPUColor = "#FF9800";
+    } else if (this.getLatestACVPU().value === "P" || this.getLatestACVPU().value === "U") {
+      this.ACVPUColor = "#F44336";
+    }
+
   }
 
 
@@ -168,6 +197,9 @@ export class VpboxComponent implements OnInit {
     }
     if(this.firstGraph === "fluid" || this.secondGraph === "fluid") {
       this.isFluidBalanceDisplayed = true;
+    }
+    if(this.firstGraph === "nrs" || this.secondGraph === "nrs") {
+      this.isNRSDisplayed = true;
     }
   }
 
@@ -227,6 +259,16 @@ export class VpboxComponent implements OnInit {
     this.graphToggler()
 
   }
+
+  toggleNRSGraph() {
+    if(!this.isNRSDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "nrs";
+    this.graphToggler()
+  }
   
  
   checkIfAnyGraphIsToggled() {
@@ -234,13 +276,14 @@ export class VpboxComponent implements OnInit {
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
       this.isRespiratoryRateDisplayed ||
-      this.isFluidBalanceDisplayed ) {
+      this.isFluidBalanceDisplayed ||
+      this.isNRSDisplayed) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
         this.isFluidBalanceDisplayed = false;
-        
+        this.isNRSDisplayed = false;
     }
   }
 }
