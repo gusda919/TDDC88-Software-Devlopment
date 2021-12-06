@@ -4,6 +4,7 @@
         "familyName": "Bodström",
         "givenName": "Jan",
         "description": "man skada höft",
+        "incoming": "no",
         "gender": "man",
         "nextCheckupIn": "01:30",
         "triage": "green",
@@ -973,7 +974,8 @@
       "patientID": "198605119885",
       "familyName": "Rosfors",
       "givenName": "Klara",
-      "description": "kvinna onormal hjärtrytm",
+      "description": "onormal hjärtrytm",
+      "incoming": "no",
       "gender": "kvinna",
       "nextCheckupIn": "00:15",
       "triage": "yellow",
@@ -1950,7 +1952,8 @@
       "patientID": "194202269207",
       "familyName": "Skoog",
       "givenName": "Anna",
-      "description": "kvinna buksmärta",
+      "description": "buksmärta",
+      "incoming": "no",
       "gender": "kvinna",
       "nextCheckupIn": "04:45",
       "triage": "yellow",
@@ -3033,5 +3036,976 @@
             }
           }
         }
-  }
+  },
+  {
+    "patientID": "197001232296",
+    "familyName": "Najsson",
+    "givenName": "Naj",
+    "description": "Hjärtinfarkt",
+    "incoming": "yes",
+    "gender": "Man",
+    "nextCheckupIn": "01:30",
+    "triage": "green",
+    "contagious": "true",
+    "newECG": "true",
+    "newXray": "true",
+    "roomBed": "3:1",
+    "importantInformation":  null,
+    "proposedMeasures": null,
+    "VitalParameters": {
+      "bloodOxygenLevel": {
+        "label": "SpO2 (pox)",
+        "data": [ 
+          { "date": "2021-03-14", "time": "13:45", "value": 98 },
+          { "date": "2021-03-14", "time": "16:45", "value": 99 }
+        ]
+      },
+      "pulse": {
+        "label": "Puls",
+        "data": [
+          { "date": "2021-03-14", "time": "13:50", "value": 81 },
+          { "date": "2021-03-14", "time": "14:40", "value": 77 }
+        ]
+      },
+      "bloodPressure": {
+        "label": "Blodtryck",
+        "data": [
+          { "date": "2021-03-14", "time": "13:50", "systolic": 177, "diastolic": 84 },
+          { "date": "2021-03-14", "time": "14:40", "systolic": 159, "diastolic": 89 }
+        ]
+      },
+      "bodyTemperature": {
+        "label": "Kroppstemperatur",
+        "data": [
+          { "date": "2021-03-14", "time": "14:11", "value": 38 },
+          { "date": "2021-03-14", "time": "15:15", "value": 36.7 },
+          { "date": "2021-03-14", "time": "16:12", "value": 36.8 }
+        ]
+      },
+      "respiratoryRate": {
+        "label": "Andningsfrekvens",
+        "data": [
+          { "date": "2021-03-14", "time": "14:15", "value": 16 },
+          { "date": "2021-03-14", "time": "15:23", "value": 14 }
+        ]
+      }
+    },
+  "entrancesAndExits": [
+    {
+        "type": "PVK",
+        "size": 1.3,
+        "localization": "vänster sida",
+        "time": "14:15",
+        "action": null,
+        "actionTime": null
+    }
+],
+  "caregiving": [
+      {
+          "date": "2021-03-14",
+          "time": "12:15",
+          "note": "Hjälper patienten med avlastningskuddar för att hitta ett smärtlindrande läge"
+      },
+      {
+          "date": "2021-03-14",
+          "time": "14:15",
+          "note": "Kontaktat anhöriga att patienten flyttas till Linköping oh planerats för operation. Patienten har själv talat med anhöriga."            
+      },
+      {
+          "date": "2021-03-14",
+          "time": "14:30",
+          "note": "Patienten fastar inför operationen från kl 15:00"
+      }
+  ],
+  "labs": [
+    {
+      "date": "2021-09-24",
+      "time": "12:00",
+      "tests": [
+        { "marker": "B-Hb (Hemoglobin)" , "value": 144 },
+        { "marker": "B-EVF", "value": 0.43 },
+        { "marker": "B-Erytrocter", "value": 4.9 },
+        { "marker": "B-MCV", "value": 88 },
+        { "marker": "ERC(B)-MCH", "value": 30 },
+        { "marker": "ERC(B)-MCHC", "value": 336 },
+        { "marker": "B-Lekocyter", "value": 12.0 },  
+        { "marker": "B-Trombocyter", "value": 162 },
+        { "marker": "P-APT-tid", "value": 33 },
+        { "marker": "P-KR (INR)", "value": 1.1 },
+        { "marker": "P-CRP", "value": 16 },
+        { "marker": "P-Natrium", "value": 140 },
+        { "marker": "P-Kalium", "value": 3.7 },
+        { "marker": "P-Kreatinin", "value": 69 },
+        { "marker": "Pt-Krea, eGFR, MDRD", "value": 71 }
+      ] 
+    },
+    {
+      "date": "2021-12-28",
+      "time": "11:45",
+      "tests": [
+        { "marker": "B-Hb (Hemoglobin)" },
+        { "marker": "B-EVF" },
+        { "marker": "B-Erytrocter" },
+        { "marker": "B-MCV" },
+        { "marker": "ERC(B)-MCH" },
+        { "marker": "ERC(B)-MCHC" },
+        { "marker": "B-Lekocyter" }
+      ] 
+    },
+    {
+      "date": "2021-12-29",
+      "time": "10:05",
+      "tests": [
+        { "marker": "B-Trombocyter" },
+        { "marker": "P-APT-tid" },
+        { "marker": "P-KR (INR)" },
+        { "marker": "P-CRP" },
+        { "marker": "P-Natrium" },
+        { "marker": "P-Kalium" },
+        { "marker": "P-Kreatinin" },
+        { "marker": "Pt-Krea, eGFR, MDRD"},
+        { "marker": "P-Glukos"}
+      ]
+    }
+  ],
+  "drugs": [
+    {
+      "date": "2021-03-14",
+      "time":"12:30",
+      "type": "Ringer-acetet Fresnius Kabi, intravenöst, Infusionsvätska, lösning",
+      "dose": "1000ml engångsdos"
+    },
+    {
+      "date": "2021-03-14",
+      "time":"14:30",
+      "type": "Innohep, 10000 anti-Xa IE subkutant, Injektionsvätska, lösning",
+      "dose": "1 förfylld spruta x 2 tv"
+    }
+  ],
+  "fluidBalance": {
+    "in": [
+      { "label": "per os", "value": 1000 },
+      { "label": "i.v.", "value": 1400 }
+    ],
+    "out": [
+      { "label": "Perspiratio", "value": 700 },
+      { "label": "Urin", "value": 700 },
+      { "label": "Blod", "value": 300 },
+      { "label": "Avföring", "value": 400 },
+      { "label": "Kräks", "value": 200 }
+    ]
+  },
+  "cosmic": {
+      "se:JournalNoteEHRExtracts": {
+        "-xsi:schemaLocation": "http://se.cambiosys.cosmicconnect.publish.xml.journalnote JournalNote.xsd",
+        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "-xmlns:se": "http://se.cambiosys.cosmicconnect.publish.xml.journalnote",
+        "XSDVersion": {
+          "-version": "0.21",
+          "-self-closing": "true"
+        },
+        "JournalNoteEHRExtract": {
+          "ehr_id": {
+            "-root": "1.2.752.129.2.1.2.1",
+            "-extension": "SE2321000040-AA059:EhrId:195001232296",
+            "-self-closing": "true"
+          },
+          "ehr_system": {
+            "-root": "1.2.752.129.2.1.2.1",
+            "-extension": "SE2321000040-AA059",
+            "-self-closing": "true"
+          },
+          "time_created": {
+            "-value": "20210915134721",
+            "-self-closing": "true"
+          },
+          "Note": {
+            "NoteId": {
+              "-root": "LiO_Note_ID",
+              "-extension": "SE2321000040-AA059:RcId:JournalNoteId:552659",
+              "-self-closing": "true"
+            },
+            "NoteVersionDateTime": {
+              "-value": "20210915134710",
+              "-self-closing": "true"
+            },
+            "NoteDateTime": {
+              "-value": "20210915132700",
+              "-self-closing": "true"
+            },
+            "NoteTemplateName": "Besök läkare (3)",
+            "NoteTypeOfNote": "Besök",
+            "NoteSignDateTime": {
+              "-self-closing": "true"
+            },
+            "NoteSecrecyLevels": {
+              "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+            },
+            "Records": {
+              "Record": [
+                {
+                  "Keyword": "Kontaktorsak",
+                  "KeywordToolType": "TextTool",
+                  "Values": {
+                    "Value": {
+                      "JournalValueType": "Text",
+                      "ValueText": "Fall i hemmet, ont höger sida."
+                    }
+                  },
+                  "Value": {
+                    "-JournalValueType": "Text",
+                    "#text": "Fall i hemmet, ont höger sida."
+                  },
+                  "KeywordSecrecyLevels": {
+                    "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                  }
+                },
+                {
+                  "Keyword": "Aktuellt hälsoproblem",
+                  "KeywordToolType": "TextTool",
+                  "Values": {
+                    "Value": {
+                      "JournalValueType": "Text",
+                      "ValueText": "70-årig man med tidigare hjärtinfarkt, kol, hypertoni, tidigare opererad för lungcancer, kolecystektomerad. Tidigare opererad för koxartros vänster sida. Inkommer efter fall i hemmet. Skulle sätta sig på en pall, men missade pallen och ramlade på höger sida. Slog i höft och knä. Tyckte att det lät som att det krasade till i knät. Nu ont i ljumske och skinka, även ont i knät. Kan stödja på benet med smärta."
+                    }
+                  },
+                  "Value": {
+                    "-JournalValueType": "Text",
+                    "#text": "70-årig man med tidigare hjärtinfarkt, kol, hypertoni, tidigare opererad för lungcancer, kolecystektomerad. Tidigare opererad för koxartros vänster sida. Inkommer efter fall i hemmet. Skulle sätta sig på en pall, men missade pallen och ramlade på höger sida. Slog i höft och knä. Tyckte att det lät som att det krasade till i knät. Nu ont i ljumske och skinka, även ont i knät. Kan stödja på benet med smärta."
+                  },
+                  "KeywordSecrecyLevels": {
+                    "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                  }
+                },
+                {
+                  "Keyword": "Status",
+                  "KeywordToolType": "TextTool",
+                  "KeywordSecrecyLevels": {
+                    "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                  },
+                  "Record": [
+                    {
+                      "Keyword": "Allmäntillstånd",
+                      "KeywordToolType": "TextTool",
+                      "KeywordSecrecyLevels": {
+                        "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                      },
+                      "Record": [
+                        {
+                          "Keyword": "Medvetandegrad",
+                          "KeywordToolType": "TextTool",
+                          "KeywordSecrecyLevels": {
+                            "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                          },
+                          "Record": {
+                            "Keyword": "RLS-85",
+                            "KeywordToolType": "TextTool",
+                            "Values": {
+                              "Value": {
+                                "JournalValueType": "Text",
+                                "ValueText": "1"
+                              }
+                            },
+                            "Value": {
+                              "-JournalValueType": "Text",
+                              "#text": "1"
+                            },
+                            "KeywordSecrecyLevels": {
+                              "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                            }
+                          }
+                        },
+                        {
+                          "Keyword": "Kroppstemperatur",
+                          "KeywordToolType": "Other",
+                          "Values": {
+                            "Value": {
+                              "JournalValueType": "Other",
+                              "ValueText": {
+                                "-self-closing": "true"
+                              }
+                            }
+                          },
+                          "Value": {
+                            "-JournalValueType": "Other",
+                            "-self-closing": "true"
+                          },
+                          "KeywordSecrecyLevels": {
+                            "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                          },
+                          "OtherValue": {
+                            "se:ArchetypeRecords": {
+                              "-xmlns:se": "http://se.cambiosys.cosmicconnect.publish.xml.archetype",
+                              "ArchetypeRecord": {
+                                "ArchetypeId": "openEHR-EHR-OBSERVATION.body_temperature-complex.v1",
+                                "Name": "Kroppstemperatur",
+                                "EventDateTime": {
+                                  "startDateTime": {
+                                    "-value": "20210915132726",
+                                    "-self-closing": "true"
+                                  },
+                                  "endDateTime": {
+                                    "-value": "20210915132726",
+                                    "-self-closing": "true"
+                                  }
+                                },
+                                "ArchetypeRecord": [
+                                  {
+                                    "Name": "Temperatur",
+                                    "DataType": "DVQUANTITY",
+                                    "Magnitude": "37.8",
+                                    "Unit": "°C",
+                                    "Range": "10.0 - 50.0"
+                                  },
+                                  {
+                                    "Name": "Kommentar",
+                                    "DataType": "DVTEXT",
+                                    "Magnitude": "Senare: 36,8"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "Keyword": "Lungor",
+                      "KeywordToolType": "TextTool",
+                      "Values": {
+                        "Value": {
+                          "JournalValueType": "Text",
+                          "ValueText": "Vesikulära andningsljud bilateralt. Inga ronki eller rassel."
+                        }
+                      },
+                      "Value": {
+                        "-JournalValueType": "Text",
+                        "#text": "Vesikulära andningsljud bilateralt. Inga ronki eller rassel."
+                      },
+                      "KeywordSecrecyLevels": {
+                        "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                      },
+                      "Record": [
+                        {
+                          "Keyword": "Syremättnad blod",
+                          "KeywordToolType": "Other",
+                          "Values": {
+                            "Value": {
+                              "JournalValueType": "Other",
+                              "ValueText": {
+                                "-self-closing": "true"
+                              }
+                            }
+                          },
+                          "Value": {
+                            "-JournalValueType": "Other",
+                            "-self-closing": "true"
+                          },
+                          "KeywordSecrecyLevels": {
+                            "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                          },
+                          "OtherValue": {
+                            "se:ArchetypeRecords": {
+                              "-xmlns:se": "http://se.cambiosys.cosmicconnect.publish.xml.archetype",
+                              "ArchetypeRecord": {
+                                "ArchetypeId": "openEHR-EHR-OBSERVATION.indirect_oximetry.v1",
+                                "Name": "SpO2 (pox)",
+                                "EventDateTime": {
+                                  "startDateTime": {
+                                    "-value": "20210915132726",
+                                    "-self-closing": "true"
+                                  },
+                                  "endDateTime": {
+                                    "-value": "20210915132726",
+                                    "-self-closing": "true"
+                                  }
+                                },
+                                "ArchetypeRecord": [
+                                  {
+                                    "Name": "SpO2",
+                                    "Magnitude": "95",
+                                    "Unit": "%"
+                                  },
+                                  {
+                                    "Name": "Tillsatt syrgas?",
+                                    "Magnitude": {
+                                      "-self-closing": "true"
+                                    }
+                                  },
+                                  {
+                                    "Name": "Låg habituell syremättnad",
+                                    "Magnitude": "Nej"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "Keyword": "Andningsfrekvens",
+                          "KeywordToolType": "Other",
+                          "Values": {
+                            "Value": {
+                              "JournalValueType": "Other",
+                              "ValueText": {
+                                "-self-closing": "true"
+                              }
+                            }
+                          },
+                          "Value": {
+                            "-JournalValueType": "Other",
+                            "-self-closing": "true"
+                          },
+                          "KeywordSecrecyLevels": {
+                            "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                          },
+                          "OtherValue": {
+                            "se:ArchetypeRecords": {
+                              "-xmlns:se": "http://se.cambiosys.cosmicconnect.publish.xml.archetype",
+                              "ArchetypeRecord": {
+                                "ArchetypeId": "openEHR-EHR-OBSERVATION.respiration.v1",
+                                "Name": "Andningsfrekvens",
+                                "EventDateTime": {
+                                  "startDateTime": {
+                                    "-value": "20210915132726",
+                                    "-self-closing": "true"
+                                  },
+                                  "endDateTime": {
+                                    "-value": "20210915132726",
+                                    "-self-closing": "true"
+                                  }
+                                },
+                                "ArchetypeRecord": {
+                                  "Name": "Andningsfrekvens",
+                                  "DataType": "DVQUANTITY",
+                                  "Magnitude": "18.0",
+                                  "Unit": "/min",
+                                  "Range": "0.0 - 200.0"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "Keyword": "Hjärta",
+                      "KeywordToolType": "TextTool",
+                      "Values": {
+                        "Value": {
+                          "JournalValueType": "Text",
+                          "ValueText": "Regelbunden rytm, normofrekvent. Inga bi eller blåsljud."
+                        }
+                      },
+                      "Value": {
+                        "-JournalValueType": "Text",
+                        "#text": "Regelbunden rytm, normofrekvent. Inga bi eller blåsljud."
+                      },
+                      "KeywordSecrecyLevels": {
+                        "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                      }
+                    },
+                    {
+                      "Keyword": "Blodtryck",
+                      "KeywordToolType": "Other",
+                      "Values": {
+                        "Value": {
+                          "JournalValueType": "Other",
+                          "ValueText": {
+                            "-self-closing": "true"
+                          }
+                        }
+                      },
+                      "Value": {
+                        "-JournalValueType": "Other",
+                        "-self-closing": "true"
+                      },
+                      "KeywordSecrecyLevels": {
+                        "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                      },
+                      "OtherValue": {
+                        "se:ArchetypeRecords": {
+                          "-xmlns:se": "http://se.cambiosys.cosmicconnect.publish.xml.archetype",
+                          "ArchetypeRecord": {
+                            "ArchetypeId": "openEHR-EHR-OBSERVATION.blood_pressure-complex.v1",
+                            "Name": "Blodtryck",
+                            "EventDateTime": {
+                              "startDateTime": {
+                                "-value": "20210915132726",
+                                "-self-closing": "true"
+                              },
+                              "endDateTime": {
+                                "-value": "20210915132726",
+                                "-self-closing": "true"
+                              }
+                            },
+                            "ArchetypeRecord": [
+                              {
+                                "Name": "Systoliskt",
+                                "DataType": "DVQUANTITY",
+                                "Magnitude": "125.0",
+                                "Unit": "mm[Hg]",
+                                "Range": "0.0 - 350.0"
+                              },
+                              {
+                                "Name": "Diastoliskt",
+                                "DataType": "DVQUANTITY",
+                                "Magnitude": "80.0",
+                                "Unit": "mm[Hg]",
+                                "Range": "0.0 - 200.0"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Keyword": "Puls",
+                      "KeywordToolType": "Other",
+                      "Values": {
+                        "Value": {
+                          "JournalValueType": "Other",
+                          "ValueText": {
+                            "-self-closing": "true"
+                          }
+                        }
+                      },
+                      "Value": {
+                        "-JournalValueType": "Other",
+                        "-self-closing": "true"
+                      },
+                      "KeywordSecrecyLevels": {
+                        "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                      },
+                      "OtherValue": {
+                        "se:ArchetypeRecords": {
+                          "-xmlns:se": "http://se.cambiosys.cosmicconnect.publish.xml.archetype",
+                          "ArchetypeRecord": {
+                            "ArchetypeId": "openEHR-EHR-OBSERVATION.heart_rate-pulse.v1",
+                            "Name": "Puls",
+                            "EventDateTime": {
+                              "startDateTime": {
+                                "-value": "20210915132726",
+                                "-self-closing": "true"
+                              },
+                              "endDateTime": {
+                                "-value": "20210915132726",
+                                "-self-closing": "true"
+                              }
+                            },
+                            "ArchetypeRecord": [
+                              {
+                                "Name": "Hjärtfrekvens",
+                                "DataType": "DVQUANTITY",
+                                "Magnitude": "99.0",
+                                "Unit": "/min",
+                                "Range": "0.0 - 400.0"
+                              },
+                              {
+                                "Name": "Oregelbunden",
+                                "Magnitude": "Nej"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Keyword": "Nedre extremitet",
+                      "KeywordToolType": "TextTool",
+                      "Values": {
+                        "Value": {
+                          "JournalValueType": "Text",
+                          "ValueText": "Ingen tydlig svullnad över knät höger sida. Ingen rodnad. Kraftig palpationsömhet över proximala tibia och lite i distala femur. Ingen tydlig palpationsömhet över patella. Palpationsömhet över centralt över femur. Kraftigt palpationsöm i ljumsken höger sida. Kan inte passivt röra i höften utan leder till kraftig smärta. Smärta över baksidan av bäckenet höger sida. Normal sensorik i nedre extremitet och perifert varm. Höger ben ser utåtroterat ut."
+                        }
+                      },
+                      "Value": {
+                        "-JournalValueType": "Text",
+                        "#text": "Ingen tydlig svullnad över knät höger sida. Ingen rodnad. Kraftig palpationsömhet över proximala tibia och lite i distala femur. Ingen tydlig palpationsömhet över patella. Palpationsömhet över centralt över femur. Kraftigt palpationsöm i ljumsken höger sida. Kan inte passivt röra i höften utan leder till kraftig smärta. Smärta över baksidan av bäckenet höger sida. Normal sensorik i nedre extremitet och perifert varm. Höger ben ser utåtroterat ut."
+                      },
+                      "KeywordSecrecyLevels": {
+                        "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                      }
+                    },
+                    {
+                      "Keyword": "Undersökningsresultat",
+                      "KeywordToolType": "TextTool",
+                      "Values": {
+                        "Value": {
+                          "JournalValueType": "Text",
+                          "ValueText": "Röntgen bäcken, höftled, knäled, lårben, visar högersidig collum femoris fraktur med ringa dislokation där skaft framgmenetet är lätt uppdraget och utåtroterat."
+                        }
+                      },
+                      "Value": {
+                        "-JournalValueType": "Text",
+                        "#text": "Röntgen bäcken, höftled, knäled, lårben, visar högersidig collum femoris fraktur med ringa dislokation där skaft framgmenetet är lätt uppdraget och utåtroterat."
+                      },
+                      "KeywordSecrecyLevels": {
+                        "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Keyword": "Bedömning",
+                  "KeywordToolType": "TextTool",
+                  "Values": {
+                    "Value": {
+                      "JournalValueType": "Text",
+                      "ValueText": "I samråd med ledningsläkare C. Diskuterar med ortpedmellanjour. Är i behov av operation. Fastar. Läggs in på ortopeden, avdelning 31. Planerar höftblockad av ledningsläkare på akutmottagningen. Kompletterar med grundstatus, PK, APT-T och bastest samt EKG som tas innan patienten skickas till US Linköping. Informerar kollega om att bevaka dessa och att eventuellt göra en plan vid avvikande prover."
+                    }
+                  },
+                  "Value": {
+                    "-JournalValueType": "Text",
+                    "#text": "I samråd med ledningsläkare C. Diskuterar med ortpedmellanjour. Är i behov av operation. Fastar. Läggs in på ortopeden, avdelning 31. Planerar höftblockad av ledningsläkare på akutmottagningen. Kompletterar med grundstatus, PK, APT-T och bastest samt EKG som tas innan patienten skickas till US Linköping. Informerar kollega om att bevaka dessa och att eventuellt göra en plan vid avvikande prover."
+                  },
+                  "KeywordSecrecyLevels": {
+                    "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                  }
+                },
+                {
+                  "Keyword": "Diagnos",
+                  "KeywordToolType": "ClinicalCodingTool",
+                  "Values": {
+                    "Value": [
+                      {
+                        "JournalValueType": "Diagnosis",
+                        "ValueText": "S7210-Pertrokantär fraktur-sluten-Huvuddiagnos"
+                      },
+                      {
+                        "JournalValueType": "Diagnosis",
+                        "ValueText": "W0199-Fall i samma plan genom halkning, snavning eller snubbling-plats, ospecificerad-aktivitet, ospecificerad-Bidiagnos"
+                      },
+                      {
+                        "JournalValueType": "Diagnosis",
+                        "ValueText": "XV015-Läkemedelsgenomgång, enkel-Åtgärd"
+                      }
+                    ]
+                  },
+                  "Value": [
+                    {
+                      "-JournalValueType": "Diagnosis",
+                      "#text": "S7210-Pertrokantär fraktur-sluten-Huvuddiagnos"
+                    },
+                    {
+                      "-JournalValueType": "Diagnosis",
+                      "#text": "W0199-Fall i samma plan genom halkning, snavning eller snubbling-plats, ospecificerad-aktivitet, ospecificerad-Bidiagnos"
+                    },
+                    {
+                      "-JournalValueType": "Diagnosis",
+                      "#text": "XV015-Läkemedelsgenomgång, enkel-Åtgärd"
+                    }
+                  ],
+                  "KeywordSecrecyLevels": {
+                    "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                  }
+                },
+                {
+                  "Keyword": "Utförda åtgärder",
+                  "KeywordToolType": "TextTool",
+                  "KeywordSecrecyLevels": {
+                    "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                  },
+                  "Record": {
+                    "Keyword": "Information",
+                    "KeywordToolType": "TextTool",
+                    "Values": {
+                      "Value": {
+                        "JournalValueType": "Text",
+                        "ValueText": "Enkel läkemedelsgenomgång Går igenom läkemedelslistan med patienten. Sänker Omeprazol till 1 x 1 som patienten tar det. Lägger till Oxykodon depot 5 mg 1 x 2, Cilaxoral 5-10 droppar x 2 samt Alvedon 500 mg 2 x 4 i samråd med ortopedmellanjour."
+                      }
+                    },
+                    "Value": {
+                      "-JournalValueType": "Text",
+                      "#text": "Enkel läkemedelsgenomgång Går igenom läkemedelslistan med patienten. Sänker Omeprazol till 1 x 1 som patienten tar det. Lägger till Oxykodon depot 5 mg 1 x 2, Cilaxoral 5-10 droppar x 2 samt Alvedon 500 mg 2 x 4 i samråd med ortopedmellanjour."
+                    },
+                    "KeywordSecrecyLevels": {
+                      "SecrecyLevel": "Klass 3: Patientdata (normalnivå)"
+                    }
+                  }
+                }
+              ]
+            },
+            "NoteActive": "true"
+          },
+          "Patient": {
+            "PatientID": {
+              "-root": "1.2.752.129.2.1.3.1",
+              "-extension": "195001232296",
+              "-self-closing": "true"
+            },
+            "PatientInternalID": "762",
+            "PatientProtectedId": "false",
+            "PatientSecrecyGroups": {
+              "-self-closing": "true"
+            },
+            "PatientName": {
+              "PatientFamilyName": "Bodström",
+              "PatientMiddleName": {
+                "-self-closing": "true"
+              },
+              "PatientGivenName": {
+                "-qualifier": "CL",
+                "-value": "Jan",
+                "-self-closing": "true"
+              }
+            }
+          },
+          "HCMContact": {
+            "target_id": {
+              "-root": "1.2.752.129.2.1.2.1",
+              "-extension": "SE2321000040-AA059:RcId:Contact:589948",
+              "-self-closing": "true"
+            },
+            "HCMContacInternaltID": "589948",
+            "ContactPerformingUnit": "8611",
+            "HCMContactType": "Mottagningsbesök enskilt",
+            "HCMContactBegin": {
+              "-value": "20201105094504",
+              "-self-closing": "true"
+            },
+            "HCMContactEnd": {
+              "-value": "20201105094504",
+              "-self-closing": "true"
+            },
+            "HCMContactStatus": "Anlänt",
+            "ContactSecrecyLevels": {
+              "-self-closing": "true"
+            }
+          },
+          "Units": {
+            "Unit": [
+              {
+                "UnitID": {
+                  "-root": "1.2.752.129.2.1.4.1",
+                  "-extension": "SE2321000040-4MTC",
+                  "-self-closing": "true"
+                },
+                "UnitLocalID": {
+                  "-root": "LiO_UNIT_LOCAL_ID",
+                  "-extension": "50895810",
+                  "-self-closing": "true"
+                },
+                "UnitName": "Cosmic:PJ:CVU",
+                "UnitSecrecyGroups": {
+                  "Group": "ITC_Patientjournalen"
+                },
+                "HeadCareproviderUnitID": {
+                  "-root": "1.2.752.129.2.1.4.1",
+                  "-extension": "SE2321000040-TEST",
+                  "-self-closing": "true"
+                },
+                "AccessZones": {
+                  "AccessZoneID": {
+                    "-root": "1.2.752.129.2.1.4.1",
+                    "-extension": "SE2321000040-4M3M",
+                    "-self-closing": "true"
+                  }
+                },
+                "PhoneNumbers": {
+                  "Phone": [
+                    {
+                      "PhoneType": "HSA_Direkttelefon",
+                      "PhoneNumber": "010-103 00 00",
+                      "PhoneComment": "Nationellt HSA-attribut"
+                    },
+                    {
+                      "PhoneType": "HSA_Växeltelefon",
+                      "PhoneNumber": "010-103 00 00",
+                      "PhoneComment": "Nationellt HSA-attribut"
+                    }
+                  ]
+                },
+                "EmailAddresses": {
+                  "-self-closing": "true"
+                },
+                "UnitAddresses": {
+                  "UnitAddress": [
+                    {
+                      "UnitAddressType": "HSA_Postadress",
+                      "UnitAddressAddress": "Patientjournalen, Klosterg. 19 B",
+                      "UnitAddressPostcode": "581 85",
+                      "UnitAddressCity": "Linköping",
+                      "UnitAddressCounty": {
+                        "-self-closing": "true"
+                      },
+                      "UnitAddressCountry": "Sverige",
+                      "UnitAddressComment": "Nationellt HSA-attribut"
+                    },
+                    {
+                      "UnitAddressType": "HSA_Besöksadress",
+                      "UnitAddressAddress": "Patientjournalen, Klosterg. 19 B",
+                      "UnitAddressPostcode": {
+                        "-self-closing": "true"
+                      },
+                      "UnitAddressCity": "Linköping",
+                      "UnitAddressCounty": {
+                        "-self-closing": "true"
+                      },
+                      "UnitAddressCountry": "Sverige",
+                      "UnitAddressComment": "Nationellt HSA-attribut"
+                    }
+                  ]
+                }
+              },
+              {
+                "UnitID": {
+                  "-root": "1.2.752.129.2.1.4.1",
+                  "-extension": "SE2321000040-TEST",
+                  "-self-closing": "true"
+                },
+                "UnitLocalID": {
+                  "-root": "LiO_UNIT_LOCAL_ID",
+                  "-extension": "\"/",
+                  "-self-closing": "true"
+                },
+                "UnitName": "Region Östergötland",
+                "UnitSecrecyGroups": {
+                  "-self-closing": "true"
+                },
+                "AccessZones": {
+                  "-self-closing": "true"
+                },
+                "PhoneNumbers": {
+                  "-self-closing": "true"
+                },
+                "EmailAddresses": {
+                  "-self-closing": "true"
+                },
+                "UnitAddresses": {
+                  "-self-closing": "true"
+                }
+              },
+              {
+                "UnitID": {
+                  "-root": "1.2.752.129.2.1.4.1",
+                  "-extension": "SE2321000040-4M3M",
+                  "-self-closing": "true"
+                },
+                "UnitLocalID": {
+                  "-root": "LiO_UNIT_LOCAL_ID",
+                  "-extension": "\"/",
+                  "-self-closing": "true"
+                },
+                "UnitName": "FO Patientjournalen",
+                "UnitSecrecyGroups": {
+                  "Group": "ITC_Patientjournalen"
+                },
+                "HeadCareproviderUnitID": {
+                  "-root": "1.2.752.129.2.1.4.1",
+                  "-extension": "SE2321000040-TEST",
+                  "-self-closing": "true"
+                },
+                "AccessZones": {
+                  "AccessZoneID": {
+                    "-root": "1.2.752.129.2.1.4.1",
+                    "-extension": "SE2321000040-4M3M",
+                    "-self-closing": "true"
+                  }
+                },
+                "PhoneNumbers": {
+                  "Phone": [
+                    {
+                      "PhoneType": "HSA_Direkttelefon",
+                      "PhoneNumber": "010-103 00 00",
+                      "PhoneComment": "Nationellt HSA-attribut"
+                    },
+                    {
+                      "PhoneType": "HSA_Växeltelefon",
+                      "PhoneNumber": "010-103 00 00",
+                      "PhoneComment": "Nationellt HSA-attribut"
+                    }
+                  ]
+                },
+                "EmailAddresses": {
+                  "-self-closing": "true"
+                },
+                "UnitAddresses": {
+                  "UnitAddress": {
+                    "UnitAddressType": "HSA_Postadress",
+                    "UnitAddressAddress": "IT-centrum",
+                    "UnitAddressPostcode": "581 85",
+                    "UnitAddressCity": "Linköping",
+                    "UnitAddressCounty": {
+                      "-self-closing": "true"
+                    },
+                    "UnitAddressCountry": "Sverige",
+                    "UnitAddressComment": "Nationellt HSA-attribut"
+                  }
+                }
+              }
+            ]
+          },
+          "CareUnit": {
+            "UnitID": {
+              "-root": "1.2.752.129.2.1.4.1",
+              "-extension": "SE2321000040-4MTC",
+              "-self-closing": "true"
+            },
+            "UnitLocalID": {
+              "-root": "LiO_UNIT_LOCAL_ID",
+              "-extension": "50895810",
+              "-self-closing": "true"
+            }
+          },
+          "AccessZoneUnit": {
+            "UnitID": {
+              "-root": "1.2.752.129.2.1.4.1",
+              "-extension": "SE2321000040-4M3M",
+              "-self-closing": "true"
+            },
+            "UnitLocalID": {
+              "-root": "LiO_UNIT_LOCAL_ID",
+              "-extension": "\"/",
+              "-self-closing": "true"
+            }
+          },
+          "HeadCareproviderUnit": {
+            "UnitID": {
+              "-root": "1.2.752.129.2.1.4.1",
+              "-extension": "SE2321000040-TEST",
+              "-self-closing": "true"
+            },
+            "UnitLocalID": {
+              "-root": "LiO_UNIT_LOCAL_ID",
+              "-extension": "\"/",
+              "-self-closing": "true"
+            }
+          },
+          "CareProviders": {
+            "CareProvider": {
+              "CareProviderType": "Vårdgivare",
+              "CareProviderID": {
+                "-root": "1.2.752.129.2.1.4.1",
+                "-extension": "SE2321000040T-525R",
+                "-self-closing": "true"
+              },
+              "CareProviderInternalID": "322009",
+              "CareProviderName": "Carina Sandell",
+              "ProviderPosition": {
+                "CareProviderPositionID": {
+                  "-root": "LiO_Caregiver_position_ID",
+                  "-extension": "Not implemented",
+                  "-self-closing": "true"
+                },
+                "CareProviderPositionName": "Övriga personer"
+              },
+              "CareProviderUnit": {
+                "UnitID": {
+                  "-root": "1.2.752.129.2.1.4.1",
+                  "-extension": "Not implemented",
+                  "-self-closing": "true"
+                },
+                "UnitLocalID": {
+                  "-root": "1.2.752.129.2.1.4.1",
+                  "-extension": "Not implemented",
+                  "-self-closing": "true"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}
 ]
