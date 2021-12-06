@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatPaginatorIntl} from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
@@ -14,73 +14,32 @@ import { DataSource } from '@angular/cdk/collections';
   styleUrls: ['./overview-incoming.component.scss']
 })
 export class OverviewIncomingComponent implements AfterViewInit {
-
-  constructor(private patientService: PatientService) {
-    this.sortedData = this.dataSource.data;
+  @Input() patientId: string;
+  
+  constructor() {
+    
   }
  
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
-    this.getPatientData();
+
+    setTimeout(() => {
+      this.dataSource.data = this.getPatientNotes();
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource;
+    }, 0)
+    
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<Patient>;
-  dataSource: MatTableDataSource<Patient> = new MatTableDataSource<Patient>();
+  @ViewChild(MatTable) table!: MatTable<IncomingPatient>;
+  dataSource : MatTableDataSource<IncomingPatient> = new MatTableDataSource<IncomingPatient>();
 
-  //displayedColumns = ['issue', 'gender', 'name', 'id' ,'arrival', 'currentsituation', 'triage'];
-  displayedColumns = ['issue', 'gender', 'name', 'id' , 'triage'];
+  
+  displayedColumns = ['issue', 'gender', 'name', 'id', 'arrival', 'currentsituation', 'triage'];
 
   groupedColumns = ['header'];
-  sortedData: Patient[];
-  
-  //this.datasource.filter('incoming'=='yes');
-  incoming: null;
-  getPatientData() {
-    
-      this.patientService.getPatients().subscribe(patients => { 
-      this.dataSource.data = patients;
-    });
-
-  }
-
-  sortData(sort:Sort) {
-
-    const data = this.dataSource.data.slice();
-    if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
-      return;
-    }
-
-
-    this.dataSource.data = data.sort((a: Patient, b: Patient) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'name':
-          return compare(a.familyName, b.familyName, isAsc);
-          case 'gender':
-          return compare(a.gender, b.gender, isAsc);
-        case 'issue':
-          return compare(a.description, b.description, isAsc);
-        case 'id':
-          return compare(a.patientID, b.patientID, isAsc);
-        case 'date':
-          return compare(a.caregiving[a.caregiving.length-1].time, b.caregiving[b.caregiving.length-1].time, isAsc);
-        case 'triage':
-          return compare(this.triageValueMap[a.triage], this.triageValueMap[b.triage], isAsc);
-        case 'nextVisit':
-          return compare(a.nextCheckupIn, b.nextCheckupIn, isAsc);
-        default:
-          return 0;
-
-      }
-    });
-
-
-  }
   triageTextMap: any  = {
     "green": "Grön",
     "yellow": "Gul",
@@ -98,7 +57,21 @@ export class OverviewIncomingComponent implements AfterViewInit {
     "yellow": "low",
     "red": "high"
   }
-}
+
+  getPatientNotes() {
+    
+      let data: IncomingPatient[] = [      
+        {issue: "Hjärtinfarkt", gender: 'Man', name: "Bosse Bossesson", id: "197203143274", arrival: "14:45", currentsituation: "Irregulär puls, avsvimmad, svag andning, HLR utförs", triage: "red"}
+        
+        
+      ];
+      
+      return data;
+    
+      
+    }
+  }
+
 
 function compare(a: number | string, b: number | string, isAsc: boolean) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
@@ -128,5 +101,16 @@ export function getSwedishPaginatorIntl() {
   paginatorIntl.getRangeLabel = SwedishRangeLabel;
   
   return paginatorIntl;
+}
+
+export interface IncomingPatient {
+  issue : string;
+  gender: string;
+  id: string;
+  currentsituation: string;
+  arrival: string;
+  name: string;
+  triage : string;
+  
 }
 
