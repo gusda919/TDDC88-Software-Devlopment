@@ -17,7 +17,5 @@ testing_testing:
     - npm ci
   
     - npm install -g @angular/cli
-    #Här behövs angular/ngcontainer
-    #stod sudo här tidigare
     - CI=true 
     - npm test --browsers=Headless --no-sandbox --no-watch
