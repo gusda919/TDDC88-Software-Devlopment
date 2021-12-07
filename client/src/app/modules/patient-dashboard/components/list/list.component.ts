@@ -40,7 +40,7 @@ export class ListComponent implements OnInit {
   faHandHoldingMedical = faHandHoldingMedical;
   faClock = faClock;
   clickedButton: any;
-  
+
   items = [
     ["B-Hb (Hemoglobin)" , 120, 170],
     ["B-EVF", 0.4, 0.5],
@@ -58,18 +58,18 @@ export class ListComponent implements OnInit {
     ["P-Kreatinin", 0, 133],
     ["Pt-Krea, eGFR, MDRD", 75, 150],
     ["Pt-Glukos", 4.0, 6.0],
-    
-    
-  ];
-        
 
-  
+
+  ];
+
+
+
 
   constructor(private patientService: PatientService) { }
 
 
   ngOnInit(): void {
-    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
+    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {
       let events: TimelineEvent[] = labs.map((l: Lab): TimelineEvent => ({
         date: new Date(l.date+"T"+l.time),
         icon: faMicroscope,
@@ -77,30 +77,30 @@ export class ListComponent implements OnInit {
         data: l.tests,
       })
       );
-      this.events = this.events.concat(events); 
-        
+      this.events = this.events.concat(events);
+
     });
 
   }
 
   markerColour(marker: string , value: any) {
-   
+
     for (var item of this.items) {
       if(item[0]===marker) {
        if( value<item[1] || value>item[2]){
         return "red";
        }
       }
-      
+
  }
- 
+
   return "black";
   }
 
- 
+
 
   getPatientLabs() {
-    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
+    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {
       let events: TimelineEvent[] = labs.map((l: Lab): TimelineEvent => ({
         date: new Date(l.date+"T"+l.time),
         icon: faMicroscope,
@@ -108,12 +108,12 @@ export class ListComponent implements OnInit {
         data: l.tests,
       })
       );
-      this.events = this.events.concat(events); 
-       
+      this.events = this.events.concat(events);
+
     });
   }
 
-  
+
 
   sortData() {
     return this.events.sort((a: TimelineEvent, b: TimelineEvent) => {
