@@ -3,6 +3,7 @@ export interface Patient {
     familyName:           string;
     givenName:            string;
     description:          string;
+    incoming:             string;
     gender:               string;
     nextCheckupIn:        string;
     triage:               string;

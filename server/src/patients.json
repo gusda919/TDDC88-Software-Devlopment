@@ -3,7 +3,8 @@
         "patientID": "195001232296",
         "familyName": "Bodström",
         "givenName": "Jan",
-        "description": "man skada höft",
+        "description": "skada höft",
+        "incoming": "no",
         "gender": "man",
         "nextCheckupIn": "01:30",
         "triage": "green",
@@ -973,7 +974,8 @@
       "patientID": "198605119885",
       "familyName": "Rosfors",
       "givenName": "Klara",
-      "description": "kvinna onormal hjärtrytm",
+      "description": "onormal hjärtrytm",
+      "incoming": "no",
       "gender": "kvinna",
       "nextCheckupIn": "00:15",
       "triage": "yellow",
@@ -1950,7 +1952,8 @@
       "patientID": "194202269207",
       "familyName": "Skoog",
       "givenName": "Anna",
-      "description": "kvinna buksmärta",
+      "description": "buksmärta",
+      "incoming": "no",
       "gender": "kvinna",
       "nextCheckupIn": "04:45",
       "triage": "yellow",
@@ -3034,4 +3037,5 @@
           }
         }
   }
+  
 ]
