@@ -25,6 +25,11 @@
   position: sticky;
   top: 0;
   z-index: 2;
+  //Background color of header
+  background: #004a82;
+  //Text color of header
+  color:#fff;
+
 }
 
 .dropdown{
@@ -33,7 +38,7 @@
 }
 
 .dropdown-menu{
-  position: absolute;
+  position: fixed;
   right: 1rem;
   top: 4rem;
   background-color: white;

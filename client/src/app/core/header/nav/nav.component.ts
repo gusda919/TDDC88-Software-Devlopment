@@ -30,7 +30,7 @@ export class NavComponent {
   patientIdsAreLoaded = false;
   subscription: Subscription;
   pn: string;
-  counter: number = 0;
+  displayRed: number;
 
   faSearch = faSearch;
 
@@ -53,33 +53,21 @@ export class NavComponent {
       pats.forEach((pat: any) => {
         console.log(pat)
         if (pat.newecg === "true") {
-          this.addECGNotification(pat.patientID);
-          this.patientService.setPatientNoNewECG2(pat.patientID).subscribe();
-        }
-        this.patientIds.push(pat.patientID);
-        if (pat.newxray === "true") {
-          this.addXrayNotification(pat.patientID);
-        }
- 
+          this.addECG(pat.patientID);
+        } 
       });
       this.patientIdsAreLoaded = true;
     });
-
   };
 
-  addECGNotification(pn: string) {
-    this.patientService.getPatient(pn).subscribe((patient: any) => {
-      let fullname = patient.givenName +" "+ patient.familyName;
-      this.messages.push({id: this.counter, patient: fullname, pn: pn, content: 'Nytt EKG-resultat tillgängligt'})
-      this.counter++;
-    });
+  setRedVisible() {
+    this.displayRed = this.messages.length;
   }
-
-  addXrayNotification(pn: string) {
+  addECG(pn: string) {
     this.patientService.getPatient(pn).subscribe((patient: any) => {
-      let fullname = patient.givenName +" "+ patient.familyName;
-      this.messages.push({id: this.counter, patient: fullname, pn: pn, content: 'Nytt röntgen-resultat tillgängligt'})
-      this.counter++;
+    let fullname = patient.givenName +" "+ patient.familyName;
+    this.messages.push({id: this.messages.length, patient: fullname, pn: pn, content: 'Nytt EKG result tillgängligt'})
+    this.setRedVisible();
     });
   }
 
@@ -89,12 +77,18 @@ export class NavComponent {
     } else {
       this.displayMessage = true;
     }
+    this.setRedVisible();
   }
 
   deleteMessage(i:number) {
     this.messages.forEach((value,index)=>{
       if(value.id == i) this.messages.splice(index,1);
-  });
+      this.setRedVisible();
+    });
+  }
+
+  closeNotifications() {
+    this.displayRed = 0;
   }
 
   getProfile() {

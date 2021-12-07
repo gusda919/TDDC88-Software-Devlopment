@@ -3,8 +3,10 @@
         "patientID": "195001232296",
         "familyName": "Bodström",
         "givenName": "Jan",
-        "description": "man skada höft",
+        "description": "skada höft",
+        "incoming": "no",
         "gender": "man",
+        "nextCheckupIn": "01:30",
         "triage": "green",
         "contagious": "true",
         "newECG": "true",
@@ -47,6 +49,20 @@
             "data": [
               { "date": "2021-03-14", "time": "14:15", "value": 16 },
               { "date": "2021-03-14", "time": "15:23", "value": 14 }
+            ]
+          },
+          "acvpu": {
+            "label": "ACVPU",
+            "data": [
+              {"date": "2021-03-14", "time": "15:30", "value": "A"}
+            ]
+          },
+          "nrs": {
+            "label": "NRS",
+            "data": [
+              {"date": "2021-03-14", "time": "14:11", "value": 4},
+              {"date": "2021-03-14", "time": "15:15", "value": 7},
+              {"date": "2021-03-14", "time": "16:12", "value": 3}
             ]
           }
         },
@@ -98,6 +114,34 @@
             { "marker": "P-Kreatinin", "value": 69 },
             { "marker": "Pt-Krea, eGFR, MDRD", "value": 71 }
           ] 
+        },
+        {
+          "date": "2021-12-28",
+          "time": "11:45",
+          "tests": [
+            { "marker": "B-Hb (Hemoglobin)" },
+            { "marker": "B-EVF" },
+            { "marker": "B-Erytrocter" },
+            { "marker": "B-MCV" },
+            { "marker": "ERC(B)-MCH" },
+            { "marker": "ERC(B)-MCHC" },
+            { "marker": "B-Lekocyter" }
+          ] 
+        },
+        {
+          "date": "2021-12-29",
+          "time": "10:05",
+          "tests": [
+            { "marker": "B-Trombocyter" },
+            { "marker": "P-APT-tid" },
+            { "marker": "P-KR (INR)" },
+            { "marker": "P-CRP" },
+            { "marker": "P-Natrium" },
+            { "marker": "P-Kalium" },
+            { "marker": "P-Kreatinin" },
+            { "marker": "Pt-Krea, eGFR, MDRD"},
+            { "marker": "P-Glukos"}
+          ]
         }
       ],
       "drugs": [
@@ -944,8 +988,10 @@
       "patientID": "198605119885",
       "familyName": "Rosfors",
       "givenName": "Klara",
-      "description": "kvinna onormal hjärtrytm",
+      "description": "onormal hjärtrytm",
+      "incoming": "no",
       "gender": "kvinna",
+      "nextCheckupIn": "00:15",
       "triage": "yellow",
       "contagious": "false",
       "newECG": "false",
@@ -978,7 +1024,7 @@
             { "date": "2021-03-16", "time": "13:13", "value": 125 },
             { "date": "2021-03-16", "time": "14:04", "value": 100 },
             { "date": "2021-03-16", "time": "14:15", "value": 91 },
-            { "date": "2021-03-16", "time": "14:56", "value": 87 }
+            { "date": "2021-03-16", "time": "14:56", "value": 116 }
           ]
         },
         "bloodPressure": {
@@ -1006,6 +1052,22 @@
             { "date": "2021-03-16", "time": "14:04", "value": 16 },
             { "date": "2021-03-16", "time": "14:15", "value": 20 },
             { "date": "2021-03-16", "time": "14:56", "value": 18 }
+          ]
+        },
+        "acvpu": {
+          "label": "ACVPU",
+          "data": [
+            {"date": "2021-03-16", "time": "15:30", "value": "A"}
+          ]
+        },
+        "nrs": {
+          "label": "NRS",
+          "data": [
+            {"date": "2021-03-16", "time": "12:01", "value": 4},
+            {"date": "2021-03-16", "time": "13:13", "value": 4},
+            {"date": "2021-03-16", "time": "14:04", "value": 5},
+            {"date": "2021-03-16", "time": "14:15", "value": 6},
+            {"date": "2021-03-16", "time": "14:56", "value": 2}
           ]
         }
       },
@@ -1097,6 +1159,34 @@
             { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
             { "marker": "P-Glukos", "value": 5.4 }
           ] 
+        },
+        {
+          "date": "2021-12-30",
+          "time": "10:45",
+          "tests": [
+            { "marker": "B-Hb (Hemoglobin)" },
+            { "marker": "B-EVF" },
+            { "marker": "B-Erytrocter" },
+            { "marker": "B-MCV" },
+            { "marker": "ERC(B)-MCH" },
+            { "marker": "ERC(B)-MCHC" },
+            { "marker": "B-Lekocyter" }
+          ] 
+        },
+        {
+          "date": "2021-12-30",
+          "time": "11:05",
+          "tests": [
+            { "marker": "B-Trombocyter" },
+            { "marker": "P-APT-tid" },
+            { "marker": "P-KR (INR)" },
+            { "marker": "P-CRP" },
+            { "marker": "P-Natrium" },
+            { "marker": "P-Kalium" },
+            { "marker": "P-Kreatinin" },
+            { "marker": "Pt-Krea, eGFR, MDRD"},
+            { "marker": "P-Glukos"}
+          ]
         }
       ],
       "drugs": [
@@ -1892,8 +1982,10 @@
       "patientID": "194202269207",
       "familyName": "Skoog",
       "givenName": "Anna",
-      "description": "kvinna buksmärta",
+      "description": "buksmärta",
+      "incoming": "no",
       "gender": "kvinna",
+      "nextCheckupIn": "04:45",
       "triage": "yellow",
       "contagious": "false",
       "newECG": "true",
@@ -1950,7 +2042,21 @@
           "data": [
             { "date": "2021-09-24", "time": "12:12", "value": 20 },
             { "date": "2021-09-24", "time": "13:42", "value": 18 },
-            { "date": "2021-09-24", "time": "14:12", "value": 18 }
+            { "date": "2021-09-24", "time": "14:12", "value": 26 }
+          ]
+        },
+        "acvpu": {
+          "label": "ACVPU",
+          "data": [
+            {"date": "2021-09-24", "time": "15:30", "value": "A"}
+          ]
+        },
+        "nrs": {
+          "label": "NRS",
+          "data": [
+            {"date": "2021-09-24", "time": "12:12", "value": 6},
+            {"date": "2021-09-24", "time": "13:42", "value": 4},
+            {"date": "2021-09-24", "time": "14:12", "value": 1}
           ]
         }
       },
@@ -2042,7 +2148,36 @@
             { "marker": "Pt-Krea, eGFR, MDRD", "value": 90 },
             { "marker": "P-Glukos", "value": 5.4 }
           ] 
+        },
+        {
+          "date": "2021-12-30",
+          "time": "10:45",
+          "tests": [
+            { "marker": "B-Hb (Hemoglobin)" },
+            { "marker": "B-EVF" },
+            { "marker": "B-Erytrocter" },
+            { "marker": "B-MCV" },
+            { "marker": "ERC(B)-MCH" },
+            { "marker": "ERC(B)-MCHC" },
+            { "marker": "B-Lekocyter" }
+          ] 
+        },
+        {
+          "date": "2021-12-30",
+          "time": "11:05",
+          "tests": [
+            { "marker": "B-Trombocyter" },
+            { "marker": "P-APT-tid" },
+            { "marker": "P-KR (INR)" },
+            { "marker": "P-CRP" },
+            { "marker": "P-Natrium" },
+            { "marker": "P-Kalium" },
+            { "marker": "P-Kreatinin" },
+            { "marker": "Pt-Krea, eGFR, MDRD"},
+            { "marker": "P-Glukos"}
+          ]
         }
+
       ],
       "drugs": [
         {
@@ -2946,4 +3081,5 @@
           }
         }
   }
+  
 ]

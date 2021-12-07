@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
-  <div id="header-logo" style="margin-left: 16px;">
+  <div id="header-logo" style="margin-left: 0px;">
   <!-- Need new Logo && Replace onclick link to eventual homepage-->
     <img id="logo" alt="Missing logo" src="../../../../assets/Logo_Region_Östergötland.png"
       onclick="document.location.href='#'" >
   </div>
-  <div id="unit-button">
-    <button mat-stroked-button color="Accent" [routerLink]="'/'+menuLinks[0]">Enhetsöversikt</button>
+  <div id="unit-button" style="height: 100%; text-align: center;">
+    <button mat-stroked-button style="height: 100%; margin-left: 10px; background-color: #015fa7;" [routerLink]="'/'+menuLinks[0]">Enhetsöversikt</button>
   </div>
   <div *ngIf="patientIdsAreLoaded" class="search-bar-div">
     <fa-icon id="search-icon" [icon]="faSearch"></fa-icon>
@@ -15,13 +15,12 @@
   <span id="dateTime">{{date| date: 'y/MM/dd &nbsp;HH:mm&nbsp;' }}</span>
 
   <button  mat-icon-button id="mail_button" (click)="getMessages()" aria-label="Example icon-button with heart icon">
-    <mat-icon matBadge="{{messages.length}}" [matBadgeHidden] = "messages.length===0" matBadgeColor="warn">notifications</mat-icon>
+    <mat-icon matBadge="{{messages.length}}" [matBadgeHidden] = "displayRed===0" matBadgeColor="warn">notifications</mat-icon>
   </button>
   <!--Profile section should include picture & name?-->
   <div id="profile_div" style="margin-left: 5px; margin-right: auto; margin-top: 7px;" >
     <div class="dropdown">
       <button id="profile-button" (click)="getProfile()">
-
           <img src="../../../../assets/TesP.png" width="50px" height="50px" alt="Missing profile picture" style="cursor:pointer">
       </button>
       </div>
@@ -43,22 +42,11 @@
     
   </div>
   <div class="dropdown-button" id="dropdown-settings">
-    <button id="dropdown-settings-button">
-      Inställningar
-
-    </button>
+    <button id="dropdown-settings-button" mat-raised-button color="primary">Inställningar</button>
   </div>
-  <!-- Maybe not required?
-  <div class="dropdown-button" id="dropdown-dashboard">
-    <button id="dropdown-dashboard-button">
-      Dashboard
-    </button>
-  </div>
-  -->
+  <div style="margin:5px"></div>
   <div class="dropdown-button" id="dropdown-logout">
-    <button id="dropdown-logout-button">
-      Logga ut
-    </button>
+    <button id="dropdown-settings-button" mat-raised-button color="primary">Logga ut</button>
   </div>
 </div>  
 
@@ -91,7 +79,7 @@
   </mat-card-content>
   <mat-divider inset></mat-divider>
   <mat-card-actions>
-    <button mat-button (click)="getMessages()">STÄNG</button>
+    <button mat-button (click)="getMessages()" (click)="closeNotifications()" >STÄNG</button>
   </mat-card-actions>
 </mat-card>
 

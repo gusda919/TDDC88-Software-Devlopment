@@ -55,13 +55,32 @@
           </div>
         </div>
       </mat-list-item>
-      <mat-list-item (click)="toggleLabs()">
-        <fa-icon matListIcon [icon]='faMicroscope'></fa-icon>
-        <h3 matLine>Senaste provresutat</h3>
-        <div matLine>{{getLatestLab().time + ' ' + getLatestRespiratoryRate().date}}</div>
+      <mat-list-item>
+        <fa-icon matListIcon [icon]='faProcedures'></fa-icon>
+        <h3 matLine>{{vitalParameters.acvpu.label}}</h3>
+        <div matLine>{{getLatestACVPU().time + ' ' + getLatestACVPU().date}}</div>
         <div fxLayout="row" fxLayoutAlign="center center">
           <div fxLayout="row">
-            <div class="param" fxFlex="30"> Se prov</div>
+            <div class="param" fxFlex="30" style="background-color: {{ACVPUColor}};">{{getLatestACVPU().value}}</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleNRSGraph()">
+        <fa-icon matListIcon [icon]='faFirstAid'></fa-icon>
+        <h3 matLine>{{vitalParameters.nrs.label}}</h3>
+        <div matLine>{{getLatestNRS().time + ' ' + getLatestNRS().date}}</div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">{{getLatestNRS().value}}</div>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item (click)="toggleFluidBalance()">
+        <fa-icon matListIcon [icon]='faTint'></fa-icon>
+        <h3 matLine>Vätskebalans</h3>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="row">
+            <div class="param" fxFlex="30">{{getFluidBalance()}} ml</div>
           </div>
         </div>
       </mat-list-item>
@@ -75,7 +94,9 @@
     <app-my-graph *ngSwitchCase="isBloodPressureAndPulseDisplayed" [graphId]="2" [bloodPressure]="vitalParameters.bloodPressure" [pulse]="vitalParameters.pulse"></app-my-graph>
     <app-my-graph *ngSwitchCase="isBodyTemperatureDisplayed" [graphId]="3" [vitalParameters]="vitalParameters.bodyTemperature"></app-my-graph>
     <app-my-graph *ngSwitchCase="isRespiratoryRateDisplayed" [graphId]="4" [vitalParameters]="vitalParameters.respiratoryRate"></app-my-graph>
-    <app-list *ngSwitchCase="isLabsDisplayed" [patientId]="patientId"></app-list>
+    <app-my-graph *ngSwitchCase="isNRSDisplayed" [graphId]="5" [vitalParameters]="vitalParameters.nrs"></app-my-graph>
+    <app-fluid-balance *ngSwitchCase="isFluidBalanceDisplayed" [patientId]="patientId"></app-fluid-balance>
   </div>
+
 
 </div>

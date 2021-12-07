@@ -1,5 +1,5 @@
 .outer-wrapper {
-  width: 95%;
+  width: 97%;
   float: left;
   margin-top: 30px;
 }
@@ -11,6 +11,7 @@
   overflow-y: hidden;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -20,7 +21,7 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .timeline-wrapper {
-  float: left;
+  //float: left;
   display: block;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -29,6 +30,7 @@
 .timeline-event {
   display: inline;
   margin: 0px 40px 0px 40px;
+  cursor: pointer;
 }
 
 .timeline-event-icon {
@@ -43,11 +45,22 @@
 }
 
 .timeline-line {
-  border: 2px dashed #000;
+  border: 2px dashed black;
   margin-top: 40px;
   margin-bottom: 20px;
   position: absolute;
   width: 95%;
+}
+
+.timeline-past-overlay {
+  background-color: #015fa7;
+  position: relative;
+  margin-top: 37px;
+  margin-bottom: 20px;
+  height: 7px;
+  width: 1000px;
+  z-index: 8;
+  float: left;
 }
 
 .event-date {
@@ -58,4 +71,44 @@
 
 .clicked {
   color: #015fa7;
+}
+
+.event-arrow {
+  border: solid #015fa7;
+  border-width: 0 7px 7px 0;
+  display: inline-block;
+  padding: 7px;
+}
+
+.event-arrow-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.event-arrow-left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.hide-arrow-wrapper {
+  // display: none;
+  visibility: hidden;
+}
+
+.current-date-marker {
+  position: relative;
+  display: inline;
+  left: 1000px;
+}
+
+.current-date-arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #015fa7;
+  display: inline-block;
+  position: relative;
+  top: 45px;
+  left: -114px;
 }

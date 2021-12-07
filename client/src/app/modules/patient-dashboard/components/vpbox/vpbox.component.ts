@@ -1,9 +1,9 @@
-import { Component, OnInit, ChangeDetectorRef, Input, OnChanges } from '@angular/core';
-import { VitalParameters } from 'src/app/shared/models/patient';
-import { faHeartbeat, faLungs, faThermometer, faMicroscope } from '@fortawesome/free-solid-svg-icons';
+import { Component, ChangeDetectorRef, Input, OnChanges } from '@angular/core';
+import { VitalParameters, FluidBalance } from 'src/app/shared/models/patient';
+import { faHeartbeat, faLungs, faThermometer, faTint, faProcedures, faFirstAid, faMicroscope } from '@fortawesome/free-solid-svg-icons';
 import { Lab } from 'src/app/shared/models/patient';
 
-import { PatientService } from '../../../../core/services/patient.service'
+import { PatientService } from '../../../../core/services/patient.service';
 
 @Component({
   selector: 'app-vpbox',
@@ -20,47 +20,55 @@ export class VpboxComponent implements OnChanges {
   faHeartbeat = faHeartbeat;
   faLungs = faLungs;
   faThermometer = faThermometer;
-  faMicroscope  = faMicroscope ;
+  faTint = faTint;
+  faProcedures = faProcedures;
+  faFirstAid = faFirstAid;
+  faMicroscope  = faMicroscope;
 
-  isBloodOxygenDisplayed = false;
-  isBloodPressureAndPulseDisplayed = false;
+  isBloodOxygenDisplayed = true;
+  isBloodPressureAndPulseDisplayed = true;
   isBodyTemperatureDisplayed = false;
   isRespiratoryRateDisplayed = false;
-  isLabsDisplayed = false;
+  isFluidBalanceDisplayed = false;
+  isNRSDisplayed = false;
+
+
+  firstGraph = "oxygen";
+  secondGraph = "pressure";
   
   bloodOxygenColor = "";
   pulseColor = "";
   bloodPressureColor = "";
   bodyTemperatureColor = "";
   respiratoryRateColor = "";
+  ACVPUColor = "";
  
   vitalParameters: VitalParameters;
+  fluidBalance: FluidBalance;
   labs: Lab[];
 
   constructor(private patientService: PatientService, private cdr: ChangeDetectorRef) {}
 
   ngOnChanges(): void {
     this.getVitalParameters();
-    this.getPatientLabs();
+    this.getFluidBalanceData();
   }
 
   getVitalParameters() {
     this.patientService.getPatientVitalparameters(this.patientId).subscribe((vitalParameters: VitalParameters) => {
       this.vitalParameters = vitalParameters;
-      this.isLoaded = true;
       this.setTriageColors();
       this.cdr.detectChanges();
     });
   }
- 
-  getPatientLabs() {
-    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {      
-      this.labs = labs;
-      this.isLoaded = true;
-      this.cdr.detectChanges();;    
-    });
-  }
 
+  getFluidBalanceData() {
+    this.patientService.getPatientFluidBalance(this.patientId).subscribe((fluidBalance: FluidBalance) => {
+      this.fluidBalance = fluidBalance;
+      this.isLoaded = true;
+    })
+  }
+ 
   //Get functions for displaying the latest value for each vital parameter
   getLatestBloodOxygenLevel() {
     let data = this.vitalParameters.bloodOxygenLevel.data;
@@ -86,12 +94,26 @@ export class VpboxComponent implements OnChanges {
     let data = this.vitalParameters.respiratoryRate.data;
     return data[data.length-1];
   }
-  
-  getLatestLab() {
-    
 
-    let data = this.labs;
+  getLatestACVPU() {
+    let data = this.vitalParameters.acvpu.data;
     return data[data.length-1];
+  }
+
+  getLatestNRS() {
+    let data = this.vitalParameters.nrs.data;
+    return data[data.length-1];
+  }
+
+  getFluidBalance() {
+    let fb = 0;
+    this.fluidBalance.in.forEach((fbIn) => {
+      fb += fbIn.value;
+    })
+    this.fluidBalance.out.forEach((fbOut) => {
+      fb -= fbOut.value;
+    })
+    return fb;
   }
 
   setTriageColors() {
@@ -143,9 +165,43 @@ export class VpboxComponent implements OnChanges {
       this.respiratoryRateColor = "#F44336";
     }
 
+
+    //Triage coloring for ACVPU
+    if (this.getLatestACVPU().value === "A") {
+      this.ACVPUColor = "#4CAF50";
+    } else if (this.getLatestACVPU().value === "C") {
+      this.ACVPUColor = "#FFEB3B";
+    } else if (this.getLatestACVPU().value === "V") {
+      this.ACVPUColor = "#FF9800";
+    } else if (this.getLatestACVPU().value === "P" || this.getLatestACVPU().value === "U") {
+      this.ACVPUColor = "#F44336";
+    }
+
   }
 
 
+
+
+  graphToggler() {
+    if(this.firstGraph === "oxygen" || this.secondGraph === "oxygen") {
+      this.isBloodOxygenDisplayed = true;
+    }
+    if(this.firstGraph === "pressure" || this.secondGraph === "pressure") {
+      this.isBloodPressureAndPulseDisplayed = true;
+    }
+    if(this.firstGraph === "temp" || this.secondGraph === "temp") {
+      this.isBodyTemperatureDisplayed = true;
+    }
+    if(this.firstGraph === "resp" || this.secondGraph === "resp") {
+      this.isRespiratoryRateDisplayed = true;
+    }
+    if(this.firstGraph === "fluid" || this.secondGraph === "fluid") {
+      this.isFluidBalanceDisplayed = true;
+    }
+    if(this.firstGraph === "nrs" || this.secondGraph === "nrs") {
+      this.isNRSDisplayed = true;
+    }
+  }
 
 
 
@@ -154,7 +210,9 @@ export class VpboxComponent implements OnChanges {
     if(!this.isBloodOxygenDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodOxygenDisplayed = !this.isBloodOxygenDisplayed;
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "oxygen";
+    this.graphToggler()
   }
 
 
@@ -162,39 +220,70 @@ export class VpboxComponent implements OnChanges {
     if(!this.isBloodPressureAndPulseDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBloodPressureAndPulseDisplayed = !this.isBloodPressureAndPulseDisplayed;
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "pressure";
+    this.graphToggler()
+
   }
 
   toggleBodyTemperatureGraph() {
     if(!this.isBodyTemperatureDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isBodyTemperatureDisplayed = !this.isBodyTemperatureDisplayed;
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "temp";
+    this.graphToggler()
+
   }
 
   toggleRespiratoryRateGraph() {
     if(!this.isRespiratoryRateDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isRespiratoryRateDisplayed = !this.isRespiratoryRateDisplayed;
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "resp";
+    this.graphToggler()
+
   }
-  toggleLabs() {
-    if(!this.isLabsDisplayed) {
+
+  toggleFluidBalance() {
+    if(!this.isFluidBalanceDisplayed) {
       this.checkIfAnyGraphIsToggled();
     }
-    this.isLabsDisplayed = ! this.isLabsDisplayed;
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "fluid";
+    this.graphToggler()
+
   }
+
+  toggleNRSGraph() {
+    if(!this.isNRSDisplayed) {
+      this.checkIfAnyGraphIsToggled();
+    }
+
+    this.secondGraph = this.firstGraph;
+    this.firstGraph = "nrs";
+    this.graphToggler()
+  }
+  
+ 
   checkIfAnyGraphIsToggled() {
     if(this.isBloodOxygenDisplayed || 
       this.isBloodPressureAndPulseDisplayed || 
       this.isBodyTemperatureDisplayed || 
-      this.isRespiratoryRateDisplayed|| 
-      this.isLabsDisplayed) {
+      this.isRespiratoryRateDisplayed ||
+      this.isFluidBalanceDisplayed ||
+      this.isNRSDisplayed) {
         this.isBloodOxygenDisplayed = false;
         this.isBloodPressureAndPulseDisplayed = false;
         this.isBodyTemperatureDisplayed = false;
         this.isRespiratoryRateDisplayed = false;
-        this.isLabsDisplayed = false;
+        this.isFluidBalanceDisplayed = false;
+        this.isNRSDisplayed = false;
     }
   }
 }

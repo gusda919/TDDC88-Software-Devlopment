@@ -1,0 +1,121 @@
+
+
+.full-width-table {
+    width: 100%;
+  }
+  
+  .full-width-table a {
+    color: black;
+  }
+  
+  .mat-cell {
+  
+    font-weight: bold;
+    font-size: 20px
+  }
+  .mat-column-header {
+    color: rgba(19, 19, 19, 0.753);
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .mat-column-issue {
+  
+    font-size: 14px
+  }
+  .mat-column-gender {
+  
+    font-size: 14px
+  }
+  .mat-column-name {
+    
+    font-size: 14px
+  }
+  .mat-column-id {
+    
+    font-size: 14px
+  }
+  .mat-column-arrival {
+    
+    font-size: 14px
+  }
+  .mat-column-triage {
+    
+    font-size: 14px
+  }
+  
+  .mat-column-currentsituation {
+    font-size: 14px;
+  }
+  
+  .mat-column-buttons .mat-button-base {
+    
+    margin: 20px 20px 20px 0;
+  }
+  
+  
+  .mat-button.mat-high,
+  .mat-stroked-button.mat-high {
+      color: #F44336;
+  }
+  .mat-button.mat-high:hover,
+  .mat-stroked-button.mat-high:hover {
+    background-color: #f0fff3;
+  }
+  
+  .mat-raised-button.mat-high,
+  .mat-flat-button.mat-high,
+  .mat-fab.mat-high,
+  .mat-mini-fab.mat-high {
+    color: #f0fff3;
+    background-color: #F44336;
+  }
+  
+  .mat-icon-button.mat-high {
+    color:#F44336;
+  }
+  
+  .mat-button.mat-normal,
+  .mat-stroked-button.mat-normal {
+      color: #4CAF50;
+  }
+  .mat-button.mat-normal:hover,
+  .mat-stroked-button.mat-norma:Hover {
+    background-color: #f0fff3;
+  }
+  
+  .mat-raised-button.mat-normal,
+  .mat-flat-button.mat-normal,
+  .mat-fab.mat-normal,
+  .mat-mini-fab.mat-normal {
+    color: #f0fff3;
+    background-color: #4CAF50;;
+  }
+  
+  .mat-icon-button.mat-normal{
+    color:#4CAF50;
+  }
+  
+  
+  
+  .mat-button.mat-low,
+  .mat-stroked-button.mat-low {
+      color: #FFEB3B;
+  }
+  .mat-button.mat-gul:hover,
+  .mat-stroked-button.mat-low:hover {
+    background-color: #f0fff3;
+  }
+  
+  .mat-raised-button.mat-low,
+  .mat-flat-button.mat-low,
+  .mat-fab.mat-low,
+  .mat-mini-fab.mat-low {
+    color: #f0fff3;
+    background-color: #FFEB3B;
+  }
+  .mat-icon-button.mat-low {
+    color:#FFEB3B;
+  }
+  
+  
