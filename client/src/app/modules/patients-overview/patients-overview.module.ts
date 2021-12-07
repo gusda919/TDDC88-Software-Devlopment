@@ -11,12 +11,15 @@ import { OverviewPageComponent } from './pages/overview-page/overview-page.compo
 import { MatCardModule } from '@angular/material/card';
 import {  MatButtonModule } from '@angular/material/button';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
+import { OverviewIncomingComponent } from './components/overview-incoming/overview-incoming.component';
 
 
 @NgModule({
   declarations: [
     OverviewTableComponent,
     OverviewPageComponent,
+
+    OverviewIncomingComponent,
 
   ],
   imports: [
