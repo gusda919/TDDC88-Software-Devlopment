@@ -1,14 +1,8 @@
-import { ThrowStmt } from '@angular/compiler';
-import { Component, Input, OnInit } from '@angular/core';
-import { Caregiving, Lab, Drug } from 'src/app/shared/models/patient';
-import { faMicroscope, faPills, faHandHoldingMedical, faClock} from '@fortawesome/free-solid-svg-icons'
 
-
-
-
-import { PatientService } from '../../../../core/services/patient.service'
-import { reduce } from 'rxjs/operators';
-import { BLACK_ON_WHITE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
+import { Component, Input, OnChanges } from '@angular/core';
+import {Lab} from 'src/app/shared/models/patient';
+import {faClock} from '@fortawesome/free-solid-svg-icons';
+import { PatientService } from '../../../../core/services/patient.service';
 
 interface TimelineEvent {
   date: Date,
@@ -23,23 +17,7 @@ interface TimelineEvent {
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
-
-  displayedEvent: TimelineEvent;
-
-
-  @Input() patientId: string;
-
-  caregiving: Caregiving[];
-  labs: Lab[];
-  drugs: Drug[];
-  events: TimelineEvent[] = [];
-
-  faMicroscope = faMicroscope;
-  faPills = faPills;
-  faHandHoldingMedical = faHandHoldingMedical;
-  faClock = faClock;
-  clickedButton: any;
+export class ListComponent implements OnChanges {
 
   items = [
     ["B-Hb (Hemoglobin)" , 120, 170],
@@ -58,76 +36,55 @@ export class ListComponent implements OnInit {
     ["P-Kreatinin", 0, 133],
     ["Pt-Krea, eGFR, MDRD", 75, 150],
     ["Pt-Glukos", 4.0, 6.0],
-
-
   ];
 
 
 
+  @Input() patientId: string;
+
+
+  labs: Lab[];
+  displayedLab: Lab;
+  noLabDisplayed = true;
+
+  faClock = faClock;
 
   constructor(private patientService: PatientService) { }
 
 
-  ngOnInit(): void {
-    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {
-      let events: TimelineEvent[] = labs.map((l: Lab): TimelineEvent => ({
-        date: new Date(l.date+"T"+l.time),
-        icon: faMicroscope,
-        type: 'lab',
-        data: l.tests,
-      })
-      );
-      this.events = this.events.concat(events);
-
-    });
-
+  ngOnChanges(): void {
+    this.getPatientLabs();
   }
 
-  markerColour(marker: string , value: any) {
+  getPatientLabs() {
+    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {
+      this.labs = labs;
+      console.log(this.labs);
+    });
+  }
 
+  displayLab(lab: Lab) {
+    this.displayedLab = lab;
+    this.noLabDisplayed = false;
+  }
+
+  closeDisplayedLab() {
+    this.noLabDisplayed = true;
+  }
+
+  //  marks results below the approved thresshold in red
+  markerColour(marker: string , value: any) {
+   
     for (var item of this.items) {
       if(item[0]===marker) {
        if( value<item[1] || value>item[2]){
         return "red";
        }
-      }
-
- }
-
-  return "black";
+    }
+      
+  }
+ 
+    return "black";
   }
 
-
-
-  getPatientLabs() {
-    this.patientService.getPatientLabs(this.patientId).subscribe((labs: Lab[]) => {
-      let events: TimelineEvent[] = labs.map((l: Lab): TimelineEvent => ({
-        date: new Date(l.date+"T"+l.time),
-        icon: faMicroscope,
-        type: 'lab',
-        data: l.tests,
-      })
-      );
-      this.events = this.events.concat(events);
-
-    });
-  }
-
-
-
-  sortData() {
-    return this.events.sort((a: TimelineEvent, b: TimelineEvent) => {
-      return <any>new Date(a.date) - <any>new Date(b.date);
-    });
-  }
-
-  displayEvent(event: any) {
-    this.displayedEvent = event;
-  }
-  closeDisplayedEvent() {
-    this.displayedEvent = <TimelineEvent>{};
-    this.clickedButton = null;
-  }
 }
-
-
