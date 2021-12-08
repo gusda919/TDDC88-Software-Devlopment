@@ -4,12 +4,12 @@
     </mat-card-header>
     <mat-card-content *ngIf="noLabDisplayed">
         <mat-action-list>
-            <mat-list-item *ngFor="let lab of labs">
+            <mat-list-item *ngFor="let lab of labs" (click)="displayLab(lab)">
                 <fa-icon matListIcon [icon]='faClock'></fa-icon>
                 <h3 matLine>{{ lab.date }} {{ lab.time }}</h3>
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <div fxLayout="row">
-                        <div class="show-result" fxFlex="30" (click)="displayLab(lab)">Visa resultat</div>            
+                        <div class="show-result" fxFlex="30">Visa resultat</div>            
                     </div>
                 </div>
             </mat-list-item>
