@@ -4,7 +4,17 @@ import { Observable, Subscription} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { PatientService } from '../../../core/services/patient.service';
 //import { uuid } from 'uuidv4';
- 
+
+
+
+
+interface message {
+  id: any,
+  patient: any,
+  pn: string,
+  content: any,
+}
+
 
 @Component({
   selector: 'app-nav',
@@ -25,10 +35,10 @@ export class NavComponent {
   pn: string;
   displayRed: number;
 
-  messages = [
-      {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
-   // {id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
-   // {id: 2, patient: 'Sven Svensson', pn:"941212-0110",content: 'Blodprov är nu tillgängligt'},
+  messages: message[]= [
+  //  {id: 0, patient: 'Test Testsson', pn:"981010-0110",  content: 'Febern har ökat till 43'},
+  // {id: 1, patient: 'Exempel Sonsson', pn:"911212-0110",content: 'Patienten har svår buksmärta'},
+  // {id: 2, patient: 'Sven Svensson', pn:"941212-0110",content: 'Blodprov är nu tillgängligt'},]
   ]
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Tablet, Breakpoints.Handset])
@@ -44,7 +54,7 @@ export class NavComponent {
         console.log(pat)
         if (pat.newecg === "true") {
           this.addECG(pat.patientID);
-        } 
+        }
       });
     });
   };

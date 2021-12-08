@@ -9,13 +9,14 @@
 
     <ng-container matColumnDef="gender">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Kön</th>
-      <td mat-cell *matCellDef="let row">{{row.gender | titlecase}}</td>
+      <td mat-cell *matCellDef="let row"> <fa-icon matListIcon [icon]= 'getGender(row.gender)' ></fa-icon></td>
+
     </ng-container>
      <!--  Patient name-->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Namn</th>
       <td mat-cell *matCellDef="let row"><a [routerLink]="['/dashboard', row.patientID]">{{row.givenName}} {{row.familyName}}</a> </td>
-      
+
     </ng-container>
 
       <!-- Medical Issue-->
@@ -26,18 +27,17 @@
 
      <!-- Date -->
       <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Senast besökt </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header=> Senaste tillsyn </th>
       <td mat-cell *matCellDef="let row">{{row.caregiving.at(-1).time.toString()}}</td>
-    </ng-container> 
+    </ng-container>
 
       <!-- Next checkup in -->
       <ng-container matColumnDef="nextVisit">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nästa besök om </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header=> Nästa tillsyn om </th>
         <td mat-cell *matCellDef="let row">{{row.nextCheckupIn}}</td>
-      </ng-container> 
+      </ng-container>
 
     <!-- Priority-->
-
 
     <ng-container matColumnDef="triage">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Triage </th>
@@ -46,15 +46,15 @@
 
 
     <ng-container matColumnDef ="header" >
-      <th mat-header-cell *matHeaderCellDef colspan="6">Enhetsöversikt - Akutmottagning </th>
+      <th mat-header-cell *matHeaderCellDef colspan="6" >Enhetsöversikt - Akutmottagning </th>
     </ng-container>
-     
+
     <tr mat-header-row *matHeaderRowDef="groupedColumns; sticky: true"></tr>
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator 
+  <mat-paginator
       [length]="dataSource?.data?.length"
       [pageIndex]="0"
       [pageSize]="10"

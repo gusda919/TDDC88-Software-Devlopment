@@ -4,34 +4,38 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatPaginatorIntl} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { MatIconModule } from '@angular/material/icon';
+import { OverviewIncomingComponent } from './overview-incoming.component';
 
-import { OverviewTableComponent } from './overview-table.component';
-
-describe('OverviewTableComponent', () => {
-  let component: OverviewTableComponent;
-  let fixture: ComponentFixture<OverviewTableComponent>;
+describe('OverviewIncomingComponent', () => {
+  let component: OverviewIncomingComponent;
+  let fixture: ComponentFixture<OverviewIncomingComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ OverviewTableComponent ],
+      declarations: [ OverviewIncomingComponent ],
       imports: [
         NoopAnimationsModule,
         MatPaginatorModule,
         MatSortModule,
         MatTableModule,
-        MatIconModule
       ]
     }).compileComponents();
   }));
 
+
   beforeEach(() => {
-    fixture = TestBed.createComponent(OverviewTableComponent);
+    fixture = TestBed.createComponent(OverviewIncomingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should compile', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+
+
+
+
 });

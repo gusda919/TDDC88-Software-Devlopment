@@ -1,50 +1,31 @@
-
-<div class="lab-overview">
-    <h1 class="header-lab">Laborationsresultat</h1>
-<mat-action-list class="list" #labs>
-    <mat-list-item class ="list-row" *ngFor="let event of events " >
-        <fa-icon matListIcon [icon]='faClock'></fa-icon>
-        <tr > {{ event.date | date:'yyyy/MM/dd HH:mm ' }} </tr>
-        <div [ngSwitch]="event">
-         <tr *ngSwitchCase="displayedEvent">
-          <th class="showResult" (click)="closeDisplayedEvent()"> &#160; Dölj Resultat  </th> 
-        </tr>
-        
-       <tr *ngSwitchDefault> 
-       <th class="showResult" (click)="displayEvent(event)"> &#160; Visa Resultat </th> 
-      </tr>
-        </div>
-        
-    </mat-list-item>
-  </mat-action-list>
-
- 
-
-   <mat-card-subtitle>
-
-        <div *ngIf="displayedEvent"  class="lab-info">
-            <table>
-                <tr>
-                    <th style="text-align: left;">Namn</th>
-                    <th>Värde</th>
-                </tr>
-                <tr *ngFor="let lab of displayedEvent.data" >
-
-                    <div style="color: {{markerColour(lab.marker,lab.value)}};">
-                    
-                    <td>{{lab.marker}}</td>
-                    <td>{{lab.value}}</td>
-                 <!--- <div *ngif="!lab.value" >
-                        <td>Väntar på resultat</td>
-
-
-                </div> -->
+<mat-card class="lab-results"> 
+    <mat-card-header>
+        <mat-card-title>Laborationsresultat</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="noLabDisplayed">
+        <mat-action-list>
+            <mat-list-item *ngFor="let lab of labs" (click)="displayLab(lab)">
+                <fa-icon matListIcon [icon]='faClock'></fa-icon>
+                <h3 matLine>{{ lab.date }} {{ lab.time }}</h3>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <div fxLayout="row">
+                        <div class="show-result" fxFlex="30">Visa resultat</div>            
+                    </div>
                 </div>
-
-                </tr>
-            </table>
-        </div>
-
-    </mat-card-subtitle>
-
-</div>
+            </mat-list-item>
+          </mat-action-list>
+    </mat-card-content>
+    <mat-card-content *ngIf="!noLabDisplayed">
+        <div class="go-back" (click)="closeDisplayedLab()">Tillbaka</div>
+        <table>
+            <tr>
+                <th style="float: left;">Namn</th>
+                <th class="values-column">Värde</th>
+            </tr>
+            <tr *ngFor="let test of displayedLab.tests">
+                <td style="color: {{markerColour(test.marker,test.value)}};">{{test.marker}}</td>
+                <td style="color: {{markerColour(test.marker,test.value)}};" class="values-column">{{test.value}}</td>
+            </tr>
+        </table>
+    </mat-card-content>
+</mat-card>

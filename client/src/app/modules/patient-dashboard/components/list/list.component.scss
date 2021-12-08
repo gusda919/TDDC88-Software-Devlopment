@@ -1,34 +1,21 @@
-
-.lab-overview{
-    
+.lab-results {
+    margin-top: 1%;
     float: left;
-    margin: 4%;
-    width: 400px;
-    height: 320px;
-    text-size-adjust: 14px;
-    background-color: white;
-}
-.header-lab{
-
-background-color: rgb(240, 240, 240);
-padding-left: 20px;
-
-}
-.showResult{
-
- color: rgb(38, 77, 204);
-
+    width: 45%;
 }
 
-.list-row{
-    padding: 10px;
-
-    
-
+.show-result {
+    color: #004a82;
+    font-weight: bold;
 }
 
-.lab-info {
- float: right;
+.go-back {
+    color: #004a82;
+    font-weight: bold;
+    float: right;
+    font-size: larger;
+}
 
-
+.values-column {
+    text-align: right;
 }
