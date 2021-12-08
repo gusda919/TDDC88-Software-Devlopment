@@ -34,21 +34,22 @@ export class FluidBalanceComponent implements OnInit {
         if (fbd.value != 0) {
           let vStart: number = total;
           total += fbd.value;
-          this.data.push([vStart, total]);
-          this.labels.push(fbd.label);
-          this.backgroundColors.push('rgb(76, 175, 80)');
         }     
       })
+      this.data.push([0, total]);
+      this.labels.push("Vätskeintag");
+      this.backgroundColors.push('rgb(76, 175, 80)');
 
+      let vStart: number = total;
       fb.out.forEach((fbd: FluidBalanceData) => {
         if (fbd.value != 0) {
-          let vStart: number = total;
-          total -= fbd.value;
-          this.data.push([vStart, total]);
-          this.labels.push(fbd.label);
-          this.backgroundColors.push('rgb(229, 57, 53)');
+          total -= fbd.value; 
         }  
       })
+
+      this.data.push([vStart, total]);
+      this.labels.push("Vätskeförlust");
+      this.backgroundColors.push('rgb(229, 57, 53)');
 
       this.data.push([0, total]);
       this.labels.push("Vätskebalans");

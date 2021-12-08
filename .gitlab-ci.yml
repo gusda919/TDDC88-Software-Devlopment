@@ -1,0 +1,21 @@
+stages:
+  
+  - test
+
+testing_testing:
+  image: node:lts-bullseye
+  stage: test
+  script: 
+    - apt-get update
+  
+    - apt-get install -y ca-certificates gconf-service libdrm2 libgbm1 xdg-utils libasound2 libatk1.0-0 libatk1.0-0 libdbus-1-3 libgconf-2-4 libgtk-3-0 libnspr4 libnss3 libx11-xcb1 libxss1 libxtst6 fonts-liberation wget curl procps
+
+    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - dpkg -i google-chrome*.deb
+
+    - cd client
+    - npm ci
+  
+    - npm install -g @angular/cli
+    - CI=true 
+    - npm test --browsers=Headless --no-sandbox --no-watch
