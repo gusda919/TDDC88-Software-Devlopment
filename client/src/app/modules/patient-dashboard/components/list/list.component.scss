@@ -1,39 +1,21 @@
-
-.lab-overview{
-
+.lab-results {
+    margin-top: 1%;
     float: left;
-   // margin: 4%;
-   margin-right: 4%;
-   margin-top: 4%;
-   margin-bottom: 4%;
-    width: 400px;
-    height: 320px;
-    text-size-adjust: 14px;
-    background-color: white;
+    width: 45%;
 }
 
-.header-lab{
-
-background-color: rgb(240, 240, 240);
-padding-left: 20px;
-
-}
-.showResult{
-
- color: rgb(38, 77, 204);
-
+.show-result {
+    color: #004a82;
+    font-weight: bold;
 }
 
-.list-row{
-    padding: 10px;
-
-
-
+.go-back {
+    color: #004a82;
+    font-weight: bold;
+    float: right;
+    font-size: larger;
 }
 
-.lab-info {
- float: right;
- background-color: white;
-
-
+.values-column {
+    text-align: right;
 }
