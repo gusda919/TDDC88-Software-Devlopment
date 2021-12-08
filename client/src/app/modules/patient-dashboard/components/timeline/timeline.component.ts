@@ -33,7 +33,8 @@ export class TimelineComponent implements OnInit {
   currentMarkerPosition: number = 0;
 
 
-  @Input() patientId: string;
+  @Input() 
+  patientId: string;
 
   caregiving: Caregiving[];
   labs: Lab[];

@@ -41,13 +41,13 @@
 
     <ng-container matColumnDef="triage">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Triage </th>
-      <td mat-cell *matCellDef="let row">  <button mat-raised-button color= "{{triageColorMap[row.triage]}}" > {{triageTextMap[row.triage]}} </button> </td>
+      <td mat-cell *matCellDef="let row">  <button mat-raised-button color="{{triageColorMap[row.triage]}}"> {{triageTextMap[row.triage]}} </button> </td>
     </ng-container>
 
 
     <ng-container matColumnDef ="header" >
       <th mat-header-cell *matHeaderCellDef colspan="6" >Enhetsöversikt - Akutmottagning </th>
-         </ng-container>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="groupedColumns; sticky: true"></tr>
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
