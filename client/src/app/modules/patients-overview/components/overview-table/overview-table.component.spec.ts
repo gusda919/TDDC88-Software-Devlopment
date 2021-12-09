@@ -4,7 +4,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatPaginatorIntl} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { MatIconModule } from '@angular/material/icon';
 
 import { OverviewTableComponent } from './overview-table.component';
 
@@ -20,7 +19,6 @@ describe('OverviewTableComponent', () => {
         MatPaginatorModule,
         MatSortModule,
         MatTableModule,
-        MatIconModule
       ]
     }).compileComponents();
   }));

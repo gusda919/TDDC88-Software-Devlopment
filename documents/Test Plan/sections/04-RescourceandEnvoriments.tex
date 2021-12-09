@@ -1,17 +1,27 @@
 \section{Rescource and Enviroments}
-This chapter regards testing tools and versions used by each tester to ensure the same prerequisites for each test done by the testers.
+% This chapter regards testing tools and versions used by each tester to ensure the same prerequisites for each test done by the testers.
+This chapter regards testing tools and versions used by each tester to ensure the exact prerequisites for each test done by the testers.
+
 
 \subsection{Testing Tools}
-The requirement tracking tool is verbal communication between testers and analysts where either a test is shown proving that a requirement is reflected in the application or by evaluating the application through existing functionality or properties the application possess. The requirement is then marked as done in the analysts document of requirements.\newline
+% The requirement tracking tool is verbal communication between testers and analysts where either a test is shown proving that a requirement is reflected in the application or by evaluating the application through existing functionality or properties the application possess. The requirement is then marked as done in the analysts document of requirements.\newline
+The requirement tracking tool is verbal communication between testers and analysts where either a test is shown proving that a requirement is reflected in the application or by evaluating the application through existing functionality or properties the application possesses. The requirement is then marked as done in the analysts' requirements document.\newline
 
-\noindent One of the two bug tracking tools is the merge request comment fields where information about what the bug is, steps to reproduce it and suspected underlying issue is relayed to the authors of the code and creator of merge request. The other bug tracking tool is git issues containing the same information as the first bug tracking tool and is used when bugs are found outside the testing procedure.\newline
 
-\noindent The automation tools are firstly the automated test done in Angular and implemented in the Gitlab pipeline which is conducted for each merge request. These tests are primarily used to ensure that the application is still having its basic functionality and is not the primary focus of the testing procedure. This is done due to the heavy focus on front-end testing as the customer application is heavily focused on front-end development. The second automated tool is a list of Selenium IDE tests and are run by the testers after they pull the merge request to their local machine.
+% \noindent One of the two bug tracking tools is the merge request comment fields where information about what the bug is, steps to reproduce it and suspected underlying issue is relayed to the authors of the code and creator of merge request. The other bug tracking tool is git issues containing the same information as the first bug tracking tool and is used when bugs are found outside the testing procedure.\newline
+\noindent One of the two bug tracking tools is the merge request comment fields where information about what the bug is, steps to reproduce it, and suspected underlying issue is relayed to the authors of the code and creator of the merge request. The other bug tracking tool is git issues containing the same information as the first bug tracking tool and is used when bugs are found outside the testing procedure.\newline
+
+% \noindent The automation tools are firstly the automated test done in Angular and implemented in the Gitlab pipeline which is conducted for each merge request. These tests are primarily used to ensure that the application is still having its basic functionality and is not the primary focus of the testing procedure. This is done due to the heavy focus on front-end testing as the customer application is heavily focused on front-end development. The second automated tool is a list of Selenium IDE tests and are run by the testers after they pull the merge request to their local machine.
+\noindent The automation tools are firstly the automated test done in Angular and implemented in the GitLab pipeline which is conducted for each merge request. These tests are primarily used to ensure that the application is still having its basic functionality and is not the primary focus of the testing procedure. This is done due to the heavy focus on front-end testing as the customer application is heavily focused on front-end development. The second automated tool is a list of Selenium IDE tests and is run by the testers after they pull the merge request to their local machine.
+
 %infoga list med selenium tests här eller bifoga.
 
 \subsection{Test Environment}
 \begin{itemize}
-  \item Angular 12.2.12 %dubbelchecka detta senare
+  \item Angular 12.2.12
+  %dubbelchecka detta senare
   \item Node 16.13.0
   \item Selenium 3.17.0
+  \item Karma 2.0.0
+  
 \end{itemize}

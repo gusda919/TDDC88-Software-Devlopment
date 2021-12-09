@@ -3,8 +3,7 @@
         "patientID": "195001232296",
         "familyName": "Bodström",
         "givenName": "Jan",
-        "description": "skada höft",
-        "incoming": "no",
+        "description": "man skada höft",
         "gender": "man",
         "nextCheckupIn": "01:30",
         "triage": "green",
@@ -49,20 +48,6 @@
             "data": [
               { "date": "2021-03-14", "time": "14:15", "value": 16 },
               { "date": "2021-03-14", "time": "15:23", "value": 14 }
-            ]
-          },
-          "acvpu": {
-            "label": "ACVPU",
-            "data": [
-              {"date": "2021-03-14", "time": "15:30", "value": "A"}
-            ]
-          },
-          "nrs": {
-            "label": "NRS",
-            "data": [
-              {"date": "2021-03-14", "time": "14:11", "value": 4},
-              {"date": "2021-03-14", "time": "15:15", "value": 7},
-              {"date": "2021-03-14", "time": "16:12", "value": 3}
             ]
           }
         },
@@ -988,8 +973,7 @@
       "patientID": "198605119885",
       "familyName": "Rosfors",
       "givenName": "Klara",
-      "description": "onormal hjärtrytm",
-      "incoming": "no",
+      "description": "kvinna onormal hjärtrytm",
       "gender": "kvinna",
       "nextCheckupIn": "00:15",
       "triage": "yellow",
@@ -1024,7 +1008,7 @@
             { "date": "2021-03-16", "time": "13:13", "value": 125 },
             { "date": "2021-03-16", "time": "14:04", "value": 100 },
             { "date": "2021-03-16", "time": "14:15", "value": 91 },
-            { "date": "2021-03-16", "time": "14:56", "value": 116 }
+            { "date": "2021-03-16", "time": "14:56", "value": 87 }
           ]
         },
         "bloodPressure": {
@@ -1052,22 +1036,6 @@
             { "date": "2021-03-16", "time": "14:04", "value": 16 },
             { "date": "2021-03-16", "time": "14:15", "value": 20 },
             { "date": "2021-03-16", "time": "14:56", "value": 18 }
-          ]
-        },
-        "acvpu": {
-          "label": "ACVPU",
-          "data": [
-            {"date": "2021-03-16", "time": "15:30", "value": "A"}
-          ]
-        },
-        "nrs": {
-          "label": "NRS",
-          "data": [
-            {"date": "2021-03-16", "time": "12:01", "value": 4},
-            {"date": "2021-03-16", "time": "13:13", "value": 4},
-            {"date": "2021-03-16", "time": "14:04", "value": 5},
-            {"date": "2021-03-16", "time": "14:15", "value": 6},
-            {"date": "2021-03-16", "time": "14:56", "value": 2}
           ]
         }
       },
@@ -1982,8 +1950,7 @@
       "patientID": "194202269207",
       "familyName": "Skoog",
       "givenName": "Anna",
-      "description": "buksmärta",
-      "incoming": "no",
+      "description": "kvinna buksmärta",
       "gender": "kvinna",
       "nextCheckupIn": "04:45",
       "triage": "yellow",
@@ -2042,21 +2009,7 @@
           "data": [
             { "date": "2021-09-24", "time": "12:12", "value": 20 },
             { "date": "2021-09-24", "time": "13:42", "value": 18 },
-            { "date": "2021-09-24", "time": "14:12", "value": 26 }
-          ]
-        },
-        "acvpu": {
-          "label": "ACVPU",
-          "data": [
-            {"date": "2021-09-24", "time": "15:30", "value": "A"}
-          ]
-        },
-        "nrs": {
-          "label": "NRS",
-          "data": [
-            {"date": "2021-09-24", "time": "12:12", "value": 6},
-            {"date": "2021-09-24", "time": "13:42", "value": 4},
-            {"date": "2021-09-24", "time": "14:12", "value": 1}
+            { "date": "2021-09-24", "time": "14:12", "value": 18 }
           ]
         }
       },
@@ -3081,5 +3034,4 @@
           }
         }
   }
-  
 ]
