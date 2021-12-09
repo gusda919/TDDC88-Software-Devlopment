@@ -4,13 +4,13 @@ import { UserModel, UserDoc } from "./user";
 import { Patient, RecordsRecord, TentacledRecord, Lab } from "./patient";
 
 const patients = require('./patients.json');
-const users = require('./testusers.json').testUsers;
+//const users = require('./testusers.json').testUsers;
 
 export const router = express.Router();
 
-router.get('/users', async (req: Request, res: Response) => {
-    res.json(users.slice(1,10));
-});
+//router.get('/users', async (req: Request, res: Response) => {
+//    res.json(users.slice(1,10));
+//});
 
 router.get('/patients', async (req: Request, res: Response) => {
   // route for getting overview attributes for all patients

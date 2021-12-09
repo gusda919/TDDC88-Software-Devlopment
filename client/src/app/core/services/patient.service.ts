@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class PatientService {
 
-  private baseUrl = 'http://localhost:8080/patients/';
+  private baseUrl = '/api/patients/';
 
   constructor(private http: HttpClient) { }
 

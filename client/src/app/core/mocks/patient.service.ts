@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PatientService {
-  private patientsUrl = 'http://localhost:8080/patients';
+  private patientsUrl = '/api/patients/';
 
   constructor(private http: HttpClient) { 
   

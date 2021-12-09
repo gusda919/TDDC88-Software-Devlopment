@@ -12,6 +12,6 @@ app.use(function(req: express.Request, res: express.Response, next: express.Next
  next();
 });
 
-app.use("/", router);
+app.use("/api", router);
  
 app.listen(config.port, () => console.log(`Example app listening on ${config.port}!`));

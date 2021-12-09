@@ -33,7 +33,8 @@ export class TimelineComponent implements OnInit {
   currentMarkerPosition: number = 0;
 
 
-  @Input() patientId: string;
+  @Input() 
+  patientId: string;
 
   caregiving: Caregiving[];
   labs: Lab[];
@@ -126,12 +127,13 @@ export class TimelineComponent implements OnInit {
        if( value<item[1] || value>item[2]){
         return "red";
        }
-      }
+    }
       
- }
- 
-  return "black";
   }
+ 
+    return "black";
+  }
+
 
   sortData() {
     return this.events.sort((a: TimelineEvent, b: TimelineEvent) => {

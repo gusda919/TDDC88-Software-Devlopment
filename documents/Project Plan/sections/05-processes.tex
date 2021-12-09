@@ -1,40 +1,31 @@
 \section{Processes}
 %\subsection{General Protocols}
 \label{sec:companywide:subsection:cwgeneral}
-% In this section, the different processes of the company are described. This section acts as a guideline for company members on how to conduct certain tasks and allows for the course responsible (examiner, CEO, supervisors) to get an overview of the company's processes. 
-In this section, the different processes of the company are described. This section acts as a guideline for company members on how to conduct specific tasks and allows for the course responsible (examiner, CEO, supervisors) to get an overview of the company's processes. 
+In this section, the different processes of the company are described. This section acts as a guideline for company members on how to conduct certain tasks and allows for the course responsible (examiner, CEO, supervisors) to get an overview of the company's processes. 
 
 %May need developing
 
 %(NO LONGER APPLICABLE) A scrum will be performed at each CEO meeting for each team member to describe what they are doing. The purpose of this scrum is to make it clear for everyone what each team member is doing, minimize waste (e.g., if two team members plan on doing the same task, they can coordinate instead of doing the same task twice), allow for collaboration on tasks if possible or needed, and delegate tasks if a team member has no task. 
 
 \subsection{Communication and meeting processes}
+%add each regular meetings we have
+%manager meeting 
+Meeting protocols will be created before-hand and anyone is free to add to the topics to discuss at the meeting. Regarding the CEO meetings, a deadline to add main topics is set on Wednesdays at 12.00 in order to allow time for the project manager to create a PowerPoint presentation and send the agenda to the CEO. Smaller topics can still be added after the deadline, but will be brought up on the meeting only if time allows.
 
-Meeting protocols will be created beforehand, and anyone can add to the topics to discuss at the meeting. Regarding the CEO meetings, a deadline to add main topics is set on Wednesdays at 12.00 in order to allow time for the project manager to create a PowerPoint presentation and send the agenda to the CEO. Smaller topics can still be added after the deadline but will be brought up at the meeting only if time allows.
-
-Meetings shall be scheduled in Teams using the calendar function, and both required and optional attendees shall be added to the meeting (exception for company-wide meetings). This way, individuals will have a better overview of meetings in place and which meetings they have to attend. Company-wide or large meetings (e.g., CFT meetings) shall be announced 24 hours beforehand. Exceptions can be made, e.g., for crisis meetings. 
+Meetings shall be scheduled in Teams using the calendar function and both required and optional attendees shall be added to the meeting (exception for company-wide meetings). This way, individuals will have a better overview of meetings that are in place and which meetings they have to attend to. Company-wide or large meetings (e.g., CFT meetings) shall be announced 24 hours beforehand. Exceptions can be made, e.g., for crisis meetings. 
 
 Managers have a weekly meeting each Monday to discuss different topics added to the agenda. These meetings also serve as a way to delegate tasks and make decisions. 
 
-Each Friday, the team leaders for each CFT will meet with the person responsible for the status reports to update them on progress. This achieves three things: first, the progress of each CFT can be documented in the status reports; secondly, the progress can be analyzed and compared with the set milestones to see if the teams are on track or if something needs to change in order to reach the milestones in time; and thirdly, it creates a tighter integration between the teams as the team leaders can sync up and discuss needs. These meetings are complemented by a shorter stand-up meeting each Tuesday (applicable in iteration 3 and 4). 
+Each Friday the team leaders for each CFT will meet with the person responsible for the status reports to update on progress. This achieves three things: first, the progress of each CFT can be documented in the status reports; secondly, the progress can be analyzed and compared with the set milestones to see if the teams are on track or if something needs to change in order to reach the milestones in time; and thirdly, it creates a tighter integration between the teams as the  team leaders can sync up and discuss needs. These meetings are complemented by a shorter stand-up meeting each Tuesday (applicable in iteration 3 and 4). 
 
-Each CFT shall have at least two stand-up meetings per week, and it is up to each CFT to decide when these meetings shall take place. To start each iteration, a sprint planning meeting shall be held within each CFT. To end an iteration, each CFT leader shall plan and hold a retrospective to gain insights into how the teams have performed and what can be done better for the next iteration. 
+Each CFT shall have at least two stand-up meetings per week, and it is up to each CFT to decide when these meetings shall take place. To start each iteration, a sprint planning meeting shall be held within each CFT. To end an iteration, each CFT leader shall plan and hold a retrospective to gain insights of how the teams have performed and what can be done better for the next iteration. 
 
-\subsection{Development and GitLab processes}
+\subsection{Development processes}
 %After the toll-gate, reasonably large tasks within CFTs shall be listed as issues on the GitLab board for that specific team. Members of the CFT shall assign their name to the tasks that they will be working on. As well as this, the burndown chart in GitLab will be updated over the task selection and done.
 
-To track development and other tasks, boards and issues on GitLab are used. For example, every requirement is reflected as the issue on GitLab, which developers shall assign themselves to when working on implementing a requirement. One issue is to be created for each requirement – for the sake of traceability. Tasks are then created under each issue if needed (i.e., if the requirement was large enough). With this process, the company faces the problem of infrequent merges as some issues contain several sub-tasks. To address this problem, this process is updated: requirements shall be split into multiple issues instead, if needed, to create a better continuous integrative process. Traceability is achieved by a requirement id as a part of the issue name/description. When all parts are implemented, the original requirement issue is closed.
+To track development and other tasks, boards and issues on GitLab are used. E.g., every requirement is reflected as an individual issue on GitLab, which developers shall assign themselves to when working on implementing a requirement. These issues/features shall be developed in individual branches, \emph{feature branches}, which are then merged to the development branch. The issues shall then be closed and the requirement shall next be reviewed. If the implementation passes the review and the testing phase, then the issue shall be remained closed, otherwise reopened. See appendix \ref{sec:dev-process-appendix} for an example of a Gitlab board used in the company. Furthermore, the issues shall be connected to a milestone, e.g., priority 1 requirements, in order to create a burndown chart.  
 
-Issues/features shall be developed in individual branches, \emph{feature branches}, which are then merged to the development branch. The issues shall then be closed, and the requirement shall next be reviewed. If the implementation passes the review and the testing phase, then the issue shall be remained closed, otherwise reopened. See appendix \ref{sec:dev-process-appendix} for an example of a GitLab board used in the company. Furthermore, the issues shall be connected to a milestone, e.g., priority 1 requirements, in order to create a burn-down chart. To differentiate issues on GitLab, id's are used to specify the type:
-\begin{itemize}
-    \item bg: issues related to bugs.
-    \item dc: issues related to documents.
-    \item fc: issues related to features not specified as a requirement.
-    \item nuc: issues related to non-functional requirements. 
-    \item rc: issues related to functional requirements.
-    \item te: issues related to testing and quality control. 
-\end{itemize}
-The development process is further described in the Software Quality Assurance Plan, section 3, and in the README of the company GitLab. 
+The development process is further described in the Software Quality Assurance Plan, section 3 and in the README of the company GitLab.
 
 \subsection{Regulatory documents}
 \label{sec:companywide:subsection:documents}
@@ -61,7 +52,7 @@ The documents listed in table \ref{tab: documents} shall be seen as living docum
             \hline
             Test plan & Axel Telenius & Testers\\
             \hline
-            User manual & Eric Schadewitz & Deployment manager, Product manager\\
+            User manual & Eric Schadewitz & Deployment manager, Product owner\\
             \hline
         \end{tabular}
         \caption{The table shows the regulatory documents of the project. Listed are also the author(s) of the document and the project member(s) who are the main reviewer(s) the documents.}
@@ -69,33 +60,42 @@ The documents listed in table \ref{tab: documents} shall be seen as living docum
     }
 \end{table}
 
-Regulatory documents shall be written in LaTeX, preferably with the help of Overleaf. The documents are made available to everyone in the company through link sharing. These links can be found among the company's files in Teams. Each document shall be reviewed after it has been updated and documented in the version table on the document's first page. This review shall be done by a member with relevant expertise, e.g., a tester can review updates to the Test Plan, and a developer can review the Architecture notebook. The grammar of each document can be reviewed by any company member. Each document shall be uploaded to GitLab (including all Latex files) to version-control. Each document (PDF) shall be uploaded to the Teams folder "Output" for the course responsible (examiner, CEO, supervisors). There is a secondary folder called "Old versions" in the Output folder, where old versions shall be moved to whenever a new version of a document is uploaded in the Output folder. 
+% \begin{itemize}
+%     \item Architecture notebook
+%     \item Customer requirements specification
+%     \item Education plan
+%     \item Project plan (this document)
+%     \item Software quality assurance plan
+%     \item Test plan
+%     \item User manual
+% \end{itemize}
+Regulatory documents shall be written in LaTeX, preferably with the help of Overleaf. The documents are made available to everyone in the company through link sharing. These links can be found among the company's files in Teams. Each document shall be reviewed after it has been updated and documented in the version table on the first page of the document. This review shall be done by a member with relevant expertise, e.g., a tester can review updates to the Test plan and a developer can review the Architecture notebook. The grammar of each document can be reviewed by any member of the company. To version-control, each document shall be uploaded to GitLab (including all Latex files). Each document (PDF) shall be uploaded to the Teams folder "Output" for the course responsible (examiner, CEO, supervisors). In the Output folder there is a secondary folder called "Old versions" where old versions shall be moved to whenever a new version of a document is uploaded in the Output folder. 
 
-To track when work is being done in the documents, there is a board on GitLab. When working on a document, an issue shall be created on GitLab and have a member assigned to it. When a document is ready to be reviewed, the issue shall be moved to the correct list of the board, under \say{Ready to be reviewed}. These issues shall also be connected to a relevant milestone, e.g., \say{everything that shall be done until the end of the project}. Additionally, issues not directly connected to requirements, such as issues connected to documents, shall be assigned to an epic on GitLab. Process for regulatory documents:
+To track when work is being done in the documents, there is a board on GitLab. When working on a document, an issue shall be created on GitLab and have a member assigned to it. When a document is ready to be reviewed, the issue shall be moved to the correct list of the board, under \say{Ready to be reviewed}. These issues shall also be connected to a relevant milestone, e.g., \say{everything that shall be done until the end of the project}. Additionally, issues not directly connected to requirements, such as issues connected to documents, shall be assigned to an epic on Gitlab. Process for regulatory documents:
 \begin{enumerate}[noitemsep,nolistsep]
-    \item Create issue on GitLab, under list \say{Backlog} or \say{Doing}, when planning to work on a document (author)
+    \item Create issue on Gitlab, under list \say{Backlog} or \say{Doing}, when planning to work on a document (author)
     \item Change document by editing or adding information (author)
     \item Move issue to the list, \say{Up for review}, and assign reviewer to the issue (author)
     \item Review and comment changes (reviewer)
     \item Address comments and edit if necessary (author)
-    \item When a document has been reviewed, the new version shall be uploaded to Teams and GitLab (author)
+    \item When a document has been reviewed, the new version shall be uploaded to Teams and Gitlab (author)
 \end{enumerate}
 
 \subsection{Requirements}
 %For Analysts to add processes regarding creating and changing requirements.
-The work with the requirements shall be conducted by the analyst team. A first draft of the requirements is to be created in the first iteration, before the tollgate meeting. The requirements shall be reviewed by the analyst team during every iteration to ensure that they are updated according to both external feedback from customers and internal feedback from the company's different departments. After feedback from the internal and external sources, the analyst team shall review the feedback and change all requirements according to what is considered valid feedback both from the customer perspective and the company perspective. The feedback from customers is collected at customer meetings, which are scheduled at least once per iteration. The feedback from the company shall be collected every week from each CFT at the weekly company meetings. This feedback can be related to re-prioritization due to time and difficulty, as well as improving language for clarity. 
-Every requirement shall be conducted from and be traceable to a use case, which originates from customer meeting data. Each use case shall have a version history and a note of who the author is of that version. Every requirement shall have an ID that gives the requirement a unique identifying name. The ID shall also be connected to the use case. In all places where requirements are going to be used, the ID of the requirement shall be clearly noted. 
+The work with the requirements shall be conducted by the analyst team. A first draft of the requirements is to be created in the first iteration, before the tollgate meeting. The requirements shall be reviewed by the analyst team during every iteration to ensure that they are updated according to both external feedback from customers and internal feedback from the company's different departments. After feedback from the internal and external sources, the analyst team shall review the feedback and change all requirements according to what is considered valid feedback both from the customer perspective and the company perspective. The feedback from customers is collected at customer meetings, which are scheduled at least once per iteration. The feedback from the company shall be collected every week from each CFT at the weekly company meetings. This feedback can be related to re-prioritization due to time and difficulty as well as improving language for clarity. 
+Every requirement shall be conducted from and be traceable to a use case, which originates from customer meeting data. Each use case shall have a version history and a note of who the author is of that version. Every requirement shall have an ID that gives the requirement a unique identifying name. The ID shall also be connected to the use case. All places where requirements are going to be used, the ID of the requirement shall be clearly noted. 
 
-When a requirement is changed after feedback, it shall first be discussed in the analyst team to decide if the change is of significant or minor importance. If the team decides that a change is of little importance and is needed, a note will be made in an internal changelog and changed in relevant places such as GitLab and SRS. Examples of minor changes are spelling and grammar mistakes. 
+When a requirement is changed after feedback, it shall first be discussed in the analyst team to decide if the change is of significant or little importance. If the team decides that a change is of little importance and a small change is needed, a note will be made in a internal change log and changed in relevant places as GitLab and SRS. Examples of small changes are spelling and grammar mistakes. 
 
-If the requirement is of more significant importance and a more considerable change is required, the procedure is similar to small changes: a note is made in an internal changelog. Additionally, a requirement change is made that explains why a change was made, what the current situation for that requirement is, and who is responsible for that change. This is later communicated out to relevant departments and changed in internal documents. 
+If the requirement is of more significant importance and a larger change is required, the procedure is similar to that of small changes: a note is made in an internal change log. Additionally, a change of requirement is made that explains why a change was made, what the current situation for that requirement is, and who is responsible for that change. This is later communicated out to relevant departments and changed in internal documents. 
 
-All company members shall know where the requirements can be found and what they mean for the customer. Therefore, the analyst team shall not be the only company representatives at customer meetings and on-site visits. Instead, team members from each workgroup shall be present along with the analysts. The analyst team will also ensure this by clearly presenting the background and key takeaways from the customer meetings on the company meeting at the beginning of iteration 2. 
+All members of the company shall have knowledge about where the requirements can be found and what they mean for the customer. Therefore, the analyst team shall not be the only company representatives at customer meetings and on on-site visits. Instead, team members from each work group shall be present along with the analysts. The analyst team will also ensure this by clearly presenting the background and key take-aways from the customer meetings on the company meeting in the beginning of iteration 2. 
 
 \subsection{Risk process}
-To identify risks within the project, risk identification workshops have been held to get a list of all relevant risks discovered. The risks were then assessed and given a probability factor from 1 to 4 and an impact factor of 1 to 4. Multiplying these two factors results in the risk management indicator, from which the risks are then ranked. A short description of how to handle the risk if it occurs and how the company should work to lower the probability of the risk occurring was then added to each risk. 
+To identify risks within the project, risk identification workshops have been held to get a list of all relevant risks discovered. The risks were then assessed and given a probability factor from 1 to 4 and an impact factor of 1 to for. Multiplying these two factors results in the risk management indicator, from which the risks are then ranked. A short description of how to handle the risk if it occurs and how the company should work to lower the probability of the risk occurring was then added to each risk. 
 
-At a later part of the project, a process to update the company employees on relevant risks and monitor risks was implemented. This process was to have a portion of each CEO meeting be reserved to go through the most relevant risks at the moment and go through the risks which have been updated with a new probability or impact factor. New risks discovered throughout the project were added using the process described above.
+At a later part of the project a process to update the company employees on relevant risks and monitor risks was implemented. This process was to have a portion of each CEO meeting be reserved to go through the most relevant risks at the moment and go through the risks which have been updated with a new probability or impact factor. New risks discovered throughout the project were added using the process described above.
 
 
 \subsection{Change of processes}
