@@ -40,12 +40,14 @@
             <h2>Labbresultat</h2>
             <table>
                 <tr>
-                    <th style="float: left;">Namn</th>
-                    <th class="values-column">Värde</th>
+                    <th style="text-align: left;">Namn</th>
+                    <th>Värde</th>
                 </tr>
                 <tr *ngFor="let lab of displayedEvent.data">
-                    <td style="color: {{markerColour(lab.marker,lab.value)}};">{{lab.marker}}</td>
-                    <td style="color: {{markerColour(lab.marker,lab.value)}};" class="values-column">{{lab.value}}</td>
+                    <div style="color: {{markerColour(lab.marker,lab.value)}};">
+                    <td>{{lab.marker}}</td>
+                    <td>{{lab.value}}</td>
+                </div>
                 </tr>
             </table>
         </div>

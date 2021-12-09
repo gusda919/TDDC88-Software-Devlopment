@@ -1,5 +1,5 @@
 \section{Development}
-This section is intended to address guidelines for the development and quality assurance of code that will result in the end product. The project is set up with TypeScript. The client (Angular) and the server (Node.js) run in seperate Docker containers and are orchestrated with Docker-compose. For a more detailed description, please see the \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/blob/develop/documents/Architecture\%20Notebook/Architecture_Notebook.pdf}{Architecture Notebook}.
+This section is intended to address guidelines for the development and quality assurance of code that will result in the end product. The project is set up with TypeScript. The client (Angular) and the server (Node.js) run in separate Docker containers and are orchestrated with Docker-compose. For a more detailed description, please see the \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/tree/main/documents/Architecture\%20Notebook}{Architecture Notebook}.
 
 \subsection{Code conventions}
 As the project is set up with TypeScript (TS), \href{https://google.github.io/styleguide/tsguide.html}{Google's TypeScript Style Guide} must be followed for all TS code. This is verified during the software reviews before each merge, further described in section \ref{subsec:reviews}.
@@ -20,21 +20,24 @@ The project uses a form of feature branch workflow. Feature branches are merged 
 \noindent There are five long-lived branches:
 \begin{itemize}
 \item \emph{main} - Is updated each iteration, code on this branch must be able to be shown to the customer. Members are only allowed to pull code from develop to main.
-\item \emph{develop} - The intermediate branch where code from backend, overview and dashboard should be merged to. Code on this branch must be ready to be tested (integration, regression and acceptance testing). Here it is fine to have some bugs.
+\item \emph{develop} - The intermediate branch where code from back-end, overview and dashboard should be merged to. Code on this branch must be ready to be tested (integration, regression and acceptance testing). Here it is fine to have some bugs.
 \item \emph{backend} - CFT1
+% \item \emph{back-end} - CFT1
 \item \emph{overview} - CFT2
 \item \emph{dashboard} - CFT3
 \end{itemize}
 
-\noindent From the three cross-functional team branches, smaller feature branches shall be created. These smaller branches are not supposed to live longer than maximum two days, this is to enable continuous integration. When these smaller branches are merged to their respective CFT branch, peer-reviews must be made (see subsection \ref{subsec:reviews} below). 
-All merge requests must be approved according to the set guidelines before it is merged.
+% \noindent From the three cross-functional team branches, smaller feature branches shall be created. These smaller branches are not supposed to live longer than maximum two days, this is to enable continuous integration. When these smaller branches are merged to their respective CFT branch, peer-reviews must be made (see subsection \ref{subsec:reviews} below). 
+% All merge requests must be approved according to the set guidelines before it is merged.
+\noindent From the three cross-functional team branches, smaller feature branches shall be created. These smaller branches are not supposed to live longer than the maximum of two days; this is to enable continuous integration. When these smaller branches are merged to their respective CFT branch, peer-reviews must be made (see subsection \ref{subsec:reviews} below). 
+All merge requests must be approved according to the set guidelines before merging.
 
 \subsubsection*{Iteration 3 \& 4}
-From iteration 3 the branches \emph{backend}, \emph{overview} and \emph{dashboard} will not be used, they are merged with \emph{develop} by the end of iteration 2. The \emph{main} and \emph{develop} branch remain and new feature branches are created from \emph{develop}. To keep everything connected with requirements, the new feature branch is created from the related issue in the requirement list on GitLab.
+From iteration 3 the branches \emph{back-end}, \emph{overview} and \emph{dashboard} will not be used, they are merged with \emph{develop} by the end of iteration 2. The \emph{main} and \emph{develop} branch remain and new feature branches are created from \emph{develop}. To keep everything connected with requirements, the new feature branch is created from the related issue in the requirement list on GitLab.
 
 \subsection{Software reviews}
 \label{subsec:reviews}
-In addition to regular discussion of code between developers, software reviews take place in connection with each merge from feature branches to the development branch. The software review must follow a set protocol in GitLab, the guidelines can be found in \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/blob/develop/README.md}{the README-file on GitLab}. In merge requests, the related requirement must be declared as well as what new features have been added, the expected behavior of these and what to test.
+In addition to regular discussion of code between developers, software reviews take place in connection with each merge from feature branches to the development branch. The software review must follow a set protocol in GitLab; the guidelines can be found in \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/tree/main#merge-requests}{the README-file on GitLab}. In merge requests, the related requirement must be declared as well as what new features have been added, the expected behavior of these, and what to test.
 
 The reviews are done by a project member who has not developed the code themselves within two working days of when the merge request was posted. The review must not exceed one hour. For merges to the main branch, the review must be done by the project architect.
 
@@ -42,7 +45,9 @@ The reviews are done by a project member who has not developed the code themselv
 GitLab is used for bug-tracking. Bugs found during testing will be listed and documented by the test team. Issues for each bug will be created in  \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/issues}{the issues tab of the company GitLab} and connected to the corresponding requirement issue if relevant.
 
 \subsection{Version-handling}
-GitLab is used for version-handling. Work needs to be commited at least daily when working on features but the goal is to commit after each working addition to the code. Commits must be tagged with what kind of commit it is (see \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/blob/develop/README.md}{the section Semantic Commit Messages in the README-file on GitLab}).
+% GitLab is used for version-handling. Work needs to be commited at least daily when working on features but the goal is to commit after each working addition to the code. Commits must be tagged with what kind of commit it is (see \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/blob/develop/README.md}{the section Semantic Commit Messages in the README-file on GitLab}).
+GitLab is used for version handling. Work needs to be committed at least daily when working on features, but the goal is to commit after each working addition to the code. Commits must be tagged with what kind of commit it is (see \href{https://gitlab.liu.se/tddc88-company-1-2021/deploy/-/tree/main#semantic-commit-messages}{the section Semantic Commit Messages in the README-file on GitLab}).
 
 \subsection{Documentation}
-The Technical Writer and the involved developers document the code produced at module level. The documentation includes descriptions of which inputs are handled, which functions are used, which inputs are given and how they work together with the rest of the system.
+% The Technical Writer and the involved developers document the code produced at module level. The documentation includes descriptions of which inputs are handled, which functions are used, which inputs are given and how they work together with the rest of the system.
+The Technical Writer and the involved developers document the code produced at the module level. The documentation includes descriptions of which inputs are handled, which functions are used, which inputs are given, and how they work together with the rest of the system.

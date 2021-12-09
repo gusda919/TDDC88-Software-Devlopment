@@ -45,13 +45,13 @@ Version & Author & Updates & Reviewed by & Date \\ [0.5ex]
     \begin{tabular}{@{}l@{}}Added chapter 3, 4 and 6\end{tabular}
     & Daniel Ma, Simon Boman & 2021-11-02  \\
 \hline
-2.1 &  & 
+2.1 & Somaye Gharedaghi & 
     \begin{tabular}{@{}l@{}}Grammatical Review\end{tabular}
-    & Somaye Gharedaghi & 2021-12-03  \\
+    & Jacob Karlén & 2021-12-03  \\
 \hline
 3.0 & Jacob Karlén & 
     \begin{tabular}{@{}l@{}}Changes to chapter 2, \\3, 7 and 8 based on feedback\\ from supervisor and reviews.\end{tabular}
-    & TBD & 2021-12-04  \\
+    & Lucas Hultqvist & 2021-12-04  \\
 \hline
 \end{tabular}
 \end{table}
@@ -165,7 +165,7 @@ List the decisions that have been made regarding architectural approaches and th
 
       \item \textbf{Decision:} The development environment will run in Docker containers orchestrated with Docker-compose.
     \linebreak{}
-    \textbf{Justification:} The motivation behind this is that it will create a consistent environment for everybody working with the development, so there shouldn't be issues related to the use of different dependencies on different systems. It is also convenient to be able to start the client, server, and database in separate Docker containers with a single Docker-compose command. Another benefit of using Docker from the beginning of the project is making deployment with Kubernetes easier since it is easy to go from using Docker-compose to Kubernetes.
+    \textbf{Justification:} The motivation behind this is that it will create a consistent environment for everybody working with the development, so there shouldn't be issues related to the use of different dependencies on different systems. It is also convenient to be able to start the client and server in separate Docker containers with a single Docker-compose command. Another benefit of using Docker from the beginning of the project is making deployment with Kubernetes easier since it is easy to go from using Docker-compose to Kubernetes.
     
       \item \textbf{Decision:} Kubernetes will be used to deploy the application
     \linebreak{}
@@ -233,7 +233,9 @@ The \textit{modules} folder contains our Angular modules, and this is currently 
 
 The \textit{shared} folder includes a folder for all the common data models of the application, and these are in the form of TypeScript files defining the different TypeScript interfaces. It also contains a folder for any Angular components that can be shared and reused across modules in the application.
 
-The file structure for the server is considerably simpler and has all the TypeScript and JSON files in the same folder \textit{src}. This simple structure of the internals of the server works because the server is very basic and only delivers static data through the Express routes defined in \textit{routes.ts}. No calculations are done on the back-end, which simplifies everything quite a bit. The Angular patient service that is responsible for handling HTTP-requests to the server routes and retrieve patient data have a service method specified for each express route in the server. This makes it very easy for a developer to inject patient data into a component, since they just 
+The file structure for the server is considerably simpler and has all the TypeScript and JSON files in the same folder \textit{src}. This simple structure of the internals of the server works because the server is very basic and only delivers static data through the Express routes defined in \textit{routes.ts}. No calculations are done on the back-end, which simplifies everything quite a bit. The Angular patient service that is responsible for handling HTTP-requests to the server routes and retrieve patient data have service methods specified for each express route in the server. This makes it very easy for a developer to inject patient data into a component, since they just use the corresponding service method for the data they need (i.e vital parameters of a patient with a given patient ID). 
+
+The project is configured to use ES modules in both the front-end and back-end, with the "import" syntax rather than "require" (CommonJS). 
 
 \includepdf[scale=0.9]{packages.pdf}
 

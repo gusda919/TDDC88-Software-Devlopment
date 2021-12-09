@@ -1,7 +1,6 @@
 FROM node:16-alpine3.11 as base
  
 # Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
  
 # Install app dependencies
@@ -11,8 +10,6 @@ COPY package*.json ./
  
 # Install any needed packages
 RUN npm install
-RUN npm install -g @angular/cli@latest
-RUN npm i --save-dev @types/node
  
 # Bundle app source
 COPY . .
